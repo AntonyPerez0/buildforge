@@ -3,6 +3,9 @@ import { Cinzel, Inter, Marcellus } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { ServiceWorkerRegister } from "@/components/service-worker-register";
+import { buildSearchIndex } from "@/lib/search-index";
+import { withBase } from "@/lib/utils";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -56,9 +59,10 @@ export const metadata: Metadata = {
     title: "BuildForge",
     description: "Zero-guessing build companions for Diablo IV & WoW Forever.",
   },
-  manifest: "/manifest.webmanifest",
+  manifest: withBase("/manifest.webmanifest"),
   icons: {
-    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    icon: [{ url: withBase("/icon.svg"), type: "image/svg+xml" }, { url: withBase("/icon-192.png"), sizes: "192x192", type: "image/png" }],
+    apple: [{ url: withBase("/apple-touch-icon.png"), sizes: "180x180" }],
   },
 };
 
@@ -69,15 +73,17 @@ export const viewport: Viewport = {
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
+  const searchIndex = buildSearchIndex();
   return (
     <html
       lang="en"
       className={`${inter.variable} ${cinzel.variable} ${marcellus.variable} h-full antialiased`}
     >
       <body className="min-h-full">
-        <SiteHeader />
+        <SiteHeader searchIndex={searchIndex} />
         <main className="flex-1">{children}</main>
         <SiteFooter />
+        <ServiceWorkerRegister />
       </body>
     </html>
   );

@@ -8,6 +8,7 @@ import { formatDate } from "@/lib/utils";
 import { BuildExplorer } from "@/components/build-explorer";
 import { MetaSnapshotGrid } from "@/components/meta-snapshot-grid";
 import { GuideIndexGrid } from "@/components/guide-index-grid";
+import { FavoritesBar } from "@/components/favorites-bar";
 import { FadeUp } from "@/components/motion";
 import { SectionHeading } from "@/components/ui-bits";
 
@@ -58,6 +59,7 @@ export default function D4Page() {
           />
         </FadeUp>
         <div className="mt-10">
+          <FavoritesBar builds={builds} />
           <BuildExplorer builds={builds} />
         </div>
       </section>

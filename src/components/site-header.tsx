@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X, Hammer } from "lucide-react";
 import { Logo } from "@/components/logo";
+import { CommandPalette } from "@/components/command-palette";
+import type { SearchEntry } from "@/lib/search-index";
 import { cn } from "@/lib/utils";
 
 const NAV = [
@@ -14,7 +16,7 @@ const NAV = [
   { href: "/about", label: "About" },
 ];
 
-export function SiteHeader() {
+export function SiteHeader({ searchIndex }: { searchIndex: SearchEntry[] }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
@@ -40,6 +42,7 @@ export function SiteHeader() {
           })}
         </nav>
         <div className="flex items-center gap-2">
+          <CommandPalette entries={searchIndex} />
           <Link
             href="/builder"
             className="hidden items-center gap-2 rounded-lg bg-(--accent, #8b87f4) px-3.5 py-1.5 text-sm font-semibold text-base shadow-[0_0_20px_-6px_var(--accent,#8b87f4)] transition-transform hover:scale-[1.03] sm:inline-flex"

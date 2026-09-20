@@ -134,7 +134,7 @@ export function BuildDetail({ build }: { build: Build }) {
             </FadeUp>
           ) : null}
           <div className="mt-10">
-            <ProgressionTimeline bands={build.progression} />
+            <ProgressionTimeline buildId={build.id} bands={build.progression} />
           </div>
         </Section>
 

@@ -156,6 +156,8 @@ export interface Build {
   extras?: ExtraGroup[];
   /** Game-specific quick facts rendered as chips. */
   meta?: Record<string, string>;
+  /** For forks: the meta build id this was forked from. */
+  forkedFrom?: string;
 }
 
 /** Condensed current-meta card synced from guide sites. */

@@ -80,6 +80,7 @@ export function forkMetaBuild(id: string): CustomBuild | null {
     name: `${source.name} (my fork)`,
     tagline: source.tagline,
     lastSynced: new Date().toISOString(),
+    forkedFrom: source.id,
   };
 }
 

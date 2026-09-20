@@ -7,6 +7,7 @@ import { latestSyncDate } from "@/lib/snapshots";
 import { formatDate } from "@/lib/utils";
 import { BuildExplorer } from "@/components/build-explorer";
 import { GuideIndexGrid } from "@/components/guide-index-grid";
+import { FavoritesBar } from "@/components/favorites-bar";
 import { FadeUp, Stagger, StaggerItem } from "@/components/motion";
 import { SectionHeading } from "@/components/ui-bits";
 
@@ -131,6 +132,7 @@ export default function ForeverPage() {
           />
         </FadeUp>
         <div className="mt-10">
+          <FavoritesBar builds={builds} />
           <BuildExplorer builds={builds} />
         </div>
 

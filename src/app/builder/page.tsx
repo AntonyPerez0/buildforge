@@ -30,6 +30,8 @@ import {
   type CustomBuild,
 } from "@/lib/custom-builds";
 import { BUILDS, buildHref } from "@/lib/builds";
+import { diffBuilds } from "@/lib/build-diff";
+import { BuildDiffPanel } from "@/components/build-diff-panel";
 import { cn, formatDate, withBase } from "@/lib/utils";
 import { TierBadge } from "@/components/ui-bits";
 
@@ -714,6 +716,27 @@ function BuilderClient() {
             </Card>
           </div>
         </div>
+
+        {/* Fork diff */}
+        {(() => {
+          const meta = build.forkedFrom
+            ? BUILDS.find((b) => b.id === build.forkedFrom)
+            : undefined;
+          if (!meta) return null;
+          const diff = diffBuilds(meta, build);
+          return (
+            <div className="mt-8">
+              <BuildDiffPanel
+                metaName={meta.name}
+                progression={diff.progression}
+                stats={diff.stats}
+                gear={diff.gear}
+                summary={diff.summary}
+                changed={diff.changed}
+              />
+            </div>
+          );
+        })()}
 
         {/* Saved builds */}
         <div className="mt-8">
