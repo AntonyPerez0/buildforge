@@ -141,6 +141,43 @@ export const furyWarrior: Build = {
       milestone: "Raids unlock December 9 — use launch→December to level alts, gear through the nine new dungeons and bank consumables.",
     },
   ],
+  specGates: [
+    { gate: "16", label: "Forever capstone — new one-point ability (verify in beta calculator)" },
+    { gate: "31", label: "Bloodthirst — the spec-defining strike" },
+  ],
+  endgame: [
+    {
+      phase: "Launch → raid prep · Nov 4 → Dec 9",
+      goal: "Level, gear and stock the raid bench",
+      steps: [
+        { name: "Dungeon circuit", detail: "The nine new dungeons", why: "Forever's reworked drops are the gear pipeline — run every dungeon in your level band, then the 60s." },
+        { name: "Enchant bench", detail: "Crusader + kits", why: "Crusader on the main hand, Minor Speed on boots, stamina bracers — apply before the first raid night, not during." },
+        { name: "Consumable bank", detail: "Pre-raid stockpile", why: "Elixirs of Giants/Mongoose, sharpening stones, scrolls, camp food that doesn't clash with class buffs — Dec 9 rewards preparation." },
+        { name: "Onyxia attunement", detail: "Questline", why: "The attunement chain gates Onyxia's Lair and pays with raid-grade rewards — start it early in the launch window." },
+      ],
+      milestone: "Raids unlock December 9 — the launch→December window is entirely your gear and consumable runway.",
+    },
+    {
+      phase: "Raid tier · Dec 9 →",
+      goal: "Barrow Deeps (10) → Hyjal Summit (20) → Onyxia's Lair (40)",
+      steps: [
+        { name: "Barrow Deeps", detail: "10-player", why: "The entry tier — perfect for guilds forming at launch; loot here starts the raid upgrade path." },
+        { name: "Hyjal Summit", detail: "20-player", why: "The mid tier — expect tight group composition; Fury's cleave and Battle Shout uptime earn the slot." },
+        { name: "Onyxia's Lair", detail: "40-player", why: "The classic 40 — deep player pool, coordinated buffs, and the famous loot table (including your cloak materials)." },
+        { name: "Raid-night kit", detail: "Per pull", why: "Elixirs, stones, scrolls and a coordinated camp buff — in classic-style raids, consumables are a DPS stat." },
+      ],
+    },
+    {
+      phase: "Min-maxing",
+      goal: "Squeeze the classic levers Forever keeps alive",
+      steps: [
+        { name: "Slow main-hand chase", detail: "Always", why: "Bloodthirst scales off weapon damage range — every weapon upgrade is a spec upgrade." },
+        { name: "Weapon skill top-ups", detail: "Weaker but real", why: "Forever reduced weapon-skill per item, but boss-level glances still cost you swings." },
+        { name: "Crafted BiS pieces", detail: "Blacksmithing", why: "Crafted epics (the Lionheart line) hold BiS slots — worth every material if you have the profession." },
+        { name: "Unified hit check", detail: "Per patch", why: "Forever merges hit/crit — verify current thresholds in the linked calculator instead of classic-era tables." },
+      ],
+    },
+  ],
   statPriority: [
     { label: "Attack Power / Strength", note: "Bloodthirst scales directly off AP — the single best stat on paper." },
     { label: "Hit (unified)", note: "Forever merges melee and spell hit into one system; gear hit once and everything benefits." },

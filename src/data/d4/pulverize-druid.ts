@@ -135,6 +135,48 @@ export const pulverizeDruid: Build = {
       ],
     },
   ],
+  endgame: [
+    {
+      phase: "Torment entry · 50–60",
+      goal: "Survive World Tier 4 with Fortify as engine and armor",
+      steps: [
+        { name: "Ancestral re-gear", detail: "First week", why: "Replace leveling legendaries with Ancestral pieces from Helltides and Lair bosses — Fortify Generation, Max Life and Willpower outrank raw damage on every slot." },
+        { name: "Glyphs", detail: "The board's earth glyph first, a Fortify or defense glyph second", why: "The earth glyph multiplies the nodes your boards route through — verify the exact glyph name in the linked guide before socketing; the Fortify glyph keeps the second health bar fat, and your damage keys off being Fortified." },
+        { name: "Aspect refresh", detail: "Max rolls", why: "Re-imprint Ursine Horror and Disobedience at their highest rolls on Ancestral gear — the ground-tear layer and stacking armor both ramp with melee density." },
+        { name: "Werebear uptime check", detail: "Bar watch", why: "If you pop out of form mid-pack, it's Spirit regen and slam cadence, not gear — keep Pulverize on cooldown or the whole engine stalls." },
+      ],
+      milestone: "Glyph bonus thresholds are reached by pathing Paragon boards toward the glyph socket — route the earth glyph through Willpower and Fortify nodes before spending points.",
+    },
+    {
+      phase: "Farming loop · 60–70",
+      goal: "Glyph XP, Fortify tempering and uniques",
+      steps: [
+        { name: "Nightmare dungeons", detail: "Tier ladder", why: "Primary glyph XP and Ancestral stream — run the highest tier you clear fast; the slam cone rewards corridors and doorways over open fields." },
+        { name: "Lair boss rotation", detail: "Summon mats from Whispers", why: "Boss loot tables are your unique hunt — Temerity's healing-to-barrier conversion is the tank ceiling prize." },
+        { name: "Tempering", detail: "Pulverize + Fortify", why: "Temper Pulverize ranks and Fortify-related affixes onto every applicable slot before masterworking — the Fortify bar is both health and damage." },
+        { name: "Helltides", detail: "Chests + mats", why: "Fastest rare-material and leveling gear farm — run them between dungeon keys." },
+      ],
+    },
+    {
+      phase: "The Pit push · 70+",
+      goal: "Climb tiers and finish the craft layer",
+      steps: [
+        { name: "Masterworking", detail: "Fortify + crit first", why: "Masterwork Fortify Generation and Critical Strike Chance before raw main-stat — every slam pays twice once the Fortify bar feeds damage." },
+        { name: "Pit climbing", detail: "Comfortable +3 tiers", why: "Push tiers you clear reliably; the upgrade drops and leaderboard thresholds reward consistency." },
+        { name: "Glyph ranks", detail: "15 → 21+", why: "Every major glyph threshold changes board scaling — keep glyph XP running even during pushes." },
+      ],
+      milestone: "Torment difficulty tiers and Pit rewards shift with patches — verify current thresholds on Maxroll or Icy Veins before spending gold.",
+    },
+    {
+      phase: "Long-term refinement",
+      goal: "Uniques, earth tuning and seasonal resets",
+      steps: [
+        { name: "Unique hunt list", detail: "Build-defining pieces", why: "Temerity converts Blood Howl's healing into a third health bar — run the specific Lair and world bosses that drop it." },
+        { name: "Earth and poison glyph lines", detail: "Hedge the picks", why: "The earth-aspect family and the poison/earth glyph lines rotate names and values by patch — read your board and the linked guide before committing final sockets." },
+        { name: "Seasonal reroll", detail: "Each season", why: "Level paths stay evergreen; re-check Werebear uptime, aspect values and glyph thresholds against the live guides each season." },
+      ],
+    },
+  ],
   statPriority: [
     { label: "Willpower", note: "Scales your damage and your life pool — the default pick everywhere." },
     { label: "Maximum Spirit / Spirit Regeneration", note: "Feeds the slam cadence — a stalled bar is a stalled build." },

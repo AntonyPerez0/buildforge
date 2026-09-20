@@ -146,6 +146,41 @@ export const enhancementShaman: Build = {
       milestone: "Raids unlock December 9 — use launch→December to level alts, gear through the nine new dungeons and bank consumables.",
     },
   ],
+  endgame: [
+    {
+      phase: "Launch → raid prep · Nov 4 → Dec 9",
+      goal: "Level, gear and stock the raid bench",
+      steps: [
+        { name: "Dungeon circuit", detail: "The nine new dungeons + classics", why: "Strength/int mail and the slow two-hander pipeline — run your level band, then the 60s; the BRD strength ring alone is worth the circuit." },
+        { name: "Weapon prep", detail: "Slow two-hander", why: "Lock in the slowest, hardest-hitting mace or axe the reworked dungeons drop before December — Stormstrike and Windfury both scale off its damage range." },
+        { name: "Enchant bench", detail: "Crusader + kits", why: "Crusader on the two-hander, Minor Speed boots, strength bracers, agility gloves — applied before the first raid night, not during." },
+        { name: "Consumable bank", detail: "Pre-raid stockpile", why: "Elixirs of Giants/Mongoose, sharpening stones and a mana-potion reserve — shocks and totem re-drops burn the pool faster than any melee spec." },
+        { name: "Totem discipline", detail: "Dungeon reps", why: "Drop at pull, refresh only when a totem dies — build the habit in dungeons so raid nights don't pay for lazy re-drops." },
+      ],
+      milestone: "Raids unlock December 9 — the launch→December window is entirely your gear and consumable runway.",
+    },
+    {
+      phase: "Raid tier · Dec 9 →",
+      goal: "Barrow Deeps (10) → Hyjal Summit (20) → Onyxia's Lair (40)",
+      steps: [
+        { name: "Barrow Deeps", detail: "10-player", why: "The entry tier — one shaman covers a small roster's totem bill: Strength of Earth + Grace of Air for melee, Mana Spring when casters burn." },
+        { name: "Hyjal Summit", detail: "20-player", why: "The mid tier — totem assignments become formal: coordinate which shaman carries Grace of Air vs Strength of Earth so the buffs don't overlap." },
+        { name: "Onyxia's Lair", detail: "40-player", why: "The classic 40 — deep rosters mean totem stations per group, and Earth Shock interrupt duty on the dangerous casts is the Enhancement tax." },
+        { name: "Raid-night kit", detail: "Per pull", why: "Elixirs, stones, mana potions and a coordinated camp buff — in classic-style raids, consumables are a DPS stat." },
+      ],
+    },
+    {
+      phase: "Min-maxing",
+      goal: "Squeeze the classic levers Forever keeps alive",
+      steps: [
+        { name: "Two-hander chase", detail: "Sulfuras era", why: "The Eye of Sulfuras from Ragnaros builds the legendary mace — the slow-two-hander dream where every Windfury proc is a screenshot moment." },
+        { name: "Weapon skill top-ups", detail: "Weaker but real", why: "Forever cut weapon-skill per item, but boss-level glances still cost Windfury windows — top off mace/axe skill as upgrades land." },
+        { name: "Blacksmithing crafts", detail: "Profession pick", why: "Crafted mail and weapon lines from the linked guides (verify Forever's recipes) fill slots while raid drops trickle in." },
+        { name: "Unified hit check", detail: "Per patch", why: "Forever merges hit/crit across melee and spells — verify current thresholds in the linked calculator instead of classic-era tables." },
+      ],
+    },
+  ],
+  specGates: [{ gate: "16", label: "Forever capstone — new one-point ability (verify in beta calculator)" }, { gate: "31", label: "Stormstrike — the Windfury setup strike" }],
   statPriority: [
     { label: "Strength (Attack Power)", note: "Scales Stormstrike, Windfury procs and every swing — the single best stat on paper." },
     { label: "Hit (unified)", note: "Forever merges melee and spell hit into one system — gear hit once and both halves of your kit benefit." },

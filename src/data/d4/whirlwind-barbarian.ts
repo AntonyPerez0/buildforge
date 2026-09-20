@@ -146,6 +146,48 @@ export const whirlwindBarbarian: Build = {
       ],
     },
   ],
+  endgame: [
+    {
+      phase: "Torment entry · 50–60",
+      goal: "Survive World Tier 4 and bring the engine online",
+      steps: [
+        { name: "Ancestral re-gear", detail: "First week", why: "Replace leveling legendaries with Ancestral pieces from Helltides and Lair bosses — target the affix priorities in the gear table." },
+        { name: "Might Glyph", detail: "Socket + level", why: "First glyph to level; Strength nodes multiply everything you do." },
+        { name: "Aspect refresh", detail: "Max rolls", why: "Re-imprint Berserk Ripping / Edgemaster's / Disobedience at their highest rolls on Ancestral gear." },
+        { name: "Shout economy check", detail: "Cooldowns 50%+", why: "If Torment feels brutal, it's almost always shout cooldown reduction, not armor." },
+      ],
+      milestone: "Glyph bonus thresholds are reached by pathing Paragon boards toward the glyph socket — plan your board routes before spending points.",
+    },
+    {
+      phase: "Farming loop · 60–70",
+      goal: "Glyph XP, uniques and tempering materials",
+      steps: [
+        { name: "Nightmare dungeons", detail: "Tier ladder", why: "Primary glyph XP and Ancestral stream — run the highest tier you clear fast, not the highest you survive." },
+        { name: "Lair boss rotation", detail: "Summon mats from Whispers", why: "Boss loot tables are your unique hunt — Dust Devil helm pieces come from here." },
+        { name: "Tempering", detail: "Whirlwind + shout affixes", why: "Temper Whirlwind ranks and Fury-cost lines onto every applicable slot before masterworking." },
+        { name: "Helltides", detail: "Chests + mats", why: "Fastest rare-material and leveling gear farm — run them between dungeon keys." },
+      ],
+    },
+    {
+      phase: "The Pit push · 70+",
+      goal: "Climb tiers and finish the craft layer",
+      steps: [
+        { name: "Masterworking", detail: "Crit + Fury first", why: "Masterwork crit damage and Fury economy stats before raw main-stat — the multipliers are larger." },
+        { name: "Pit climbing", detail: "Comfortable +3 tiers", why: "Push tiers you clear reliably; the upgrade drops and leaderboard thresholds reward consistency." },
+        { name: "Glyph ranks", detail: "15 → 21+", why: "Every major glyph threshold changes board scaling — keep glyph XP running even during pushes." },
+      ],
+      milestone: "Torment difficulty tiers and Pit rewards shift with patches — verify current thresholds on Maxroll or Icy Veins before spending gold.",
+    },
+    {
+      phase: "Long-term refinement",
+      goal: "Uniques, alt-friendly tuning and seasonal resets",
+      steps: [
+        { name: "Unique hunt list", detail: "Build-defining pieces", why: "Dust Devil helms, Ring of Red Furor, Temerity — run the specific Lair bosses that drop them." },
+        { name: "Seasonal reroll", detail: "Each season", why: "Level paths stay evergreen; re-check endgame tuning (glyph thresholds, aspect values) against the live guides each season." },
+        { name: "Alt leveling", detail: "Boost pipeline", why: "Once the first Whirlwind Barb is finished, alts level faster with your seasonal knowledge — check the boost guides when you get there." },
+      ],
+    },
+  ],
   statPriority: [
     { label: "Strength", note: "Scales all your damage — the default pick everywhere." },
     { label: "Fury per Second / Maximum Fury", note: "Feeds Unbridled Rage's doubled cost." },

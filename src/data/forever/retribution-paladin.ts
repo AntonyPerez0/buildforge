@@ -144,6 +144,48 @@ export const retPaladin: Build = {
       milestone: "Raids unlock December 9 — the launch window is your dungeon-gearing and enchanting runway.",
     },
   ],
+  endgame: [
+    {
+      phase: "Launch → raid prep · Nov 4 → Dec 9",
+      goal: "Level, gear and stock the raid bench",
+      steps: [
+        { name: "Dungeon circuit", detail: "The nine new dungeons + classics", why: "Run every dungeon in your level band for strength plate and slow two-hander drops — the reworked pipeline feeds Ret's whole kit before December." },
+        { name: "Enchant bench", detail: "Crusader + kits", why: "Crusader on the two-hander, Minor Speed on boots, strength bracers and leg kits — applied before the first raid night, not during." },
+        { name: "Consumable bank", detail: "Pre-raid stockpile", why: "Elixirs of Giants/Mongoose, sharpening stones and a mana-potion reserve for the Judgement economy — plus a camp buff that doesn't overlap a Blessing." },
+        { name: "Onyxia attunement", detail: "Questline", why: "The chain gates Onyxia's Lair and pays raid-grade rewards (your neck-slot era) — start it early in the launch window." },
+      ],
+      milestone: "Raids unlock December 9 — the launch→December window is entirely your dungeon-gearing and enchanting runway.",
+    },
+    {
+      phase: "Raid tier · Dec 9 →",
+      goal: "Barrow Deeps (10) → Hyjal Summit (20) → Onyxia's Lair (40)",
+      steps: [
+        { name: "Barrow Deeps", detail: "10-player", why: "The entry tier — perfect for guilds forming at launch; loot here starts the plate upgrade path." },
+        { name: "Hyjal Summit", detail: "20-player", why: "The mid tier — Sanctity Aura is pure raid value: every holy-damage dealer scales off your uptime, so keep Judgement of the Crusader applied and re-judged." },
+        { name: "Onyxia's Lair", detail: "40-player", why: "The classic 40 — deep player pool, coordinated Blessings and the famous loot table; Judgement maintenance and Hammer of Justice stuns earn the melee slot." },
+        { name: "Raid-night kit", detail: "Per pull", why: "Elixirs, stones, mana potions and a coordinated camp buff — in classic-style raids, consumables are a DPS stat." },
+      ],
+    },
+    {
+      phase: "Min-maxing",
+      goal: "Squeeze the classic levers Forever keeps alive",
+      steps: [
+        { name: "Slow two-hander chase", detail: "Always", why: "SoC procs 70% of weapon damage — every slow mace upgrade is a spec upgrade; Sulfuras from the Sulfuron Ingot is the endgame dream." },
+        { name: "Weapon skill top-ups", detail: "Weaker but real", why: "Forever cut weapon-skill per item, but boss-level glances still cost Judgement windows — top off mace/sword skill as upgrades land." },
+        { name: "Unified hit check", detail: "Per patch", why: "Forever merges hit/crit across melee and spells — verify current thresholds in the linked calculator instead of classic-era tables." },
+      ],
+    },
+    {
+      phase: "Off-spec value — Holy/Prot flexibility",
+      goal: "One Paladin, three raid seats",
+      steps: [
+        { name: "Holy off-spec", detail: "Cheap swap", why: "Forever makes healer gear grant spell damage — a second spell-damage set converts Ret into a real off-healer without a new gear grind." },
+        { name: "Prot utility", detail: "Situational", why: "Shield-and-stamina fill-in tanking covers dungeon nights when a tank no-shows — verify Forever's Protection tuning in the linked guide before relying on it." },
+        { name: "Respec economics", detail: "Budget it", why: "Respecs cost gold — decide before raid tier whether you're Ret-locked or rotating; both are viable, only one is cheap." },
+      ],
+    },
+  ],
+  specGates: [{ gate: "16", label: "Forever capstone — new one-point ability (verify in beta calculator)" }, { gate: "21", label: "Sanctity Aura — raid-wide holy damage" }, { gate: "31", label: "Repentance" }],
   statPriority: [
     { label: "Attack Power / Strength", note: "Scales every swing and every SoC proc." },
     { label: "Hit (unified)", note: "Forever merges melee and spell hit — one stat, every benefit." },

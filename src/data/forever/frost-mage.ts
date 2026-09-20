@@ -145,6 +145,41 @@ export const frostMage: Build = {
       milestone: "Raids unlock December 9 — spend launch→December grinding dungeons and banking conjure stations' worth of supplies.",
     },
   ],
+  endgame: [
+    {
+      phase: "Launch → raid prep · Nov 4 → Dec 9",
+      goal: "Level, gear and stock the raid bench",
+      steps: [
+        { name: "Dungeon circuit", detail: "The nine new dungeons + classics", why: "Reworked drops feed casters real upgrades — run your level band for spell-damage cloth, then the 60s for wands and trinkets." },
+        { name: "Enchant bench", detail: "Spell power + Minor Speed", why: "A spell-power weapon enchant/oil on the staff, Minor Speed on boots, intellect bracers — verify current enchant names/ranks in the linked guide before applying." },
+        { name: "Conjure stations", detail: "Water + food, stockpiled", why: "Pre-conjure full stacks of raid water and food into bags and bank — mages are the raid's consumable vendor, and Dec 9 will drain both." },
+        { name: "Consumable bank", detail: "Oils + potions", why: "Wizard Oils, spell elixirs and a mana-potion reserve for Blizzard waves — coordinate camp food so it doesn't clash with the raid's conjured spread." },
+      ],
+      milestone: "Raids unlock December 9 — the launch→December window is your dungeon-gearing and conjure-stockpiling runway.",
+    },
+    {
+      phase: "Raid tier · Dec 9 →",
+      goal: "Barrow Deeps (10) → Hyjal Summit (20) → Onyxia's Lair (40)",
+      steps: [
+        { name: "Barrow Deeps", detail: "10-player", why: "The entry tier — perfect for launch guilds; Frost's Nova-and-Blizzard control covers a small roster's add problems." },
+        { name: "Hyjal Summit", detail: "20-player", why: "The mid tier — expect add-heavy pulls; Blizzard placement and Ice Barrier discipline are your slot-earners." },
+        { name: "Onyxia's Lair", detail: "40-player", why: "The classic 40 — deep rosters and coordinated buffs; Arcane Intellect on 40 heads is your real contribution between Frostbolt windows." },
+        { name: "Raid role", detail: "Control + AoE", why: "Blizzard on adds, Nova on anything melee-shaped, Shatter crits on frozen targets — and refresh Arcane Intellect before anyone asks." },
+        { name: "Raid-night kit", detail: "Per pull", why: "Oils, spell elixirs, mana potions and a coordinated camp buff — in classic-style raids, consumables are a DPS stat." },
+      ],
+    },
+    {
+      phase: "Min-maxing",
+      goal: "Squeeze the caster levers Forever keeps alive",
+      steps: [
+        { name: "Staff chase", detail: "Raid-era", why: "Staff of Dominance is the stat-stick dream — until it drops, the reworked dungeon caster weapons were fully reworked; check the itemization guide for the current list." },
+        { name: "Healer-gear sweep", detail: "Forever bonus", why: "Healer gear now grants spell damage — cloth marked 'healing' is real Frost throughput; don't vendor what the new system feeds you." },
+        { name: "Wand weaving", detail: "Keep current", why: "A fresh wand is the cheapest damage-per-mana upgrade — raid wands come from the linked guides; keep the ranged slot current." },
+        { name: "Unified hit check", detail: "Per patch", why: "Forever merges spell and melee hit — one stat now serves everything; verify current thresholds in the linked calculator instead of classic spell-hit tables." },
+      ],
+    },
+  ],
+  specGates: [{ gate: "16", label: "Forever capstone — new one-point ability (verify in beta calculator)" }, { gate: "31", label: "Deep Frost capstone — verify the current pick in the beta calculator" }],
   statPriority: [
     { label: "Spell Damage (Frost)", note: "Flat Frost power scales Frostbolt, Blizzard and Cone of Cold alike." },
     { label: "Hit (unified)", note: "Forever merges spell and melee hit into one system — spell hit gear is everywhere now." },

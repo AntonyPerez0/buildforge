@@ -146,6 +146,41 @@ export const afflictionWarlock: Build = {
       milestone: "Raids unlock December 9 — use the runway on the nine new dungeons and shard banking instead of rushing.",
     },
   ],
+  endgame: [
+    {
+      phase: "Launch → raid prep · Nov 4 → Dec 9",
+      goal: "Level, gear and stock the raid bench",
+      steps: [
+        { name: "Soul shard farm", detail: "Full soul bag", why: "Shards fuel summons and Healthstones and the December raids are shard-hungry — bank a full bag during the launch window, not on raid night (Drain Soul only pays on the killing blow)." },
+        { name: "Raid pet choice", detail: "Felhunter vs Voidwalker", why: "Demonic Sacrifice makes the Felhunter a mana-regen battery and the Voidwalker a health-regen one — pick per encounter and verify current values in the linked guide." },
+        { name: "Dungeon circuit", detail: "Dreadmist run", why: "The reworked 60 dungeons carry the full Dreadmist set — shadow-damage cloth with zero downsides; run them until it's yours." },
+        { name: "Enchant bench", detail: "Spell power + Minor Speed", why: "Spell-power weapon enchant, Minor Speed boots, intellect bracers — verify current ranks in the linked guide before applying." },
+        { name: "Consumable bank", detail: "Runes + potions", why: "Demonic Runes are mana-on-demand, mana potions cover no-tap windows, shadow-damage elixirs feed the DoT kit — Healthstones you supply yourself." },
+      ],
+      milestone: "Raids unlock December 9 — the launch→December window is your Dreadmist, shard-banking and enchanting runway.",
+    },
+    {
+      phase: "Raid tier · Dec 9 →",
+      goal: "Barrow Deeps (10) → Hyjal Summit (20) → Onyxia's Lair (40)",
+      steps: [
+        { name: "Barrow Deeps", detail: "10-player", why: "The entry tier — DoT engines shine in small rosters: Corruption + Agony on everything, Nightfall procs called out as they light up." },
+        { name: "Hyjal Summit", detail: "20-player", why: "The mid tier — curse assignment is real work: Curse of Elements on the boss when casters want the amp, Agony when they don't." },
+        { name: "Onyxia's Lair", detail: "40-player", why: "The classic 40 — deep rosters, coordinated buffs and your utility ceiling: Healthstones to the whole raid, plus a Soulstone (verify its resurrection cooldown in the linked guide before relying on it)." },
+        { name: "Raid-night kit", detail: "Per pull", why: "Demonic Runes, mana potions, shadow elixirs and a coordinated camp buff — in classic-style raids, consumables are a DPS stat." },
+      ],
+    },
+    {
+      phase: "Min-maxing",
+      goal: "Squeeze the caster levers Forever keeps alive",
+      steps: [
+        { name: "Staff chase", detail: "Raid-era", why: "Staff of Dominance from Molten Core is the stat-stick dream — until then, the reworked dungeon caster weapons were fully reworked; check the itemization guide for the current list." },
+        { name: "Healer-gear sweep", detail: "Forever bonus", why: "Healer gear now grants spell damage — cloth marked 'healing' feeds Corruption and Agony just the same; don't vendor it." },
+        { name: "Weapon skill check", detail: "Low priority", why: "Forever cut weapon-skill per item and a staff-wielding DoT engine barely swings — spend the attention on unified hit instead, then re-verify both in the linked calculator." },
+        { name: "Unified hit check", detail: "Per patch", why: "Old spell-hit tables are dead — Forever merges spell and melee hit; verify current thresholds in the linked calculator." },
+      ],
+    },
+  ],
+  specGates: [{ gate: "16", label: "Forever capstone — new one-point ability (verify in beta calculator)" }, { gate: "31", label: "Deep Affliction capstone — verify the current pick in the beta calculator" }],
   statPriority: [
     { label: "Spell Damage (shadow-leaning)", note: "Corruption, Curse of Agony, Drain Life and Shadow Bolt all scale — generic spell damage also feeds Immolate, your one fire DoT." },
     { label: "Hit (unified)", note: "Forever merges spell and melee hit into one system — gear it once and every bolt benefits." },

@@ -8,7 +8,7 @@ const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://antonyperez0.github.io
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = SITE.replace(/\/$/, "");
   const now = new Date();
-  const routes = ["", "/d4", "/forever", "/builder", "/about", "/sync"];
+  const routes = ["", "/d4", "/forever", "/forever/launch", "/builder", "/about", "/sync"];
   return [
     ...routes.map((r) => ({
       url: `${base}${r}`,

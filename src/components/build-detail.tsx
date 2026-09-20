@@ -7,18 +7,24 @@ import { ProgressionTimeline } from "@/components/progression-timeline";
 import { SectionNav, type SectionNavItem } from "@/components/section-nav";
 import { CopyLinkButton, ForkButton } from "@/components/share-buttons";
 import { PaperDoll } from "@/components/paper-doll";
+import { EndgamePanel } from "@/components/endgame-panel";
+import { TalentSpine } from "@/components/talent-spine";
 import { FadeUp } from "@/components/motion";
 import { buildHref } from "@/lib/builds";
 
-const SECTIONS: SectionNavItem[] = [
-  { id: "level-path", label: "Level path" },
-  { id: "gear", label: "Gear" },
-  { id: "stats", label: "Stats" },
-  { id: "rotation", label: "Rotation" },
-  { id: "watch-outs", label: "Watch-outs" },
-  { id: "extras", label: "Extras" },
-  { id: "sources", label: "Sources" },
-];
+function getSections(build: Build): SectionNavItem[] {
+  const items: SectionNavItem[] = [{ id: "level-path", label: "Level path" }];
+  if (build.endgame) items.push({ id: "endgame", label: "Endgame" });
+  items.push(
+    { id: "gear", label: "Gear" },
+    { id: "stats", label: "Stats" },
+    { id: "rotation", label: "Rotation" },
+    { id: "watch-outs", label: "Watch-outs" },
+    { id: "extras", label: "Extras" },
+    { id: "sources", label: "Sources" },
+  );
+  return items;
+}
 
 function Section({
   id,
@@ -109,7 +115,7 @@ export function BuildDetail({ build }: { build: Build }) {
       </section>
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <SectionNav items={SECTIONS} />
+        <SectionNav items={getSections(build)} />
 
         {/* ─── Level path ───────────────────────────────────── */}
         <Section id="level-path">
@@ -133,10 +139,34 @@ export function BuildDetail({ build }: { build: Build }) {
               </div>
             </FadeUp>
           ) : null}
+
+          {/* ─── Talent spine (Forever) ─────────────────────── */}
+          {build.game === "forever" && build.specGates ? (
+            <FadeUp className="mt-6">
+              <TalentSpine build={build} />
+            </FadeUp>
+          ) : null}
+
           <div className="mt-10">
             <ProgressionTimeline buildId={build.id} bands={build.progression} />
           </div>
         </Section>
+
+        {/* ─── Endgame ──────────────────────────────────────── */}
+        {build.endgame ? (
+          <Section id="endgame">
+            <FadeUp>
+              <SectionHeading
+                eyebrow="Beyond the cap"
+                title="Endgame chapters"
+                sub="The game after the level path — the loop where most hours go. Same checkable flow as the level path."
+              />
+            </FadeUp>
+            <div className="mt-8">
+              <EndgamePanel buildId={build.id} phases={build.endgame} />
+            </div>
+          </Section>
+        ) : null}
 
         {/* ─── Gear ─────────────────────────────────────────── */}
         <Section id="gear">

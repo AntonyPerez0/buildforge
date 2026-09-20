@@ -144,6 +144,40 @@ export const combatRogue: Build = {
       milestone: "Raids unlock December 9 — the launch window is your gear and consumable runway.",
     },
   ],
+  endgame: [
+    {
+      phase: "Launch → raid prep · Nov 4 → Dec 9",
+      goal: "Level, gear and stock the raid bench",
+      steps: [
+        { name: "Dungeon circuit", detail: "Swords first", why: "Blackrock Depths classics (Krol Blade, Mirah's Song) plus the nine new dungeons — slow main hand, fast off-hand, every single run." },
+        { name: "Enchant bench", detail: "Crusader + kits", why: "Crusader on the main hand, flat damage on the off-hand, Minor Speed boots, agility gloves — applied before the first raid night, not during." },
+        { name: "Consumable bank", detail: "Pre-raid stockpile", why: "Thistle Tea for burn windows, Elixirs of the Mongoose, sharpening stones — and pickpocket/lockbox gold funds the whole bench." },
+        { name: "Weapon-skill warm-up", detail: "Swords", why: "Forever cut weapon-skill per item, but boss-level glances still cost swings — keep sword skill topped as upgrades land, and verify current values in the linked guide." },
+      ],
+      milestone: "Raids unlock December 9 — the launch→December window is entirely your gear and consumable runway.",
+    },
+    {
+      phase: "Raid tier · Dec 9 →",
+      goal: "Barrow Deeps (10) → Hyjal Summit (20) → Onyxia's Lair (40)",
+      steps: [
+        { name: "Barrow Deeps", detail: "10-player", why: "The entry tier — small rosters love a rogue who cleaves; Blade Flurry makes every two-pack a DPS check you win." },
+        { name: "Hyjal Summit", detail: "20-player", why: "The mid tier — tight compositions; Adrenaline Rush burn windows on priority targets are how Combat keeps its slot." },
+        { name: "Onyxia's Lair", detail: "40-player", why: "The classic 40 — deep player pool, coordinated buffs and interrupt duty (Kick on the casts that matter) between Eviscerate cycles." },
+        { name: "Raid-night kit", detail: "Per pull", why: "Tea, elixirs, stones and a coordinated camp buff — in classic-style raids, consumables are a DPS stat." },
+      ],
+    },
+    {
+      phase: "Min-maxing",
+      goal: "Squeeze the classic levers Forever keeps alive",
+      steps: [
+        { name: "Slow main-hand chase", detail: "Always", why: "Sinister Strike spends main-hand damage — every slow sword upgrade is an energy-efficiency upgrade; raid drops from the linked guides are the tier past Krol Blade." },
+        { name: "Weapon skill top-ups", detail: "Weaker but real", why: "Boss-level glances still tax dual-wielders — top off sword skill as each upgrade lands." },
+        { name: "Engineering utilities", detail: "Profession pick", why: "Gadgets, bombs and the classic toys (verify Forever's list in the linked guide) add burst and utility no stat line can buy." },
+        { name: "Unified hit check", detail: "Per patch", why: "Old dual-wield hit-cap math is dead — Forever's unified system replaces it; verify current thresholds in the linked calculator." },
+      ],
+    },
+  ],
+  specGates: [{ gate: "16", label: "Forever capstone — new one-point ability (verify in beta calculator)" }, { gate: "31", label: "Adrenaline Rush — the burn button" }],
   statPriority: [
     { label: "Attack Power / Agility", note: "Agility gives crit AND attack power — rogue's double-duty stat." },
     { label: "Hit (unified)", note: "Dual-wield misses are brutal; Forever's unified hit makes it one easy stat." },

@@ -146,6 +146,41 @@ export const beastMasteryHunter: Build = {
       milestone: "Raids unlock December 9 — use launch→December to farm dungeons and bank pet consumables.",
     },
   ],
+  endgame: [
+    {
+      phase: "Launch → raid prep · Nov 4 → Dec 9",
+      goal: "Level, gear and stock the raid bench — pet included",
+      steps: [
+        { name: "Pet training", detail: "Max ranks", why: "Growl and the attack skills trained to max before December — the pet is 100% free raid damage only if it's actually trained." },
+        { name: "Pet food stock", detail: "Bank stacks", why: "Feed Pet is a DPS cooldown — arrive at 60 with full stacks of pet food banked for raid nights, not bought at the last minute." },
+        { name: "Dungeon circuit", detail: "Mail + ranged", why: "The nine new dungeons plus classics feed agility mail and the slow bow/gun chase — the ranged slot is the whole build." },
+        { name: "Enchant bench", detail: "Scopes + agility", why: "Scopes on the ranged weapon (the classic engineer purchase), agility bracers and Minor Speed boots — applied before the first raid night." },
+        { name: "Consumable bank", detail: "Pre-raid stockpile", why: "Elixirs of the Mongoose, agility scrolls and a camp buff that doesn't clash with a class buff." },
+      ],
+      milestone: "Raids unlock December 9 — the launch→December window is your mail, ranged-weapon and pet-food runway.",
+    },
+    {
+      phase: "Raid tier · Dec 9 →",
+      goal: "Barrow Deeps (10) → Hyjal Summit (20) → Onyxia's Lair (40)",
+      steps: [
+        { name: "Barrow Deeps", detail: "10-player", why: "The entry tier — a BM pair (you + pet) is two bodies of sustained DPS in a small roster; keep Growl off tanked targets." },
+        { name: "Hyjal Summit", detail: "20-player", why: "The mid tier — pet uptime through add waves and Trueshot Aura for the melee group are your slot-earners." },
+        { name: "Onyxia's Lair", detail: "40-player", why: "The classic 40 — deep rosters punish dead pets: Feign Death discipline, Mend Pet between phases, Bestial Wrath saved for the burn windows." },
+        { name: "Raid-night kit", detail: "Per pull", why: "Elixirs, pet food every cooldown and a coordinated camp buff — in classic-style raids, consumables are a DPS stat (and your pet eats too)." },
+      ],
+    },
+    {
+      phase: "Min-maxing",
+      goal: "Squeeze the classic levers Forever keeps alive",
+      steps: [
+        { name: "Ranged chase", detail: "Rhok'delar era", why: "The Ancient Petrified Leaf questline out of Molten Core ends in the legendary bow — the single biggest upgrade in the hunter's tree." },
+        { name: "Devilsaur set", detail: "Crafted crit", why: "Gauntlets + leggings from Un'Goro hides hold two BiS crit slots — worth every hide while the leatherworkers supply." },
+        { name: "Weapon skill top-ups", detail: "Weaker but real", why: "Forever cut weapon-skill per item, but boss-level glances still tax the melee stat-stick and wing-clip moments — keep it current." },
+        { name: "Unified hit check", detail: "Per patch", why: "Forever merges ranged and spell hit — old hunter hit-cap tables are dead; verify current thresholds in the linked calculator." },
+      ],
+    },
+  ],
+  specGates: [{ gate: "16", label: "Forever capstone — new one-point ability (verify in beta calculator)" }, { gate: "21", label: "Intimidation — the pet stun" }, { gate: "31", label: "Bestial Wrath — the burn window" }],
   statPriority: [
     { label: "Agility", note: "Ranged attack power + crit — the hunter's double-duty stat." },
     { label: "Ranged Attack Power", note: "Scales every shot; mail tiers carry it." },

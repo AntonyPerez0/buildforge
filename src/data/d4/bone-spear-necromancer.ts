@@ -134,6 +134,48 @@ export const boneSpearNecromancer: Build = {
       ],
     },
   ],
+  endgame: [
+    {
+      phase: "Torment entry · 50–60",
+      goal: "Survive World Tier 4 and thread the spear through Ancestral gear",
+      steps: [
+        { name: "Ancestral re-gear", detail: "First week", why: "Replace leveling legendaries with Ancestral pieces from Helltides and Lair bosses — Maximum Essence and Cooldown Reduction first; the cast ceiling IS the damage ceiling." },
+        { name: "Glyphs", detail: "The board's bone glyph first, a Vulnerable glyph second", why: "The bone glyph multiplies the nodes your boards route through — verify the exact pick in the linked guide before socketing; Bone Prison roots keep a Vulnerable glyph paying on every cast." },
+        { name: "Aspect refresh", detail: "Max rolls", why: "Re-imprint Edgemaster's, Disobedience and the shard-splitting aspect at their highest rolls on Ancestral gear — shard behavior gets retuned often, so verify current tuning before imprinting." },
+        { name: "Pierce discipline", detail: "Line up the cast", why: "At Torment density every spear should thread multiple bodies before shattering — if shards feel weak, it's positioning, not gear." },
+      ],
+      milestone: "Glyph bonus thresholds are reached by pathing Paragon boards toward the glyph socket — route the bone glyph through bone and Essence nodes before spending points.",
+    },
+    {
+      phase: "Farming loop · 60–70",
+      goal: "Glyph XP, Essence economy and uniques",
+      steps: [
+        { name: "Nightmare dungeons", detail: "Tier ladder", why: "Primary glyph XP and Ancestral stream — run the highest tier you clear fast; corridor maps line up the pierce better than open arenas." },
+        { name: "Lair boss rotation", detail: "Summon mats from Whispers", why: "Boss loot tables are your unique hunt — the class's build-defining uniques live here; verify the current targets before spending summons." },
+        { name: "Tempering", detail: "Bone Spear + Essence", why: "Temper Bone Spear ranks and Essence affixes onto every applicable slot before masterworking — the bar feeds every cast." },
+        { name: "Helltides", detail: "Chests + mats", why: "Fastest rare-material and leveling gear farm — run them between dungeon keys." },
+      ],
+    },
+    {
+      phase: "The Pit push · 70+",
+      goal: "Climb tiers and finish the craft layer",
+      steps: [
+        { name: "Masterworking", detail: "Crit + Essence first", why: "Masterwork Critical Strike Chance and Maximum Essence before raw main-stat — shards and lucky-hit effects scale off crit frequency, and Edgemaster's keys off the full bar." },
+        { name: "Pit climbing", detail: "Comfortable +3 tiers", why: "Push tiers you clear reliably; the upgrade drops and leaderboard thresholds reward consistency." },
+        { name: "Glyph ranks", detail: "15 → 21+", why: "Every major glyph threshold changes board scaling — keep glyph XP running even during pushes." },
+      ],
+      milestone: "Torment difficulty tiers and Pit rewards shift with patches — verify current thresholds on Maxroll or Icy Veins before spending gold.",
+    },
+    {
+      phase: "Long-term refinement",
+      goal: "Uniques, shard tuning and seasonal resets",
+      steps: [
+        { name: "Unique hunt list", detail: "Build-defining pieces", why: "Hunt the class's build-defining uniques from Lair bosses — the exact list rotates by patch, so verify the current targets on Maxroll or Icy Veins before committing summons." },
+        { name: "Bone-spirit synergy", detail: "Hedge the pickup", why: "Bone Storm's orbiting spirits and shard-interaction bonuses rotate by patch — verify the current bone-spirit/bone-shard synergy lines in the linked guide before committing Paragon points." },
+        { name: "Seasonal reroll", detail: "Each season", why: "Level paths stay evergreen; re-check shard behavior, aspect values and glyph thresholds against the live guides each season." },
+      ],
+    },
+  ],
   statPriority: [
     { label: "Intelligence", note: "Scales all your damage — the default pick everywhere." },
     { label: "Maximum Essence / Essence Regeneration", note: "Feeds the casts AND the key passive threshold — never trade it away." },

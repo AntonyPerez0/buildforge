@@ -141,6 +141,48 @@ export const chainLightningSorcerer: Build = {
       ],
     },
   ],
+  endgame: [
+    {
+      phase: "Torment entry · 50–60",
+      goal: "Survive World Tier 4 and feed the mana engine",
+      steps: [
+        { name: "Ancestral re-gear", detail: "First week", why: "Replace leveling legendaries with Ancestral pieces from Helltides and Lair bosses — Maximum Mana and Cooldown Reduction first; the loop dies without both." },
+        { name: "Glyphs", detail: "Control first, Charged second", why: "Frost Nova plus your board's crowd-control nodes keep Control active almost permanently; Charged multiplies the lightning nodes your boards route through." },
+        { name: "Aspect refresh", detail: "Max rolls", why: "Re-imprint Disobedience, Recharging and Storm Swell at their highest rolls on Ancestral gear — barrier damage and Teleport uptime are your defense budget." },
+        { name: "Mana economy check", detail: "Bar never empties", why: "If the enchant's bonus Chain Lightning stops firing, it's almost always a Maximum Mana problem, not damage — fix resource before touching crit." },
+      ],
+      milestone: "Glyph bonus thresholds are reached by pathing Paragon boards toward the glyph socket — plan board routes so Charged rakes lightning nodes before spending points.",
+    },
+    {
+      phase: "Farming loop · 60–70",
+      goal: "Glyph XP, Crackling Energy tuning and uniques",
+      steps: [
+        { name: "Nightmare dungeons", detail: "Tier ladder", why: "Primary glyph XP and Ancestral stream — run the highest tier you clear fast; Chain Lightning bounces reward pack density over boss arenas." },
+        { name: "Lair boss rotation", detail: "Summon mats from Whispers", why: "Boss loot tables are your unique hunt — Frostburn plus the staff and ring lottery pieces come from here." },
+        { name: "Tempering", detail: "Chain Lightning + Teleport", why: "Temper Chain Lightning ranks and Teleport affixes onto every applicable slot before masterworking — Crackling Energy frequency scales with cast count." },
+        { name: "Helltides", detail: "Chests + mats", why: "Fastest rare-material and leveling gear farm — run them between dungeon keys." },
+      ],
+    },
+    {
+      phase: "The Pit push · 70+",
+      goal: "Climb tiers and finish the craft layer",
+      steps: [
+        { name: "Masterworking", detail: "Mana + crit first", why: "Masterwork Maximum Mana and Critical Strike Chance before raw main-stat — the enchant doubling turns every extra cast into a multiplier." },
+        { name: "Pit climbing", detail: "Comfortable +3 tiers", why: "Push tiers you clear reliably; the upgrade drops and leaderboard thresholds reward consistency." },
+        { name: "Glyph ranks", detail: "15 → 21+", why: "Every major glyph threshold changes board scaling — keep glyph XP running even during pushes." },
+      ],
+      milestone: "Torment difficulty tiers and Pit rewards shift with patches — verify current thresholds on Maxroll or Icy Veins before spending gold.",
+    },
+    {
+      phase: "Long-term refinement",
+      goal: "Uniques, enchant tuning and seasonal resets",
+      steps: [
+        { name: "Unique hunt list", detail: "Build-defining pieces", why: "Frostburn for freeze extension, The Oculus for Teleport warping, Tal Rasha's Iridescent Loop once a second element joins the rotation — run the specific Lair bosses that drop them." },
+        { name: "Enchant audit", detail: "Each season", why: "The Chain Lightning enchant's doubling and its mana cost sit at the center of the loop — verify live values before locking a Paragon path around them." },
+        { name: "Seasonal reroll", detail: "Each season", why: "Level paths stay evergreen; re-check glyph thresholds and aspect values against the live guides each season." },
+      ],
+    },
+  ],
   statPriority: [
     { label: "Maximum Mana / Mana Regeneration", note: "Feeds the enchant casts AND the key passive threshold — never trade it away." },
     { label: "Cooldown Reduction", note: "Teleport uptime is your entire defense layer." },

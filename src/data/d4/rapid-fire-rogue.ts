@@ -136,6 +136,49 @@ export const rapidFireRogue: Build = {
       ],
     },
   ],
+  endgame: [
+    {
+      phase: "Torment entry · 50–60",
+      goal: "Survive World Tier 4 and keep the channel fed",
+      steps: [
+        { name: "Ancestral re-gear", detail: "First week", why: "Replace leveling legendaries with Ancestral pieces from Helltides and Lair bosses — Critical Strike Chance, Vulnerable Damage and Maximum Energy outrank raw Dexterity." },
+        { name: "Glyphs", detail: "The board's marksman glyph first, a Vulnerable glyph second", why: "The marksman glyph multiplies the nodes your boards route through — verify the exact pick in the linked guide before socketing; Puncture keeps a Vulnerable glyph paying on every arrow." },
+        { name: "Aspect refresh", detail: "Max rolls", why: "Re-imprint Rapid Aspect, Expectant and Disobedience at their highest rolls on Ancestral gear — channel speed, Puncture payoff and the armor ramp all scale with the imprint." },
+        { name: "Channel-hold drill", detail: "Budget blinks", why: "Rapid Fire roots you — decide where Dash and Shadow Step go BEFORE starting each channel; a planned exit is the marksman's armor." },
+      ],
+      milestone: "Glyph bonus thresholds are reached by pathing Paragon boards toward the glyph socket — route the marksman glyph through crit and Vulnerable nodes before spending points.",
+    },
+    {
+      phase: "Farming loop · 60–70",
+      goal: "Glyph XP, channel tuning and uniques",
+      steps: [
+        { name: "Nightmare dungeons", detail: "Tier ladder", why: "Primary glyph XP and Ancestral stream — run the highest tier you clear fast; the volley rewards long sightlines over tight corridors." },
+        { name: "Lair boss rotation", detail: "Summon mats from Whispers", why: "Boss loot tables are your unique hunt — the class's build-defining uniques live here; verify the current targets before spending summons." },
+        { name: "Tempering", detail: "Rapid Fire + imbuement", why: "Temper Rapid Fire ranks and imbuement-related affixes onto every applicable slot before masterworking — the poison drip is half your boss output." },
+        { name: "Helltides", detail: "Chests + mats", why: "Fastest rare-material and leveling gear farm — run them between dungeon keys." },
+      ],
+    },
+    {
+      phase: "The Pit push · 70+",
+      goal: "Climb tiers and finish the craft layer",
+      steps: [
+        { name: "Masterworking", detail: "Crit + Vulnerable first", why: "Masterwork Critical Strike Chance/Damage and Vulnerable Damage before raw main-stat — the whole damage model keys off the marked volley." },
+        { name: "Ranged weapon stat sticks", detail: "Bow first", why: "The two-handed bow is your entire weapon pool — keep it upgraded and masterworked ahead of armor, and re-verify its aspect imprint after every swap." },
+        { name: "Pit climbing", detail: "Comfortable +3 tiers", why: "Push tiers you clear reliably; the upgrade drops and leaderboard thresholds reward consistency." },
+        { name: "Glyph ranks", detail: "15 → 21+", why: "Every major glyph threshold changes board scaling — keep glyph XP running even during pushes." },
+      ],
+      milestone: "Torment difficulty tiers and Pit rewards shift with patches — verify current thresholds on Maxroll or Icy Veins before spending gold.",
+    },
+    {
+      phase: "Long-term refinement",
+      goal: "Uniques, energy tuning and seasonal resets",
+      steps: [
+        { name: "Unique hunt list", detail: "Build-defining pieces", why: "Hunt the class's marksman-defining uniques from Lair bosses — the exact list rotates by patch, so verify current targets on Maxroll or Icy Veins before committing summons." },
+        { name: "Inner Sight economy", detail: "Meter discipline", why: "Fill the meter, then spend the unlimited-Energy window on uninterrupted channels — a dry bar between windows is a regen-affix problem, not a rotation problem." },
+        { name: "Seasonal reroll", detail: "Each season", why: "Level paths stay evergreen; re-check Specialization picks, imbuement values and glyph thresholds against the live guides each season." },
+      ],
+    },
+  ],
   statPriority: [
     { label: "Dexterity", note: "Scales all your damage — the default pick everywhere." },
     { label: "Critical Strike Chance", note: "Vulnerable plus crit is the whole damage model." },

@@ -40,6 +40,14 @@ describe("build data integrity", () => {
       expect(build.rotation.length).toBeGreaterThanOrEqual(1);
       expect(build.watchOuts.length).toBeGreaterThanOrEqual(4);
       expect(["authored", "snapshot"]).toContain(build.dataQuality);
+
+      expect(build.endgame).toBeDefined();
+      expect(build.endgame!.length).toBeGreaterThanOrEqual(3);
+      for (const phase of build.endgame!) {
+        expect(phase.phase.length).toBeGreaterThan(3);
+        expect(phase.goal.length).toBeGreaterThan(3);
+        expect(phase.steps.length).toBeGreaterThanOrEqual(2);
+      }
     },
   );
 

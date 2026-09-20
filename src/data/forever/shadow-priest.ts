@@ -145,6 +145,40 @@ export const shadowPriest: Build = {
       milestone: "Raids unlock December 9 — the launch window is your dungeon-gearing runway.",
     },
   ],
+  endgame: [
+    {
+      phase: "Launch → raid prep · Nov 4 → Dec 9",
+      goal: "Level, gear and stock the raid bench",
+      steps: [
+        { name: "Wand farming", detail: "Priority one", why: "Wand weaving is the spec's mana rhythm — farm the reworked dungeons until the ranged slot is current before anything else." },
+        { name: "Dungeon circuit", detail: "Shadow cloth", why: "The nine new dungeons plus classics carry spell-damage cloth — run your band, then the 60s for the full kit." },
+        { name: "Enchant bench", detail: "Spell power + Minor Speed", why: "Caster oil on the staff, Minor Speed boots, intellect bracers — verify current enchant ranks in the linked guide before applying." },
+        { name: "Consumable bank", detail: "Pre-raid stockpile", why: "Shadow-damage elixirs, mana potions for burn phases and a camp buff that doesn't clash with a class buff — Spirit Tap handles the rest." },
+      ],
+      milestone: "Raids unlock December 9 — the launch→December window is your wand-and-cloth gearing runway.",
+    },
+    {
+      phase: "Raid tier · Dec 9 →",
+      goal: "Barrow Deeps (10) → Hyjal Summit (20) → Onyxia's Lair (40)",
+      steps: [
+        { name: "Barrow Deeps", detail: "10-player", why: "The entry tier — Vampiric Embrace healing covers a small roster's margins; DoT everything, Flay the priority." },
+        { name: "Hyjal Summit", detail: "20-player", why: "The mid tier — multi-target SW:P uptime plus VE conversion is a second healer's worth of output on add waves." },
+        { name: "Onyxia's Lair", detail: "40-player", why: "The classic 40 — Shadow Weaving stacks deepen every shadow dealer's damage; mind your position, Shadowform traded armor away." },
+        { name: "Raid-night kit", detail: "Per pull", why: "Elixirs, oils, mana potions and a coordinated camp buff — in classic-style raids, consumables are a DPS stat." },
+      ],
+    },
+    {
+      phase: "Min-maxing",
+      goal: "Squeeze the caster levers Forever keeps alive",
+      steps: [
+        { name: "Staff chase", detail: "Raid-era", why: "Staff of Dominance carries Shadow into raids; the late swap to a dagger + off-hand is a raid-drop decision — compare options with the linked guides." },
+        { name: "Wand final form", detail: "Keep current", why: "Your mana engine has a slot of its own — raid wands from the linked guides are worth more than most sidegrades." },
+        { name: "Healer-gear sweep", detail: "Forever bonus", why: "Healer gear now grants spell damage — cloth marked 'healing' is real Shadow throughput; don't vendor it." },
+        { name: "Unified hit check", detail: "Per patch", why: "Forever merges spell and melee hit — verify current thresholds in the linked calculator instead of classic spell-hit tables." },
+      ],
+    },
+  ],
+  specGates: [{ gate: "16", label: "Forever capstone — new one-point ability (verify in beta calculator)" }, { gate: "31", label: "Shadowform — the spec identity" }],
   statPriority: [
     { label: "Shadow Spell Damage", note: "Scales SW:P ticks, Mind Blast and Mind Flay alike." },
     { label: "Hit (unified)", note: "Forever merges spell and melee hit — one stat now serves everything." },

@@ -143,6 +143,48 @@ export const minionNecromancer: Build = {
       ],
     },
   ],
+  endgame: [
+    {
+      phase: "Torment entry · 50–60",
+      goal: "Survive World Tier 4 and rebuild the squad on Ancestral gear",
+      steps: [
+        { name: "Ancestral re-gear", detail: "First week", why: "Replace leveling legendaries with Ancestral pieces from Helltides and Lair bosses — Minion Damage, Minion Attack Speed and Minion Life outrank your own offense everywhere they fit." },
+        { name: "Deadraiser Glyph", detail: "Socket + level", why: "First glyph to level — corpse consumption powers the squad, and no build makes corpses faster than yours." },
+        { name: "Aspect refresh", detail: "Max rolls", why: "Re-imprint Frenzied Dead and the shadow-burst aspects at their highest rolls on Ancestral gear — minion attack speed feeds Shadowblight triggers per second." },
+        { name: "Book of the Dead audit", detail: "Sacrifice check", why: "Re-confirm the loadout after every big gear swap: Skirmisher warriors, Shadow mages, Golem sacrificed — re-gear can flip which sacrifice bonus pays best." },
+      ],
+      milestone: "Glyph bonus thresholds are reached by pathing Paragon boards toward the glyph socket — route Deadraiser through minion nodes before spending points.",
+    },
+    {
+      phase: "Farming loop · 60–70",
+      goal: "Glyph XP, squad tempering and the Mendeln hunt",
+      steps: [
+        { name: "Nightmare dungeons", detail: "Tier ladder", why: "Primary glyph XP and Ancestral stream — run the highest tier you clear fast; the squad clears density, so pack-heavy dungeons pay best." },
+        { name: "Lair boss rotation", detail: "Summon mats from Whispers", why: "Boss loot tables are your unique hunt — Ring of Mendeln is the build-defining prize; verify its live tuning before building around it." },
+        { name: "Tempering", detail: "Minion lines", why: "Temper Minion Damage, Minion Attack Speed and Minion Life onto every applicable slot before masterworking — Torment AoE deletes skeletons otherwise." },
+        { name: "Helltides", detail: "Chests + mats", why: "Fastest rare-material and leveling gear farm — run them between dungeon keys." },
+      ],
+    },
+    {
+      phase: "The Pit push · 70+",
+      goal: "Climb tiers and finish the craft layer",
+      steps: [
+        { name: "Masterworking", detail: "Minion + cooldown first", why: "Masterwork minion damage and cooldown stats before raw main-stat — the squad is your DPS and Tendrils is your tempo." },
+        { name: "Pit climbing", detail: "Comfortable +3 tiers", why: "Push tiers you clear reliably; the upgrade drops and leaderboard thresholds reward consistency." },
+        { name: "Glyph ranks", detail: "15 → 21+", why: "Every major glyph threshold changes board scaling — keep glyph XP running even during pushes." },
+      ],
+      milestone: "Torment difficulty tiers and Pit rewards shift with patches — verify current thresholds on Maxroll or Icy Veins before spending gold.",
+    },
+    {
+      phase: "Long-term refinement",
+      goal: "Uniques, sacrifice tuning and seasonal resets",
+      steps: [
+        { name: "Unique hunt list", detail: "Build-defining pieces", why: "Ring of Mendeln detonates the squad on its own triggers — the ceiling pick; run the specific Lair bosses that drop it and re-optimize the Book of the Dead around it once it lands." },
+        { name: "Book of the Dead re-optimization", detail: "Each season", why: "Sacrifice bonuses and minion upgrades get retuned — re-read every warrior, mage and Golem entry before locking a Paragon path." },
+        { name: "Seasonal reroll", detail: "Each season", why: "Level paths stay evergreen; re-check minion scaling and glyph thresholds against the live guides each season." },
+      ],
+    },
+  ],
   statPriority: [
     { label: "Intelligence", note: "Scales your damage and minion power — the default pick everywhere." },
     { label: "Minion Damage", note: "The affix that makes the squad an army — take it every slot it fits." },

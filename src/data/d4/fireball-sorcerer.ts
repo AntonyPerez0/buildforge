@@ -135,6 +135,48 @@ export const fireballSorcerer: Build = {
       ],
     },
   ],
+  endgame: [
+    {
+      phase: "Torment entry · 50–60",
+      goal: "Survive World Tier 4 and double the casts on Ancestral gear",
+      steps: [
+        { name: "Ancestral re-gear", detail: "First week", why: "Replace leveling legendaries with Ancestral pieces from Helltides and Lair bosses — Maximum Mana and Cooldown Reduction first; the enchant's free Fireballs drink the same bar you do." },
+        { name: "Glyphs", detail: "The board's fire glyph first, a crit glyph second", why: "The fire glyph multiplies the nodes your boards route through — verify the exact pick in the linked guide before socketing; crits extend burns and feed the detonation loops." },
+        { name: "Aspect refresh", detail: "Max rolls", why: "Re-imprint Disobedience, Conceited and Recharging at their highest rolls on Ancestral gear — barrier damage and Teleport uptime are your defense budget." },
+        { name: "Mana sustain check", detail: "Bar never empties", why: "If the enchant's bonus Fireballs stop flying, it's almost always a Maximum Mana problem, not damage — fix resource before touching crit." },
+      ],
+      milestone: "Glyph bonus thresholds are reached by pathing Paragon boards toward the glyph socket — route the fire glyph through Intelligence and mana nodes before spending points.",
+    },
+    {
+      phase: "Farming loop · 60–70",
+      goal: "Glyph XP, detonation tuning and uniques",
+      steps: [
+        { name: "Nightmare dungeons", detail: "Tier ladder", why: "Primary glyph XP and Ancestral stream — run the highest tier you clear fast; Fireball detonations reward clusters, so pick pack-heavy maps." },
+        { name: "Lair boss rotation", detail: "Summon mats from Whispers", why: "Boss loot tables are your unique hunt — Staff of Endless Rage's extra Fireballs on cast rewires the whole loop." },
+        { name: "Tempering", detail: "Fireball + Teleport", why: "Temper Fireball ranks and Teleport affixes onto every applicable slot before masterworking — every extra cast fires the enchant again." },
+        { name: "Helltides", detail: "Chests + mats", why: "Fastest rare-material and leveling gear farm — run them between dungeon keys." },
+      ],
+    },
+    {
+      phase: "The Pit push · 70+",
+      goal: "Climb tiers and finish the craft layer",
+      steps: [
+        { name: "Masterworking", detail: "Mana + crit first", why: "Masterwork Maximum Mana and Critical Strike Chance/Damage before raw main-stat — the enchant doubling turns every sustained cast into a multiplier." },
+        { name: "Pit climbing", detail: "Comfortable +3 tiers", why: "Push tiers you clear reliably; the upgrade drops and leaderboard thresholds reward consistency." },
+        { name: "Glyph ranks", detail: "15 → 21+", why: "Every major glyph threshold changes board scaling — keep glyph XP running even during pushes." },
+      ],
+      milestone: "Torment difficulty tiers and Pit rewards shift with patches — verify current thresholds on Maxroll or Icy Veins before spending gold.",
+    },
+    {
+      phase: "Long-term refinement",
+      goal: "Uniques, enchant tuning and seasonal resets",
+      steps: [
+        { name: "Unique hunt list", detail: "Build-defining pieces", why: "Staff of Endless Rage is the loop-rewiring prize; beyond it, hunt the class's build-defining uniques from Lair bosses and verify live tuning before committing summons." },
+        { name: "Inferno and beyond", detail: "Hedge the options", why: "Inferno pins elites inside the burn; Hydra turrets compete for the same slots at high tiers — the endgame pick rotates by patch, verify it in the linked guide before committing." },
+        { name: "Seasonal reroll", detail: "Each season", why: "Level paths stay evergreen; re-check enchant effects, aspect values and glyph thresholds against the live guides each season." },
+      ],
+    },
+  ],
   statPriority: [
     { label: "Maximum Mana / Mana Regeneration", note: "Feeds the enchant casts AND the key passive threshold — never trade it away." },
     { label: "Critical Strike Chance", note: "Crits extend burns and trigger the detonation loops." },

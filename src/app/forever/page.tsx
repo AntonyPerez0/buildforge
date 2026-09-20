@@ -76,6 +76,13 @@ export default function ForeverPage() {
             <p className="mt-4 max-w-2xl text-sm leading-relaxed text-ink-muted sm:text-base">
               {game.description}
             </p>
+            <Link
+              href="/forever/launch"
+              className="mt-6 inline-flex items-center gap-2 rounded-xl border border-(--accent-border) bg-(--accent-wash) px-5 py-2.5 text-sm font-semibold text-(--accent-bright) transition-transform hover:scale-[1.03]"
+            >
+              <CalendarClock className="h-4 w-4" />
+              Launch hub — day-one checklist, dungeons & raids
+            </Link>
           </FadeUp>
         </div>
       </section>

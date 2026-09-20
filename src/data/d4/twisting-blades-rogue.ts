@@ -140,6 +140,49 @@ export const twistingBladesRogue: Build = {
       ],
     },
   ],
+  endgame: [
+    {
+      phase: "Torment entry · 50–60",
+      goal: "Survive World Tier 4 and keep the blades orbiting",
+      steps: [
+        { name: "Ancestral re-gear", detail: "First week", why: "Replace leveling legendaries with Ancestral pieces from Helltides and Lair bosses — Critical Strike Chance and Maximum Energy outrank raw Dexterity on daggers and rings." },
+        { name: "Glyphs", detail: "Chip first, Efficacy second", why: "Puncture's Vulnerable keeps Chip active on everything you blade through; Efficacy multiplies the poison nodes your board routes through." },
+        { name: "Aspect refresh", detail: "Max rolls", why: "Re-imprint Bladedancer and Expectant at their highest rolls on Ancestral gear — the returning-blade orbit is the build's signature and scales with the imprint." },
+        { name: "Energy economy check", detail: "Inner Sight live", why: "If Twisting Blades ever sputters mid-pack, the fix is Energy economy — Inner Sight windows and cost reduction, not attack speed." },
+      ],
+      milestone: "Glyph bonus thresholds are reached by pathing Paragon boards toward the glyph socket — route Chip through Vulnerable nodes before spending points.",
+    },
+    {
+      phase: "Farming loop · 60–70",
+      goal: "Glyph XP, imbuement tuning and uniques",
+      steps: [
+        { name: "Nightmare dungeons", detail: "Tier ladder", why: "Primary glyph XP and Ancestral stream — run the highest tier you clear fast; melee blades reward tight corridors over open arenas." },
+        { name: "Lair boss rotation", detail: "Summon mats from Whispers", why: "Boss loot tables are your unique hunt — Grasp of Shadow's shadow clones are the build-defining prize." },
+        { name: "Tempering", detail: "Blades + imbuement", why: "Temper Twisting Blades ranks and imbuement affixes onto every applicable slot before masterworking — Poison Imbuement is half your multiplier." },
+        { name: "Helltides", detail: "Chests + mats", why: "Fastest rare-material and leveling gear farm — run them between dungeon keys." },
+      ],
+    },
+    {
+      phase: "The Pit push · 70+",
+      goal: "Climb tiers and finish the craft layer",
+      steps: [
+        { name: "Masterworking", detail: "Crit + Energy first", why: "Masterwork Critical Strike Chance/Damage and Maximum Energy before raw main-stat — the orbit multiplies crits, and a dry bar strands you in melee." },
+        { name: "Boss orbit positioning", detail: "Practice it", why: "Against Pit bosses, blade INTO the target and step back — the returning orbit crosses the boss twice; dashing away strands the return trip." },
+        { name: "Pit climbing", detail: "Comfortable +3 tiers", why: "Push tiers you clear reliably; the upgrade drops and leaderboard thresholds reward consistency." },
+        { name: "Glyph ranks", detail: "15 → 21+", why: "Every major glyph threshold changes board scaling — keep glyph XP running even during pushes." },
+      ],
+      milestone: "Torment difficulty tiers and Pit rewards shift with patches — verify current thresholds on Maxroll or Icy Veins before spending gold.",
+    },
+    {
+      phase: "Long-term refinement",
+      goal: "Uniques, imbuement choice and seasonal resets",
+      steps: [
+        { name: "Unique hunt list", detail: "Build-defining pieces", why: "Grasp of Shadow's shadow clones echo your blades through packs — run the specific Lair bosses that drop it and verify live tuning before building around it." },
+        { name: "Imbuement choice", detail: "Poison vs shadow", why: "Poison is the default pack and boss engine; shadow variants spike burst but rewire the rotation — verify the current meta split on Maxroll or Icy Veins before committing slots." },
+        { name: "Seasonal reroll", detail: "Each season", why: "Level paths stay evergreen; re-check imbuement values, aspect rolls and glyph thresholds against the live guides each season." },
+      ],
+    },
+  ],
   statPriority: [
     { label: "Dexterity", note: "Scales all your damage — the default pick everywhere." },
     { label: "Critical Strike Chance", note: "Puncture's Vulnerable and Inner Sight both reward crit frequency." },

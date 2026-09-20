@@ -126,6 +126,15 @@ export type DataQuality =
   /** Condensed from linked guides; always opens the full guide. */
   | "snapshot";
 
+/** A phase of post-level-cap play: Torment entry, raid prep, min-maxing… */
+export interface EndgamePhase {
+  /** e.g. "Torment entry · 50–60" */
+  phase: string;
+  goal: string;
+  steps: SkillStep[];
+  milestone?: string;
+}
+
 export interface Build {
   /** Unique id, e.g. "d4-whirlwind-barbarian". */
   id: string;
@@ -158,6 +167,10 @@ export interface Build {
   meta?: Record<string, string>;
   /** For forks: the meta build id this was forked from. */
   forkedFrom?: string;
+  /** Post-level-cap chapters: Torment/Pit loops for D4, dungeon/raid prep for Forever. */
+  endgame?: EndgamePhase[];
+  /** Forever only: signature abilities at the classic talent gates. */
+  specGates?: { gate: "16" | "21" | "31"; label: string }[];
 }
 
 /** Condensed current-meta card synced from guide sites. */
