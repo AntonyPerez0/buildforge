@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-cinzel: var(--font-cinzel), serif;
+  --font-marcellus: var(--font-marcellus), serif;
+
+  --color-ink: #edebe7;
+  --color-ink-muted: #a3a1ab;
+  --color-ink-dim: #6f6d78;
+
+  --color-base: #0a0a0e;
+  --color-surface: #131319;
+  --color-surface-raised: #1a1a22;
+  --color-line: #26262f;
+  --color-line-bright: #34343f;
+
+  --color-d4: #d4202e;
+  --color-d4-bright: #ef4652;
+  --color-d4-soft: #8f1a23;
+  --color-d4-ember: #f0a43b;
+
+  --color-forever: #e4b54a;
+  --color-forever-bright: #f5cf6e;
+  --color-forever-arcane: #4e86d4;
+  --color-forever-deep: #0b1427;
+
+  --color-tier-s: #ffc24b;
+  --color-tier-a: #6ecf8e;
+  --color-tier-b: #7fa8e0;
+  --color-tier-c: #9a98a0;
+}
+
+/* Runtime game theming (swappable per section) */
+:root {
+  --accent: #8b87f4;
+  --accent-bright: #a5a1ff;
+  --accent-ember: #5ad0c0;
+  --accent-glow: rgba(139, 135, 244, 0.14);
+  --accent-border: rgba(139, 135, 244, 0.35);
+  --accent-wash: rgba(139, 135, 244, 0.08);
+}
+
+[data-game="d4"] {
+  --accent: #d4202e;
+  --accent-bright: #ef4652;
+  --accent-ember: #f0a43b;
+  --accent-glow: rgba(212, 32, 46, 0.16);
+  --accent-border: rgba(212, 32, 46, 0.35);
+  --accent-wash: rgba(212, 32, 46, 0.09);
+}
+
+[data-game="forever"] {
+  --accent: #e4b54a;
+  --accent-bright: #f5cf6e;
+  --accent-ember: #4e86d4;
+  --accent-glow: rgba(228, 181, 74, 0.14);
+  --accent-border: rgba(228, 181, 74, 0.35);
+  --accent-wash: rgba(228, 181, 74, 0.08);
+}
+
+[data-game="neutral"] {
+  --accent: #8b87f4;
+  --accent-bright: #a5a1ff;
+  --accent-ember: #5ad0c0;
+  --accent-glow: rgba(139, 135, 244, 0.14);
+  --accent-border: rgba(139, 135, 244, 0.35);
+  --accent-wash: rgba(139, 135, 244, 0.08);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-base);
+  color: var(--color-ink);
+}
+
+::selection {
+  background: color-mix(in oklab, var(--accent, #8b87f4) 40%, transparent);
+}
+
+/* Ambient world background — per-game gradients + vignette */
+.world-bg {
+  position: relative;
+  isolation: isolate;
+}
+
+.world-bg::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(1200px 600px at 12% -10%, var(--accent-glow) 0%, transparent 60%),
+    radial-gradient(900px 500px at 90% 0%, var(--accent-wash) 0%, transparent 55%),
+    radial-gradient(1400px 900px at 50% 120%, rgba(10, 10, 14, 0) 0%, rgba(0, 0, 0, 0.55) 100%);
+}
+
+/* Subtle film-grain so large dark surfaces don't band */
+.noise::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Display type helpers */
+.display-d4 {
+  font-family: var(--font-cinzel), serif;
+  letter-spacing: 0.02em;
+}
+
+.display-forever {
+  font-family: var(--font-marcellus), serif;
+  letter-spacing: 0.04em;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.6875rem;
+  font-weight: 600;
+}
+
+/* Card surfaces */
+.panel {
+  border-radius: 0.875rem;
+  border: 1px solid var(--color-line);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0.008)), var(--color-surface);
+}
+
+.panel-hover {
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.panel-hover:hover {
+  border-color: var(--accent-border);
+  box-shadow: 0 0 0 1px var(--accent-wash), 0 18px 50px -20px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+.accent-text {
+  color: var(--accent-bright);
+}
+
+.accent-chip {
+  color: var(--accent-bright);
+  background: var(--accent-wash);
+  border: 1px solid var(--accent-border);
+}
+
+/* Hairline dividers that fade at the edges */
+.fade-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-line-bright), transparent);
+}
+
+/* Timeline rail */
+.timeline-rail {
+  background: linear-gradient(180deg, var(--accent-border), var(--color-line) 70%, transparent);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.rise {
+  animation: rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .rise {
+    animation: none;
+  }
+}

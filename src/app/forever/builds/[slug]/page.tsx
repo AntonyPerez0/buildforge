@@ -1,0 +1,28 @@
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { BUILDS, getBuild } from "@/lib/builds";
+import { BuildDetail } from "@/components/build-detail";
+
+export function generateStaticParams() {
+  return BUILDS.filter((b) => b.game === "forever").map((b) => ({ slug: b.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: PageProps<"/forever/builds/[slug]">): Promise<Metadata> {
+  const { slug } = await params;
+  const build = getBuild("forever", slug);
+  if (!build) return {};
+  return {
+    title: `${build.name} — WoW Forever level path`,
+    description: build.tagline,
+    openGraph: { title: `${build.name} · BuildForge`, description: build.tagline },
+  };
+}
+
+export default async function ForeverBuildPage(props: PageProps<"/forever/builds/[slug]">) {
+  const { slug } = await props.params;
+  const build = getBuild("forever", slug);
+  if (!build) notFound();
+  return <BuildDetail build={build} />;
+}

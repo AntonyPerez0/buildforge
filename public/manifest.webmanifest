@@ -1,0 +1,17 @@
+{
+  "name": "BuildForge — Diablo IV & WoW Forever builds",
+  "short_name": "BuildForge",
+  "description": "The second-screen build companion for Diablo IV and World of Warcraft: Forever. Level-by-level paths, gear priorities, zero guessing.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0e",
+  "theme_color": "#0a0a0e",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
