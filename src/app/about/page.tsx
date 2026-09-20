@@ -41,8 +41,8 @@ const SOURCES = [
 const PIPELINE = [
   {
     icon: Bot,
-    title: "Maintainer-run sync, not live scraping",
-    body: "Browsers block cross-site scraping and guide sites rightly protect their content. Instead, npm run sync fetches public guide indexes server-side: robots.txt is checked and honored first, requests are rate-limited to one every two seconds, and the scraper identifies itself with a custom user-agent.",
+    title: "Nightly automated sync",
+    body: "A scheduled GitHub Action runs the sync pipeline every night: guide indexes are fetched robots-aware and rate-limited, curated source links are refreshed, newly published guides appear as NEW entries, and if anything changed the site rebuilds and redeploys automatically. The footer shows the latest sync date.",
   },
   {
     icon: Database,
@@ -57,7 +57,7 @@ const PIPELINE = [
   {
     icon: ShieldCheck,
     title: "Every number has an escape hatch",
-    body: "Seasonal balance changes. Every build page carries a last-synced date and links to its sources, so a stale number is one click away from being corrected.",
+    body: "Seasonal balance changes. Every build page carries a last-synced date and links to its sources, so a stale number is one click away from being corrected. Tiers on auto-discovered guides stay blank until a human curates them.",
   },
 ];
 

@@ -1,0 +1,387 @@
+import type { Build } from "@/data/types";
+
+export const pulverizeDruid: Build = {
+  id: "d4-pulverize-druid",
+  game: "d4",
+  slug: "pulverize-druid",
+  name: "Pulverize Druid",
+  className: "Druid",
+  role: "Shapeshift melee AoE tank",
+  tier: "A",
+  difficulty: 2,
+  tagline: "Slam packs into paste. Fortify through everything they throw back.",
+  summary:
+    "The classic slam tank. You keep Werebear form rolling by Pulverizing on cooldown, stack Fortify from Blood Howl and Earthen Bulwark, and walk through packs that would shred anything squishier. Temerity turns your healing into a third health bar — this build simply refuses to die quickly.",
+  patchLabel: "Season 15 · Patch 3.2",
+  lastSynced: "2026-09-19",
+  dataQuality: "authored",
+  sources: [
+    {
+      site: "Maxroll",
+      url: "https://maxroll.gg/d4/build-guides",
+      label: "Maxroll Druid build guides",
+    },
+    {
+      site: "Icy Veins",
+      url: "https://www.icy-veins.com/d4/druid/builds/",
+      label: "Icy Veins Druid builds",
+    },
+  ],
+  meta: {
+    "Core loop": "Pulverize → Werebear form → Fortify stacks",
+    "Tank engine": "Blood Howl + Earthen Bulwark keep Fortify fed",
+    "Key mechanic": "Every slam refreshes the Werebear window",
+    "Playstyle": "Stand in the pack, slam, out-Fortify the damage",
+    "Best for": "Campaign → Helltides → Nightmare dungeons",
+  },
+  skillPriority: [
+    "Pulverize (your entire damage)",
+    "Blood Howl (healing that feeds Fortify)",
+    "Earthen Bulwark (barrier + pull-in)",
+    "Grizzly Rage (long Werebear burst window)",
+  ],
+  progression: [
+    {
+      levels: "1–2",
+      goal: "Build the Spirit habit before the Core slot opens",
+      steps: [
+        { name: "Wind Shear", detail: "Rank 1", why: "A Spirit-generating Basic with wide reach — the standard opener for slam builds. If seasonal tuning shifts the pick, verify in the linked guide." },
+        { name: "Enhanced Wind Shear", detail: "1 pt", why: "More Spirit regeneration after each cast — keeps early Core ranks from stalling." },
+      ],
+    },
+    {
+      levels: "3–5",
+      goal: "Take Pulverize the moment the Core slot unlocks and never look back",
+      steps: [
+        { name: "Pulverize", detail: "Rank 1", why: "The whole build. Core skills unlock at level 3 — grab it instantly. The slam IS your Werebear trigger." },
+        { name: "Enhanced Pulverize", detail: "1 pt", why: "Fatter slams and Fortify on the hit — the tank engine starts immediately." },
+        { name: "Earthen Bulwark", detail: "Rank 1 (Defensive unlocks at 5)", why: "A barrier for the walk-in — soaks the pull before your Fortify stack exists." },
+      ],
+      milestone: "Level 3: Core skill slot unlocks — Pulverize becomes your only real attack for the rest of the game.",
+    },
+    {
+      levels: "6–10",
+      goal: "Rank the slam and start the Fortify engine",
+      steps: [
+        { name: "Pulverize", detail: "Ranks 2–3", why: "More damage per slam and a wider cone — keep it maxed as points allow." },
+        { name: "Blood Howl", detail: "Rank 1", why: "Healing that converts into Fortify — the second health bar starts here." },
+        { name: "Enhanced Blood Howl", detail: "1 pt", why: "More heal per cast, and the Fortify payoff lands sooner." },
+      ],
+    },
+    {
+      levels: "11–15",
+      goal: "Finish Pulverize ranks and open the spirit layer",
+      steps: [
+        { name: "Pulverize", detail: "Ranks 4–5", why: "Finish maxing your Core skill — every rank is real pack-clear speed." },
+        { name: "Cyclone Armor", detail: "Rank 1", why: "Absorbs and redirects projectiles — ranged packs stop chipping your Fortify bar." },
+        { name: "Grizzly Rage", detail: "Rank 1 (Ultimate unlocks at 12+)", why: "A long, locked-in Werebear window — your burst for elites and boss packs." },
+      ],
+      milestone: "Level 15: Spirit boons unlock — attune your first spirit boon; verify the current pick in the linked guide.",
+    },
+    {
+      levels: "16–25",
+      goal: "Layer the Fortify engine and tank passives",
+      steps: [
+        { name: "Fortify passives", detail: "Ranks 1–3 each", why: "Everything that adds Max Life, Fortify generation or damage while Fortified — this build's damage AND defense live on that bar." },
+        { name: "Earthen Bulwark", detail: "Enhanced rank", why: "Shorter cooldown on the barrier — more uptime in elite density." },
+        { name: "Cyclone Armor", detail: "Enhanced rank", why: "Tighter cooldown so the projectile layer never lapses in Nightmare." },
+      ],
+    },
+    {
+      levels: "26–35",
+      goal: "Key passive online + Werebear burst window",
+      steps: [
+        { name: "Grizzly Rage", detail: "Supreme rank", why: "The payoff rank — the rage window lasts long enough to slam through an entire elite pack." },
+        { name: "Key passive", detail: "The Werebear/Fortify pick", why: "Ursine Strength is the classic Werebear pickup — verify the current key-passive pick in the linked guide before committing." },
+        { name: "Spirit passives", detail: "Ranks 1–3 each", why: "Spirit regen and cost reduction feed the slam cadence — a stalled bar is a stalled build." },
+      ],
+      milestone: "Level 30+: World Tier 3 (Nightmare) — re-gear into Legendary items with the aspects below.",
+    },
+    {
+      levels: "36–45",
+      goal: "Legendary Aspects carry the build into endgame shape",
+      steps: [
+        { name: "Aspect of the Ursine Horror", detail: "Weapon slot", why: "The Pulverize signature — the slam tears the ground open and adds a second layer of damage; verify the current tuning in the linked guide." },
+        { name: "Aspect of Disobedience", detail: "Armor slot", why: "Stacking armor while you deal damage — melee density makes it ramp constantly." },
+        { name: "A Fortify-scaling damage aspect", detail: "Ring or armor", why: "Several compete each patch — verify the current pick in the linked guide before imprinting." },
+      ],
+    },
+    {
+      levels: "46–50",
+      goal: "Enter the endgame engine",
+      steps: [
+        { name: "Werebear-uptime aspect", detail: "One slot", why: "Extends the transformation window — fewer pop-outs, more slams; verify the current pick in the linked guide." },
+        { name: "Paragon Boards", detail: "Start at 50", why: "Open the first board and path toward Willpower + earth nodes; respec freely until 60 — it's cheap." },
+      ],
+      milestone: "Level 50: Paragon Board + World Tier 4 (Torment) after a gear refresh.",
+    },
+    {
+      levels: "51–70",
+      goal: "Glyphs, torment farming, build finalization",
+      steps: [
+        { name: "The board's earth glyph", detail: "Socket first", why: "Multiplies your earth nodes — verify the exact pick in the linked guide before socketing." },
+        { name: "A Fortify or defense glyph", detail: "Socket second", why: "Keeps the second health bar fat once Torment starts hitting back." },
+        { name: "Your board's matching glyph", detail: "Third socket", why: "Glyph value depends on the nodes you path through — read the board before socketing." },
+        { name: "Torment dungeons", detail: "Farm loop", why: "Helltides + Nightmare dungeons + Lair bosses for Ancestral gear and glyph leveling." },
+      ],
+    },
+    {
+      levels: "70+",
+      goal: "Push the Pit and refine",
+      steps: [
+        { name: "The Pit", detail: "Push tiers", why: "The endgame climb — higher tiers drop better masterworking rolls and glyph XP; push as far as the slam carries you." },
+        { name: "Masterworking + Tempering", detail: "Craft layer", why: "Temper Pulverize/Fortify affixes, then masterwork crit and Fortify stats first." },
+        { name: "Check live tuning", detail: "Every season", why: "Werebear uptime, aspect values and companion packages shift by patch — verify final numbers on Maxroll or Icy Veins." },
+      ],
+    },
+  ],
+  statPriority: [
+    { label: "Willpower", note: "Scales your damage and your life pool — the default pick everywhere." },
+    { label: "Maximum Spirit / Spirit Regeneration", note: "Feeds the slam cadence — a stalled bar is a stalled build." },
+    { label: "Maximum Life / Fortify Generation", note: "The Fortify bar is your second health bar — feed it constantly." },
+    { label: "Critical Strike Chance", note: "Fatter crits make every slam pay twice." },
+    { label: "Damage to Close Enemies", note: "The slam is always close range — this is never a dead affix." },
+    { label: "Total Armor / Damage Reduction", note: "Melee build — never skip the defensive layer." },
+  ],
+  gear: [
+    {
+      slot: "Helm",
+      target: "Cooldown Reduction + Pulverize ranks",
+      affixes: ["Cooldown Reduction", "Total Armor", "Life", "Ranks to Pulverize"],
+      item: {
+        name: "Crown of the Rootbound Bear",
+        quality: "legendary",
+        type: "Ancestral Legendary Helm",
+        itemPower: "925 Item Power",
+        armor: "616 Armor",
+        stats: [
+          { text: "+8.0% Cooldown Reduction" },
+          { text: "+601 Total Armor" },
+          { text: "+1,010 Maximum Life" },
+          { text: "+2 Ranks to Pulverize (tempered)", tone: "power" },
+        ],
+        source: "Helltides & Lair boss drops",
+        icon: "helm",
+      },
+    },
+    {
+      slot: "Chest",
+      target: "Tanky stat stick",
+      affixes: ["Total Armor", "Damage Reduction", "Max Life", "Ranks to Earthen Bulwark"],
+      item: {
+        name: "Hauberk of the Waking Grove",
+        quality: "legendary",
+        type: "Ancestral Legendary Chest Armor",
+        itemPower: "925 Item Power",
+        armor: "1,416 Armor",
+        stats: [
+          { text: "+605 Total Armor" },
+          { text: "+14.0% Damage Reduction" },
+          { text: "+1,380 Maximum Life" },
+          { text: "+2 Ranks to Earthen Bulwark (tempered)", tone: "power" },
+        ],
+        source: "Nightmare dungeons",
+        icon: "chest",
+      },
+    },
+    {
+      slot: "Gloves",
+      target: "Attack-speed and crit tuning",
+      affixes: ["Attack Speed", "Critical Strike Chance", "Lucky Hit Chance", "Ranks to Pulverize"],
+      item: {
+        name: "Grips of the Loam Fist",
+        quality: "legendary",
+        type: "Ancestral Legendary Gloves",
+        itemPower: "925 Item Power",
+        armor: "452 Armor",
+        stats: [
+          { text: "+14.0% Attack Speed" },
+          { text: "+9.5% Critical Strike Chance" },
+          { text: "+20.0% Lucky Hit Chance" },
+          { text: "+3 Ranks to Pulverize (tempered)", tone: "power" },
+        ],
+        source: "Nightmare dungeons",
+        icon: "hands",
+      },
+    },
+    {
+      slot: "Pants",
+      target: "Healing converted to Barrier — a third health bar on top of Fortify",
+      affixes: ["Total Armor", "Max Life"],
+      item: {
+        name: "Temerity",
+        quality: "unique",
+        type: "Ancestral Unique Pants",
+        itemPower: "925 Item Power",
+        armor: "918 Armor",
+        stats: [
+          { text: "Your healing is converted into a Barrier, up to a large share of your Maximum Life.", tone: "power" },
+          { text: "+886 Total Armor" },
+          { text: "+1,098 Maximum Life" },
+        ],
+        flavor: "Blood Howl's healing becomes a shield stacked on the Fortify bar — three health bars deep.",
+        source: "World & Lair boss drops",
+        icon: "legs",
+      },
+    },
+    {
+      slot: "Boots",
+      target: "Movement + Spirit support",
+      affixes: ["Movement Speed", "Maximum Spirit", "Attack Speed"],
+      item: {
+        name: "Striders of the Wold Path",
+        quality: "legendary",
+        type: "Ancestral Legendary Boots",
+        itemPower: "925 Item Power",
+        armor: "506 Armor",
+        stats: [
+          { text: "+22.0% Movement Speed" },
+          { text: "+28 Maximum Spirit" },
+          { text: "+9.0% Attack Speed" },
+        ],
+        source: "Helltides",
+        icon: "feet",
+      },
+    },
+    {
+      slot: "Main Hand",
+      target: "Two-Handed Staff — weapon damage is the slam",
+      affixes: ["Willpower", "Critical Strike Damage", "Damage to Close Enemies"],
+      item: {
+        name: "Staff of the Sleeping Fault",
+        quality: "legendary",
+        type: "Ancestral Legendary Two-Handed Staff",
+        itemPower: "925 Item Power",
+        stats: [
+          { text: "2,868 Damage per second (slow — feeds the slam)" },
+          { text: "+395 Willpower" },
+          { text: "+158.0% Critical Strike Damage" },
+          { text: "Imprinted: Aspect of the Ursine Horror — Pulverize tears the ground and spawns a second damage layer (verify tuning)", tone: "power" },
+        ],
+        source: "Nightmare dungeons · aspect imprint",
+        icon: "staff",
+      },
+    },
+    {
+      slot: "Off-Hand",
+      target: "Empty — the build swings a two-handed staff, so this slot stays open; that's the trade for the bigger weapon pool (two-handers carry extra aspect slots — verify the current rules in the linked guide)",
+    },
+    {
+      slot: "Amulet",
+      target: "Skill ranks + movement",
+      affixes: ["Movement Speed", "Damage", "Cooldown Reduction", "Ranks to Pulverize"],
+      item: {
+        name: "Pendant of the Den Mother",
+        quality: "legendary",
+        type: "Ancestral Legendary Amulet",
+        itemPower: "925 Item Power",
+        stats: [
+          { text: "+18.0% Movement Speed" },
+          { text: "+73.5% Damage" },
+          { text: "+10.8% Cooldown Reduction" },
+          { text: "+3 Ranks to Pulverize (tempered)", tone: "power" },
+        ],
+        source: "Lair boss drops",
+        icon: "amulet",
+      },
+    },
+    {
+      slot: "Ring 1",
+      target: "The crit-Fortify engine",
+      affixes: ["Critical Strike Chance", "Maximum Spirit", "Damage to Close Enemies"],
+      item: {
+        name: "Loop of the Rooted Heart",
+        quality: "legendary",
+        type: "Ancestral Legendary Ring",
+        itemPower: "925 Item Power",
+        stats: [
+          { text: "+10.5% Critical Strike Chance" },
+          { text: "+26 Maximum Spirit" },
+          { text: "+30.0% Damage to Close Enemies" },
+        ],
+        source: "Nightmare dungeons",
+        icon: "ring",
+      },
+    },
+    {
+      slot: "Ring 2",
+      target: "Resource + attack-speed filler",
+      affixes: ["Critical Strike Chance", "Maximum Spirit", "Attack Speed", "Damage"],
+      item: {
+        name: "Band of the Feral Chorus",
+        quality: "legendary",
+        type: "Ancestral Legendary Ring",
+        itemPower: "925 Item Power",
+        stats: [
+          { text: "+9.5% Critical Strike Chance" },
+          { text: "+22 Maximum Spirit" },
+          { text: "+18.0% Attack Speed" },
+          { text: "+76.0% Damage" },
+        ],
+        source: "Helltides",
+        icon: "ring",
+      },
+    },
+  ],
+  rotation: [
+    {
+      phase: "Pull / Setup",
+      steps: [
+        "Earthen Bulwark before you engage — the barrier soaks the pull while your Fortify stack builds.",
+        "Line up the pack so the slam cone covers the most bodies before the first cast.",
+      ],
+    },
+    {
+      phase: "Standard pack",
+      steps: [
+        "Pulverize on cooldown — every cast refreshes Werebear form and drops the Fortify-laced slam.",
+        "Blood Howl the moment it's up — the heal converts into Fortify and keeps the tank engine spinning.",
+        "Walk INTO the pack, not around it — close-range damage and Fortify both reward standing in the middle.",
+      ],
+    },
+    {
+      phase: "Elites / Bosses",
+      steps: [
+        "Pop Grizzly Rage for the long Werebear window and unload slams back-to-back.",
+        "Keep Blood Howl cycling even mid-burst — the Fortify bar is your second health bar, not a panic button.",
+        "Cyclone Armor any ranged pack — redirected projectiles feed the density you're already slamming.",
+      ],
+    },
+  ],
+  watchOuts: [
+    "Werebear form lives on a timer after each cast — stop slamming and you pop out of form; keep Pulverize on cooldown or the whole engine stalls.",
+    "Fortify decays constantly — Blood Howl and Earthen Bulwark are maintenance casts, not panic buttons.",
+    "Don't take the Werebear key passive before your Fortify generation sustains it — a key passive you can't feed does nothing; verify the current pick in the linked guide.",
+    "Spirit management: slamming on cooldown drains the bar — keep Spirit regen affixes on gear or you'll stall between casts.",
+    "Don't farm Torment before re-gearing into Legendary Aspects at 30+/50+ — the difficulty spike punishes blue gear.",
+    "Seasonal patches retune Werebear uptime, aspect values and companion packages — verify final numbers in the linked live guides before you lock a Paragon path.",
+  ],
+  extras: [
+    {
+      label: "Key Legendary Aspects",
+      items: [
+        { name: "Aspect of the Ursine Horror", note: "The Pulverize signature — a second damage layer on every slam; verify the current tuning." },
+        { name: "Aspect of Disobedience (Desecrated Crypt)", note: "Stacking armor while attacking — melee density ramps it fast." },
+        { name: "A Fortify-scaling damage aspect", note: "Several compete each patch — verify the current pick in the linked guide." },
+        { name: "A Werebear-uptime aspect", note: "Extends the transformation window — verify the current pick." },
+        { name: "A Spirit-regen aspect", note: "Smooths the slam cadence — verify the current pick." },
+      ],
+    },
+    {
+      label: "Paragon Glyphs",
+      items: [
+        { name: "The board's earth glyph", note: "Socket the glyph that multiplies your earth nodes — verify the exact pick in the linked guide." },
+        { name: "A Fortify or defense glyph", note: "Keeps the second health bar fat in Torment." },
+        { name: "Your board's matching glyph", note: "Depends on pathing — read the nodes before socketing." },
+      ],
+    },
+    {
+      label: "Consumables",
+      items: [
+        { name: "Willpower elixir", note: "Flat damage and life for the leveling push." },
+        { name: "Any incense before Torment", note: "Life + sustain for Torment entries." },
+        { name: "Elixirs before bosses", note: "Always run one — free XP bonus in early Torment." },
+      ],
+    },
+  ],
+};

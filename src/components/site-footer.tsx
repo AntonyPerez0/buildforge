@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { Logo } from "@/components/logo";
+import { latestSyncDate } from "@/lib/snapshots";
+import { formatDate } from "@/lib/utils";
 
 export function SiteFooter() {
   return (
@@ -16,6 +18,10 @@ export function SiteFooter() {
             Not affiliated with Blizzard Entertainment. Diablo and World of Warcraft are
             trademarks of their respective owners. Build data is summarized and linked with
             attribution to Maxroll, Icy Veins, ClassicWoW.gg and Wowhead.
+          </p>
+          <p className="text-xs text-ink-dim">
+            Meta refreshed nightly (last sync {formatDate(latestSyncDate())}) by the
+            BuildForge pipeline — robots-aware, rate-limited, attributed.
           </p>
         </div>
         <div>

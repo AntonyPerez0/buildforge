@@ -3,8 +3,11 @@ import Link from "next/link";
 import { Flame, RefreshCw } from "lucide-react";
 import { GAMES } from "@/lib/games";
 import { getBuildsFor, getSnapshotsFor } from "@/lib/builds";
+import { latestSyncDate } from "@/lib/snapshots";
+import { formatDate } from "@/lib/utils";
 import { BuildExplorer } from "@/components/build-explorer";
 import { MetaSnapshotGrid } from "@/components/meta-snapshot-grid";
+import { GuideIndexGrid } from "@/components/guide-index-grid";
 import { FadeUp } from "@/components/motion";
 import { SectionHeading } from "@/components/ui-bits";
 
@@ -32,7 +35,7 @@ export default function D4Page() {
               </span>
               <span className="inline-flex items-center gap-1.5 text-xs text-ink-dim">
                 <RefreshCw className="h-3 w-3" />
-                {game.metaLine}
+                {game.metaLine} · nightly sync {formatDate(latestSyncDate())}
               </span>
             </div>
             <h1 className="display-d4 mt-5 text-4xl font-bold tracking-wide text-ink sm:text-6xl">
@@ -69,7 +72,7 @@ export default function D4Page() {
           />
         </FadeUp>
         <div className="mt-10">
-          <MetaSnapshotGrid snapshots={snapshots} />
+          <MetaSnapshotGrid snapshots={snapshots.filter((s) => s.tier)} />
         </div>
         <FadeUp className="mt-6">
           <p className="text-xs leading-relaxed text-ink-dim">
@@ -82,6 +85,17 @@ export default function D4Page() {
             month.
           </p>
         </FadeUp>
+
+        <FadeUp className="mt-16">
+          <SectionHeading
+            eyebrow="Synced nightly"
+            title="Live guide index"
+            sub="Every guide the nightly pipeline finds on Maxroll and Icy Veins — refreshed once a day, linked with attribution. Tier ratings land here after human curation."
+          />
+        </FadeUp>
+        <div className="mt-10">
+          <GuideIndexGrid snapshots={snapshots.filter((s) => !s.tier)} />
+        </div>
       </section>
     </div>
   );

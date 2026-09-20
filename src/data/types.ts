@@ -53,6 +53,7 @@ export type ItemIconKey =
   | "scythe"
   | "wand"
   | "gun"
+  | "bow"
   | "offhand"
   | "relic";
 
@@ -163,7 +164,8 @@ export interface MetaSnapshot {
   game: GameId;
   className: string;
   buildName: string;
-  tier: Tier;
+  /** Curated tier when a human has verified it; null for auto-discovered entries. */
+  tier?: Tier | null;
   summary: string;
   sources: SourceRef[];
   fetchedAt: string;

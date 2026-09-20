@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CalendarClock, Compass, Info } from "lucide-react";
 import { GAMES } from "@/lib/games";
-import { getBuildsFor } from "@/lib/builds";
+import { getBuildsFor, getSnapshotsFor } from "@/lib/builds";
+import { latestSyncDate } from "@/lib/snapshots";
+import { formatDate } from "@/lib/utils";
 import { BuildExplorer } from "@/components/build-explorer";
+import { GuideIndexGrid } from "@/components/guide-index-grid";
 import { FadeUp, Stagger, StaggerItem } from "@/components/motion";
 import { SectionHeading } from "@/components/ui-bits";
 
@@ -57,7 +60,7 @@ export default function ForeverPage() {
               </span>
               <span className="inline-flex items-center gap-1.5 text-xs text-ink-dim">
                 <Compass className="h-3 w-3" />
-                {game.metaLine}
+                {game.metaLine} · nightly sync {formatDate(latestSyncDate())}
               </span>
             </div>
             <h1 className="display-forever mt-5 text-4xl font-bold tracking-wide text-ink sm:text-6xl">
@@ -129,6 +132,17 @@ export default function ForeverPage() {
         </FadeUp>
         <div className="mt-10">
           <BuildExplorer builds={builds} />
+        </div>
+
+        <FadeUp className="mt-16">
+          <SectionHeading
+            eyebrow="Synced nightly"
+            title="Forever guide index"
+            sub="Every class and spec guide from ClassicWoW.gg's Forever section, refreshed by the nightly pipeline and linked with attribution."
+          />
+        </FadeUp>
+        <div className="mt-10">
+          <GuideIndexGrid snapshots={getSnapshotsFor("forever")} />
         </div>
       </section>
     </div>

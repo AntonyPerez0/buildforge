@@ -17,7 +17,13 @@ export function MetaSnapshotGrid({ snapshots }: { snapshots: MetaSnapshot[] }) {
                 <p className="text-[15px] font-semibold leading-tight text-ink">{s.buildName}</p>
                 <p className="text-xs text-ink-dim">{s.className}</p>
               </div>
-              <TierBadge tier={s.tier} size="sm" />
+              {s.tier ? (
+                <TierBadge tier={s.tier} size="sm" />
+              ) : (
+                <span className="inline-flex h-6 items-center rounded-md border border-(--accent-border) bg-(--accent-wash) px-2 text-[10px] font-bold tracking-widest text-(--accent-bright)">
+                  NEW
+                </span>
+              )}
             </div>
             <p className="text-sm leading-relaxed text-ink-muted">{s.summary}</p>
             <div className="mt-auto flex flex-wrap items-center gap-2 pt-1">

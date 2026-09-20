@@ -181,6 +181,16 @@ export const ITEM_ICONS = {
       </g>
     </Svg>
   ),
+  bow: () => (
+    <Svg>
+      <g {...strokeProps}>
+        <path d="M7 3c6 2.5 9 5.5 9 9s-3 6.5-9 9" />
+        <path d="M7 3v18" opacity="0.6" />
+        <path d="M7 12h13" />
+        <path d="M18 10.2l2 1.8-2 1.8" />
+      </g>
+    </Svg>
+  ),
   gun: () => (
     <Svg>
       <g {...strokeProps}>

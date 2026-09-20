@@ -1,0 +1,501 @@
+import type { Build } from "@/data/types";
+
+export const enhancementShaman: Build = {
+  id: "forever-enhancement-shaman",
+  game: "forever",
+  slug: "enhancement-shaman",
+  name: "Enhancement Shaman",
+  className: "Shaman",
+  role: "Melee caster hybrid with Windfury swings",
+  tier: "A",
+  difficulty: 2,
+  tagline: "Slow two-hander, Windfury procs, Earth Shock on repeat — the melee caster.",
+  summary:
+    "Enhancement is the shaman's melee soul: a slow two-handed mace or axe, Windfury procs that hit like spells, Earth Shock between every swing, and a totem kit that buffs the whole party while you brawl. Forever keeps it honest — no dual-wielding in this kit, the two-hander is the spec — while unified hit/crit and reworked dungeon drops feed Enhancement real upgrades. Swing, shock, drop totems, repeat.",
+  patchLabel: "Forever Beta · Sep 2026",
+  lastSynced: "2026-09-19",
+  dataQuality: "authored",
+  sources: [
+    { site: "ClassicWoW.gg", url: "https://classicwow.gg/forever/guides/shaman/enhancement", label: "ClassicWoW.gg Enhancement guide" },
+    { site: "Wowhead", url: "https://www.wowhead.com/forever", label: "Wowhead Forever hub" },
+    { site: "Blizzard", url: "https://worldofwarcraft.blizzard.com/en-us/news/24302093/carve-a-new-path-with-world-of-warcraft-forever", label: "Official Forever announcement" },
+  ],
+  meta: {
+    "Best races": "Tauren (Horde) · Orc (Horde) · Troll (Horde) · Dwarf Shaman (new in Forever)",
+    "Key mechanic": "Windfury Weapon — bonus swings that hit like spells",
+    "Weapons": "Slow two-handed mace/axe — no dual-wield in Forever's kit",
+    "Playstyle": "Swing, shock, totem — the melee caster hybrid",
+    "Professions": "Blacksmithing + Mining (or Leatherworking)",
+    "Forever note": "Unified hit/crit — one stat now serves swings and shocks",
+  },
+  skillPriority: [
+    "Two-Handed Axes and Maces (crit on your exact weapon)",
+    "Thundering Strikes + Flurry (crit → attack speed loop)",
+    "Windfury Weapon (the spec's identity, online early 30s)",
+    "Stormstrike at 31 points (one-button burst, shock feeder)",
+  ],
+  progression: [
+    {
+      levels: "1–9",
+      goal: "Learn the totem rhythm: Rockbiter on, totems down, shock the casters",
+      steps: [
+        { name: "Rockbiter Weapon", detail: "Level 1", why: "Flat attack-power imbue from minute one — your weapon buff until Windfury exists." },
+        { name: "Earth Shock", detail: "As trained", why: "Interrupt plus damage in one button — your signature spell for every caster mob you ever meet." },
+        { name: "Lightning Shield", detail: "As trained", why: "Charges snap off on every hit — melee uptime is mana income, keep it refreshed." },
+        { name: "Strength of Earth / Grace of Air", detail: "As trained", why: "Totems are stat sticks for the whole party — drop them at pull, not on vibes." },
+      ],
+    },
+    {
+      levels: "10–14",
+      goal: "First talent points: mana before crit",
+      steps: [
+        { name: "Ancestral Knowledge", detail: "Ranks 1–5", why: "Intellect scaling — a bigger pool funds shocks, totems and every re-drop between pulls." },
+      ],
+      milestone: "Level 10: talent points begin — one per level, 51 total at 60.",
+    },
+    {
+      levels: "15–19",
+      goal: "Commit to the two-hander",
+      steps: [
+        { name: "Two-Handed Axes and Maces", detail: "Ranks 1–5", why: "Extra crit with exactly the weapons Enhancement should carry — buy the biggest, slowest mace or axe you can afford." },
+        { name: "Weapon upgrade", detail: "Priority", why: "Slow, heavy max damage is your whole scaling model — a two-hander upgrade beats any other slot at this level." },
+      ],
+    },
+    {
+      levels: "20–24",
+      goal: "Ghost Wolf era + the crit engine",
+      steps: [
+        { name: "Thundering Strikes", detail: "Ranks 1–5", why: "Crit per rank — feeds Flurry next band, and crit is the currency every Enhancement number is priced in." },
+        { name: "Ghost Wolf", detail: "Level ~20", why: "Faster travel — Forever has no flying, so the wolf is your interstate." },
+        { name: "Fire Totem", detail: "Quest ~20", why: "Classic-style totem quest line continues — verify exact levels in the linked guide." },
+      ],
+      milestone: "Level ~20: Ghost Wolf + Fire Totem — travel and totems both expand.",
+    },
+    {
+      levels: "25–29",
+      goal: "Hit the Forever 16-point capstone milestone",
+      steps: [
+        { name: "Flurry", detail: "Ranks 1–5", why: "Crits grant attack speed — with Thundering Strikes banked, the uptime is near-permanent. This is where swings start feeling like bursts." },
+        { name: "16-point capstone", detail: "Reserved", why: "Forever adds a brand-new one-point ability at 16 points into a tree. Check the exact effect in the beta talent calculator — values are still tuning." },
+      ],
+      milestone: "Level ~25: your 16th talent point unlocks the new Forever capstone ability in your main tree.",
+    },
+    {
+      levels: "30–34",
+      goal: "WINDFURY. The spec clicks here.",
+      steps: [
+        { name: "Windfury Weapon", detail: "Ranks 1–2", why: "The iconic deep-Enhancement imbue — your swings proc bonus WF attacks that hit like a second character. Rockbiter retires the day you train this." },
+        { name: "Earth Shock cadence", detail: "Practice", why: "WF procs + shock spam is the full combat model — learn the mana rhythm now, before raids price it against you." },
+        { name: "Water Totem", detail: "Quest ~30", why: "Mana Spring and Healing Stream unlock — party sustain from your totem bag; verify the quest level in the linked guide." },
+      ],
+      milestone: "Windfury Weapon live: swing-damage graphs double the moment the first proc chain lands.",
+    },
+    {
+      levels: "35–39",
+      goal: "Finish the Windfury line",
+      steps: [
+        { name: "Windfury Weapon", detail: "Rank 2", why: "Second rank smooths the proc damage — bank it before saving for Stormstrike." },
+        { name: "Enhancing Totems", detail: "Ranks 1–5 (if tuned)", why: "Boosts Strength of Earth and Grace of Air — group-wide value; verify the tuned numbers in the beta calculator." },
+        { name: "Elemental Devastation", detail: "If tuned", why: "Melee crits boosting your shock damage is classic-flavored synergy — check whether Forever keeps it before spending." },
+      ],
+    },
+    {
+      levels: "40–44",
+      goal: "STORMSTRIKE. The 31-point signature arrives.",
+      steps: [
+        { name: "Stormstrike", detail: "31-point talent", why: "Instant nature strike whose bonus feeds your next two nature shocks — the burst button and the shock-amplifier in one." },
+        { name: "Air Totem", detail: "Quest ~40", why: "The last totem bag unlock — Grace of Air from the trainer completes the party kit; verify the quest level in the linked guide." },
+        { name: "Weapon upgrade", detail: "Priority", why: "Stormstrike and WF procs both scale off the two-hander's damage range — a slow, heavy mace is the biggest single upgrade at 40+." },
+      ],
+      milestone: "Level 40: with 31 Enhancement points banked, Stormstrike is live. Your burst window opens.",
+    },
+    {
+      levels: "45–49",
+      goal: "Top out Enhancement",
+      steps: [
+        { name: "Remaining Enhancement ranks", detail: "Complete", why: "Finish the Flurry/Thundering Strikes lines and remaining Windfury ranks — verify the tuned endgame split in the linked calculator." },
+        { name: "Sub-tree thought", detail: "Resto/Elemental filler", why: "Points past the core spill into healing mana or elemental utility — common raid fillers; check the calculator before spending." },
+        { name: "1H + shield option", detail: "Situationally", why: "Tankier dungeon pulls swap to a shield without losing the totem kit — Windfury swings off a one-hander when the drop demands it." },
+      ],
+    },
+    {
+      levels: "50–54",
+      goal: "Gear sweep — Earthfury era",
+      steps: [
+        { name: "Strength + Int mail", detail: "Reworked drops", why: "Forever's reworked dungeon drops feed Enhancement real upgrades — and healer mail now carries spell damage that serves your shocks." },
+        { name: "Totem discipline", detail: "Dungeon practice", why: "The new dungeons (Hall of Thanes, Ruins of Lordaeron, City of Dalaran, Drowned City…) punish lazy re-drops — build the habit before raids." },
+      ],
+    },
+    {
+      levels: "55–59",
+      goal: "Enchant and consumable bench",
+      steps: [
+        { name: "Crusader", detail: "Two-handed weapon", why: "The classic heal-on-proc enchant — strength scaling plus self-healing on every proc." },
+        { name: "Boots + bracers enchants", detail: "Minor Speed + stamina", why: "Ground travel (no flying) and melee survivability make the last grind stretch painless." },
+        { name: "Hit re-check", detail: "Unified system", why: "Re-evaluate your hit against Forever's unified tables before 60 — old cap numbers are wrong; use the linked calculator." },
+      ],
+    },
+    {
+      levels: "60 / Raid-ready",
+      goal: "Barrow Deeps (10) · Hyjal Summit (20) · Onyxia's Lair (40) — December 9",
+      steps: [
+        { name: "Final talents", detail: "30+ Enhancement core", why: "Windfury + Flurry + Stormstrike with resto or elemental filler — verify the beta-tuned raid split in the linked calculator before lock-in." },
+        { name: "Hit target", detail: "Unified system", why: "Forever merges hit and crit across melee and spells — old melee-cap tables are dead. Check current values in the linked guide, not classic-era posts." },
+        { name: "Consumables", detail: "Elixir of Giants, food, stones", why: "Strength elixirs + sharpening stones + a camp buff (that doesn't clash with a class buff) is the launch-night kit." },
+      ],
+      milestone: "Raids unlock December 9 — use launch→December to level alts, gear through the nine new dungeons and bank consumables.",
+    },
+  ],
+  statPriority: [
+    { label: "Strength (Attack Power)", note: "Scales Stormstrike, Windfury procs and every swing — the single best stat on paper." },
+    { label: "Hit (unified)", note: "Forever merges melee and spell hit into one system — gear hit once and both halves of your kit benefit." },
+    { label: "Critical Strike (unified)", note: "Feeds Flurry, WF windows and shock-synergy talents — effectively permanent attack-speed uptime." },
+    { label: "Agility", note: "Melee crit secondary — cheaper than crit itself on mail pieces." },
+    { label: "Intellect", note: "Totems and shocks burn mana — pool size is totem uptime and shock cadence." },
+    { label: "Stamina", note: "You're in melee range by choice — survivability is DPS time." },
+  ],
+  gear: [
+    {
+      slot: "Head",
+      target: "Strength + intellect mail — T1 Earthfury when raids open",
+      affixes: ["Strength", "Intellect", "Stamina"],
+      item: {
+        name: "Earthfury Helmet",
+        quality: "epic",
+        type: "Epic Mail Helm",
+        armor: "383 Armor",
+        stats: [
+          { text: "+20 Intellect" },
+          { text: "+15 Stamina" },
+          { text: "Mana-regeneration flavored line" },
+        ],
+        source: "Molten Core · Earthfury",
+        icon: "helm",
+      },
+    },
+    {
+      slot: "Neck",
+      target: "Strength + stamina epic from the attunement lines",
+      affixes: ["Strength", "Stamina", "Hit"],
+      item: {
+        name: "Mark of Fordragon",
+        quality: "epic",
+        type: "Epic Necklace",
+        stats: [
+          { text: "+13 Stamina" },
+          { text: "+10 Strength" },
+        ],
+        source: "Quest reward · Onyxia attunement era",
+        icon: "amulet",
+      },
+    },
+    {
+      slot: "Shoulders",
+      target: "Tier 1 strength/int mail",
+      affixes: ["Strength", "Intellect", "Stamina"],
+      item: {
+        name: "Earthfury Epaulets",
+        quality: "epic",
+        type: "Epic Mail Shoulders",
+        armor: "378 Armor",
+        stats: [
+          { text: "+18 Intellect" },
+          { text: "+13 Stamina" },
+          { text: "Mana-regeneration flavored line" },
+        ],
+        source: "Molten Core · Earthfury",
+        icon: "shoulders",
+      },
+    },
+    {
+      slot: "Back",
+      target: "The raid-ticket cloak — craft it before Onyxia",
+      affixes: ["Strength", "Stamina"],
+      item: {
+        name: "Onyxia Scale Cloak",
+        quality: "epic",
+        type: "Epic Cloak",
+        armor: "54 Armor",
+        stats: [
+          { text: "+9 Strength" },
+          { text: "+9 Stamina" },
+          { text: "Crafted from Onyxia Scales", tone: "power" },
+        ],
+        source: "Crafted · Dragonscale Leatherworking",
+        icon: "offhand",
+      },
+    },
+    {
+      slot: "Chest",
+      target: "Tier 1 vestment or the strongest reworked-dungeon mail while leveling",
+      affixes: ["Strength", "Intellect", "Stamina"],
+      item: {
+        name: "Earthfury Vestment",
+        quality: "epic",
+        type: "Epic Mail Chest",
+        armor: "533 Armor",
+        stats: [
+          { text: "+22 Intellect" },
+          { text: "+20 Stamina" },
+          { text: "Mana-regeneration flavored line" },
+        ],
+        source: "Molten Core · Earthfury",
+        icon: "chest",
+      },
+    },
+    {
+      slot: "Wrists",
+      target: "Strength/int mail, enchant immediately",
+      affixes: ["Strength", "Intellect"],
+      item: {
+        name: "Earthfury Bracers",
+        quality: "epic",
+        type: "Epic Mail Bracers",
+        armor: "313 Armor",
+        stats: [
+          { text: "+16 Intellect" },
+          { text: "+12 Stamina" },
+        ],
+        source: "Molten Core · Earthfury",
+        icon: "wrist",
+      },
+    },
+    {
+      slot: "Hands",
+      target: "Crit or strength mail gauntlets",
+      affixes: ["Strength", "Crit", "Intellect"],
+      item: {
+        name: "Earthfury Gauntlets",
+        quality: "epic",
+        type: "Epic Mail Gloves",
+        armor: "370 Armor",
+        stats: [
+          { text: "+15 Strength" },
+          { text: "+15 Intellect" },
+        ],
+        source: "Molten Core · Earthfury",
+        icon: "hands",
+      },
+    },
+    {
+      slot: "Waist",
+      target: "Any clean strength/int mail without a downside",
+      affixes: ["Strength", "Intellect", "Stamina"],
+      item: {
+        name: "Earthfury Belt",
+        quality: "epic",
+        type: "Epic Mail Belt",
+        armor: "336 Armor",
+        stats: [
+          { text: "+17 Intellect" },
+          { text: "+13 Stamina" },
+        ],
+        source: "Molten Core · Earthfury",
+        icon: "belt",
+      },
+    },
+    {
+      slot: "Legs",
+      target: "Armor-kit these early; T1 legs at 60",
+      affixes: ["Strength", "Intellect", "Stamina"],
+      item: {
+        name: "Earthfury Legguards",
+        quality: "epic",
+        type: "Epic Mail Legs",
+        armor: "464 Armor",
+        stats: [
+          { text: "+20 Intellect" },
+          { text: "+18 Stamina" },
+        ],
+        source: "Molten Core · Earthfury",
+        icon: "legs",
+      },
+    },
+    {
+      slot: "Feet",
+      target: "Boots with Minor Speed enchant — non-negotiable",
+      affixes: ["Stamina", "Movement via enchant"],
+      item: {
+        name: "Earthfury Boots",
+        quality: "epic",
+        type: "Epic Mail Boots",
+        armor: "370 Armor",
+        stats: [
+          { text: "+15 Intellect" },
+          { text: "+12 Stamina" },
+        ],
+        source: "Molten Core · Earthfury",
+        icon: "feet",
+      },
+    },
+    {
+      slot: "Ring 1",
+      target: "Strength ring from Blackrock Depths",
+      affixes: ["Strength", "Stamina"],
+      item: {
+        name: "Myrmidon's Signet",
+        quality: "rare",
+        type: "Rare Ring",
+        stats: [
+          { text: "+10 Strength" },
+          { text: "+7 Stamina" },
+        ],
+        source: "Blackrock Depths",
+        icon: "ring",
+      },
+    },
+    {
+      slot: "Ring 2",
+      target: "Strength + hit pairing — unified hit serves the swings",
+      affixes: ["Strength", "Hit", "Stamina"],
+      item: {
+        name: "Boulderfist Band",
+        quality: "rare",
+        type: "Rare Ring",
+        stats: [
+          { text: "+12 Strength" },
+          { text: "+7 Stamina" },
+          { text: "+1% Hit Chance" },
+        ],
+        source: "Reworked dungeon drops — verify itemization guide",
+        icon: "ring",
+      },
+    },
+    {
+      slot: "Trinket 1",
+      target: "The extra-attack proc — Windfury's favorite teammate",
+      affixes: ["On-use / proc damage"],
+      item: {
+        name: "Hand of Justice",
+        quality: "rare",
+        type: "Rare Trinket",
+        stats: [
+          { text: "Equip: Chance to strike with an additional attack after a melee swing.", tone: "power" },
+        ],
+        flavor: "Two swings become three — and a WF proc chain on a two-hander is a raid note.",
+        source: "Blackrock Depths · Emperor Dagran Thaurissan",
+        icon: "trinket",
+      },
+    },
+    {
+      slot: "Trinket 2",
+      target: "Crit trinket from Upper Blackrock Spire — crit feeds everything",
+      affixes: ["Crit"],
+      item: {
+        name: "Blackhand's Breadth",
+        quality: "rare",
+        type: "Rare Trinket",
+        stats: [
+          { text: "Equip: +2% Critical Strike chance.", tone: "power" },
+        ],
+        source: "Upper Blackrock Spire · questline",
+        icon: "trinket",
+      },
+    },
+    {
+      slot: "Main Hand",
+      target: "Slow, heavy two-handed mace — the aspirational legendary is Sulfuras; a pre-raid slow 2H from the reworked dungeons carries you until then",
+      affixes: ["Slow speed", "High max damage", "Crusader enchant"],
+      item: {
+        name: "Sulfuras, Hand of Ragnaros",
+        quality: "legendary",
+        type: "Legendary Two-Handed Mace",
+        stats: [
+          { text: "Slow, massive damage range — Stormstrike's favorite food" },
+          { text: "+30 Fire Resistance" },
+        ],
+        flavor: "The Enhancement dream two-hander — every Windfury proc on it is a screenshot moment.",
+        source: "Crafted · Eye of Sulfuras from Ragnaros",
+        icon: "mace",
+      },
+    },
+    {
+      slot: "Off-Hand",
+      target: "Two-handed mace occupies both hands — this slot stays empty; the 1H + shield pair is a situational dungeon swap, not the raid kit",
+    },
+    {
+      slot: "Ranged",
+      target: "Totem for the ranged slot — Forever itemization gives totems a home here; check the itemization guide for the current drop list",
+      affixes: ["Intellect", "Nature Spell Damage"],
+      item: {
+        name: "Stormcall Totem",
+        quality: "rare",
+        type: "Rare Totem",
+        stats: [
+          { text: "+9 Intellect" },
+          { text: "Equip: +13 Nature Spell Damage.", tone: "power" },
+        ],
+        flavor: "Earth Shock and Stormstrike are nature damage — the totem slot quietly feeds both.",
+        source: "Reworked dungeon drops — verify itemization guide",
+        icon: "relic",
+      },
+    },
+  ],
+  rotation: [
+    {
+      phase: "Pull",
+      steps: [
+        "Drop Strength of Earth + Grace of Air at pull — Mana Spring when the casters are burning — not mid-fight.",
+        "Rockbiter before Windfury exists; Windfury Weapon the day you train it.",
+        "Open with a swing, then Earth Shock the first cast — interrupt discipline starts pull one.",
+      ],
+    },
+    {
+      phase: "Standard rotation",
+      steps: [
+        "Swing with WF procs; Earth Shock on cooldown between swings — that cadence is your damage.",
+        "Stormstrike first when it's up — its bonus feeds your next two nature shocks.",
+        "Refresh totems when they expire or the pack moves — mid-pull re-drops are mana suicide.",
+        "Lightning Shield kept charged — melee uptime is mana income.",
+      ],
+    },
+    {
+      phase: "Burst / Sustain",
+      steps: [
+        "Stormstrike + double-shock chain on cooldown windows — this is the burst check.",
+        "Flame Shock on runners, Frost Shock on kites — the shock kit covers every movement problem.",
+        "Mana dipping: Mana Spring down, slower shock cadence — never stop swinging, the totems carry the sustain.",
+      ],
+    },
+  ],
+  watchOuts: [
+    "Camp buffs don't stack with matching class buffs — coordinate at camp so your food buff isn't overriding (or overridden by) a class buff.",
+    "No flying mounts in Forever — Ghost Wolf is the commute; budget ground travel between dungeons and totem quests.",
+    "Forever's unified hit/crit system means every old melee hit-cap table is wrong. Use the linked calculator, not muscle memory.",
+    "Totem discipline: re-dropping totems burns the mana your shocks need — drop at pull, refresh only when a totem dies or the fight shifts.",
+    "Threat is classic-style: Windfury proc chains spike threat — your tank's Sunder count is your permission slip, not the first swing.",
+    "No dual-wielding in this kit — that's a later-era invention. Don't chase two one-handers; the slow two-hander IS the spec.",
+    "Ruleset choice (Normal/PvP/RP) is per-character and permanent — pick before you invest. Raids don't open until December 9, so there's no reason to rush 60; the nine new dungeons are the gearing funnel.",
+  ],
+  extras: [
+    {
+      label: "Core Enchants",
+      items: [
+        { name: "Enchant Weapon — Crusader", note: "Two-hander; strength + heal procs while leveling and raiding." },
+        { name: "Enchant Boots — Minor Speed", note: "Permanent 8% run speed; worth every copper." },
+        { name: "Enchant Bracers — Greater Strength", note: "Straight into your scaling." },
+        { name: "Enchant Gloves — Greater Agility", note: "Melee crit for the Flurry loop." },
+      ],
+    },
+    {
+      label: "Consumables",
+      items: [
+        { name: "Elixir of Giants", note: "Strength — scales Stormstrike and every swing." },
+        { name: "Elixir of the Mongoose", note: "Agility for crit/Flurry chaining." },
+        { name: "Sharpening Stones", note: "Weapon damage; cheap and constant." },
+        { name: "Major Mana Potions", note: "Shocks are mana-hungry; totems double the bill." },
+        { name: "Camp food", note: "Stack it with a buff class you AREN'T running (camps don't stack with matching class buffs)." },
+      ],
+    },
+    {
+      label: "Leveling Quick Reference",
+      items: [
+        { name: "Level ~20", note: "Ghost Wolf + Fire Totem quest (verify levels in the guide)." },
+        { name: "Level ~25", note: "16th talent point → Forever capstone (verify in beta calculator)." },
+        { name: "Level 30+", note: "Windfury Weapon era — Earth Shock cadence locks in." },
+        { name: "Level 40", note: "Stormstrike + Air Totem quest — burst window opens." },
+        { name: "Level 60", note: "51 points: finalize 30+ Enhancement, enchant, stock consumables for Dec 9." },
+      ],
+    },
+  ],
+};

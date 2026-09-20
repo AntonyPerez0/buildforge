@@ -1,0 +1,46 @@
+name: Nightly meta sync
+
+on:
+  schedule:
+    # Daily at 06:23 UTC — off-the-hour to dodge the scheduler rush.
+    - cron: "23 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run sync
+      - name: Commit refreshed meta data
+        id: commit
+        run: |
+          git config user.name "buildforge-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/synced
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No meta changes since last sync."
+          else
+            git commit -m "chore(meta): nightly sync $(date -u +%F)"
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Push
+        if: steps.commit.outputs.changed == 'true'
+        run: git push
+
+  deploy:
+    needs: sync
+    if: needs.sync.outputs.changed == 'true'
+    uses: ./.github/workflows/deploy.yml
