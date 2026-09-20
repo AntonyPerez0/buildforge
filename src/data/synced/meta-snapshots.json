@@ -196,6 +196,22 @@
       "fetchedAt": "2026-09-20"
     },
     {
+      "id": "d4-snap-wingstrikespaladin",
+      "game": "d4",
+      "className": "Paladin",
+      "buildName": "Wing Strikes Paladin",
+      "tier": null,
+      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/wing-strikes-paladin-guide",
+          "label": "Maxroll Wing Strikes Paladin"
+        }
+      ],
+      "fetchedAt": "2026-09-20"
+    },
+    {
       "id": "d4-snap-minionnecromancer",
       "game": "d4",
       "className": "Necromancer",
@@ -1311,22 +1327,6 @@
           "site": "Maxroll",
           "url": "https://maxroll.gg/d4/build-guides/support-paladin-guide",
           "label": "Maxroll Support Paladin"
-        }
-      ],
-      "fetchedAt": "2026-09-20"
-    },
-    {
-      "id": "d4-snap-wingstrikespaladin",
-      "game": "d4",
-      "className": "Paladin",
-      "buildName": "Wing Strikes Paladin",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/wing-strikes-paladin-guide",
-          "label": "Maxroll Wing Strikes Paladin"
         }
       ],
       "fetchedAt": "2026-09-20"
