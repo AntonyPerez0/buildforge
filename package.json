@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "test": "vitest run",
-    "sync": "node scripts/sync-meta.mjs"
+    "sync": "node scripts/sync-meta.mjs",
+    "postbuild": "node scripts/fix-og.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",

@@ -31,6 +31,7 @@ export function SiteHeader({ searchIndex }: { searchIndex: SearchEntry[] }) {
               <Link
                 key={item.href}
                 href={item.href}
+                aria-current={active ? "page" : undefined}
                 className={cn(
                   "rounded-lg px-3 py-1.5 text-sm font-medium transition-colors",
                   active ? "bg-surface-raised text-ink" : "text-ink-muted hover:text-ink",

@@ -36,6 +36,7 @@ export function SiteFooter() {
           <p className="eyebrow mb-3">Project</p>
           <ul className="space-y-2 text-sm text-ink-muted">
             <li><Link href="/about" className="hover:text-ink">Data sources &amp; sync</Link></li>
+            <li><Link href="/sync" className="hover:text-ink">Nightly sync report</Link></li>
             <li><a href="https://github.com/AntonyPerez0/buildforge" className="hover:text-ink">GitHub repository</a></li>
             <li><a href="https://github.com/AntonyPerez0/buildforge/issues" className="hover:text-ink">Report an issue</a></li>
           </ul>

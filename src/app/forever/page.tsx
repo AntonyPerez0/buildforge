@@ -4,6 +4,7 @@ import { CalendarClock, Compass, Info } from "lucide-react";
 import { GAMES } from "@/lib/games";
 import { getBuildsFor, getSnapshotsFor } from "@/lib/builds";
 import { latestSyncDate } from "@/lib/snapshots";
+import { ogImage } from "@/lib/site";
 import { formatDate } from "@/lib/utils";
 import { BuildExplorer } from "@/components/build-explorer";
 import { GuideIndexGrid } from "@/components/guide-index-grid";
@@ -15,6 +16,11 @@ export const metadata: Metadata = {
   title: "WoW Forever — Classic+ build paths",
   description:
     "Zero-guessing World of Warcraft: Forever (Classic+) builds. Classic talent trees with Forever twists — 16-point capstones, unified hit/crit, new dungeons and raids. Every talent point mapped from 1 to 60.",
+  openGraph: {
+    title: "BuildForge — WoW Forever build paths",
+    images: [ogImage("forever", "hub")],
+  },
+  twitter: { card: "summary_large_image", images: [ogImage("forever", "hub")] },
 };
 
 const FOREVER_CHANGES = [

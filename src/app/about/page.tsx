@@ -130,6 +130,12 @@ export default function AboutPage() {
                 View on GitHub
               </a>
               <Link
+                href="/sync"
+                className="inline-flex items-center gap-2 rounded-lg border border-line bg-surface px-4 py-2 text-sm font-medium text-ink-muted hover:text-ink"
+              >
+                Nightly sync report
+              </Link>
+              <Link
                 href="/builder"
                 className="inline-flex items-center gap-2 rounded-lg border border-line bg-surface px-4 py-2 text-sm font-medium text-ink-muted hover:text-ink"
               >

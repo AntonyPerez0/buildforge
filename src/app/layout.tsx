@@ -4,7 +4,9 @@ import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { ServiceWorkerRegister } from "@/components/service-worker-register";
+import { MotionProvider } from "@/components/motion-provider";
 import { buildSearchIndex } from "@/lib/search-index";
+import { ogImage } from "@/lib/site";
 import { withBase } from "@/lib/utils";
 
 const inter = Inter({
@@ -53,11 +55,13 @@ export const metadata: Metadata = {
     title: "BuildForge — Zero-guessing build companions",
     description:
       "Level-by-level paths for Diablo IV and WoW Forever. Every skill, talent and gear priority at the exact level you need it.",
+    images: [{ url: ogImage("neutral", "site"), width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "BuildForge",
     description: "Zero-guessing build companions for Diablo IV & WoW Forever.",
+    images: [ogImage("neutral", "site")],
   },
   manifest: withBase("/manifest.webmanifest"),
   icons: {
@@ -80,8 +84,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${inter.variable} ${cinzel.variable} ${marcellus.variable} h-full antialiased`}
     >
       <body className="min-h-full">
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-[100] focus:rounded-lg focus:bg-(--accent) focus:px-4 focus:py-2 focus:font-semibold focus:text-base"
+        >
+          Skip to content
+        </a>
         <SiteHeader searchIndex={searchIndex} />
-        <main className="flex-1">{children}</main>
+        <main id="main" className="flex-1">
+          <MotionProvider>{children}</MotionProvider>
+        </main>
         <SiteFooter />
         <ServiceWorkerRegister />
       </body>

@@ -4,6 +4,7 @@ import { Flame, RefreshCw } from "lucide-react";
 import { GAMES } from "@/lib/games";
 import { getBuildsFor, getSnapshotsFor } from "@/lib/builds";
 import { latestSyncDate } from "@/lib/snapshots";
+import { ogImage } from "@/lib/site";
 import { formatDate } from "@/lib/utils";
 import { BuildExplorer } from "@/components/build-explorer";
 import { MetaSnapshotGrid } from "@/components/meta-snapshot-grid";
@@ -16,6 +17,11 @@ export const metadata: Metadata = {
   title: "Diablo IV — Season 15 build paths",
   description:
     "Zero-guessing Diablo IV builds for Season 15: Hell's Legacy. Level-by-level skill paths, gear priorities and rotations for Barbarian, Sorcerer, Necromancer, Rogue and the S15 meta.",
+  openGraph: {
+    title: "BuildForge — Diablo IV build paths",
+    images: [ogImage("d4", "hub")],
+  },
+  twitter: { card: "summary_large_image", images: [ogImage("d4", "hub")] },
 };
 
 export default function D4Page() {

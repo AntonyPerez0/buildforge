@@ -47,6 +47,7 @@ export function buildSearchIndex(): SearchEntry[] {
     ["Diablo IV hub", "Season 15 build paths & live meta", "/d4"],
     ["WoW Forever hub", "Classic+ build paths & guide index", "/forever"],
     ["Custom Build Forge", "Fork, edit and share your own builds", "/builder"],
+    ["Nightly sync report", "What the pipeline found on its last run", "/sync"],
     ["About & data pipeline", "How BuildForge stays fresh", "/about"],
   ] as const) {
     entries.push({ type: "page", title, subtitle, href, keywords: `${title} ${subtitle}`.toLowerCase() });

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { BUILDS, getBuild } from "@/lib/builds";
+import { ogImage } from "@/lib/site";
 import { BuildDetail } from "@/components/build-detail";
 
 export function generateStaticParams() {
@@ -16,7 +17,17 @@ export async function generateMetadata({
   return {
     title: `${build.name} — WoW Forever level path`,
     description: build.tagline,
-    openGraph: { title: `${build.name} · BuildForge`, description: build.tagline },
+    openGraph: {
+      title: `${build.name} · BuildForge`,
+      description: build.tagline,
+      images: [{ url: ogImage("forever", build.slug), width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${build.name} · BuildForge`,
+      description: build.tagline,
+      images: [ogImage("forever", build.slug)],
+    },
   };
 }
 
