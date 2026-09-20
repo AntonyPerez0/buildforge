@@ -32,6 +32,63 @@ export interface ProgressionBand {
   milestone?: string;
 }
 
+/** Keys into the in-house SVG item art set (components/item-icons.tsx). */
+export type ItemIconKey =
+  | "helm"
+  | "shoulders"
+  | "chest"
+  | "hands"
+  | "wrist"
+  | "belt"
+  | "legs"
+  | "feet"
+  | "amulet"
+  | "ring"
+  | "trinket"
+  | "sword"
+  | "axe"
+  | "mace"
+  | "dagger"
+  | "staff"
+  | "scythe"
+  | "wand"
+  | "gun"
+  | "offhand"
+  | "relic";
+
+export type ItemQuality =
+  | "common"
+  | "magic"
+  | "uncommon"
+  | "rare"
+  | "epic"
+  | "legendary"
+  | "unique";
+
+/** One stat/affix line inside an item tooltip. */
+export interface ItemStatLine {
+  text: string;
+  /** affix = blue (D4) / green (WoW), power = signature item power, bonus = plain white. */
+  tone?: "affix" | "power" | "bonus" | "flavor";
+}
+
+/** The visual + stat payload rendered in paper-doll tooltips. */
+export interface ItemVisual {
+  name: string;
+  quality: ItemQuality;
+  /** Full type line, e.g. "Ancestral Unique Helm" or "Epic Plate Bracers". */
+  type: string;
+  /** e.g. "900 Item Power" (D4). */
+  itemPower?: string;
+  /** e.g. "620 Armor". */
+  armor?: string;
+  stats: ItemStatLine[];
+  flavor?: string;
+  /** Where the item comes from, e.g. "Crafted · Blacksmithing 300". */
+  source?: string;
+  icon: ItemIconKey;
+}
+
 /** One gear slot: what to equip and what to look for. */
 export interface GearSlot {
   slot: string;
@@ -41,6 +98,8 @@ export interface GearSlot {
   affixes?: string[];
   /** A specific unique / best-in-slot item and where it comes from. */
   unique?: string;
+  /** In-game styled item preview for the paper doll (hover tooltip). */
+  item?: ItemVisual;
 }
 
 /** Priority list grouped by combat phase. */

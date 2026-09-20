@@ -6,6 +6,7 @@ import { DifficultyDots, SectionHeading, TierBadge } from "@/components/ui-bits"
 import { ProgressionTimeline } from "@/components/progression-timeline";
 import { SectionNav, type SectionNavItem } from "@/components/section-nav";
 import { CopyLinkButton, ForkButton } from "@/components/share-buttons";
+import { PaperDoll } from "@/components/paper-doll";
 import { FadeUp } from "@/components/motion";
 import { buildHref } from "@/lib/builds";
 
@@ -141,50 +142,40 @@ export function BuildDetail({ build }: { build: Build }) {
         <Section id="gear">
           <FadeUp>
             <SectionHeading
-              eyebrow="Loot decoder"
+              eyebrow="Character screen"
               title="Gear priorities"
-              sub="What to keep, what to chase, and which stat lines make an item worth its slot."
+              sub="Hover or tap any slot for the full item card — target item, stat lines and what to look for. Below the doll: the plain-text checklist."
             />
           </FadeUp>
           <FadeUp className="mt-8">
-            <div className="panel overflow-hidden">
-              <div className="overflow-x-auto">
-                <table className="w-full min-w-[640px] text-left text-sm">
-                  <thead>
-                    <tr className="border-b border-line bg-surface-raised/50 text-[11px] tracking-wider text-ink-dim uppercase">
-                      <th className="px-4 py-3 font-semibold">Slot</th>
-                      <th className="px-4 py-3 font-semibold">Target</th>
-                      <th className="px-4 py-3 font-semibold">Prioritize on it</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {build.gear.map((g) => (
-                      <tr key={g.slot} className="border-b border-line/60 align-top last:border-0 hover:bg-surface-raised/30">
-                        <td className="px-4 py-3.5 font-semibold whitespace-nowrap text-(--accent-bright)">{g.slot}</td>
-                        <td className="max-w-[280px] px-4 py-3.5 text-ink">
-                          {g.target}
-                          {g.unique ? (
-                            <p className="mt-1.5 text-xs leading-relaxed text-ink-muted">{g.unique}</p>
-                          ) : null}
-                        </td>
-                        <td className="px-4 py-3.5">
-                          {g.affixes ? (
-                            <div className="flex flex-wrap gap-1.5">
-                              {g.affixes.map((a) => (
-                                <span key={a} className="rounded border border-line bg-surface px-2 py-0.5 text-xs text-ink-muted">
-                                  {a}
-                                </span>
-                              ))}
-                            </div>
-                          ) : (
-                            <span className="text-xs text-ink-dim">—</span>
-                          )}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+            <PaperDoll build={build} />
+          </FadeUp>
+          <FadeUp className="mt-6">
+            <div className="panel divide-y divide-line/70">
+              {build.gear.map((g) => (
+                <div key={g.slot} className="flex flex-col gap-1.5 p-4 sm:flex-row sm:items-baseline sm:gap-4">
+                  <p className="w-28 shrink-0 text-sm font-semibold text-(--accent-bright)">{g.slot}</p>
+                  <div className="min-w-0">
+                    <p className="text-sm text-ink">{g.target}</p>
+                    {g.item ? (
+                      <p className="mt-0.5 text-xs text-ink-dim">
+                        {g.item.quality === "unique" ? "Unique" : g.item.quality === "legendary" ? "Legendary" : g.item.quality === "epic" ? "Epic" : g.item.quality === "rare" ? "Rare" : "Item"}
+                        {" · "}
+                        {g.item.source ?? g.item.type}
+                      </p>
+                    ) : null}
+                    {g.affixes && g.affixes.length > 0 ? (
+                      <div className="mt-1.5 flex flex-wrap gap-1.5">
+                        {g.affixes.map((a) => (
+                          <span key={a} className="rounded border border-line bg-surface px-2 py-0.5 text-xs text-ink-muted">
+                            {a}
+                          </span>
+                        ))}
+                      </div>
+                    ) : null}
+                  </div>
+                </div>
+              ))}
             </div>
           </FadeUp>
         </Section>

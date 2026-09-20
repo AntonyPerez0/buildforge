@@ -169,6 +169,110 @@ body {
   background: linear-gradient(180deg, var(--accent-border), var(--color-line) 70%, transparent);
 }
 
+/* ── Paper doll (in-game character screen) ─────────────────── */
+
+.doll-frame-d4 {
+  background:
+    radial-gradient(120% 70% at 50% 0%, rgba(212, 32, 46, 0.12), transparent 60%),
+    radial-gradient(90% 60% at 50% 100%, rgba(240, 164, 59, 0.05), transparent 60%),
+    #100c11;
+  border: 1px solid rgba(212, 32, 46, 0.3);
+  box-shadow:
+    inset 0 0 50px rgba(0, 0, 0, 0.55),
+    0 24px 70px -30px rgba(0, 0, 0, 0.9);
+}
+
+.doll-frame-forever {
+  background:
+    radial-gradient(120% 70% at 50% 0%, rgba(78, 134, 212, 0.1), transparent 60%),
+    radial-gradient(90% 60% at 50% 100%, rgba(228, 181, 74, 0.06), transparent 60%),
+    #0c0f16;
+  border: 1px solid rgba(228, 181, 74, 0.3);
+  box-shadow:
+    inset 0 0 50px rgba(0, 0, 0, 0.55),
+    0 24px 70px -30px rgba(0, 0, 0, 0.9);
+}
+
+.slot-frame {
+  border: 1px solid color-mix(in srgb, var(--slot-color, #4a4a56) 55%, transparent);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.4)),
+    #101016;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 6px 18px -8px color-mix(in srgb, var(--slot-color, #4a4a56) 50%, transparent);
+}
+
+.slot-frame-empty {
+  border-style: dashed;
+  border-color: var(--color-line-bright);
+  opacity: 0.55;
+}
+
+/* ── Item tooltips (game-styled) ───────────────────────────── */
+
+.tooltip-d4 {
+  position: relative;
+  --tooltip-base: #b7b3c9;
+  background: linear-gradient(180deg, #1c1426 0%, #120d18 100%);
+  border: 1px solid #5a4a78;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04),
+    inset 0 0 34px rgba(122, 92, 180, 0.12);
+}
+
+.tooltip-d4::before,
+.tooltip-d4::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  transform: rotate(45deg);
+  background: #9a7fd0;
+  opacity: 0.85;
+}
+
+.tooltip-d4::before {
+  top: 7px;
+  left: 7px;
+}
+
+.tooltip-d4::after {
+  bottom: 7px;
+  right: 7px;
+}
+
+.tooltip-wow {
+  position: relative;
+  --tooltip-base: #c9c7d4;
+  background: linear-gradient(180deg, #11151f 0%, #0a0d13 100%);
+  border: 1px solid #6f5c2e;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04),
+    inset 0 0 34px rgba(228, 181, 74, 0.09);
+}
+
+.tooltip-wow::before,
+.tooltip-wow::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  transform: rotate(45deg);
+  background: #e4b54a;
+  opacity: 0.85;
+}
+
+.tooltip-wow::before {
+  top: 7px;
+  left: 7px;
+}
+
+.tooltip-wow::after {
+  bottom: 7px;
+  right: 7px;
+}
+
 @keyframes rise {
   from {
     opacity: 0;
