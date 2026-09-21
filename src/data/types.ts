@@ -135,6 +135,19 @@ export interface EndgamePhase {
   milestone?: string;
 }
 
+/**
+ * A run of talent points placed one per level, e.g. from=10 to=14 with
+ * rankFrom=1 expands to "Level 10: Cruelty Rank 1 … Level 14: Cruelty Rank 5".
+ * Single-level runs (from === to) are one-point talents.
+ */
+export interface TalentRun {
+  from: number;
+  to: number;
+  name: string;
+  rankFrom: number;
+  note?: string;
+}
+
 export interface Build {
   /** Unique id, e.g. "d4-whirlwind-barbarian". */
   id: string;
@@ -171,6 +184,8 @@ export interface Build {
   endgame?: EndgamePhase[];
   /** Forever only: signature abilities at the classic talent gates. */
   specGates?: { gate: "16" | "21" | "31"; label: string }[];
+  /** Forever only: exact per-level talent point placement, levels 10→44. */
+  talentRuns?: TalentRun[];
 }
 
 /** Condensed current-meta card synced from guide sites. */

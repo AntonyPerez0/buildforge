@@ -145,6 +145,22 @@ export const shadowPriest: Build = {
       milestone: "Raids unlock December 9 — the launch window is your dungeon-gearing runway.",
     },
   ],
+  talentRuns: [
+    { from: 10, to: 14, name: "Spirit Tap", rankFrom: 1 },
+    { from: 15, to: 19, name: "Shadow Weaving", rankFrom: 1 },
+    { from: 20, to: 21, name: "Improved Shadow Word: Pain", rankFrom: 1 },
+    { from: 22, to: 24, name: "Shadow Focus", rankFrom: 1 },
+    { from: 25, to: 25, name: "Forever 16-point capstone", rankFrom: 1, note: "verify in beta calculator" },
+    { from: 26, to: 29, name: "Darkness", rankFrom: 1 },
+    { from: 30, to: 30, name: "Vampiric Embrace", rankFrom: 1 },
+    { from: 31, to: 31, name: "Darkness", rankFrom: 5 },
+    { from: 32, to: 33, name: "Improved Vampiric Embrace", rankFrom: 1 },
+    { from: 34, to: 35, name: "Shadow Reach", rankFrom: 1 },
+    { from: 36, to: 39, name: "Mental Strength", rankFrom: 1 },
+    { from: 40, to: 40, name: "Shadowform", rankFrom: 1 },
+    { from: 41, to: 41, name: "Mental Strength", rankFrom: 5 },
+    { from: 42, to: 44, name: "Shadow Power", rankFrom: 1 },
+  ],
   endgame: [
     {
       phase: "Launch → raid prep · Nov 4 → Dec 9",

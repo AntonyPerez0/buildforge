@@ -146,6 +146,23 @@ export const beastMasteryHunter: Build = {
       milestone: "Raids unlock December 9 — use launch→December to farm dungeons and bank pet consumables.",
     },
   ],
+  talentRuns: [
+    { from: 10, to: 12, name: "Endurance Training", rankFrom: 1 },
+    { from: 13, to: 17, name: "Improved Aspect of the Hawk", rankFrom: 1 },
+    { from: 18, to: 20, name: "Thick Hide", rankFrom: 1 },
+    { from: 21, to: 21, name: "Bestial Swiftness", rankFrom: 1 },
+    { from: 22, to: 24, name: "Ferocity", rankFrom: 1 },
+    { from: 25, to: 25, name: "Forever 16-point capstone", rankFrom: 1, note: "verify in beta calculator" },
+    { from: 26, to: 27, name: "Ferocity", rankFrom: 4 },
+    { from: 28, to: 29, name: "Improved Mend Pet", rankFrom: 1 },
+    { from: 30, to: 30, name: "Intimidation", rankFrom: 1 },
+    { from: 31, to: 35, name: "Unleashed Fury", rankFrom: 1 },
+    { from: 36, to: 36, name: "Aimed Shot", rankFrom: 1, note: "Marksmanship dip" },
+    { from: 37, to: 39, name: "Frenzy", rankFrom: 1 },
+    { from: 40, to: 40, name: "Bestial Wrath", rankFrom: 1 },
+    { from: 41, to: 42, name: "Frenzy", rankFrom: 4 },
+    { from: 43, to: 44, name: "Spirit Bond", rankFrom: 1 },
+  ],
   endgame: [
     {
       phase: "Launch → raid prep · Nov 4 → Dec 9",

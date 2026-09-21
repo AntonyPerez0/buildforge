@@ -145,6 +145,22 @@ export const frostMage: Build = {
       milestone: "Raids unlock December 9 — spend launch→December grinding dungeons and banking conjure stations' worth of supplies.",
     },
   ],
+  talentRuns: [
+    { from: 10, to: 14, name: "Improved Frostbolt", rankFrom: 1 },
+    { from: 15, to: 19, name: "Ice Shards", rankFrom: 1 },
+    { from: 20, to: 24, name: "Piercing Ice", rankFrom: 1 },
+    { from: 25, to: 25, name: "Forever 16-point capstone", rankFrom: 1, note: "verify in beta calculator" },
+    { from: 26, to: 29, name: "Shatter", rankFrom: 1 },
+    { from: 30, to: 30, name: "Shatter", rankFrom: 5 },
+    { from: 31, to: 31, name: "Cold Snap", rankFrom: 1 },
+    { from: 32, to: 33, name: "Improved Frost Nova", rankFrom: 1 },
+    { from: 34, to: 34, name: "Ice Barrier", rankFrom: 1 },
+    { from: 35, to: 37, name: "Permafrost", rankFrom: 1 },
+    { from: 38, to: 39, name: "Arctic Reach", rankFrom: 1 },
+    { from: 40, to: 40, name: "Frost Channeling", rankFrom: 1 },
+    { from: 41, to: 42, name: "Frost Channeling", rankFrom: 2 },
+    { from: 43, to: 44, name: "Winter's Chill", rankFrom: 1 },
+  ],
   endgame: [
     {
       phase: "Launch → raid prep · Nov 4 → Dec 9",

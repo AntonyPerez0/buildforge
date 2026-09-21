@@ -144,6 +144,23 @@ export const retPaladin: Build = {
       milestone: "Raids unlock December 9 — the launch window is your dungeon-gearing and enchanting runway.",
     },
   ],
+  talentRuns: [
+    { from: 10, to: 14, name: "Benediction", rankFrom: 1 },
+    { from: 15, to: 19, name: "Improved Blessing of Might", rankFrom: 1 },
+    { from: 20, to: 20, name: "Seal of Command", rankFrom: 1 },
+    { from: 21, to: 24, name: "Conviction", rankFrom: 1 },
+    { from: 25, to: 25, name: "Forever 16-point capstone", rankFrom: 1, note: "verify in beta calculator" },
+    { from: 26, to: 26, name: "Conviction", rankFrom: 5 },
+    { from: 27, to: 29, name: "Two-Handed Weapon Specialization", rankFrom: 1 },
+    { from: 30, to: 30, name: "Sanctity Aura", rankFrom: 1 },
+    { from: 31, to: 32, name: "Two-Handed Weapon Specialization", rankFrom: 4 },
+    { from: 33, to: 35, name: "Vindication", rankFrom: 1 },
+    { from: 36, to: 39, name: "Vengeance", rankFrom: 1 },
+    { from: 40, to: 40, name: "Repentance", rankFrom: 1 },
+    { from: 41, to: 41, name: "Vengeance", rankFrom: 5 },
+    { from: 42, to: 43, name: "Improved Sanctity Aura", rankFrom: 1 },
+    { from: 44, to: 44, name: "Bank it", rankFrom: 1, note: "hold for the raid-tuned split" },
+  ],
   endgame: [
     {
       phase: "Launch → raid prep · Nov 4 → Dec 9",

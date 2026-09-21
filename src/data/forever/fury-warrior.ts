@@ -145,6 +145,19 @@ export const furyWarrior: Build = {
     { gate: "16", label: "Forever capstone — new one-point ability (verify in beta calculator)" },
     { gate: "31", label: "Bloodthirst — the spec-defining strike" },
   ],
+  talentRuns: [
+    { from: 10, to: 14, name: "Cruelty", rankFrom: 1 },
+    { from: 15, to: 19, name: "Unbridled Wrath", rankFrom: 1 },
+    { from: 20, to: 24, name: "Dual Wield Specialization", rankFrom: 1 },
+    { from: 25, to: 25, name: "Forever 16-point capstone", rankFrom: 1, note: "verify in beta calculator" },
+    { from: 26, to: 29, name: "Booming Voice", rankFrom: 1 },
+    { from: 30, to: 34, name: "Flurry", rankFrom: 1 },
+    { from: 35, to: 37, name: "Improved Berserker Rage", rankFrom: 1 },
+    { from: 38, to: 39, name: "Death Wish", rankFrom: 1 },
+    { from: 40, to: 40, name: "Bloodthirst", rankFrom: 1 },
+    { from: 41, to: 43, name: "Death Wish", rankFrom: 3 },
+    { from: 44, to: 44, name: "Enrage", rankFrom: 1 },
+  ],
   endgame: [
     {
       phase: "Launch → raid prep · Nov 4 → Dec 9",

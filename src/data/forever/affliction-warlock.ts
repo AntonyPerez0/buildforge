@@ -146,6 +146,21 @@ export const afflictionWarlock: Build = {
       milestone: "Raids unlock December 9 — use the runway on the nine new dungeons and shard banking instead of rushing.",
     },
   ],
+  talentRuns: [
+    { from: 10, to: 14, name: "Improved Corruption", rankFrom: 1 },
+    { from: 15, to: 16, name: "Improved Life Tap", rankFrom: 1 },
+    { from: 17, to: 19, name: "Improved Curse of Agony", rankFrom: 1 },
+    { from: 20, to: 24, name: "Improved Drain Life", rankFrom: 1 },
+    { from: 25, to: 25, name: "Forever 16-point capstone", rankFrom: 1, note: "verify in beta calculator" },
+    { from: 26, to: 30, name: "Fel Concentration", rankFrom: 1 },
+    { from: 31, to: 32, name: "Nightfall", rankFrom: 1 },
+    { from: 33, to: 33, name: "Dark Pact", rankFrom: 1 },
+    { from: 34, to: 35, name: "Grim Reach", rankFrom: 1 },
+    { from: 36, to: 39, name: "Shadow Mastery", rankFrom: 1 },
+    { from: 40, to: 40, name: "Siphon Life", rankFrom: 1 },
+    { from: 41, to: 41, name: "Shadow Mastery", rankFrom: 5 },
+    { from: 42, to: 44, name: "Demonic Embrace", rankFrom: 1, note: "Demonology dip" },
+  ],
   endgame: [
     {
       phase: "Launch → raid prep · Nov 4 → Dec 9",

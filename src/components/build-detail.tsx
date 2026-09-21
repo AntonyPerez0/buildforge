@@ -9,6 +9,7 @@ import { CopyLinkButton, ForkButton } from "@/components/share-buttons";
 import { PaperDoll } from "@/components/paper-doll";
 import { EndgamePanel } from "@/components/endgame-panel";
 import { TalentSpine } from "@/components/talent-spine";
+import { TalentLevelTable } from "@/components/talent-level-table";
 import { FadeUp } from "@/components/motion";
 import { buildHref } from "@/lib/builds";
 
@@ -140,10 +141,15 @@ export function BuildDetail({ build }: { build: Build }) {
             </FadeUp>
           ) : null}
 
-          {/* ─── Talent spine (Forever) ─────────────────────── */}
+          {/* ─── Talent spine + per-level table (Forever) ───── */}
           {build.game === "forever" && build.specGates ? (
             <FadeUp className="mt-6">
               <TalentSpine build={build} />
+            </FadeUp>
+          ) : null}
+          {build.game === "forever" && build.talentRuns?.length ? (
+            <FadeUp className="mt-4">
+              <TalentLevelTable build={build} />
             </FadeUp>
           ) : null}
 

@@ -146,6 +146,19 @@ export const enhancementShaman: Build = {
       milestone: "Raids unlock December 9 — use launch→December to level alts, gear through the nine new dungeons and bank consumables.",
     },
   ],
+  talentRuns: [
+    { from: 10, to: 14, name: "Ancestral Knowledge", rankFrom: 1 },
+    { from: 15, to: 19, name: "Two-Handed Axes and Maces", rankFrom: 1 },
+    { from: 20, to: 24, name: "Thundering Strikes", rankFrom: 1 },
+    { from: 25, to: 25, name: "Forever 16-point capstone", rankFrom: 1, note: "verify in beta calculator" },
+    { from: 26, to: 30, name: "Flurry", rankFrom: 1 },
+    { from: 31, to: 32, name: "Windfury Weapon", rankFrom: 1 },
+    { from: 33, to: 37, name: "Enhancing Totems", rankFrom: 1 },
+    { from: 38, to: 39, name: "Elemental Devastation", rankFrom: 1 },
+    { from: 40, to: 40, name: "Stormstrike", rankFrom: 1 },
+    { from: 41, to: 43, name: "Elemental Devastation", rankFrom: 3 },
+    { from: 44, to: 44, name: "Bank it", rankFrom: 1, note: "hold for the raid-tuned split" },
+  ],
   endgame: [
     {
       phase: "Launch → raid prep · Nov 4 → Dec 9",
