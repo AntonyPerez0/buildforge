@@ -3,6 +3,7 @@
 import { Milestone } from "lucide-react";
 import type { Build } from "@/data/types";
 import { cn } from "@/lib/utils";
+import { FOREVER_IN_BETA, FOREVER_LAUNCH_LEVEL_CAP, FOREVER_LEVEL_CAP } from "@/lib/forever";
 
 interface SpineNode {
   levels: string;
@@ -95,22 +96,44 @@ export function GateDiagram({ build }: { build: Build }) {
             </li>
           );
         })}
-        <li className="relative flex gap-4">
-          <div className="flex flex-col items-center">
-            <span className="grid h-7 w-7 place-items-center rounded-full border border-line bg-surface font-mono text-[12px] font-bold text-ink-dim">
-              51
-            </span>
-          </div>
-          <div className="min-w-0">
-            <p className="text-[13px] font-semibold text-ink">
-              Level 60<span className="ml-2 font-normal text-ink-dim">51 points · finalize the split</span>
-            </p>
-            <p className="mt-1 text-[12px] text-ink-dim">
-              After the 31-point gate, points spill into your secondary tree — verify the
-              beta-tuned split in the linked calculator.
-            </p>
-          </div>
-        </li>
+        {FOREVER_IN_BETA ? (
+          <li className="relative flex gap-4">
+            <div className="flex flex-col items-center">
+              <span className="grid h-7 w-7 place-items-center rounded-full border border-dashed border-line-bright bg-surface font-mono text-[12px] font-bold text-ink-dim">
+                {FOREVER_LAUNCH_LEVEL_CAP}
+              </span>
+            </div>
+            <div className="min-w-0">
+              <p className="text-[13px] font-semibold text-ink">
+                Level {FOREVER_LEVEL_CAP} · beta cap
+                <span className="ml-2 font-normal text-ink-dim">
+                  spine resumes to 60 at launch
+                </span>
+              </p>
+              <p className="mt-1 text-[12px] leading-relaxed text-ink-dim">
+                The beta stops here — secondary-tree points, the 31-point gate and the
+                51-point finish return when the full game launches on Nov 4.
+              </p>
+            </div>
+          </li>
+        ) : (
+          <li className="relative flex gap-4">
+            <div className="flex flex-col items-center">
+              <span className="grid h-7 w-7 place-items-center rounded-full border border-line bg-surface font-mono text-[12px] font-bold text-ink-dim">
+                51
+              </span>
+            </div>
+            <div className="min-w-0">
+              <p className="text-[13px] font-semibold text-ink">
+                Level 60<span className="ml-2 font-normal text-ink-dim">51 points · finalize the split</span>
+              </p>
+              <p className="mt-1 text-[12px] text-ink-dim">
+                After the 31-point gate, points spill into your secondary tree — verify the
+                beta-tuned split in the linked calculator.
+              </p>
+            </div>
+          </li>
+        )}
       </ol>
     </div>
   );

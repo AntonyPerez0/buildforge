@@ -1,4 +1,5 @@
 import type { GameId } from "@/data/types";
+import { FOREVER_IN_BETA, FOREVER_LAUNCH_LEVEL_CAP, FOREVER_LEVEL_CAP } from "@/lib/forever";
 
 export interface GameConfig {
   id: GameId;
@@ -44,13 +45,16 @@ export const GAMES: Record<GameId, GameConfig> = {
     label: "WoW Forever",
     shortLabel: "Forever",
     tagline: "Classic+, the way it was meant to continue.",
-    description:
-      "World of Warcraft: Forever (Classic+) — level 60 Azeroth with new talents, dungeons and raids. Classic trees with Forever twists, from level 1 to raid-ready.",
+    description: FOREVER_IN_BETA
+      ? `World of Warcraft: Forever (Classic+) — the beta is live with a level ${FOREVER_LEVEL_CAP} cap. Classic trees with Forever twists; the full 1–${FOREVER_LAUNCH_LEVEL_CAP} tracks return at launch on Nov 4.`
+      : "World of Warcraft: Forever (Classic+) — level 60 Azeroth with new talents, dungeons and raids. Classic trees with Forever twists, from level 1 to raid-ready.",
     themeClass: "game-forever",
     displayClass: "display-forever",
     href: "/forever",
     statusChip: "Beta live · Launches Nov 4, 2026",
-    metaLine: "Level 60 · Classic+ trees · Raids unlock Dec 9",
+    metaLine: FOREVER_IN_BETA
+      ? `Beta cap ${FOREVER_LEVEL_CAP} · Classic+ trees · Full game Nov 4`
+      : "Level 60 · Classic+ trees · Raids unlock Dec 9",
     classOrder: [
       "Warrior",
       "Paladin",

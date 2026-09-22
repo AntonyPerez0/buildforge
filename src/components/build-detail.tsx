@@ -1,6 +1,7 @@
-import { ArrowUpRight, BookOpen, FlaskConical, Skull } from "lucide-react";
+import { ArrowUpRight, BookOpen, FlaskConical, Hourglass, Skull } from "lucide-react";
 import type { Build } from "@/data/types";
 import { GAMES } from "@/lib/games";
+import { FOREVER_IN_BETA, FOREVER_LAUNCH_LEVEL_CAP, FOREVER_LEVEL_CAP } from "@/lib/forever";
 import { cn, formatDate } from "@/lib/utils";
 import { DifficultyDots, SectionHeading, TierBadge } from "@/components/ui-bits";
 import { ProgressionTimeline } from "@/components/progression-timeline";
@@ -116,6 +117,24 @@ export function BuildDetail({ build }: { build: Build }) {
       </section>
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        {build.game === "forever" && FOREVER_IN_BETA ? (
+          <FadeUp className="pt-6">
+            <div className="panel flex items-start gap-3 border-(--accent-border) bg-(--accent-wash) p-4">
+              <Hourglass className="mt-0.5 h-4 w-4 shrink-0 text-(--accent-bright)" />
+              <p className="text-[13px] leading-relaxed text-ink">
+                <span className="font-semibold text-(--accent-bright)">
+                  Forever beta caps at level {FOREVER_LEVEL_CAP}.
+                </span>{" "}
+                <span className="text-ink-muted">
+                  This path is trimmed to what&apos;s reachable in beta right now. The full
+                  level 1–{FOREVER_LAUNCH_LEVEL_CAP} track, endgame chapters and raid prep
+                  return here at launch on Nov 4, 2026.
+                </span>
+              </p>
+            </div>
+          </FadeUp>
+        ) : null}
+
         <SectionNav items={getSections(build)} />
 
         {/* ─── Level path ───────────────────────────────────── */}

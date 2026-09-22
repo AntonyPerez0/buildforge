@@ -11,11 +11,13 @@ import { GuideIndexGrid } from "@/components/guide-index-grid";
 import { FavoritesBar } from "@/components/favorites-bar";
 import { FadeUp, Stagger, StaggerItem } from "@/components/motion";
 import { SectionHeading } from "@/components/ui-bits";
+import { FOREVER_IN_BETA, FOREVER_LEVEL_CAP } from "@/lib/forever";
 
 export const metadata: Metadata = {
   title: "WoW Forever — Classic+ build paths",
-  description:
-    "Zero-guessing World of Warcraft: Forever (Classic+) builds. Classic talent trees with Forever twists — 16-point capstones, unified hit/crit, new dungeons and raids. Every talent point mapped from 1 to 60.",
+  description: FOREVER_IN_BETA
+    ? `Zero-guessing World of Warcraft: Forever (Classic+) builds for the level ${FOREVER_LEVEL_CAP} beta. Classic talent trees with Forever twists — 16-point capstones, unified hit/crit, new dungeons and raids. Full 1–60 tracks return at launch.`
+    : "Zero-guessing World of Warcraft: Forever (Classic+) builds. Classic talent trees with Forever twists — 16-point capstones, unified hit/crit, new dungeons and raids. Every talent point mapped from 1 to 60.",
   openGraph: {
     title: "BuildForge — WoW Forever build paths",
     images: [ogImage("forever", "hub")],
@@ -141,7 +143,9 @@ export default function ForeverPage() {
           <SectionHeading
             eyebrow="Core collection"
             title="Level-by-level build paths"
-            sub="Classic talent trees with Forever deltas baked in — from level 1 ability ranks to the December 9 raid unlock."
+            sub={FOREVER_IN_BETA
+              ? "Classic talent trees with Forever deltas baked in — paths cover everything reachable in the beta; the post-cap track returns at launch."
+              : "Classic talent trees with Forever deltas baked in — from level 1 ability ranks to the December 9 raid unlock."}
           />
         </FadeUp>
         <div className="mt-10">

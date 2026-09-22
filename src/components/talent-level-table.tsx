@@ -4,6 +4,7 @@ import { Milestone } from "lucide-react";
 import type { Build } from "@/data/types";
 import { expandTalentRuns } from "@/lib/talents";
 import { cn } from "@/lib/utils";
+import { FOREVER_IN_BETA, FOREVER_LEVEL_CAP } from "@/lib/forever";
 
 /**
  * Exact per-level talent placement for levels 10→44 — the answer to
@@ -68,9 +69,9 @@ export function TalentLevelTable({ build }: { build: Build }) {
 
       <div className="border-t border-line px-4 py-3 sm:px-5">
         <p className="text-xs leading-relaxed text-ink-dim">
-          After level 44 the core build is banked — spend 45–60 on your secondary tree and
-          final tuning, then verify the beta-tuned split in the linked calculator before
-          lock-in. Beta values may shift; the gate levels (16/21/31 points) are structural.
+          {FOREVER_IN_BETA
+            ? `The beta caps at level ${FOREVER_LEVEL_CAP} — placement resumes here at launch, running through level 44 before points spill into your secondary tree. Gate levels (16/21/31 points) are structural; beta values may shift.`
+            : "After level 44 the core build is banked — spend 45–60 on your secondary tree and final tuning, then verify the beta-tuned split in the linked calculator before lock-in. Beta values may shift; the gate levels (16/21/31 points) are structural."}
         </p>
       </div>
     </div>

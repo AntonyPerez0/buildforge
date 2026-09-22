@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { BUILDS, getBuild } from "@/lib/builds";
+import { applyBetaCap } from "@/lib/forever";
 import { ogImage } from "@/lib/site";
 import { BuildDetail } from "@/components/build-detail";
 
@@ -35,5 +36,5 @@ export default async function ForeverBuildPage(props: PageProps<"/forever/builds
   const { slug } = await props.params;
   const build = getBuild("forever", slug);
   if (!build) notFound();
-  return <BuildDetail build={build} />;
+  return <BuildDetail build={applyBetaCap(build)} />;
 }

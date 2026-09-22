@@ -14,6 +14,7 @@ import { FadeUp, Stagger, StaggerItem } from "@/components/motion";
 import { SectionHeading } from "@/components/ui-bits";
 import { BuildCard } from "@/components/build-card";
 import { BUILDS } from "@/lib/builds";
+import { FOREVER_IN_BETA, FOREVER_LEVEL_CAP } from "@/lib/forever";
 import { cn } from "@/lib/utils";
 
 const FEATURES = [
@@ -104,8 +105,9 @@ export default function HomePage() {
                 WoW FOREVER
               </h1>
               <p className="max-w-md text-sm leading-relaxed text-ink-muted sm:text-base">
-                Blizzard&apos;s Classic+ is here: level 60 Azeroth, new dungeons, new raids,
-                new trees with 16-point capstones. Every talent point, mapped from 1 to 60.
+                {FOREVER_IN_BETA
+                  ? `Blizzard's Classic+ beta is live: new dungeons, new raids, new trees with 16-point capstones. Paths cover the level ${FOREVER_LEVEL_CAP} beta cap — full 1–60 tracks at launch.`
+                  : "Blizzard's Classic+ is here: level 60 Azeroth, new dungeons, new raids, new trees with 16-point capstones. Every talent point, mapped from 1 to 60."}
               </p>
               <span className="inline-flex items-center gap-2 rounded-lg border border-forever/40 bg-forever/10 px-4 py-2 text-sm font-semibold text-forever-bright transition-all group-hover:bg-forever/20">
                 Return to Azeroth <ArrowRight className="h-4 w-4" />
