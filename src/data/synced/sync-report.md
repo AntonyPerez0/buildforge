@@ -1,11 +1,11 @@
-# BuildForge nightly sync — 2026-09-22
+# BuildForge nightly sync — 2026-09-23
 
 | Source | Index | Result |
 | --- | --- | --- |
 | Maxroll | https://maxroll.gg/d4/build-guides | 100 links |
-| Icy Veins | https://www.icy-veins.com/d4/ | 3 links |
+| Icy Veins | https://www.icy-veins.com/d4/ | failed (HTTP 403) |
 | ClassicWoW.gg | (static spec index from site nav) | 28 specs |
 
-9 curated snapshots refreshed · 104 newly discovered (tier pending curation)
+9 curated snapshots refreshed · 101 newly discovered (tier pending curation)
 
 Curate new entries by adding tier + summary to `src/data/synced/curated-meta.json`.
