@@ -1,4 +1,4 @@
-# BuildForge nightly sync — 2026-09-25
+# BuildForge nightly sync — 2026-09-26
 
 | Source | Index | Result |
 | --- | --- | --- |
@@ -6,6 +6,6 @@
 | Icy Veins | https://www.icy-veins.com/d4/ | failed (HTTP 403) |
 | ClassicWoW.gg | (static spec index from site nav) | 28 specs |
 
-9 curated snapshots refreshed · 101 newly discovered (tier pending curation)
+9 curated snapshots refreshed · 103 newly discovered (tier pending curation)
 
 Curate new entries by adding tier + summary to `src/data/synced/curated-meta.json`.
