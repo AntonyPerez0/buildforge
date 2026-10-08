@@ -1,9 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Check, RotateCcw } from "lucide-react";
 import { loadProgress, saveProgress, stepId, toggleStep } from "@/lib/progress";
-import { cn } from "@/lib/utils";
 
 export interface LaunchTask {
   title: string;
@@ -13,7 +11,7 @@ export interface LaunchTask {
 
 const LIST_ID = "forever-launch-checklist";
 
-/** Day-one checklist for the Forever launch — checkable, saved on device. */
+/** Day-one checklist as a WoW quest-log parchment — checkable, saved on device. */
 export function LaunchChecklist({ tasks }: { tasks: LaunchTask[] }) {
   const [checked, setChecked] = useState<string[]>([]);
   const [loaded, setLoaded] = useState(false);
@@ -34,68 +32,52 @@ export function LaunchChecklist({ tasks }: { tasks: LaunchTask[] }) {
   const done = tasks.filter((_, i) => checked.includes(stepId(LIST_ID, 0, i))).length;
 
   return (
-    <div>
-      <div className="panel mb-5 flex flex-wrap items-center justify-between gap-3 p-4">
-        <div className="flex items-center gap-3">
-          <div className="grid h-10 w-10 place-items-center rounded-lg border border-(--accent-border) bg-(--accent-wash) font-mono text-[13px] font-bold text-(--accent-bright)">
-            {loaded ? `${done}/${tasks.length}` : "–"}
-          </div>
-          <div>
-            <p className="text-sm font-semibold text-ink">Launch-day checklist</p>
-            <p className="text-xs text-ink-dim">Saved on this device — work through it before Nov 4</p>
-          </div>
-        </div>
-        {done > 0 ? (
-          <button
-            type="button"
-            onClick={() => update([])}
-            className="inline-flex items-center gap-1.5 rounded-lg border border-line px-3 py-1.5 text-xs font-medium text-ink-dim transition-colors hover:border-forever/40 hover:text-forever-bright"
-          >
-            <RotateCcw className="h-3.5 w-3.5" /> Reset
-          </button>
-        ) : null}
+    <div className="wowui-parchment">
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <h3 className="wowui-parchment-head">Day-one Checklist</h3>
+        <p className="font-mono text-sm font-bold text-[#7d590d]">
+          {loaded ? `${done}/${tasks.length}` : "–"}
+        </p>
       </div>
+      <p className="wowui-ink-body mt-1 text-[13px]">
+        Decisions that are permanent or time-sensitive — work through it before Nov 4.
+      </p>
 
-      <ul className="grid gap-3 sm:grid-cols-2">
+      <ul className="mt-4">
         {tasks.map((task, i) => {
           const id = stepId(LIST_ID, 0, i);
           const isDone = checked.includes(id);
           return (
             <li
               key={task.title}
-              className={cn(
-                "flex items-start gap-3 rounded-xl border p-4 transition-colors",
-                isDone
-                  ? "border-(--accent-border)/40 bg-(--accent-wash)"
-                  : "border-line bg-surface",
-              )}
+              className="wowui-task flex items-start gap-3 py-3"
             >
               <button
                 type="button"
-                onClick={() => update(toggleStep(checked, id))}
                 aria-pressed={isDone}
                 aria-label={`${isDone ? "Mark undone" : "Mark done"}: ${task.title}`}
-                className={cn(
-                  "mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full border transition-colors",
-                  isDone
-                    ? "border-(--accent-bright) bg-(--accent) text-base"
-                    : "border-line-bright text-transparent hover:border-(--accent-bright)",
-                )}
-              >
-                <Check className="h-3 w-3" strokeWidth={3} />
-              </button>
+                onClick={() => update(toggleStep(checked, id))}
+                className="wowui-taskbox"
+              />
               <div className="min-w-0">
                 <div className="flex flex-wrap items-baseline gap-2">
-                  <span className={cn("text-sm font-semibold text-ink", isDone && "opacity-50 line-through")}>
+                  <span
+                    className="text-base leading-snug"
+                    style={{
+                      fontFamily: "var(--font-fondamento), serif",
+                      color: isDone ? "#8a744f" : "#1a0f04",
+                      textShadow: "1px -1px 0 #7d590d",
+                      textDecoration: isDone ? "line-through" : "none",
+                    }}
+                  >
                     {task.title}
                   </span>
-                  {task.tag ? (
-                    <span className="rounded border border-(--accent-border) bg-(--accent-wash) px-1.5 py-0.5 text-[10px] font-bold tracking-wider text-(--accent-bright) uppercase">
-                      {task.tag}
-                    </span>
-                  ) : null}
+                  {task.tag ? <span className="wowui-stamp">{task.tag}</span> : null}
                 </div>
-                <p className={cn("mt-1 text-[13px] leading-relaxed text-ink-muted", isDone && "opacity-60")}>
+                <p
+                  className="mt-1 text-[13px] leading-relaxed"
+                  style={{ color: isDone ? "#96835d" : "#4d2e00" }}
+                >
                   {task.body}
                 </p>
               </div>
@@ -103,6 +85,19 @@ export function LaunchChecklist({ tasks }: { tasks: LaunchTask[] }) {
           );
         })}
       </ul>
+
+      {done > 0 ? (
+        <div className="mt-2 flex justify-end">
+          <button
+            type="button"
+            onClick={() => update([])}
+            className="wowui-stamp cursor-pointer hover:brightness-110"
+            aria-label="Reset the checklist"
+          >
+            Reset progress
+          </button>
+        </div>
+      ) : null}
     </div>
   );
 }

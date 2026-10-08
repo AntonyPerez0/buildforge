@@ -7,8 +7,8 @@ import { latestSyncDate } from "@/lib/snapshots";
 import { ogImage } from "@/lib/site";
 import { formatDate } from "@/lib/utils";
 import { ForeverRoster } from "@/components/forever-roster";
+import { WowHeading } from "@/components/wowui";
 import { FadeUp, Stagger, StaggerItem } from "@/components/motion";
-import { SectionHeading } from "@/components/ui-bits";
 import { FOREVER_IN_BETA, FOREVER_LEVEL_CAP } from "@/lib/forever";
 
 export const metadata: Metadata = {
@@ -56,41 +56,38 @@ export default function ForeverPage() {
 
   return (
     <div data-game="forever" className="world-bg noise">
-      {/* Hero band */}
-      <section className="border-b border-line bg-[radial-gradient(90%_100%_at_50%_0%,rgba(78,134,212,0.14),transparent_70%),radial-gradient(60%_60%_at_80%_10%,rgba(228,181,74,0.1),transparent_60%)]">
+      {/* Hero band — carved stone banner */}
+      <section className="wowui-banner">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
           <FadeUp>
             <div className="flex flex-wrap items-center gap-3">
-              <span className="accent-chip inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold">
+              <span className="wowui-chip">
                 <CalendarClock className="h-3.5 w-3.5" />
                 {game.statusChip}
               </span>
-              <span className="inline-flex items-center gap-1.5 text-xs text-ink-dim">
+              <span className="wowui-chip">
                 <Compass className="h-3 w-3" />
                 {game.metaLine} · nightly sync {formatDate(latestSyncDate())}
               </span>
             </div>
-            <h1 className="display-forever mt-5 text-4xl font-bold tracking-wide text-ink sm:text-6xl">
+            <h1 className="wowui-title display-forever mt-5 text-4xl font-bold tracking-wide sm:text-6xl">
               WOW FOREVER
             </h1>
-            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-ink-muted sm:text-base">
+            <p className="wowui-sub mt-4 max-w-2xl text-sm leading-relaxed sm:text-base">
               {game.description}
             </p>
-            <Link
-              href="/forever/launch"
-              className="mt-6 inline-flex items-center gap-2 rounded-xl border border-(--accent-border) bg-(--accent-wash) px-5 py-2.5 text-sm font-semibold text-(--accent-bright) transition-transform hover:scale-[1.03]"
-            >
+            <Link href="/forever/launch" className="wow-redbtn mt-6 inline-flex">
               <CalendarClock className="h-4 w-4" />
-              Launch hub — day-one checklist, dungeons & raids
+              Launch hub — day-one checklist, dungeons &amp; raids
             </Link>
           </FadeUp>
         </div>
       </section>
 
-      {/* What changes */}
+      {/* What changes — quest-log parchment */}
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
         <FadeUp>
-          <SectionHeading
+          <WowHeading
             eyebrow="Classic+ briefing"
             title="What changes in Forever"
             sub="The mechanics that reshape every build before you spend your first talent point. Full details on the linked official pages."
@@ -99,16 +96,18 @@ export default function ForeverPage() {
         <Stagger className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {FOREVER_CHANGES.map((c) => (
             <StaggerItem key={c.title}>
-              <div className="panel panel-hover h-full p-5">
-                <Info className="h-4.5 w-4.5 text-(--accent-bright)" />
-                <h3 className="mt-3 text-[15px] font-semibold text-ink">{c.title}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-ink-muted">{c.body}</p>
+              <div className="wowui-parchment h-full">
+                <h3 className="wowui-parchment-head flex items-start gap-2">
+                  <Info className="mt-1.5 h-4 w-4 shrink-0" />
+                  {c.title}
+                </h3>
+                <p className="wowui-ink-body mt-2 text-sm">{c.body}</p>
               </div>
             </StaggerItem>
           ))}
         </Stagger>
         <FadeUp className="mt-6">
-          <p className="text-xs leading-relaxed text-ink-dim">
+          <p className="text-xs leading-relaxed" style={{ color: "#9d968a" }}>
             Sources:{" "}
             <a
               href="https://worldofwarcraft.blizzard.com/en-us/news/24302093/carve-a-new-path-with-world-of-warcraft-forever"
@@ -138,7 +137,7 @@ export default function ForeverPage() {
       {/* Builds */}
       <section className="mx-auto max-w-6xl px-4 pb-20 sm:px-6 sm:pb-28">
         <FadeUp>
-          <SectionHeading
+          <WowHeading
             eyebrow="Core collection"
             title="Level-by-level build paths"
             sub={FOREVER_IN_BETA
