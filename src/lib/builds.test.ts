@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import type { Build } from "@/data/types";
 import { BUILDS, getBuild, getSnapshotsFor, buildHref } from "@/lib/builds";
 import { GAMES } from "@/lib/games";
-import { decodeShare, encodeShare, forkMetaBuild } from "@/lib/custom-builds";
+import { decodeShare, encodeShare, forkMetaBuild, normalizeCustomBuild, type CustomBuild } from "@/lib/custom-builds";
 
 /** Data-integrity contract for every published build. */
 describe("build data integrity", () => {
@@ -90,6 +90,32 @@ describe("custom build sharing", () => {
 
   it("rejects garbage share strings", () => {
     expect(decodeShare("not-a-build!!!")).toBeNull();
+  });
+
+  it("rejects share payloads missing sections the build pages map over", () => {
+    const broken = { ...BUILDS[0], statPriority: undefined };
+    expect(decodeShare(encodeShare(broken as unknown as CustomBuild))).toBeNull();
+  });
+
+  it("repairs gaps in share/import payloads instead of crashing", () => {
+    const adopted = normalizeCustomBuild({
+      game: "d4",
+      name: "Half a build",
+      progression: [{ levels: "1–5", goal: "start", steps: [{ name: "X", why: "why" }] }],
+      statPriority: [],
+      gear: [],
+      rotation: [{ phase: "Standard" }],
+      watchOuts: [],
+      sources: [],
+    });
+    expect(adopted).not.toBeNull();
+    expect(adopted?.gear).toEqual([]);
+    expect(adopted?.rotation[0].steps).toEqual([]);
+    expect(Number.isNaN(Date.parse(adopted!.lastSynced))).toBe(false);
+  });
+
+  it("keeps the stored id when loading saved builds", () => {
+    expect(normalizeCustomBuild({ ...BUILDS[0], id: "custom-keep" }, false)?.id).toBe("custom-keep");
   });
 
   it("forks a meta build with a fresh id and renamed title", () => {

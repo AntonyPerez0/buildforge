@@ -76,7 +76,7 @@ export default function D4Page() {
           <SectionHeading
             eyebrow="Live meta"
             title="Season 15 snapshot"
-            sub="Condensed straight from Maxroll and Icy Veins. These cards are pointers — open the full guide for the complete tree, gear table and tuning notes."
+            sub="Condensed straight from Maxroll. These cards are pointers — open the full guide for the complete tree, gear table and tuning notes."
           />
         </FadeUp>
         <div className="mt-10">
@@ -98,7 +98,7 @@ export default function D4Page() {
           <SectionHeading
             eyebrow="Synced nightly"
             title="Live guide index"
-            sub="Every guide the nightly pipeline finds on Maxroll and Icy Veins — refreshed once a day, linked with attribution. Tier ratings land here after human curation."
+            sub="Every guide the nightly pipeline finds on Maxroll — refreshed once a day, linked with attribution. Tier ratings land here after human curation."
           />
         </FadeUp>
         <div className="mt-10">

@@ -29,8 +29,10 @@ self.addEventListener("fetch", (event) => {
     event.respondWith(
       fetch(req)
         .then((res) => {
-          const copy = res.clone();
-          caches.open(VERSION).then((cache) => cache.put(req, copy));
+          if (res.ok) {
+            const copy = res.clone();
+            caches.open(VERSION).then((cache) => cache.put(req, copy));
+          }
           return res;
         })
         .catch(() =>
@@ -44,8 +46,10 @@ self.addEventListener("fetch", (event) => {
     caches.match(req).then((hit) => {
       const network = fetch(req)
         .then((res) => {
-          const copy = res.clone();
-          caches.open(VERSION).then((cache) => cache.put(req, copy));
+          if (res.ok) {
+            const copy = res.clone();
+            caches.open(VERSION).then((cache) => cache.put(req, copy));
+          }
           return res;
         })
         .catch(() => hit);

@@ -5,7 +5,8 @@ export function getFavorites(): string[] {
   if (typeof window === "undefined") return [];
   try {
     const raw = window.localStorage.getItem(KEY);
-    return raw ? (JSON.parse(raw) as string[]) : [];
+    const parsed: unknown = raw ? JSON.parse(raw) : null;
+    return Array.isArray(parsed) ? (parsed as string[]) : [];
   } catch {
     return [];
   }

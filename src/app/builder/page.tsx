@@ -26,6 +26,7 @@ import {
   encodeShare,
   forkMetaBuild,
   loadCustomBuilds,
+  normalizeCustomBuild,
   saveCustomBuild,
   type CustomBuild,
 } from "@/lib/custom-builds";
@@ -162,6 +163,17 @@ function BuilderClient() {
     };
   }, [params, flash]);
 
+  // Warn before leaving with unsaved edits.
+  useEffect(() => {
+    if (!dirty) return;
+    const warn = (e: BeforeUnloadEvent) => {
+      e.preventDefault();
+      e.returnValue = "";
+    };
+    window.addEventListener("beforeunload", warn);
+    return () => window.removeEventListener("beforeunload", warn);
+  }, [dirty]);
+
   const update = useCallback(<K extends keyof CustomBuild>(key: K, value: CustomBuild[K]) => {
     setBuild((b) => ({ ...b, [key]: value }));
     setDirty(true);
@@ -180,7 +192,10 @@ function BuilderClient() {
       flash("Give your build a name first.");
       return;
     }
-    saveCustomBuild(build);
+    if (!saveCustomBuild(build)) {
+      flash("Couldn't save — this device's storage is full or blocked.");
+      return;
+    }
     setSaved(loadCustomBuilds());
     setDirty(false);
     flash("Saved to this device.");
@@ -195,9 +210,9 @@ function BuilderClient() {
     const reader = new FileReader();
     reader.onload = () => {
       try {
-        const parsed = JSON.parse(String(reader.result)) as CustomBuild;
-        if (!Array.isArray(parsed.progression)) throw new Error("bad shape");
-        setBuild({ ...parsed, id: `custom-${Date.now().toString(36)}` });
+        const adopted = normalizeCustomBuild(JSON.parse(String(reader.result)));
+        if (!adopted) throw new Error("bad shape");
+        setBuild(adopted);
         setDirty(true);
         flash("Build imported.");
       } catch {

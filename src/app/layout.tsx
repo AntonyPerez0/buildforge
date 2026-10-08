@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     template: "%s · BuildForge",
   },
   description:
-    "The second-screen companion for Diablo IV Season 15 and World of Warcraft: Forever (Classic+). Level-by-level build paths, gear priorities, rotations and zero guessing — synced with Maxroll, Icy Veins and ClassicWoW.gg.",
+    "The second-screen companion for Diablo IV Season 15 and World of Warcraft: Forever (Classic+). Level-by-level build paths, gear priorities, rotations and zero guessing — synced with Maxroll and ClassicWoW.gg.",
   keywords: [
     "Diablo 4 builds",
     "WoW Forever builds",
