@@ -6,9 +6,7 @@ import { getBuildsFor, getSnapshotsFor } from "@/lib/builds";
 import { latestSyncDate } from "@/lib/snapshots";
 import { ogImage } from "@/lib/site";
 import { formatDate } from "@/lib/utils";
-import { BuildExplorer } from "@/components/build-explorer";
-import { GuideIndexGrid } from "@/components/guide-index-grid";
-import { FavoritesBar } from "@/components/favorites-bar";
+import { ForeverRoster } from "@/components/forever-roster";
 import { FadeUp, Stagger, StaggerItem } from "@/components/motion";
 import { SectionHeading } from "@/components/ui-bits";
 import { FOREVER_IN_BETA, FOREVER_LEVEL_CAP } from "@/lib/forever";
@@ -148,21 +146,9 @@ export default function ForeverPage() {
               : "Classic talent trees with Forever deltas baked in — from level 1 ability ranks to the December 9 raid unlock."}
           />
         </FadeUp>
-        <div className="mt-10">
-          <FavoritesBar builds={builds} />
-          <BuildExplorer builds={builds} />
-        </div>
-
-        <FadeUp className="mt-16">
-          <SectionHeading
-            eyebrow="Synced nightly"
-            title="Forever guide index"
-            sub="Every class and spec guide from ClassicWoW.gg's Forever section, refreshed by the nightly pipeline and linked with attribution."
-          />
+        <FadeUp className="mx-auto mt-10 max-w-3xl">
+          <ForeverRoster builds={builds} guides={getSnapshotsFor("forever")} />
         </FadeUp>
-        <div className="mt-10">
-          <GuideIndexGrid snapshots={getSnapshotsFor("forever")} />
-        </div>
       </section>
     </div>
   );
