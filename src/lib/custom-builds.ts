@@ -44,23 +44,73 @@ export function emptyBuild(game: GameId): CustomBuild {
   };
 }
 
+/**
+ * Runtime guard for builds arriving from localStorage, share links or JSON
+ * files: rejects anything missing the arrays the editor and build pages map
+ * over, repairs harmless gaps (per-phase steps, invalid dates), and always
+ * hands back a fully shaped CustomBuild. freshId=false keeps the stored id
+ * (saved builds); share links and imports always get a fresh one.
+ */
+export function normalizeCustomBuild(value: unknown, freshId = true): CustomBuild | null {
+  if (!value || typeof value !== "object") return null;
+  const b = value as Partial<CustomBuild>;
+  if (b.game !== "d4" && b.game !== "forever") return null;
+  if (
+    !Array.isArray(b.progression) ||
+    !Array.isArray(b.statPriority) ||
+    !Array.isArray(b.gear) ||
+    !Array.isArray(b.rotation) ||
+    !Array.isArray(b.watchOuts) ||
+    !Array.isArray(b.sources)
+  ) {
+    return null;
+  }
+  const base = emptyBuild(b.game);
+  return {
+    ...base,
+    ...b,
+    progression: b.progression.map((band) => ({
+      ...band,
+      steps: Array.isArray(band?.steps) ? band.steps : [],
+    })),
+    rotation: b.rotation.map((phase) => ({
+      ...phase,
+      steps: Array.isArray(phase?.steps) ? phase.steps : [],
+    })),
+    lastSynced:
+      typeof b.lastSynced === "string" && !Number.isNaN(Date.parse(b.lastSynced))
+        ? b.lastSynced
+        : base.lastSynced,
+    id: freshId || typeof b.id !== "string" || !b.id ? uid() : b.id,
+  } as CustomBuild;
+}
+
 export function loadCustomBuilds(): CustomBuild[] {
   if (typeof window === "undefined") return [];
   try {
     const raw = window.localStorage.getItem(STORAGE_KEY);
     if (!raw) return [];
-    const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? parsed : [];
+    const parsed: unknown = JSON.parse(raw);
+    if (!Array.isArray(parsed)) return [];
+    return parsed
+      .map((b) => normalizeCustomBuild(b, false))
+      .filter((b): b is CustomBuild => b !== null);
   } catch {
     return [];
   }
 }
 
-export function saveCustomBuild(build: CustomBuild): void {
-  if (typeof window === "undefined") return;
+/** Returns false when storage is full or blocked, so the UI can warn. */
+export function saveCustomBuild(build: CustomBuild): boolean {
+  if (typeof window === "undefined") return false;
   const builds = loadCustomBuilds().filter((b) => b.id !== build.id);
   builds.unshift(build);
-  window.localStorage.setItem(STORAGE_KEY, JSON.stringify(builds));
+  try {
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(builds));
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 export function deleteCustomBuild(id: string): void {
@@ -101,9 +151,7 @@ export function decodeShare(encoded: string): CustomBuild | null {
     const bin = atob(b64);
     const bytes = Uint8Array.from(bin, (c) => c.charCodeAt(0));
     const json = new TextDecoder().decode(bytes);
-    const parsed = JSON.parse(json) as CustomBuild;
-    if (!parsed || typeof parsed !== "object" || !Array.isArray(parsed.progression)) return null;
-    return { ...parsed, id: uid() };
+    return normalizeCustomBuild(JSON.parse(json));
   } catch {
     return null;
   }

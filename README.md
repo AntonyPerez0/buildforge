@@ -44,7 +44,7 @@ as a PWA and fully usable offline. Pick your world — Diablo IV (Season 15) or 
   site pages, with keyboard navigation.
 - **Favorites pinning** — star builds; pinned to the top of both hubs.
 - **Live meta pipeline** — curated Season 15 snapshot cards + an auto-discovered **live guide
-  index** (85 D4 guides + 28 Forever spec guides), refreshed nightly.
+  index** (84 D4 guides + 28 Forever spec guides), refreshed nightly.
 - **Nightly sync report page** (`/sync`) — exactly what the pipeline checked on its last run.
 - **Forever launch hub** (`/forever/launch`) — day-one checklist (rulesets, access, name
   reservation, race/class combos, camping, Legacy), the December 9 raid unlock, new dungeons
@@ -111,13 +111,14 @@ BuildForge **summarizes and attributes** — it never reproduces guide content.
    stat priorities, rotations and watch-outs. They anchor to patch-stable mechanics and hedge
    anything seasonal.
 2. **Nightly automated sync** (`.github/workflows/sync.yml`, daily at 06:23 UTC):
-   - Fetches public guide indexes (Maxroll, Icy Veins, ClassicWoW.gg) — `robots.txt` honored
-     first, one request every 2 s, custom user-agent.
+   - Fetches public guide indexes (Maxroll; ClassicWoW.gg specs come from the site's own
+     nav) — `robots.txt` honored first, one request every 2 s, custom user-agent.
    - Refreshes curated source links, appends newly published guides as `tier: null` "NEW"
-     entries, and writes `src/data/synced/meta-snapshots.json` + a human-readable report.
+     entries, and keeps guides discovered on earlier runs (they age out after 120 days
+     unseen). Writes `src/data/synced/meta-snapshots.json` + a human-readable report.
    - If anything changed, the workflow **auto-commits and chains the Pages deploy** — the site
      is back online with fresh data within minutes.
-   - If every index is unreachable, previous data is kept untouched.
+   - If every remote index is unreachable, previous data is kept untouched.
 3. **Human curation stays human**: tiers and summaries live in
    `src/data/synced/curated-meta.json` — the bot never invents them. Newly discovered guides
    show a NEW badge until someone curates them.

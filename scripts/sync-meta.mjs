@@ -3,11 +3,14 @@
  * BuildForge nightly meta-sync pipeline.
  *
  * Runs daily via GitHub Actions (see .github/workflows/sync.yml):
- *   1. Fetches public guide indexes (Maxroll, Icy Veins, ClassicWoW.gg)
+ *   1. Fetches the public guide indexes (Maxroll; ClassicWoW.gg specs come
+ *      from that site's own nav)
  *   2. Honors robots.txt, rate-limits itself, identifies via a custom UA
  *   3. Refreshes curated snapshot source links when guides move
  *   4. Appends newly discovered guide entries (tier: null until a human curates)
- *   5. Writes src/data/synced/meta-snapshots.json + a human-readable report
+ *   5. Keeps guides discovered on earlier runs — they age out after
+ *      MAX_CARRIED_AGE_DAYS unseen — and writes src/data/synced/meta-snapshots.json
+ *      plus a human-readable report
  *
  * Tiers and summaries are curated in src/data/synced/curated-meta.json —
  * this script never invents them.
@@ -82,17 +85,6 @@ const INDEXES = [
         .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
         .join(" "),
   },
-  {
-    site: "Icy Veins",
-    game: "d4",
-    url: "https://www.icy-veins.com/d4/",
-    hrefMatch: /href="(\/d4\/guides\/[^"]+build[^"]+)"[^>]*>(.*?)<\/a>/gs,
-    titleFromHref: (href, inner) =>
-      decodeEntities(inner.replace(/<[^>]+>/g, " "))
-        .replace(/\s+by\s+[^ ]+$/i, "")
-        .replace(/\s+/g, " ")
-        .trim(),
-  },
 ];
 
 /** ClassicWoW.gg renders class guides client-side; these spec URLs come from the site's own nav. */
@@ -122,20 +114,11 @@ function guessClass(text) {
   return found ?? "Unknown";
 }
 
-function decodeEntities(s) {
-  return s
-    .replace(/&amp;/g, "&")
-    .replace(/&#0?39;|&apos;|&#x27;/g, "'")
-    .replace(/&quot;/g, '"')
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
 async function collectIndexEntries() {
   const fresh = [];
   const report = [];
+  /** Entries fetched from remote indexes — static entries never count. */
+  let remoteEntries = 0;
 
   for (const idx of INDEXES) {
     const url = new URL(idx.url);
@@ -147,15 +130,16 @@ async function collectIndexEntries() {
     }
     try {
       const html = await fetchText(idx.url);
+      const collected = [];
       let m;
       const seen = new Set();
       idx.hrefMatch.lastIndex = 0;
-      while ((m = idx.hrefMatch.exec(html)) && fresh.length < 250) {
+      while ((m = idx.hrefMatch.exec(html)) && collected.length < 250) {
         const title = idx.titleFromHref(m[1], m[2] ?? "");
         const key = title.toLowerCase();
         if (!title || seen.has(key)) continue;
         seen.add(key);
-        fresh.push({
+        collected.push({
           site: idx.site,
           game: idx.game,
           className: guessClass(title),
@@ -163,6 +147,8 @@ async function collectIndexEntries() {
           url: `${url.origin}${m[1]}`,
         });
       }
+      remoteEntries += collected.length;
+      fresh.push(...collected);
       console.log(`✓ ${idx.site}: ${seen.size} guide links`);
       report.push(`| ${idx.site} | ${idx.url} | ${seen.size} links |`);
     } catch (err) {
@@ -183,7 +169,7 @@ async function collectIndexEntries() {
   }
   report.push(`| ${STATIC_INDEX.site} | (static spec index from site nav) | ${STATIC_INDEX.specs.length} specs |`);
 
-  return { fresh, report };
+  return { fresh, report, remoteEntries };
 }
 
 function cap(s) {
@@ -200,14 +186,26 @@ async function main() {
   const curatedRaw = JSON.parse(await readFile(CURATED_FILE, "utf8"));
   const curated = curatedRaw.curated ?? [];
 
-  const { fresh, report } = await collectIndexEntries();
+  const { fresh, report, remoteEntries } = await collectIndexEntries();
+  const previous = await readPreviousSnapshots();
 
-  if (fresh.length === 0) {
-    console.log("\nAll indexes unreachable — keeping the previous snapshot file untouched.");
+  // Guard the promise in the README: if every remote index fails (or a redesign
+  // breaks link parsing), the static spec list alone must not overwrite a rich
+  // previous snapshot file.
+  if (remoteEntries === 0) {
+    console.log("\nNo remote index returned entries — keeping the previous snapshot file untouched.");
     await mkdir(SYNCED_DIR, { recursive: true });
     await writeFile(
       REPORT_FILE,
-      `# BuildForge nightly sync — ${today}\n\nAll indexes unreachable; no changes written.\n`,
+      [
+        `# BuildForge nightly sync — ${today}`,
+        "",
+        "| Source | Index | Result |",
+        "| --- | --- | --- |",
+        ...report,
+        "",
+        "Every remote index failed or returned nothing; previous snapshot data was kept untouched.\n",
+      ].join("\n"),
     );
     return;
   }
@@ -251,7 +249,7 @@ async function main() {
     });
   }
 
-  const snapshots = [...refreshed, ...discovered];
+  const snapshots = [...refreshed, ...discovered, ...carryPrevious(previous, curated, refreshed, discovered)];
   await mkdir(SYNCED_DIR, { recursive: true });
 
   const payload = {
@@ -273,13 +271,44 @@ async function main() {
   );
   report.push(
     "",
-    `${refreshed.length} curated snapshots refreshed · ${discovered.length} newly discovered (tier pending curation)`,
+    `${refreshed.length} curated snapshots refreshed · ${discovered.length} newly discovered · ${snapshots.length - refreshed.length - discovered.length} carried from earlier runs (tier pending curation)`,
     "",
     "Curate new entries by adding tier + summary to `src/data/synced/curated-meta.json`.",
   );
   await writeFile(REPORT_FILE, report.join("\n") + "\n");
 
   console.log(`\n${refreshed.length} curated + ${discovered.length} discovered → ${OUT_FILE}`);
+}
+
+/** Previously discovered entries (tier: null) kept from the last snapshot file. */
+async function readPreviousSnapshots() {
+  try {
+    const raw = JSON.parse(await readFile(OUT_FILE, "utf8"));
+    return Array.isArray(raw?.snapshots) ? raw.snapshots : [];
+  } catch {
+    return [];
+  }
+}
+
+/**
+ * Keep guides discovered on earlier runs that today's index pages didn't list —
+ * a redesign, pagination change or index reshuffle must not wipe them. A carried
+ * entry keeps its fetchedAt (its last-seen date), ages out after
+ * MAX_CARRIED_AGE_DAYS, and is dropped once a human curates or replaces it.
+ */
+const MAX_CARRIED_AGE_DAYS = 120;
+
+function carryPrevious(previous, curated, refreshed, discovered) {
+  const curatedIds = new Set(curated.map((e) => e.id));
+  const todayIds = new Set([...refreshed, ...discovered].map((s) => s.id));
+  const oldestKept = Date.now() - MAX_CARRIED_AGE_DAYS * 24 * 60 * 60 * 1000;
+  return previous.filter(
+    (s) =>
+      !todayIds.has(s.id) &&
+      !curatedIds.has(s.id) &&
+      typeof s.fetchedAt === "string" &&
+      Date.parse(s.fetchedAt) > oldestKept,
+  );
 }
 
 function discoverKeys(name) {

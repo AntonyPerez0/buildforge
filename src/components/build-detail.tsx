@@ -207,8 +207,8 @@ export function BuildDetail({ build }: { build: Build }) {
           </FadeUp>
           <FadeUp className="mt-6">
             <div className="panel divide-y divide-line/70">
-              {build.gear.map((g) => (
-                <div key={g.slot} className="flex flex-col gap-1.5 p-4 sm:flex-row sm:items-baseline sm:gap-4">
+              {build.gear.map((g, i) => (
+                <div key={`${g.slot}-${i}`} className="flex flex-col gap-1.5 p-4 sm:flex-row sm:items-baseline sm:gap-4">
                   <p className="w-28 shrink-0 text-sm font-semibold text-(--accent-bright)">{g.slot}</p>
                   <div className="min-w-0">
                     <p className="text-sm text-ink">{g.target}</p>
@@ -246,7 +246,7 @@ export function BuildDetail({ build }: { build: Build }) {
           <FadeUp className="mt-8">
             <ol className="grid gap-3 md:grid-cols-2">
               {build.statPriority.map((s, i) => (
-                <li key={s.label} className="panel flex items-start gap-4 p-4">
+                <li key={`${s.label}-${i}`} className="panel flex items-start gap-4 p-4">
                   <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg border border-(--accent-border) bg-(--accent-wash) font-mono text-sm font-bold text-(--accent-bright)">
                     {i + 1}
                   </span>
@@ -271,8 +271,8 @@ export function BuildDetail({ build }: { build: Build }) {
           </FadeUp>
           <FadeUp className="mt-8">
             <div className="grid gap-4 md:grid-cols-3">
-              {build.rotation.map((phase) => (
-                <div key={phase.phase} className="panel p-5">
+              {build.rotation.map((phase, i) => (
+                <div key={`${phase.phase}-${i}`} className="panel p-5">
                   <p className="eyebrow text-(--accent-bright)">{phase.phase}</p>
                   <ol className="mt-4 space-y-3">
                     {phase.steps.map((step, i) => (

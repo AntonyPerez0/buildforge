@@ -28,7 +28,7 @@ export const GAMES: Record<GameId, GameConfig> = {
     displayClass: "display-d4",
     href: "/d4",
     statusChip: "Season 15 · Hell's Legacy",
-    metaLine: "Patch 3.2 · Meta synced from Maxroll & Icy Veins",
+    metaLine: "Patch 3.2 · Meta synced from Maxroll",
     classOrder: [
       "Barbarian",
       "Rogue",
