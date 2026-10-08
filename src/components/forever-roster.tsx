@@ -8,16 +8,16 @@ import { buildHref } from "@/lib/builds";
 import { getFavorites, toggleFavorite, FAVORITES_EVENT } from "@/lib/favorites";
 import { GAMES } from "@/lib/games";
 
-/** Classic-era WoW class colors, brightened for dark backgrounds. */
+/** Classic-era WoW class colors (canonical values), brightened for dark backgrounds. */
 const CLASS_COLORS: Record<string, string> = {
   Warrior: "#c69b6d",
   Paladin: "#f48cba",
-  Hunter: "#abd473",
+  Hunter: "#aad372",
   Rogue: "#fff569",
   Priest: "#ffffff",
   Shaman: "#4a9fe3",
-  Mage: "#69ccf0",
-  Warlock: "#9482c9",
+  Mage: "#68ccef",
+  Warlock: "#9382c9",
   Druid: "#ff7d0a",
   Monk: "#00ff96",
   "Death Knight": "#c41f3e",

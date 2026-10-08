@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Cinzel, Inter, Marcellus } from "next/font/google";
+import { Cinzel, Fondamento, Inter, Marcellus } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -26,6 +26,14 @@ const marcellus = Marcellus({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-marcellus",
+  display: "swap",
+});
+
+/** Morpheus stand-in — quest titles, parchment text (WoW's medieval script). */
+const fondamento = Fondamento({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-fondamento",
   display: "swap",
 });
 
@@ -81,7 +89,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${cinzel.variable} ${marcellus.variable} h-full antialiased`}
+      className={`${inter.variable} ${cinzel.variable} ${marcellus.variable} ${fondamento.variable} h-full antialiased`}
     >
       <body className="min-h-full">
         <a
