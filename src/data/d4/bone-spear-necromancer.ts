@@ -7,7 +7,7 @@ export const boneSpearNecromancer: Build = {
   name: "Bone Spear Necromancer",
   className: "Necromancer",
   role: "Ranged precision caster",
-  tier: "S",
+  tier: "C",
   difficulty: 2,
   tagline: "One spear through the whole pack — precision casting with a graveyard on retainer.",
   summary:
@@ -18,13 +18,13 @@ export const boneSpearNecromancer: Build = {
   sources: [
     {
       site: "Maxroll",
-      url: "https://maxroll.gg/d4/build-guides",
-      label: "Maxroll Necromancer build guides",
+      url: "https://maxroll.gg/d4/build-guides/bone-spear-necromancer-guide",
+      label: "Maxroll Bone Spear Necromancer guide",
     },
     {
       site: "Icy Veins",
-      url: "https://www.icy-veins.com/d4/necromancer/builds/",
-      label: "Icy Veins Necromancer builds",
+      url: "https://www.icy-veins.com/d4/guides/endgame-tier-list/",
+      label: "Icy Veins endgame tier list",
     },
   ],
   meta: {

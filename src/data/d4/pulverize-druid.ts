@@ -7,7 +7,7 @@ export const pulverizeDruid: Build = {
   name: "Pulverize Druid",
   className: "Druid",
   role: "Shapeshift melee AoE tank",
-  tier: "A",
+  tier: "B",
   difficulty: 2,
   tagline: "Slam packs into paste. Fortify through everything they throw back.",
   summary:
@@ -18,13 +18,13 @@ export const pulverizeDruid: Build = {
   sources: [
     {
       site: "Maxroll",
-      url: "https://maxroll.gg/d4/build-guides",
-      label: "Maxroll Druid build guides",
+      url: "https://maxroll.gg/d4/build-guides/pulverize-druid-guide",
+      label: "Maxroll Pulverize Druid guide",
     },
     {
       site: "Icy Veins",
-      url: "https://www.icy-veins.com/d4/druid/builds/",
-      label: "Icy Veins Druid builds",
+      url: "https://www.icy-veins.com/d4/guides/shifter-pulverize-druid-build/",
+      label: "Icy Veins Shifter Pulverize Druid build",
     },
   ],
   meta: {

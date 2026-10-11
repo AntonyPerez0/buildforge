@@ -7,34 +7,34 @@ import { SectionHeading } from "@/components/ui-bits";
 export const metadata: Metadata = {
   title: "About — data sources & sync pipeline",
   description:
-    "How BuildForge keeps build data fresh: a maintainer-run sync pipeline with robots.txt compliance, rate limiting and attribution to Maxroll, Icy Veins, ClassicWoW.gg and Wowhead.",
+    "How BuildForge keeps build data fresh: tiers read nightly from the Maxroll and Icy Veins tier lists, with robots.txt compliance, rate limiting and attribution.",
 };
 
 const SOURCES = [
   {
     name: "Maxroll",
-    url: "https://maxroll.gg/d4/build-guides",
-    use: "Diablo IV build guides, tier lists and seasonal compendiums.",
+    url: "https://maxroll.gg/d4/tierlists/endgame-tier-list",
+    use: "Diablo IV tier lists (endgame, leveling) and build guides — the primary tier source for D4. Maxroll does not cover WoW Forever.",
   },
   {
     name: "Icy Veins",
-    url: "https://www.icy-veins.com/d4/",
-    use: "Diablo IV class builds and seasonal meta coverage.",
+    url: "https://www.icy-veins.com/d4/guides/endgame-tier-list/",
+    use: "Diablo IV tier lists and build guides, plus the WoW Forever spec guides and tier-list hub (Forever tier lists are marked Coming Soon).",
   },
   {
     name: "ClassicWoW.gg",
     url: "https://classicwow.gg/forever",
-    use: "WoW Forever (Classic+) class guides, talent calculator and itemization notes.",
+    use: "WoW Forever class guides, talent calculator and itemization notes — linked alongside Icy Veins.",
   },
   {
     name: "Wowhead",
     url: "https://www.wowhead.com/forever",
-    use: "WoW Forever news, databases and class coverage.",
+    use: "WoW Forever news and databases.",
   },
   {
     name: "Blizzard News",
     url: "https://worldofwarcraft.blizzard.com/en-us/news/24302093/carve-a-new-path-with-world-of-warcraft-forever",
-    use: "Official World of Warcraft: Forever announcements and roadmap.",
+    use: "Official World of Warcraft: Forever announcements, rulesets and roadmap; Diablo IV season notes.",
   },
 ];
 
@@ -42,12 +42,12 @@ const PIPELINE = [
   {
     icon: Bot,
     title: "Nightly automated sync",
-    body: "A scheduled GitHub Action runs the sync pipeline every night: guide indexes are fetched robots-aware and rate-limited, curated source links are refreshed, newly published guides appear as NEW entries, and if anything changed the site rebuilds and redeploys automatically. The footer shows the latest sync date.",
+    body: "A scheduled GitHub Action runs the pipeline every night: Maxroll and Icy Veins guide indexes and tier lists are fetched robots-aware and rate-limited, newly published guides join the index, and if anything changed the site rebuilds and redeploys automatically.",
   },
   {
     icon: Database,
-    title: "Summaries + links, never copies",
-    body: "The pipeline stores build names, tiers and one-paragraph summaries with a link back to the full guide. It never reproduces full guide content — the source sites earn the traffic, BuildForge earns the glance.",
+    title: "Tiers are read, never invented",
+    body: "Every tier comes from a Maxroll or Icy Veins tier list and links back to it. The sync re-reads each list nightly; if a page can't be parsed cleanly, the last human-verified placements stay — and the sync report says which.",
   },
   {
     icon: ScrollText,
@@ -57,7 +57,7 @@ const PIPELINE = [
   {
     icon: ShieldCheck,
     title: "Every number has an escape hatch",
-    body: "Seasonal balance changes. Every build page carries a last-synced date and links to its sources, so a stale number is one click away from being corrected. Tiers on auto-discovered guides stay blank until a human curates them.",
+    body: "Seasonal balance changes. Every build page carries its update date and links to its sources, and only build names, tiers and links are stored — never guide content. The source sites earn the traffic; BuildForge earns the glance.",
   },
 ];
 
@@ -117,27 +117,29 @@ export default function AboutPage() {
             <p className="mt-3 text-sm leading-relaxed text-ink-muted">
               BuildForge is open source. The sync pipeline is a local CLI — clone the repo,
               run <code className="rounded bg-surface-raised px-1.5 py-0.5 font-mono text-xs text-(--accent-bright)">npm run sync</code>,
-              and it refreshes the live-meta snapshot data with fresh timestamps. Open a PR
-              when the meta shifts and the whole site updates.
+              and it re-reads the guide indexes and tier lists. Edit tiers by hand in{" "}
+              <code className="rounded bg-surface-raised px-1.5 py-0.5 font-mono text-xs text-(--accent-bright)">curated-meta.json</code>{" "}
+              and apply them without fetching via{" "}
+              <code className="rounded bg-surface-raised px-1.5 py-0.5 font-mono text-xs text-(--accent-bright)">npm run sync -- --offline</code>.
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
               <a
                 href="https://github.com/AntonyPerez0/buildforge"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg bg-(--accent) px-4 py-2 text-sm font-semibold text-base transition-transform hover:scale-[1.03]"
+                className="btn btn-primary"
               >
                 View on GitHub
               </a>
               <Link
                 href="/sync"
-                className="inline-flex items-center gap-2 rounded-lg border border-line bg-surface px-4 py-2 text-sm font-medium text-ink-muted hover:text-ink"
+                className="btn"
               >
                 Nightly sync report
               </Link>
               <Link
                 href="/builder"
-                className="inline-flex items-center gap-2 rounded-lg border border-line bg-surface px-4 py-2 text-sm font-medium text-ink-muted hover:text-ink"
+                className="btn"
               >
                 Try the Builder
               </Link>

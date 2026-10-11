@@ -1,113 +1,126 @@
 {
-  "_comment": "Human-curated meta layer: tiers and summaries are edited here. The nightly sync (scripts/sync-meta.mjs) refreshes source links and appends newly discovered guide entries on top. Tier stays null until a human verifies it.",
-  "curated": [
+  "_comment": "Human-verified tier layer. Tiers come from Maxroll and Icy Veins tier lists only — never invented. Each list records where it lives and when a human last checked it. The nightly sync (scripts/sync-meta.mjs) re-reads every list and replaces that list's assignments with the live ones when the page parses cleanly; otherwise these verified assignments stay. 'guides' are hand-verified guide links added to the live guide index alongside what the sync discovers.",
+  "tierLists": [
     {
-      "id": "d4-snap-blazing-scream-warlock",
+      "id": "maxroll-d4-endgame",
+      "site": "Maxroll",
       "game": "d4",
-      "className": "Warlock",
-      "buildName": "Blazing Scream Warlock",
-      "tier": "S",
-      "summary": "Maxroll and Icy Veins both report Warlock as the story of Season 15 — Blazing Scream has been clearing Pit 150 days into the season. Fresh from the live meta; open the full guide for the complete skill tree, gear list and tuning notes.",
-      "sources": [
-        { "site": "Maxroll", "url": "https://maxroll.gg/d4/build-guides/blazing-scream-warlock-guide", "label": "Maxroll Blazing Scream Warlock guide" },
-        { "site": "Icy Veins", "url": "https://www.icy-veins.com/d4/warlock/builds/", "label": "Icy Veins Warlock builds" }
-      ]
+      "list": "Endgame",
+      "url": "https://maxroll.gg/d4/tierlists/endgame-tier-list",
+      "sourceUpdated": "2026-09-26",
+      "checkedAt": "2026-10-11",
+      "note": "Overall endgame list for Season 15. A/B/C rows here are the verified subset — open the list for every entry."
     },
     {
-      "id": "d4-snap-apocalypse-warlock",
+      "id": "icyveins-d4-endgame",
+      "site": "Icy Veins",
       "game": "d4",
-      "className": "Warlock",
-      "buildName": "Apocalypse Warlock",
-      "tier": "A",
-      "summary": "The other Warlock engine riding the class's Season 15 surge — a second chassis on the same dominant power base. Fresh from the live meta; open the full guide for the complete skill tree, gear list and tuning notes.",
-      "sources": [
-        { "site": "Maxroll", "url": "https://maxroll.gg/d4/build-guides/apocalypse-warlock-guide", "label": "Maxroll Apocalypse Warlock guide" },
-        { "site": "Icy Veins", "url": "https://www.icy-veins.com/d4/warlock/builds/", "label": "Icy Veins Warlock builds" }
-      ]
+      "list": "Endgame",
+      "url": "https://www.icy-veins.com/d4/guides/endgame-tier-list/",
+      "checkedAt": "2026-10-11",
+      "note": "Ranks endgame push builds for Torment XII and the Pit. Only the verified S tier is mirrored until the nightly sync reads the full list."
     },
     {
-      "id": "d4-snap-dread-claws-warlock",
+      "id": "maxroll-d4-leveling",
+      "site": "Maxroll",
       "game": "d4",
-      "className": "Warlock",
-      "buildName": "Dread Claws Warlock",
-      "tier": "A",
-      "summary": "The new class's leveling pickup — a melee-flavored Warlock that gets you to Torment fast. Leveling-focused: open the full guide for the endgame transition path.",
-      "sources": [
-        { "site": "Maxroll", "url": "https://maxroll.gg/d4/build-guides", "label": "Maxroll Warlock build guides" },
-        { "site": "Icy Veins", "url": "https://www.icy-veins.com/d4/warlock/builds/", "label": "Icy Veins Warlock builds" }
-      ]
+      "list": "Leveling",
+      "url": "https://maxroll.gg/d4/tierlists/leveling-tier-list",
+      "sourceUpdated": "2026-09-14",
+      "checkedAt": "2026-10-11"
     },
     {
-      "id": "d4-snap-divine-lance-paladin",
+      "id": "icyveins-d4-leveling",
+      "site": "Icy Veins",
       "game": "d4",
-      "className": "Paladin",
-      "buildName": "Divine Lance Paladin",
-      "tier": "A",
-      "summary": "The Paladin's return put holy builds back on the board, and Divine Lance leads them. Fresh from the live meta; open the full guide for the complete skill tree, gear list and tuning notes.",
-      "sources": [
-        { "site": "Maxroll", "url": "https://maxroll.gg/d4/build-guides/divine-lance-paladin-guide", "label": "Maxroll Divine Lance Paladin guide" },
-        { "site": "Icy Veins", "url": "https://www.icy-veins.com/d4/paladin/builds/", "label": "Icy Veins Paladin builds" }
-      ]
+      "list": "Leveling",
+      "url": "https://www.icy-veins.com/d4/guides/leveling-tier-list/",
+      "checkedAt": "2026-10-11"
     },
     {
-      "id": "d4-snap-shield-charge-paladin",
-      "game": "d4",
-      "className": "Paladin",
-      "buildName": "Shield Charge Paladin",
-      "tier": "A",
-      "summary": "The bruisier take on the returned class — charge through packs instead of spearing them. Fresh from the live meta; open the full guide for the complete skill tree, gear list and tuning notes.",
-      "sources": [
-        { "site": "Maxroll", "url": "https://maxroll.gg/d4/build-guides/shield-charge-paladin-guide", "label": "Maxroll Shield Charge Paladin guide" },
-        { "site": "Icy Veins", "url": "https://www.icy-veins.com/d4/paladin/builds/", "label": "Icy Veins Paladin builds" }
-      ]
-    },
-    {
-      "id": "d4-snap-counterswarm-spiritborn",
-      "game": "d4",
-      "className": "Spiritborn",
-      "buildName": "Counterswarm Spiritborn",
-      "tier": "A",
-      "summary": "Spiritborn stays meta-relevant in Season 15 with this counter-based swarm engine. Fresh from the live meta; open the full guide for the complete skill tree, gear list and tuning notes.",
-      "sources": [
-        { "site": "Maxroll", "url": "https://maxroll.gg/d4/build-guides/counterswarm-spiritborn-guide", "label": "Maxroll Counterswarm Spiritborn guide" },
-        { "site": "Icy Veins", "url": "https://www.icy-veins.com/d4/spiritborn/builds/", "label": "Icy Veins Spiritborn builds" }
-      ]
-    },
-    {
-      "id": "d4-snap-cold-rain-of-arrows-rogue",
-      "game": "d4",
-      "className": "Rogue",
-      "buildName": "Cold Rain of Arrows Rogue",
-      "tier": "A",
-      "summary": "The Rogue's Season 15 answer for AoE farming — chill the screen, then arrow it down. Fresh from the live meta; open the full guide for the complete skill tree, gear list and tuning notes.",
-      "sources": [
-        { "site": "Maxroll", "url": "https://maxroll.gg/d4/build-guides/rain-of-arrows-rogue-guide", "label": "Maxroll Rain of Arrows Rogue guide" },
-        { "site": "Icy Veins", "url": "https://www.icy-veins.com/d4/rogue/builds/", "label": "Icy Veins Rogue builds" }
-      ]
-    },
-    {
-      "id": "d4-snap-lacerate-druid",
-      "game": "d4",
-      "className": "Druid",
-      "buildName": "Lacerate Druid",
-      "tier": "B",
-      "summary": "The Werebear swipe still clears Torment content without heroics — solid, not spectacular. Fresh from the live meta; open the full guide for the complete skill tree, gear list and tuning notes.",
-      "sources": [
-        { "site": "Maxroll", "url": "https://maxroll.gg/d4/build-guides/lacerate-druid-guide", "label": "Maxroll Lacerate Druid guide" },
-        { "site": "Icy Veins", "url": "https://www.icy-veins.com/d4/druid/builds/", "label": "Icy Veins Druid builds" }
-      ]
-    },
-    {
-      "id": "d4-snap-call-of-the-ancients-barbarian",
-      "game": "d4",
-      "className": "Barbarian",
-      "buildName": "Call of the Ancients Barbarian",
-      "tier": "B",
-      "summary": "The shout-and-summon classic stays a solid B into Season 15. Fresh from the live meta; open the full guide for the complete skill tree, gear list and tuning notes.",
-      "sources": [
-        { "site": "Maxroll", "url": "https://maxroll.gg/d4/build-guides/call-of-the-ancients-barbarian-guide", "label": "Maxroll Call of the Ancients Barbarian guide" },
-        { "site": "Icy Veins", "url": "https://www.icy-veins.com/d4/barbarian/builds/", "label": "Icy Veins Barbarian builds" }
-      ]
+      "id": "icyveins-forever-hub",
+      "site": "Icy Veins",
+      "game": "forever",
+      "list": "Raid & PvP",
+      "url": "https://www.icy-veins.com/wow-forever/tier-list-hub",
+      "checkedAt": "2026-10-11",
+      "status": "coming-soon",
+      "note": "Icy Veins' Forever tier lists are marked Coming Soon. Maxroll has no Forever coverage. Ratings on Forever builds are BuildForge's own until Icy Veins publishes — the sync picks them up automatically."
     }
+  ],
+  "tierAssignments": [
+    { "list": "maxroll-d4-endgame", "tier": "S", "build": "Blazing Scream Warlock", "className": "Warlock", "url": "https://maxroll.gg/d4/build-guides/blazing-scream-warlock-guide" },
+    { "list": "maxroll-d4-endgame", "tier": "S", "build": "Counterswarm Spiritborn", "className": "Spiritborn", "url": "https://maxroll.gg/d4/build-guides/counterswarm-spiritborn-guide" },
+    { "list": "maxroll-d4-endgame", "tier": "S", "build": "Blood Wave Necromancer", "className": "Necromancer", "url": "https://maxroll.gg/d4/build-guides/blood-wave-necromancer-guide" },
+    { "list": "maxroll-d4-endgame", "tier": "S", "build": "Apocalypse Warlock", "className": "Warlock", "url": "https://maxroll.gg/d4/build-guides/apocalypse-warlock-guide" },
+    { "list": "maxroll-d4-endgame", "tier": "S", "build": "Stinger Spiritborn", "className": "Spiritborn", "url": "https://maxroll.gg/d4/build-guides/stinger-spiritborn-guide" },
+    { "list": "maxroll-d4-endgame", "tier": "S", "build": "Whirlwind Barbarian", "className": "Barbarian", "url": "https://maxroll.gg/d4/build-guides/whirlwind-barbarian-guide" },
+    { "list": "maxroll-d4-endgame", "tier": "S", "build": "Poison Penetrating Shot Rogue", "className": "Rogue", "url": "https://maxroll.gg/d4/build-guides/penetrating-shot-rogue-guide" },
+    { "list": "maxroll-d4-endgame", "tier": "S", "build": "Shield of Retribution Paladin", "className": "Paladin", "url": "https://maxroll.gg/d4/build-guides/shield-of-retribution-paladin-guide" },
+    { "list": "maxroll-d4-endgame", "tier": "S", "build": "Firewall Sorcerer", "className": "Sorcerer", "url": "https://maxroll.gg/d4/build-guides/firewall-sorcerer-guide" },
+    { "list": "maxroll-d4-endgame", "tier": "S", "build": "Dance of Knives Rogue", "className": "Rogue", "url": "https://maxroll.gg/d4/build-guides/dance-of-knives-rogue-guide" },
+
+    { "list": "maxroll-d4-endgame", "tier": "A", "build": "Divine Lance Paladin", "className": "Paladin", "url": "https://maxroll.gg/d4/build-guides/divine-lance-paladin-guide" },
+    { "list": "maxroll-d4-endgame", "tier": "A", "build": "Lacerate Druid", "className": "Druid", "url": "https://maxroll.gg/d4/build-guides/lacerate-druid-guide" },
+    { "list": "maxroll-d4-endgame", "tier": "A", "build": "Rend Barbarian", "className": "Barbarian", "url": "https://maxroll.gg/d4/build-guides/rend-barbarian-guide" },
+    { "list": "maxroll-d4-endgame", "tier": "A", "build": "Shield Charge Paladin", "className": "Paladin", "url": "https://maxroll.gg/d4/build-guides/shield-charge-paladin-guide" },
+    { "list": "maxroll-d4-endgame", "tier": "A", "build": "Storm Strike Druid", "className": "Druid", "url": "https://maxroll.gg/d4/build-guides/storm-strike-druid-guide" },
+    { "list": "maxroll-d4-endgame", "tier": "A", "build": "Flame Charge Barbarian", "className": "Barbarian", "url": null },
+    { "list": "maxroll-d4-endgame", "tier": "A", "build": "Lunatic Warlock", "className": "Warlock", "url": null },
+    { "list": "maxroll-d4-endgame", "tier": "A", "build": "Bone Spirit Necromancer", "className": "Necromancer", "url": "https://maxroll.gg/d4/build-guides/bone-spirit-necromancer-guide" },
+    { "list": "maxroll-d4-endgame", "tier": "A", "build": "Landslide Druid", "className": "Druid", "url": null },
+    { "list": "maxroll-d4-endgame", "tier": "A", "build": "Heartseeker Rogue", "className": "Rogue", "url": "https://maxroll.gg/d4/build-guides/heartseeker-rogue-specialized-guide" },
+    { "list": "maxroll-d4-endgame", "tier": "A", "build": "Cold Rain of Arrows Rogue", "className": "Rogue", "url": "https://maxroll.gg/d4/build-guides/rain-of-arrows-rogue-guide" },
+    { "list": "maxroll-d4-endgame", "tier": "A", "build": "Tornado Druid", "className": "Druid", "url": "https://maxroll.gg/d4/build-guides/tornado-druid-guide" },
+    { "list": "maxroll-d4-endgame", "tier": "A", "build": "Minion Necromancer", "className": "Necromancer", "url": "https://maxroll.gg/d4/build-guides/minion-necromancer-guide" },
+    { "list": "maxroll-d4-endgame", "tier": "A", "build": "Poison Twisting Blades Rogue", "className": "Rogue", "url": "https://maxroll.gg/d4/build-guides/twisting-blades-rogue-guide" },
+    { "list": "maxroll-d4-endgame", "tier": "A", "build": "Rapid Fire Rogue", "className": "Rogue", "url": "https://maxroll.gg/d4/build-guides/rapid-fire-rogue-guide" },
+    { "list": "maxroll-d4-endgame", "tier": "A", "build": "Minion Barbarian", "className": "Barbarian", "url": "https://maxroll.gg/d4/build-guides/minion-barbarian-guide" },
+
+    { "list": "maxroll-d4-endgame", "tier": "B", "build": "Pulverize Druid", "className": "Druid", "url": "https://maxroll.gg/d4/build-guides/pulverize-druid-guide" },
+    { "list": "maxroll-d4-endgame", "tier": "B", "build": "Lightning Storm Druid", "className": "Druid", "url": null },
+    { "list": "maxroll-d4-endgame", "tier": "B", "build": "Boulder Druid", "className": "Druid", "url": "https://maxroll.gg/d4/build-guides/boulder-druid-guide" },
+
+    { "list": "maxroll-d4-endgame", "tier": "C", "build": "Bone Spear Necromancer", "className": "Necromancer", "url": "https://maxroll.gg/d4/build-guides/bone-spear-necromancer-guide" },
+    { "list": "maxroll-d4-endgame", "tier": "C", "build": "Fireball Sorcerer", "className": "Sorcerer", "url": "https://maxroll.gg/d4/build-guides/fireball-sorcerer-guide" },
+    { "list": "maxroll-d4-endgame", "tier": "C", "build": "Army of the Dead Necromancer", "className": "Necromancer", "url": null },
+    { "list": "maxroll-d4-endgame", "tier": "C", "build": "Sever Necromancer", "className": "Necromancer", "url": "https://maxroll.gg/d4/build-guides/sever-necromancer-endgame-guide" },
+    { "list": "maxroll-d4-endgame", "tier": "C", "build": "Companion Druid", "className": "Druid", "url": "https://maxroll.gg/d4/build-guides/companion-druid-guide" },
+
+    { "list": "icyveins-d4-endgame", "tier": "S", "build": "Whirlwind Barbarian", "className": "Barbarian", "url": "https://www.icy-veins.com/d4/guides/whirlwind-barbarian-build" },
+    { "list": "icyveins-d4-endgame", "tier": "S", "build": "Hammer of the Ancients Barbarian", "className": "Barbarian", "url": null },
+    { "list": "icyveins-d4-endgame", "tier": "S", "build": "Penetrating Shot Rogue", "className": "Rogue", "url": null },
+    { "list": "icyveins-d4-endgame", "tier": "S", "build": "Rapid Fire Rogue", "className": "Rogue", "url": "https://www.icy-veins.com/d4/guides/rapid-fire-rogue-build" },
+    { "list": "icyveins-d4-endgame", "tier": "S", "build": "Blazing Scream Warlock", "className": "Warlock", "url": "https://www.icy-veins.com/d4/guides/hellfire-blazing-scream-warlock-build" },
+
+    { "list": "maxroll-d4-leveling", "tier": "S", "build": "Dance of Knives Rogue", "className": "Rogue", "url": null },
+    { "list": "maxroll-d4-leveling", "tier": "S", "build": "Frenzy Throw Barbarian", "className": "Barbarian", "url": null },
+    { "list": "maxroll-d4-leveling", "tier": "S", "build": "Barrage Rogue", "className": "Rogue", "url": null },
+    { "list": "maxroll-d4-leveling", "tier": "S", "build": "Minion Necromancer", "className": "Necromancer", "url": null },
+    { "list": "maxroll-d4-leveling", "tier": "S", "build": "Blizzard Sorcerer", "className": "Sorcerer", "url": null },
+    { "list": "maxroll-d4-leveling", "tier": "S", "build": "Shield of Retribution Paladin", "className": "Paladin", "url": null },
+    { "list": "maxroll-d4-leveling", "tier": "S", "build": "Stinger Spiritborn", "className": "Spiritborn", "url": null },
+    { "list": "maxroll-d4-leveling", "tier": "S", "build": "Rock Splitter Thorns Spiritborn", "className": "Spiritborn", "url": null },
+    { "list": "maxroll-d4-leveling", "tier": "A", "build": "Whirlwind Barbarian", "className": "Barbarian", "url": null },
+    { "list": "maxroll-d4-leveling", "tier": "A", "build": "Dread Claws Warlock", "className": "Warlock", "url": "https://maxroll.gg/d4/build-guides/dread-claws-warlock-leveling-guide" },
+    { "list": "maxroll-d4-leveling", "tier": "A", "build": "Blessed Hammer Paladin", "className": "Paladin", "url": null }
+  ],
+  "guides": [
+    { "site": "Icy Veins", "game": "d4", "title": "Whirlwind Barbarian", "url": "https://www.icy-veins.com/d4/guides/whirlwind-barbarian-build/" },
+    { "site": "Icy Veins", "game": "d4", "title": "Rapid Fire Rogue", "url": "https://www.icy-veins.com/d4/guides/rapid-fire-rogue-build/" },
+    { "site": "Icy Veins", "game": "d4", "title": "Dance of Knives Rogue", "url": "https://www.icy-veins.com/d4/guides/dance-of-knives-rogue-build/" },
+    { "site": "Icy Veins", "game": "d4", "title": "Hellfire Blazing Scream Warlock", "url": "https://www.icy-veins.com/d4/guides/hellfire-blazing-scream-warlock-build/" },
+    { "site": "Icy Veins", "game": "d4", "title": "Fireball Sorcerer", "url": "https://www.icy-veins.com/d4/guides/fireball-sorcerer-build/" },
+    { "site": "Icy Veins", "game": "d4", "title": "Shifter Pulverize Druid", "url": "https://www.icy-veins.com/d4/guides/shifter-pulverize-druid-build/" },
+
+    { "site": "Icy Veins", "game": "forever", "title": "Fury Warrior", "url": "https://www.icy-veins.com/wow-forever/fury-warrior-melee-dps-pve-guide" },
+    { "site": "Icy Veins", "game": "forever", "title": "Retribution Paladin", "url": "https://www.icy-veins.com/wow-forever/retribution-paladin-melee-dps-pve-guide" },
+    { "site": "Icy Veins", "game": "forever", "title": "Enhancement Shaman", "url": "https://www.icy-veins.com/wow-forever/enhancement-shaman-melee-dps-pve-guide" },
+    { "site": "Icy Veins", "game": "forever", "title": "Combat Rogue", "url": "https://www.icy-veins.com/wow-forever/combat-rogue-melee-dps-pve-guide" },
+    { "site": "Icy Veins", "game": "forever", "title": "Beast Mastery Hunter", "url": "https://www.icy-veins.com/wow-forever/beast-mastery-hunter-ranged-dps-pve-guide" },
+    { "site": "Icy Veins", "game": "forever", "title": "Affliction Warlock", "url": "https://www.icy-veins.com/wow-forever/affliction-warlock-ranged-dps-pve-guide" },
+    { "site": "Icy Veins", "game": "forever", "title": "Frost Mage", "url": "https://www.icy-veins.com/wow-forever/frost-mage-ranged-dps-pve-guide" },
+    { "site": "Icy Veins", "game": "forever", "title": "Shadow Priest", "url": "https://www.icy-veins.com/wow-forever/shadow-priest-ranged-dps-pve-guide" },
+    { "site": "Icy Veins", "game": "forever", "title": "Holy Priest", "url": "https://www.icy-veins.com/wow-forever/holy-priest-healer-pve-guide" }
   ]
 }

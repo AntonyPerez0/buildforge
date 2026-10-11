@@ -12,7 +12,7 @@ export const chainLightningSorcerer: Build = {
   name: "Chain Lightning Sorcerer",
   className: "Sorcerer",
   role: "Ranged AoE caster",
-  tier: "S",
+  tier: "B",
   difficulty: 3,
   tagline: "Cast forever, blink on cooldown, let the sparks do the killing.",
   summary:
@@ -23,13 +23,13 @@ export const chainLightningSorcerer: Build = {
   sources: [
     {
       site: "Maxroll",
-      url: "https://maxroll.gg/d4/build-guides",
-      label: "Maxroll Sorcerer build guides",
+      url: "https://maxroll.gg/d4/tierlists/sorcerer-endgame-tier-list",
+      label: "Maxroll Sorcerer tier list (no Season 15 Chain Lightning guide)",
     },
     {
       site: "Icy Veins",
-      url: "https://www.icy-veins.com/d4/sorcerer/builds/",
-      label: "Icy Veins Sorcerer builds",
+      url: "https://www.icy-veins.com/d4/guides/endgame-tier-list/",
+      label: "Icy Veins endgame tier list",
     },
   ],
   meta: {

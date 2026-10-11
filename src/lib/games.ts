@@ -1,5 +1,5 @@
 import type { GameId } from "@/data/types";
-import { FOREVER_IN_BETA, FOREVER_LAUNCH_LEVEL_CAP, FOREVER_LEVEL_CAP } from "@/lib/forever";
+import { FOREVER_DATES, FOREVER_IN_BETA, FOREVER_LAUNCH_LEVEL_CAP, FOREVER_LEVEL_CAP } from "@/lib/forever";
 
 export interface GameConfig {
   id: GameId;
@@ -23,12 +23,12 @@ export const GAMES: Record<GameId, GameConfig> = {
     shortLabel: "D4",
     tagline: "Sanctuary, seasons, and the Pit.",
     description:
-      "Meta builds for Season 15: Hell's Legacy — leveling paths that tell you exactly what to take at every level, gear priorities, and zero-guessing gotchas.",
+      "Season 15 — Season of Hell's Legacy, patch 3.2. Leveling paths that tell you exactly what to take at every level, gear priorities and zero-guessing gotchas, ranked against the Maxroll and Icy Veins tier lists.",
     themeClass: "game-d4",
     displayClass: "display-d4",
     href: "/d4",
     statusChip: "Season 15 · Hell's Legacy",
-    metaLine: "Patch 3.2 · Meta synced from Maxroll",
+    metaLine: "Patch 3.2 · Tiers from Maxroll & Icy Veins",
     classOrder: [
       "Barbarian",
       "Rogue",
@@ -46,15 +46,15 @@ export const GAMES: Record<GameId, GameConfig> = {
     shortLabel: "Forever",
     tagline: "Classic+, the way it was meant to continue.",
     description: FOREVER_IN_BETA
-      ? `World of Warcraft: Forever (Classic+) — the beta is live with a level ${FOREVER_LEVEL_CAP} cap. Classic trees with Forever twists; the full 1–${FOREVER_LAUNCH_LEVEL_CAP} tracks return at launch on Nov 4.`
+      ? `World of Warcraft: Forever (Classic+) — the beta runs to level ${FOREVER_LEVEL_CAP} until ${FOREVER_DATES.betaEnds}. Classic trees with Forever twists; the full 1–${FOREVER_LAUNCH_LEVEL_CAP} tracks return at launch on ${FOREVER_DATES.launch}.`
       : "World of Warcraft: Forever (Classic+) — level 60 Azeroth with new talents, dungeons and raids. Classic trees with Forever twists, from level 1 to raid-ready.",
     themeClass: "game-forever",
     displayClass: "display-forever",
     href: "/forever",
-    statusChip: "Beta live · Launches Nov 4, 2026",
+    statusChip: FOREVER_IN_BETA ? `Beta live · Launches ${FOREVER_DATES.launch}` : "Live · Level 60",
     metaLine: FOREVER_IN_BETA
-      ? `Beta cap ${FOREVER_LEVEL_CAP} · Classic+ trees · Full game Nov 4`
-      : "Level 60 · Classic+ trees · Raids unlock Dec 9",
+      ? `Beta cap ${FOREVER_LEVEL_CAP} · Guides from Icy Veins · Full game Nov 4`
+      : "Level 60 · Guides from Icy Veins · Raids unlock Dec 9",
     classOrder: [
       "Warrior",
       "Paladin",

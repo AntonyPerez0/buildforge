@@ -78,7 +78,9 @@ export function GateDiagram({ build }: { build: Build }) {
               <div className={cn("min-w-0 pb-1", gate && "pt-0.5")}>
                 <p className="text-[13px] font-semibold text-ink">
                   Levels {node.levels}
-                  <span className="ml-2 font-normal text-ink-dim">{node.points} points</span>
+                  <span className="ml-2 font-normal text-ink-dim">
+                    {node.points} {node.points === 1 ? "point" : "points"}
+                  </span>
                 </p>
                 {gate ? (
                   <p className="mt-1 flex items-start gap-2 rounded-lg border border-(--accent-border) bg-(--accent-wash) px-2.5 py-1.5 text-[12px] leading-relaxed text-ink">

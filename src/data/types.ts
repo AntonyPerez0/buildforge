@@ -1,6 +1,6 @@
 export type GameId = "d4" | "forever";
 
-export type Tier = "S" | "A" | "B" | "C";
+export type Tier = "S" | "A" | "B" | "C" | "D";
 
 export type SourceName = "Maxroll" | "Icy Veins" | "ClassicWoW.gg" | "Wowhead" | "Blizzard";
 
@@ -186,6 +186,46 @@ export interface Build {
   specGates?: { gate: "16" | "21" | "31"; label: string }[];
   /** Forever only: exact per-level talent point placement, levels 10→44. */
   talentRuns?: TalentRun[];
+}
+
+/** A tier list on Maxroll or Icy Veins that BuildForge mirrors. */
+export interface TierListMeta {
+  id: string;
+  site: Extract<SourceName, "Maxroll" | "Icy Veins">;
+  game: GameId;
+  /** "Endgame", "Leveling", … */
+  list: string;
+  url: string;
+  /** When the source last updated the list, if it says. */
+  sourceUpdated?: string;
+  /** When BuildForge last verified (curated) or read (auto) it. */
+  checkedAt: string;
+  /** curated = human-verified rows; auto = read live by the nightly sync; coming-soon = not published yet. */
+  status: "curated" | "auto" | "coming-soon";
+  note?: string;
+}
+
+/** One build's placement on one source tier list. */
+export interface TierAssignment {
+  list: string;
+  tier: Tier;
+  build: string;
+  className: string;
+  /** Guide link on the source site; null when the list names a build without a guide we've verified. */
+  url: string | null;
+  auto?: boolean;
+}
+
+/** A resolved placement, ready to render ("Maxroll Endgame · S"). */
+export interface SourceTier {
+  listId: string;
+  site: TierListMeta["site"];
+  list: string;
+  tier: Tier;
+  listUrl: string;
+  guideUrl: string | null;
+  checkedAt: string;
+  auto: boolean;
 }
 
 /** Condensed current-meta card synced from guide sites. */

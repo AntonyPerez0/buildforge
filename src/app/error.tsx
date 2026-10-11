@@ -23,13 +23,13 @@ export default function Error({ error, reset }: { error: Error; reset: () => voi
             <button
               type="button"
               onClick={reset}
-              className="inline-flex items-center gap-2 rounded-lg bg-(--accent) px-4 py-2 text-sm font-semibold text-base transition-transform hover:scale-[1.03]"
+              className="btn btn-primary"
             >
               <RotateCcw className="h-4 w-4" /> Try again
             </button>
             <Link
               href="/"
-              className="rounded-lg border border-line bg-surface px-4 py-2 text-sm font-medium text-ink-muted hover:text-ink"
+              className="btn"
             >
               Home
             </Link>

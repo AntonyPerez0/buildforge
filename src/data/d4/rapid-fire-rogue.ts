@@ -18,13 +18,13 @@ export const rapidFireRogue: Build = {
   sources: [
     {
       site: "Maxroll",
-      url: "https://maxroll.gg/d4/build-guides",
-      label: "Maxroll Rogue build guides",
+      url: "https://maxroll.gg/d4/build-guides/rapid-fire-rogue-guide",
+      label: "Maxroll Rapid Fire Rogue guide",
     },
     {
       site: "Icy Veins",
-      url: "https://www.icy-veins.com/d4/rogue/builds/",
-      label: "Icy Veins Rogue builds",
+      url: "https://www.icy-veins.com/d4/guides/rapid-fire-rogue-build/",
+      label: "Icy Veins Rapid Fire Rogue build",
     },
   ],
   meta: {

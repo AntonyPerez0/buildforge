@@ -1,8 +1,8 @@
 import type { Build, GearSlot, ItemIconKey } from "@/data/types";
-import { GAMES } from "@/lib/games";
 import { cn } from "@/lib/utils";
 import { CharacterSilhouette, ITEM_ICONS } from "@/components/item-icons";
 import { ItemSlot } from "@/components/item-slot";
+import { D4Ornament } from "@/components/ui-bits";
 
 type Bucket = "left" | "right" | "bottom" | "weapons";
 
@@ -160,26 +160,35 @@ function SlotButton({
 }
 
 export function PaperDoll({ build }: { build: Build }) {
-  const game = GAMES[build.game];
   const { assigned, leftovers } = assignSlots(build);
   const byBucket = (b: Bucket) => assigned.filter((a) => a.bucket === b);
   const isD4 = build.game === "d4";
 
   return (
-    <div
-      className={cn(
-        "relative rounded-xl p-4 sm:p-5",
-        isD4 ? "doll-frame-d4" : "doll-frame-forever",
+    <div className={cn("relative p-4 sm:p-5", isD4 ? "doll-frame-d4" : "doll-frame-forever")}>
+      {isD4 ? (
+        <div className="mb-5 flex flex-col items-center gap-1 text-center">
+          <p className="font-[family-name:var(--font-cinzel)] text-sm font-bold tracking-[0.3em] text-[#efe4d0] uppercase">
+            Equipment
+          </p>
+          <D4Ornament className="w-44" />
+          <p className="text-[10px] tracking-[0.14em] text-[#8a7f70] uppercase">Ancestral target · hover or tap any slot</p>
+        </div>
+      ) : (
+        <div className="wow-head wow-head-2 mb-4">
+          <div className="wow-badge" aria-hidden="true">
+            <span className="font-[family-name:var(--font-marcellus)] text-2xl text-[#ffd100] [text-shadow:1px_1px_0_#000]">
+              {build.className.charAt(0)}
+            </span>
+          </div>
+          <div className="wow-titlebar flex-col !gap-0">
+            <span>{build.name}</span>
+            <span className="text-[11px] text-[#e6e0d3] [text-shadow:1px_1px_0_#000]">
+              Level 60 {build.className} · raid-ready target
+            </span>
+          </div>
+        </div>
       )}
-    >
-      <div className="mb-4 flex items-center justify-between">
-        <p className={cn("text-sm font-semibold tracking-widest text-ink uppercase", game.displayClass)}>
-          {isD4 ? "Equipment" : "Character"}
-        </p>
-        <p className="text-[10px] tracking-wider text-ink-dim uppercase">
-          {isD4 ? "Ancestral target · hover any slot" : "Raid-ready target · hover any slot"}
-        </p>
-      </div>
 
       <div className="flex items-start justify-between gap-2 sm:gap-4">
         <div className="flex flex-col gap-2.5 sm:gap-3">
@@ -190,7 +199,7 @@ export function PaperDoll({ build }: { build: Build }) {
 
         <div className="flex min-w-24 flex-1 flex-col items-center justify-end self-stretch pt-2">
           <CharacterSilhouette
-            className={cn("h-36 w-24 sm:h-44 sm:w-28", isD4 ? "text-d4/50" : "text-forever-arcane/50")}
+            className={cn("h-36 w-24 sm:h-44 sm:w-28", isD4 ? "text-[#6d110c]" : "text-forever-arcane/50")}
           />
           <div className="mt-4 flex gap-2.5 sm:gap-4">
             {byBucket("weapons").map((entry) => (
@@ -207,15 +216,10 @@ export function PaperDoll({ build }: { build: Build }) {
       </div>
 
       {byBucket("bottom").length > 0 ? (
-        <div className="mt-5 border-t border-white/5 pt-4">
+        <div className={cn("mt-5 pt-4", isD4 ? "border-t border-[#241d18]" : "border-t border-black/60 shadow-[0_-1px_0_rgba(255,255,255,0.04)]")}>
           <div className="flex flex-wrap justify-center gap-2.5 sm:gap-3">
             {byBucket("bottom").map((entry) => (
-              <SlotButton
-                key={entry.slot}
-                build={build}
-                entry={entry}
-                align="center"
-              />
+              <SlotButton key={entry.slot} build={build} entry={entry} align="center" />
             ))}
           </div>
         </div>
@@ -234,9 +238,10 @@ export function PaperDoll({ build }: { build: Build }) {
         </div>
       ) : null}
 
-      <p className="mt-4 text-[11px] leading-relaxed text-ink-dim">
-        Tap or hover a slot for the full item card — stats are representative rolls tuned for
-        this build; the sources section links the live guides for exact values.
+      <p className={cn("mt-4 text-[11px] leading-relaxed", isD4 ? "text-[#8a7f70]" : "text-[#cfc6b0]")}>
+        {isD4
+          ? "Tap or hover a slot for the full item card. Stats are representative rolls for this build — the sources section links the live guides for exact values."
+          : "Tap or hover a slot for the item tooltip. Forever reworked every loot table, so items marked Classic-era reference are stat benchmarks, not Forever drop locations — the linked Icy Veins guide tracks real drops."}
       </p>
     </div>
   );

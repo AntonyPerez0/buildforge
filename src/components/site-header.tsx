@@ -16,27 +16,27 @@ const NAV = [
   { href: "/about", label: "About" },
 ];
 
+/** The header takes on the chrome of the world you're in. */
+function sectionGame(pathname: string): "d4" | "forever" | "neutral" {
+  if (pathname === "/d4" || pathname.startsWith("/d4/")) return "d4";
+  if (pathname === "/forever" || pathname.startsWith("/forever/")) return "forever";
+  return "neutral";
+}
+
 export function SiteHeader({ searchIndex }: { searchIndex: SearchEntry[] }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const game = sectionGame(pathname);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line/80 bg-base/80 backdrop-blur-xl">
+    <header data-game={game} className="site-header sticky top-0 z-50">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <Logo />
         <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
           {NAV.map((item) => {
             const active = pathname === item.href || pathname.startsWith(item.href + "/");
             return (
-              <Link
-                key={item.href}
-                href={item.href}
-                aria-current={active ? "page" : undefined}
-                className={cn(
-                  "rounded-lg px-3 py-1.5 text-sm font-medium transition-colors",
-                  active ? "bg-surface-raised text-ink" : "text-ink-muted hover:text-ink",
-                )}
-              >
+              <Link key={item.href} href={item.href} aria-current={active ? "page" : undefined} className="nav-link">
                 {item.label}
               </Link>
             );
@@ -44,10 +44,7 @@ export function SiteHeader({ searchIndex }: { searchIndex: SearchEntry[] }) {
         </nav>
         <div className="flex items-center gap-2">
           <CommandPalette entries={searchIndex} />
-          <Link
-            href="/builder"
-            className="hidden items-center gap-2 rounded-lg bg-(--accent, #8b87f4) px-3.5 py-1.5 text-sm font-semibold text-base shadow-[0_0_20px_-6px_var(--accent,#8b87f4)] transition-transform hover:scale-[1.03] sm:inline-flex"
-          >
+          <Link href="/builder" className="btn btn-primary btn-sm hidden sm:inline-flex">
             <Hammer className="h-4 w-4" />
             Forge a build
           </Link>
@@ -63,18 +60,22 @@ export function SiteHeader({ searchIndex }: { searchIndex: SearchEntry[] }) {
         </div>
       </div>
       {open ? (
-        <nav className="border-t border-line bg-base px-4 py-3 md:hidden" aria-label="Mobile">
+        <nav className="border-t border-line px-4 py-3 md:hidden" aria-label="Mobile">
           <div className="flex flex-col gap-1">
-            {NAV.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-2.5 text-sm font-medium text-ink-muted hover:bg-surface hover:text-ink"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {NAV.map((item) => {
+              const active = pathname === item.href || pathname.startsWith(item.href + "/");
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  aria-current={active ? "page" : undefined}
+                  className={cn("nav-link py-2.5")}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </div>
         </nav>
       ) : null}

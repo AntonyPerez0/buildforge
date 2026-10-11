@@ -12,10 +12,11 @@ export const shadowPriest: Build = {
   tagline: "Shadow Word: Pain, Mind Flay, and mana that refills itself on every kill.",
   summary:
     "Shadow Priest turns leveling into a closed loop: DoTs on everything, Mind Flay to finish, Spirit Tap to refill. You almost never stop to drink, and in raids your Vampiric Embrace heals the party while you deal damage. Forever's unified hit/crit system means spell gearing just got simpler — one hit stat, every spell benefits.",
-  patchLabel: "Forever Beta · Sep 2026",
+  patchLabel: "Forever Beta · Oct 2026",
   lastSynced: "2026-09-19",
   dataQuality: "authored",
   sources: [
+    { site: "Icy Veins", url: "https://www.icy-veins.com/wow-forever/shadow-priest-ranged-dps-pve-guide", label: "Icy Veins Shadow Priest guide (Forever)" },
     { site: "ClassicWoW.gg", url: "https://classicwow.gg/forever/guides/priest/shadow", label: "ClassicWoW.gg Shadow guide" },
     { site: "Wowhead", url: "https://www.wowhead.com/forever", label: "Wowhead Forever hub" },
     { site: "Blizzard", url: "https://worldofwarcraft.blizzard.com/en-us/news/24302093/carve-a-new-path-with-world-of-warcraft-forever", label: "Official Forever announcement" },
@@ -453,8 +454,8 @@ export const shadowPriest: Build = {
           { text: "+20 Intellect" },
           { text: "+15 Spirit" },
         ],
-        flavor: "The Molten Core caster staff — carries Shadow Priests straight into raids.",
-        source: "Molten Core",
+        flavor: "Classic-era caster benchmark — Forever's reworked loot tables decide the real staff.",
+        source: "Classic-era reference",
         icon: "staff",
       },
     },

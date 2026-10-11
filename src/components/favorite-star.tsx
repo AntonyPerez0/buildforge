@@ -34,7 +34,7 @@ export function FavoriteStar({
         "z-10 grid h-8 w-8 place-items-center rounded-lg border transition-all",
         fav
           ? "border-tier-s/50 bg-tier-s/10 text-tier-s"
-          : "border-line bg-surface/80 text-ink-dim opacity-0 hover:text-tier-s focus-visible:opacity-100 group-hover:opacity-100 sm:opacity-0",
+          : "border-line bg-surface/80 text-ink-dim opacity-0 hover:text-tier-s focus-visible:opacity-100 group-hover:opacity-100 [@media(hover:none)]:opacity-70",
         className,
       )}
     >

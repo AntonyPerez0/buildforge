@@ -1,4 +1,4 @@
-const VERSION = "bf-v1";
+const VERSION = "bf-v2";
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
