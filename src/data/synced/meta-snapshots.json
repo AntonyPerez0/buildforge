@@ -13,10 +13,10 @@
       "list": "Endgame",
       "url": "https://maxroll.gg/d4/tierlists/endgame-tier-list",
       "sourceUpdated": "2026-09-26",
-      "checkedAt": "2026-10-11",
+      "checkedAt": "2026-10-12",
       "note": "Overall endgame list for Season 15. A/B/C rows here are the verified subset — open the full list for every entry.",
-      "status": "curated",
-      "result": "offline run"
+      "status": "auto",
+      "result": "86 guides across 5 tiers"
     },
     {
       "id": "icyveins-d4-endgame",
@@ -27,7 +27,7 @@
       "checkedAt": "2026-10-11",
       "note": "Ranks endgame push builds for Torment XII and the Pit. Only S-tier entries BuildForge has verified are shown — Icy Veins' S tier may hold more, and the lower tiers are on the full list.",
       "status": "curated",
-      "result": "offline run"
+      "result": "failed (HTTP 403)"
     },
     {
       "id": "maxroll-d4-leveling",
@@ -36,9 +36,9 @@
       "list": "Leveling",
       "url": "https://maxroll.gg/d4/tierlists/leveling-tier-list",
       "sourceUpdated": "2026-09-14",
-      "checkedAt": "2026-10-11",
-      "status": "curated",
-      "result": "offline run"
+      "checkedAt": "2026-10-12",
+      "status": "auto",
+      "result": "38 guides across 4 tiers"
     },
     {
       "id": "icyveins-d4-leveling",
@@ -46,9 +46,9 @@
       "game": "d4",
       "list": "Leveling",
       "url": "https://www.icy-veins.com/d4/guides/leveling-tier-list/",
-      "checkedAt": "2026-10-11",
-      "status": "curated",
-      "result": "offline run"
+      "checkedAt": "2026-10-12",
+      "status": "auto",
+      "result": "23 guides across 3 tiers"
     },
     {
       "id": "icyveins-forever-hub",
@@ -59,7 +59,7 @@
       "checkedAt": "2026-10-11",
       "status": "coming-soon",
       "note": "Icy Veins' Forever tier lists are marked Coming Soon. Maxroll has no Forever coverage. Ratings on Forever builds are BuildForge's own until Icy Veins publishes — the sync picks them up automatically.",
-      "result": "offline run"
+      "result": "failed (HTTP 403)"
     }
   ],
   "tierAssignments": [
@@ -68,294 +68,688 @@
       "tier": "S",
       "build": "Blazing Scream Warlock",
       "className": "Warlock",
-      "url": "https://maxroll.gg/d4/build-guides/blazing-scream-warlock-guide"
+      "url": "https://maxroll.gg/d4/build-guides/blazing-scream-warlock-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
       "tier": "S",
-      "build": "Counterswarm Spiritborn",
+      "build": "Evade Counterswarm Spiritborn",
       "className": "Spiritborn",
-      "url": "https://maxroll.gg/d4/build-guides/counterswarm-spiritborn-guide"
+      "url": "https://maxroll.gg/d4/build-guides/evade-counterswarm-spiritborn-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
       "tier": "S",
       "build": "Blood Wave Necromancer",
       "className": "Necromancer",
-      "url": "https://maxroll.gg/d4/build-guides/blood-wave-necromancer-guide"
+      "url": "https://maxroll.gg/d4/build-guides/blood-wave-necromancer-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
       "tier": "S",
       "build": "Apocalypse Warlock",
       "className": "Warlock",
-      "url": "https://maxroll.gg/d4/build-guides/apocalypse-warlock-guide"
+      "url": "https://maxroll.gg/d4/build-guides/apocalypse-warlock-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
       "tier": "S",
       "build": "Stinger Spiritborn",
       "className": "Spiritborn",
-      "url": "https://maxroll.gg/d4/build-guides/stinger-spiritborn-guide"
+      "url": "https://maxroll.gg/d4/build-guides/stinger-spiritborn-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
       "tier": "S",
       "build": "Whirlwind Barbarian",
       "className": "Barbarian",
-      "url": "https://maxroll.gg/d4/build-guides/whirlwind-barbarian-guide"
+      "url": "https://maxroll.gg/d4/build-guides/whirlwind-barbarian-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
       "tier": "S",
-      "build": "Poison Penetrating Shot Rogue",
+      "build": "Penetrating Shot Rogue",
       "className": "Rogue",
-      "url": "https://maxroll.gg/d4/build-guides/penetrating-shot-rogue-guide"
+      "url": "https://maxroll.gg/d4/build-guides/penetrating-shot-rogue-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
       "tier": "S",
-      "build": "Shield of Retribution Paladin",
+      "build": "Shield Of Retribution Paladin",
       "className": "Paladin",
-      "url": "https://maxroll.gg/d4/build-guides/shield-of-retribution-paladin-guide"
+      "url": "https://maxroll.gg/d4/build-guides/shield-of-retribution-paladin-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
       "tier": "S",
       "build": "Firewall Sorcerer",
       "className": "Sorcerer",
-      "url": "https://maxroll.gg/d4/build-guides/firewall-sorcerer-guide"
+      "url": "https://maxroll.gg/d4/build-guides/firewall-sorcerer-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
       "tier": "S",
-      "build": "Dance of Knives Rogue",
+      "build": "Dance Of Knives Rogue",
       "className": "Rogue",
-      "url": "https://maxroll.gg/d4/build-guides/dance-of-knives-rogue-guide"
+      "url": "https://maxroll.gg/d4/build-guides/dance-of-knives-rogue-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
       "tier": "A",
       "build": "Divine Lance Paladin",
       "className": "Paladin",
-      "url": "https://maxroll.gg/d4/build-guides/divine-lance-paladin-guide"
+      "url": "https://maxroll.gg/d4/build-guides/divine-lance-paladin-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
       "tier": "A",
       "build": "Lacerate Druid",
       "className": "Druid",
-      "url": "https://maxroll.gg/d4/build-guides/lacerate-druid-guide"
+      "url": "https://maxroll.gg/d4/build-guides/lacerate-druid-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
       "tier": "A",
       "build": "Rend Barbarian",
       "className": "Barbarian",
-      "url": "https://maxroll.gg/d4/build-guides/rend-barbarian-guide"
+      "url": "https://maxroll.gg/d4/build-guides/rend-barbarian-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
       "tier": "A",
       "build": "Shield Charge Paladin",
       "className": "Paladin",
-      "url": "https://maxroll.gg/d4/build-guides/shield-charge-paladin-guide"
+      "url": "https://maxroll.gg/d4/build-guides/shield-charge-paladin-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
       "tier": "A",
       "build": "Storm Strike Druid",
       "className": "Druid",
-      "url": "https://maxroll.gg/d4/build-guides/storm-strike-druid-guide"
+      "url": "https://maxroll.gg/d4/build-guides/storm-strike-druid-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
       "tier": "A",
-      "build": "Flame Charge Barbarian",
+      "build": "Charge Barbarian",
       "className": "Barbarian",
-      "url": null
+      "url": "https://maxroll.gg/d4/build-guides/charge-barbarian-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
       "tier": "A",
       "build": "Lunatic Warlock",
       "className": "Warlock",
-      "url": null
+      "url": "https://maxroll.gg/d4/build-guides/lunatic-warlock-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
       "tier": "A",
       "build": "Bone Spirit Necromancer",
       "className": "Necromancer",
-      "url": "https://maxroll.gg/d4/build-guides/bone-spirit-necromancer-guide"
+      "url": "https://maxroll.gg/d4/build-guides/bone-spirit-necromancer-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
       "tier": "A",
-      "build": "Landslide Druid",
+      "build": "Trampleslide Druid",
       "className": "Druid",
-      "url": null
+      "url": "https://maxroll.gg/d4/build-guides/trampleslide-druid-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
       "tier": "A",
-      "build": "Heartseeker Rogue",
+      "build": "Heartseeker Rogue Specialized",
       "className": "Rogue",
-      "url": "https://maxroll.gg/d4/build-guides/heartseeker-rogue-specialized-guide"
+      "url": "https://maxroll.gg/d4/build-guides/heartseeker-rogue-specialized-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
       "tier": "A",
-      "build": "Cold Rain of Arrows Rogue",
+      "build": "Rain Of Arrows Rogue",
       "className": "Rogue",
-      "url": "https://maxroll.gg/d4/build-guides/rain-of-arrows-rogue-guide"
+      "url": "https://maxroll.gg/d4/build-guides/rain-of-arrows-rogue-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
       "tier": "A",
       "build": "Tornado Druid",
       "className": "Druid",
-      "url": "https://maxroll.gg/d4/build-guides/tornado-druid-guide"
+      "url": "https://maxroll.gg/d4/build-guides/tornado-druid-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
       "tier": "A",
       "build": "Death Trap Rogue",
       "className": "Rogue",
-      "url": "https://maxroll.gg/d4/build-guides/death-trap-rogue-guide"
+      "url": "https://maxroll.gg/d4/build-guides/death-trap-rogue-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
       "tier": "A",
       "build": "Cataclysm Druid",
       "className": "Druid",
-      "url": "https://maxroll.gg/d4/build-guides/cataclysm-druid-build-guide"
+      "url": "https://maxroll.gg/d4/build-guides/cataclysm-druid-build-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
       "tier": "A",
       "build": "Mighty Throw Barbarian",
       "className": "Barbarian",
-      "url": "https://maxroll.gg/d4/build-guides/mighty-throw-barbarian-guide"
+      "url": "https://maxroll.gg/d4/build-guides/mighty-throw-barbarian-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
       "tier": "A",
       "build": "Crushing Hand Spiritborn",
       "className": "Spiritborn",
-      "url": "https://maxroll.gg/d4/build-guides/crushing-hand-spiritborn-guide"
+      "url": "https://maxroll.gg/d4/build-guides/crushing-hand-spiritborn-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
       "tier": "A",
       "build": "Auradin",
       "className": "Paladin",
-      "url": "https://maxroll.gg/d4/build-guides/auradin-guide"
+      "url": "https://maxroll.gg/d4/build-guides/auradin-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
       "tier": "A",
       "build": "Evade Caltrops Rogue",
       "className": "Rogue",
-      "url": "https://maxroll.gg/d4/build-guides/evade-caltrops-rogue-guide"
+      "url": "https://maxroll.gg/d4/build-guides/evade-caltrops-rogue-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
       "tier": "A",
-      "build": "Poison Rain of Arrows Rogue",
+      "build": "Poison Rain Of Arrows Rogue",
       "className": "Rogue",
-      "url": "https://maxroll.gg/d4/build-guides/poison-rain-of-arrows-rogue-guide"
+      "url": "https://maxroll.gg/d4/build-guides/poison-rain-of-arrows-rogue-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
       "tier": "A",
-      "build": "Minion Necromancer",
-      "className": "Necromancer",
-      "url": "https://maxroll.gg/d4/build-guides/minion-necromancer-guide"
+      "build": "Ice Spikes Sorcerer",
+      "className": "Sorcerer",
+      "url": "https://maxroll.gg/d4/build-guides/ice-spikes-sorcerer-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
       "tier": "A",
-      "build": "Poison Twisting Blades Rogue",
+      "build": "Cold Penetrating Shot Rogue",
       "className": "Rogue",
-      "url": "https://maxroll.gg/d4/build-guides/twisting-blades-rogue-guide"
+      "url": "https://maxroll.gg/d4/build-guides/cold-penetrating-shot-rogue-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
       "tier": "A",
-      "build": "Rapid Fire Rogue",
+      "build": "Blizzard Sorcerer",
+      "className": "Sorcerer",
+      "url": "https://maxroll.gg/d4/build-guides/blizzard-sorcerer-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "A",
+      "build": "Flurry Rogue",
       "className": "Rogue",
-      "url": "https://maxroll.gg/d4/build-guides/rapid-fire-rogue-guide"
+      "url": "https://maxroll.gg/d4/build-guides/flurry-rogue-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "A",
+      "build": "Rake Spiritborn",
+      "className": "Spiritborn",
+      "url": "https://maxroll.gg/d4/build-guides/rake-spiritborn-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "A",
+      "build": "Minion Warlock",
+      "className": "Warlock",
+      "url": "https://maxroll.gg/d4/build-guides/minion-warlock-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "A",
+      "build": "Touch Of Death Spiritborn",
+      "className": "Spiritborn",
+      "url": "https://maxroll.gg/d4/build-guides/touch-of-death-spiritborn-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
       "tier": "A",
       "build": "Minion Barbarian",
       "className": "Barbarian",
-      "url": "https://maxroll.gg/d4/build-guides/minion-barbarian-guide"
+      "url": "https://maxroll.gg/d4/build-guides/minion-barbarian-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
-      "tier": "B",
-      "build": "Pulverize Druid",
-      "className": "Druid",
-      "url": "https://maxroll.gg/d4/build-guides/pulverize-druid-guide"
+      "tier": "A",
+      "build": "Thrash Spiritborn",
+      "className": "Spiritborn",
+      "url": "https://maxroll.gg/d4/build-guides/thrash-spiritborn-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
-      "tier": "B",
-      "build": "Lightning Storm Druid",
+      "tier": "A",
+      "build": "Poison Barrage Rogue",
+      "className": "Rogue",
+      "url": "https://maxroll.gg/d4/build-guides/poison-barrage-rogue-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "A",
+      "build": "Lunging Strike Barbarian",
+      "className": "Barbarian",
+      "url": "https://maxroll.gg/d4/build-guides/lunging-strike-barbarian-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "A",
+      "build": "Upheaval Barbarian",
+      "className": "Barbarian",
+      "url": "https://maxroll.gg/d4/build-guides/upheaval-barbarian-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "A",
+      "build": "Twisting Blades Rogue",
+      "className": "Rogue",
+      "url": "https://maxroll.gg/d4/build-guides/twisting-blades-rogue-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "A",
+      "build": "Rapid Fire Rogue",
+      "className": "Rogue",
+      "url": "https://maxroll.gg/d4/build-guides/rapid-fire-rogue-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "A",
+      "build": "Shred Druid",
       "className": "Druid",
-      "url": null
+      "url": "https://maxroll.gg/d4/build-guides/shred-druid-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "A",
+      "build": "Dash Rogue",
+      "className": "Rogue",
+      "url": "https://maxroll.gg/d4/build-guides/dash-rogue-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "A",
+      "build": "Minion Necromancer",
+      "className": "Necromancer",
+      "url": "https://maxroll.gg/d4/build-guides/minion-necromancer-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "A",
+      "build": "Blessed Hammer Paladin",
+      "className": "Paladin",
+      "url": "https://maxroll.gg/d4/build-guides/blessed-hammer-paladin-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "A",
+      "build": "Barrage Rogue",
+      "className": "Rogue",
+      "url": "https://maxroll.gg/d4/build-guides/barrage-rogue-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "A",
+      "build": "Hammer Of The Ancients Barbarian",
+      "className": "Barbarian",
+      "url": "https://maxroll.gg/d4/build-guides/hammer-of-the-ancients-barbarian-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "A",
+      "build": "Quill Volley Spiritborn",
+      "className": "Spiritborn",
+      "url": "https://maxroll.gg/d4/build-guides/quill-volley-spiritborn-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "A",
+      "build": "Brandish Paladin",
+      "className": "Paladin",
+      "url": "https://maxroll.gg/d4/build-guides/brandish-paladin-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
       "tier": "B",
       "build": "Boulder Druid",
       "className": "Druid",
-      "url": "https://maxroll.gg/d4/build-guides/boulder-druid-guide"
+      "url": "https://maxroll.gg/d4/build-guides/boulder-druid-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
       "tier": "B",
       "build": "Golem Necromancer",
       "className": "Necromancer",
-      "url": "https://maxroll.gg/d4/build-guides/golem-necromancer-guide"
+      "url": "https://maxroll.gg/d4/build-guides/golem-necromancer-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "B",
+      "build": "Arrow Storms Rogue",
+      "className": "Rogue",
+      "url": "https://maxroll.gg/d4/build-guides/arrow-storms-rogue-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "B",
+      "build": "Tyrants Grasp Warlock",
+      "className": "Warlock",
+      "url": "https://maxroll.gg/d4/build-guides/tyrants-grasp-warlock-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "B",
+      "build": "Fist Of The Heavens Paladin",
+      "className": "Paladin",
+      "url": "https://maxroll.gg/d4/build-guides/fist-of-the-heavens-paladin-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "B",
+      "build": "Meteor Sorcerer",
+      "className": "Sorcerer",
+      "url": "https://maxroll.gg/d4/build-guides/meteor-sorcerer-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "B",
+      "build": "Clash Paladin",
+      "className": "Paladin",
+      "url": "https://maxroll.gg/d4/build-guides/clash-paladin-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "B",
+      "build": "Frenzy Barbarian",
+      "className": "Barbarian",
+      "url": "https://maxroll.gg/d4/build-guides/frenzy-barbarian-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "B",
+      "build": "Wing Strikes Paladin",
+      "className": "Paladin",
+      "url": "https://maxroll.gg/d4/build-guides/wing-strikes-paladin-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "B",
+      "build": "Ice Shards Sorcerer",
+      "className": "Sorcerer",
+      "url": "https://maxroll.gg/d4/build-guides/ice-shards-sorcerer-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "B",
+      "build": "Lightning Storm Druid",
+      "className": "Druid",
+      "url": "https://maxroll.gg/d4/build-guides/lightning-storm-druid-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "B",
+      "build": "Withering Fist Spiritborn",
+      "className": "Spiritborn",
+      "url": "https://maxroll.gg/d4/build-guides/withering-fist-spiritborn-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "B",
+      "build": "Grenade Rogue",
+      "className": "Rogue",
+      "url": "https://maxroll.gg/d4/build-guides/grenade-rogue-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "B",
+      "build": "Rock Splitter Spiritborn",
+      "className": "Spiritborn",
+      "url": "https://maxroll.gg/d4/build-guides/rock-splitter-spiritborn-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "B",
+      "build": "Ball Lightning Sorcerer",
+      "className": "Sorcerer",
+      "url": "https://maxroll.gg/d4/build-guides/ball-lightning-sorcerer-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "B",
+      "build": "Hydra Sorcerer",
+      "className": "Sorcerer",
+      "url": "https://maxroll.gg/d4/build-guides/hydra-sorcerer-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "B",
+      "build": "Pulverize Druid",
+      "className": "Druid",
+      "url": "https://maxroll.gg/d4/build-guides/pulverize-druid-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "B",
+      "build": "Earthquake Barbarian",
+      "className": "Barbarian",
+      "url": "https://maxroll.gg/d4/build-guides/earthquake-barbarian-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "B",
+      "build": "Hell Fracture Warlock",
+      "className": "Warlock",
+      "url": "https://maxroll.gg/d4/build-guides/hell-fracture-warlock-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "B",
+      "build": "Mighty Maelstrom Barbarian",
+      "className": "Barbarian",
+      "url": "https://maxroll.gg/d4/build-guides/mighty-maelstrom-barbarian-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "B",
+      "build": "Zeal Paladin",
+      "className": "Paladin",
+      "url": "https://maxroll.gg/d4/build-guides/zeal-paladin-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "B",
+      "build": "Zenith Paladin",
+      "className": "Paladin",
+      "url": "https://maxroll.gg/d4/build-guides/zenith-paladin-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "B",
+      "build": "Blood Surge Necromancer",
+      "className": "Necromancer",
+      "url": "https://maxroll.gg/d4/build-guides/blood-surge-necromancer-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "B",
+      "build": "Blight Necromancer",
+      "className": "Necromancer",
+      "url": "https://maxroll.gg/d4/build-guides/blight-necromancer-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "C",
+      "build": "Army Of The Dead Necromancer",
+      "className": "Necromancer",
+      "url": "https://maxroll.gg/d4/build-guides/army-of-the-dead-necromancer-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "C",
+      "build": "Sever Necromancer Endgame",
+      "className": "Necromancer",
+      "url": "https://maxroll.gg/d4/build-guides/sever-necromancer-endgame-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "C",
+      "build": "Evade Barbarian",
+      "className": "Barbarian",
+      "url": "https://maxroll.gg/d4/build-guides/evade-barbarian-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "C",
+      "build": "Dread Claws Warlock",
+      "className": "Warlock",
+      "url": "https://maxroll.gg/d4/build-guides/dread-claws-warlock-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "C",
+      "build": "Eviscerate Warlock",
+      "className": "Warlock",
+      "url": "https://maxroll.gg/d4/build-guides/eviscerate-warlock-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
       "tier": "C",
       "build": "Bone Spear Necromancer",
       "className": "Necromancer",
-      "url": "https://maxroll.gg/d4/build-guides/bone-spear-necromancer-guide"
-    },
-    {
-      "list": "maxroll-d4-endgame",
-      "tier": "C",
-      "build": "Fireball Sorcerer",
-      "className": "Sorcerer",
-      "url": "https://maxroll.gg/d4/build-guides/fireball-sorcerer-guide"
-    },
-    {
-      "list": "maxroll-d4-endgame",
-      "tier": "C",
-      "build": "Army of the Dead Necromancer",
-      "className": "Necromancer",
-      "url": null
-    },
-    {
-      "list": "maxroll-d4-endgame",
-      "tier": "C",
-      "build": "Sever Necromancer",
-      "className": "Necromancer",
-      "url": "https://maxroll.gg/d4/build-guides/sever-necromancer-endgame-guide"
+      "url": "https://maxroll.gg/d4/build-guides/bone-spear-necromancer-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-endgame",
       "tier": "C",
       "build": "Companion Druid",
       "className": "Druid",
-      "url": "https://maxroll.gg/d4/build-guides/companion-druid-guide"
+      "url": "https://maxroll.gg/d4/build-guides/companion-druid-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "C",
+      "build": "Fireball Sorcerer",
+      "className": "Sorcerer",
+      "url": "https://maxroll.gg/d4/build-guides/fireball-sorcerer-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "D",
+      "build": "Blood Lance Necromancer",
+      "className": "Necromancer",
+      "url": "https://maxroll.gg/d4/build-guides/blood-lance-necromancer-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "D",
+      "build": "Frozen Orb Sorcerer",
+      "className": "Sorcerer",
+      "url": "https://maxroll.gg/d4/build-guides/frozen-orb-sorcerer-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-endgame",
+      "tier": "D",
+      "build": "Incinerate Sorcerer",
+      "className": "Sorcerer",
+      "url": "https://maxroll.gg/d4/build-guides/incinerate-sorcerer-guide",
+      "auto": true
     },
     {
       "list": "icyveins-d4-endgame",
@@ -409,79 +803,490 @@
     {
       "list": "maxroll-d4-leveling",
       "tier": "S",
-      "build": "Dance of Knives Rogue",
+      "build": "Dance Of Knives Rogue Leveling",
       "className": "Rogue",
-      "url": null
+      "url": "https://maxroll.gg/d4/build-guides/dance-of-knives-rogue-leveling-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-leveling",
       "tier": "S",
-      "build": "Frenzy Throw Barbarian",
+      "build": "Frenzy Barbarian Leveling",
       "className": "Barbarian",
-      "url": null
+      "url": "https://maxroll.gg/d4/build-guides/frenzy-barbarian-leveling-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-leveling",
       "tier": "S",
-      "build": "Barrage Rogue",
+      "build": "Barrage Rogue Leveling",
       "className": "Rogue",
-      "url": "https://maxroll.gg/d4/build-guides/barrage-rogue-leveling-guide"
+      "url": "https://maxroll.gg/d4/build-guides/barrage-rogue-leveling-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-leveling",
       "tier": "S",
-      "build": "Minion Necromancer",
+      "build": "Minion Necromancer Leveling",
       "className": "Necromancer",
-      "url": null
+      "url": "https://maxroll.gg/d4/build-guides/minion-necromancer-leveling-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-leveling",
       "tier": "S",
-      "build": "Blizzard Sorcerer",
+      "build": "Blizzard Sorcerer Leveling",
       "className": "Sorcerer",
-      "url": null
+      "url": "https://maxroll.gg/d4/build-guides/blizzard-sorcerer-leveling-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-leveling",
       "tier": "S",
-      "build": "Shield of Retribution Paladin",
+      "build": "Shield Of Retribution Paladin Leveling",
       "className": "Paladin",
-      "url": null
+      "url": "https://maxroll.gg/d4/build-guides/shield-of-retribution-paladin-leveling-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-leveling",
       "tier": "S",
-      "build": "Stinger Spiritborn",
+      "build": "Stinger Spiritborn Leveling",
       "className": "Spiritborn",
-      "url": null
+      "url": "https://maxroll.gg/d4/build-guides/stinger-spiritborn-leveling-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-leveling",
       "tier": "S",
-      "build": "Rock Splitter Thorns Spiritborn",
+      "build": "Rock Splitter Thorns Spiritborn Leveling",
       "className": "Spiritborn",
-      "url": null
+      "url": "https://maxroll.gg/d4/build-guides/rock-splitter-thorns-spiritborn-leveling-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-leveling",
       "tier": "A",
-      "build": "Whirlwind Barbarian",
+      "build": "Whirlwind Barbarian Leveling",
       "className": "Barbarian",
-      "url": null
+      "url": "https://maxroll.gg/d4/build-guides/whirlwind-barbarian-leveling-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-leveling",
       "tier": "A",
-      "build": "Dread Claws Warlock",
+      "build": "Lightning Storm Druid Leveling Guide 2",
+      "className": "Druid",
+      "url": "https://maxroll.gg/d4/build-guides/lightning-storm-druid-leveling-guide-2",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-leveling",
+      "tier": "A",
+      "build": "Twisting Blades Rogue Leveling",
+      "className": "Rogue",
+      "url": "https://maxroll.gg/d4/build-guides/twisting-blades-rogue-leveling-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-leveling",
+      "tier": "A",
+      "build": "Heartseeker Rogue Leveling",
+      "className": "Rogue",
+      "url": "https://maxroll.gg/d4/build-guides/heartseeker-rogue-leveling-build-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-leveling",
+      "tier": "A",
+      "build": "Penetrating Shot Rogue Leveling",
+      "className": "Rogue",
+      "url": "https://maxroll.gg/d4/build-guides/penetrating-shot-rogue-leveling-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-leveling",
+      "tier": "A",
+      "build": "Flurry Rogue Leveling",
+      "className": "Rogue",
+      "url": "https://maxroll.gg/d4/build-guides/flurry-rogue-leveling-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-leveling",
+      "tier": "A",
+      "build": "Companion Druid Leveling",
+      "className": "Druid",
+      "url": "https://maxroll.gg/d4/build-guides/companion-druid-leveling-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-leveling",
+      "tier": "A",
+      "build": "Firewall Sorcerer Leveling",
+      "className": "Sorcerer",
+      "url": "https://maxroll.gg/d4/build-guides/firewall-sorcerer-leveling-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-leveling",
+      "tier": "A",
+      "build": "Apocalypse Warlock Leveling",
       "className": "Warlock",
-      "url": "https://maxroll.gg/d4/build-guides/dread-claws-warlock-leveling-guide"
+      "url": "https://maxroll.gg/d4/build-guides/apocalypse-warlock-leveling-guide",
+      "auto": true
     },
     {
       "list": "maxroll-d4-leveling",
       "tier": "A",
-      "build": "Blessed Hammer Paladin",
+      "build": "Blood Surge Necromancer Leveling",
+      "className": "Necromancer",
+      "url": "https://maxroll.gg/d4/build-guides/blood-surge-necromancer-leveling-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-leveling",
+      "tier": "A",
+      "build": "Blight Necromancer Leveling",
+      "className": "Necromancer",
+      "url": "https://maxroll.gg/d4/build-guides/blight-necromancer-leveling-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-leveling",
+      "tier": "A",
+      "build": "Sever Necromancer Leveling",
+      "className": "Necromancer",
+      "url": "https://maxroll.gg/d4/build-guides/sever-necromancer-leveling-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-leveling",
+      "tier": "A",
+      "build": "Blessed Hammer Paladin Leveling",
       "className": "Paladin",
-      "url": null
+      "url": "https://maxroll.gg/d4/build-guides/blessed-hammer-paladin-leveling-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-leveling",
+      "tier": "A",
+      "build": "Minion Warlock Leveling",
+      "className": "Warlock",
+      "url": "https://maxroll.gg/d4/build-guides/minion-warlock-leveling-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-leveling",
+      "tier": "A",
+      "build": "Dread Claws Warlock Leveling",
+      "className": "Warlock",
+      "url": "https://maxroll.gg/d4/build-guides/dread-claws-warlock-leveling-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-leveling",
+      "tier": "B",
+      "build": "Crushing Hand Spiritborn Leveling",
+      "className": "Spiritborn",
+      "url": "https://maxroll.gg/d4/build-guides/crushing-hand-spiritborn-leveling-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-leveling",
+      "tier": "B",
+      "build": "Shred Druid Leveling",
+      "className": "Druid",
+      "url": "https://maxroll.gg/d4/build-guides/shred-druid-leveling-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-leveling",
+      "tier": "B",
+      "build": "Lunatic Warlock Leveling",
+      "className": "Warlock",
+      "url": "https://maxroll.gg/d4/build-guides/lunatic-warlock-leveling-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-leveling",
+      "tier": "B",
+      "build": "Pulverize Druid Leveling",
+      "className": "Druid",
+      "url": "https://maxroll.gg/d4/build-guides/pulverize-druid-leveling-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-leveling",
+      "tier": "B",
+      "build": "Ice Shards Sorcerer Leveling",
+      "className": "Sorcerer",
+      "url": "https://maxroll.gg/d4/build-guides/ice-shards-sorcerer-leveling-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-leveling",
+      "tier": "B",
+      "build": "Ice Spikes Sorcerer Leveling",
+      "className": "Sorcerer",
+      "url": "https://maxroll.gg/d4/build-guides/ice-spikes-sorcerer-leveling-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-leveling",
+      "tier": "B",
+      "build": "Rapid Fire Rogue Leveling",
+      "className": "Rogue",
+      "url": "https://maxroll.gg/d4/build-guides/rapid-fire-rogue-leveling-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-leveling",
+      "tier": "B",
+      "build": "Eviscerate Warlock Leveling",
+      "className": "Warlock",
+      "url": "https://maxroll.gg/d4/build-guides/eviscerate-warlock-leveling-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-leveling",
+      "tier": "B",
+      "build": "Blazing Scream Warlock Leveling",
+      "className": "Warlock",
+      "url": "https://maxroll.gg/d4/build-guides/blazing-scream-warlock-leveling-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-leveling",
+      "tier": "B",
+      "build": "Zeal Paladin Leveling",
+      "className": "Paladin",
+      "url": "https://maxroll.gg/d4/build-guides/zeal-paladin-leveling-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-leveling",
+      "tier": "B",
+      "build": "Hell Fracture Warlock Leveling",
+      "className": "Warlock",
+      "url": "https://maxroll.gg/d4/build-guides/hell-fracture-warlock-leveling-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-leveling",
+      "tier": "B",
+      "build": "Frozen Orb Sorcerer Leveling",
+      "className": "Sorcerer",
+      "url": "https://maxroll.gg/d4/build-guides/frozen-orb-sorcerer-leveling-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-leveling",
+      "tier": "B",
+      "build": "Incinerate Sorcerer Leveling",
+      "className": "Sorcerer",
+      "url": "https://maxroll.gg/d4/build-guides/incinerate-sorcerer-leveling-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-leveling",
+      "tier": "C",
+      "build": "Hammer Of The Ancients Barbarian Leveling",
+      "className": "Barbarian",
+      "url": "https://maxroll.gg/d4/build-guides/hammer-of-the-ancients-barbarian-leveling-guide",
+      "auto": true
+    },
+    {
+      "list": "maxroll-d4-leveling",
+      "tier": "C",
+      "build": "Rend Barbarian Leveling",
+      "className": "Barbarian",
+      "url": "https://maxroll.gg/d4/build-guides/rend-barbarian-leveling-guide",
+      "auto": true
+    },
+    {
+      "list": "icyveins-d4-leveling",
+      "tier": "S",
+      "build": "Whirlwind Barbarian Leveling",
+      "className": "Barbarian",
+      "url": "https://www.icy-veins.com/d4/guides/whirlwind-barbarian-leveling-build",
+      "auto": true
+    },
+    {
+      "list": "icyveins-d4-leveling",
+      "tier": "S",
+      "build": "Hammer Of The Ancients Barbarian Leveling",
+      "className": "Barbarian",
+      "url": "https://www.icy-veins.com/d4/guides/hammer-of-the-ancients-barbarian-leveling-build",
+      "auto": true
+    },
+    {
+      "list": "icyveins-d4-leveling",
+      "tier": "S",
+      "build": "Blessed Hammer Paladin Leveling",
+      "className": "Paladin",
+      "url": "https://www.icy-veins.com/d4/guides/blessed-hammer-paladin-leveling-build",
+      "auto": true
+    },
+    {
+      "list": "icyveins-d4-leveling",
+      "tier": "S",
+      "build": "Dance Of Knives Rogue Leveling",
+      "className": "Rogue",
+      "url": "https://www.icy-veins.com/d4/guides/dance-of-knives-rogue-leveling-build",
+      "auto": true
+    },
+    {
+      "list": "icyveins-d4-leveling",
+      "tier": "S",
+      "build": "Quill Volley Spiritborn Leveling",
+      "className": "Spiritborn",
+      "url": "https://www.icy-veins.com/d4/guides/quill-volley-spiritborn-leveling-build",
+      "auto": true
+    },
+    {
+      "list": "icyveins-d4-leveling",
+      "tier": "S",
+      "build": "Payback Spiritborn Leveling",
+      "className": "Spiritborn",
+      "url": "https://www.icy-veins.com/d4/guides/payback-spiritborn-leveling-build",
+      "auto": true
+    },
+    {
+      "list": "icyveins-d4-leveling",
+      "tier": "S",
+      "build": "Charged Bolts Sorcerer Leveling",
+      "className": "Sorcerer",
+      "url": "https://www.icy-veins.com/d4/guides/charged-bolts-sorcerer-leveling-build",
+      "auto": true
+    },
+    {
+      "list": "icyveins-d4-leveling",
+      "tier": "S",
+      "build": "Demon Summoner Warlock Leveling",
+      "className": "Warlock",
+      "url": "https://www.icy-veins.com/d4/guides/demon-summoner-warlock-leveling-build",
+      "auto": true
+    },
+    {
+      "list": "icyveins-d4-leveling",
+      "tier": "S",
+      "build": "Abyss Rampage Warlock Leveling",
+      "className": "Warlock",
+      "url": "https://www.icy-veins.com/d4/guides/abyss-rampage-warlock-leveling-build",
+      "auto": true
+    },
+    {
+      "list": "icyveins-d4-leveling",
+      "tier": "S",
+      "build": "Summoner Necromancer Leveling",
+      "className": "Necromancer",
+      "url": "https://www.icy-veins.com/d4/guides/summoner-necromancer-leveling-build",
+      "auto": true
+    },
+    {
+      "list": "icyveins-d4-leveling",
+      "tier": "A",
+      "build": "Double Swing Barbarian Leveling",
+      "className": "Barbarian",
+      "url": "https://www.icy-veins.com/d4/guides/double-swing-barbarian-leveling-build",
+      "auto": true
+    },
+    {
+      "list": "icyveins-d4-leveling",
+      "tier": "A",
+      "build": "Zeal Paladin Leveling",
+      "className": "Paladin",
+      "url": "https://www.icy-veins.com/d4/guides/zeal-paladin-leveling-build",
+      "auto": true
+    },
+    {
+      "list": "icyveins-d4-leveling",
+      "tier": "A",
+      "build": "Divine Lance Paladin Leveling",
+      "className": "Paladin",
+      "url": "https://www.icy-veins.com/d4/guides/divine-lance-paladin-leveling-build",
+      "auto": true
+    },
+    {
+      "list": "icyveins-d4-leveling",
+      "tier": "A",
+      "build": "Pulverize Druid Leveling",
+      "className": "Druid",
+      "url": "https://www.icy-veins.com/d4/guides/pulverize-druid-leveling-build",
+      "auto": true
+    },
+    {
+      "list": "icyveins-d4-leveling",
+      "tier": "A",
+      "build": "Shred Druid Leveling",
+      "className": "Druid",
+      "url": "https://www.icy-veins.com/d4/guides/shred-druid-leveling-build",
+      "auto": true
+    },
+    {
+      "list": "icyveins-d4-leveling",
+      "tier": "A",
+      "build": "Companion Druid Leveling",
+      "className": "Druid",
+      "url": "https://www.icy-veins.com/d4/guides/companion-druid-leveling-build",
+      "auto": true
+    },
+    {
+      "list": "icyveins-d4-leveling",
+      "tier": "A",
+      "build": "Rapid Fire Rogue Leveling",
+      "className": "Rogue",
+      "url": "https://www.icy-veins.com/d4/guides/rapid-fire-rogue-leveling-build",
+      "auto": true
+    },
+    {
+      "list": "icyveins-d4-leveling",
+      "tier": "A",
+      "build": "Fireball Sorcerer Leveling",
+      "className": "Sorcerer",
+      "url": "https://www.icy-veins.com/d4/guides/fireball-sorcerer-leveling-build",
+      "auto": true
+    },
+    {
+      "list": "icyveins-d4-leveling",
+      "tier": "A",
+      "build": "Blizzard Sorcerer Leveling",
+      "className": "Sorcerer",
+      "url": "https://www.icy-veins.com/d4/guides/blizzard-sorcerer-leveling-build",
+      "auto": true
+    },
+    {
+      "list": "icyveins-d4-leveling",
+      "tier": "A",
+      "build": "Hellfire Abodian Warlock Leveling",
+      "className": "Warlock",
+      "url": "https://www.icy-veins.com/d4/guides/hellfire-abodian-warlock-leveling-build",
+      "auto": true
+    },
+    {
+      "list": "icyveins-d4-leveling",
+      "tier": "A",
+      "build": "Blessed Shield Paladin Leveling",
+      "className": "Paladin",
+      "url": "https://www.icy-veins.com/d4/guides/blessed-shield-paladin-leveling-build",
+      "auto": true
+    },
+    {
+      "list": "icyveins-d4-leveling",
+      "tier": "A",
+      "build": "Lightning Storm Druid Leveling",
+      "className": "Druid",
+      "url": "https://www.icy-veins.com/d4/guides/lightning-storm-druid-leveling-build",
+      "auto": true
+    },
+    {
+      "list": "icyveins-d4-leveling",
+      "tier": "B",
+      "build": "Flurry Rogue Leveling",
+      "className": "Rogue",
+      "url": "https://www.icy-veins.com/d4/guides/flurry-rogue-leveling-build",
+      "auto": true
     }
   ],
   "snapshots": [
@@ -559,7 +1364,7 @@
         {
           "site": "Maxroll",
           "url": "https://maxroll.gg/d4/build-guides/blazing-scream-warlock-guide",
-          "label": "Maxroll Blazing Scream Warlock guide"
+          "label": "Maxroll Blazing Scream Warlock"
         },
         {
           "site": "Icy Veins",
@@ -801,65 +1606,1486 @@
       "fetchedAt": "2026-10-12"
     },
     {
-      "id": "forever-snap-armswarriorforever",
-      "game": "forever",
-      "className": "Warrior",
-      "buildName": "Arms Warrior (Forever)",
+      "id": "d4-snap-counterswarmspiritborn",
+      "game": "d4",
+      "className": "Spiritborn",
+      "buildName": "Counterswarm Spiritborn",
       "tier": null,
-      "summary": "Live guide on ClassicWoW.gg. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
       "sources": [
         {
-          "site": "ClassicWoW.gg",
-          "url": "https://classicwow.gg/forever/guides/warrior/arms",
-          "label": "ClassicWoW.gg Arms Warrior (Forever)"
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/counterswarm-spiritborn-guide",
+          "label": "Maxroll Counterswarm Spiritborn"
         }
       ],
       "fetchedAt": "2026-10-12"
     },
     {
-      "id": "forever-snap-protectionwarriorforever",
-      "game": "forever",
-      "className": "Warrior",
-      "buildName": "Protection Warrior (Forever)",
+      "id": "d4-snap-deathtraprogue",
+      "game": "d4",
+      "className": "Rogue",
+      "buildName": "Death Trap Rogue",
       "tier": null,
-      "summary": "Live guide on ClassicWoW.gg. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
       "sources": [
         {
-          "site": "ClassicWoW.gg",
-          "url": "https://classicwow.gg/forever/guides/warrior/protection",
-          "label": "ClassicWoW.gg Protection Warrior (Forever)"
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/death-trap-rogue-guide",
+          "label": "Maxroll Death Trap Rogue"
         }
       ],
       "fetchedAt": "2026-10-12"
     },
     {
-      "id": "forever-snap-holypaladinforever",
-      "game": "forever",
+      "id": "d4-snap-laceratedruid",
+      "game": "d4",
+      "className": "Druid",
+      "buildName": "Lacerate Druid",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/lacerate-druid-guide",
+          "label": "Maxroll Lacerate Druid"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-penetratingshotrogue",
+      "game": "d4",
+      "className": "Rogue",
+      "buildName": "Penetrating Shot Rogue",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/penetrating-shot-rogue-guide",
+          "label": "Maxroll Penetrating Shot Rogue"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-heartseekerroguespecialized",
+      "game": "d4",
+      "className": "Rogue",
+      "buildName": "Heartseeker Rogue Specialized",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/heartseeker-rogue-specialized-guide",
+          "label": "Maxroll Heartseeker Rogue Specialized"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-bonespiritnecromancer",
+      "game": "d4",
+      "className": "Necromancer",
+      "buildName": "Bone Spirit Necromancer",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/bone-spirit-necromancer-guide",
+          "label": "Maxroll Bone Spirit Necromancer"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-firewallsorcerer",
+      "game": "d4",
+      "className": "Sorcerer",
+      "buildName": "Firewall Sorcerer",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/firewall-sorcerer-guide",
+          "label": "Maxroll Firewall Sorcerer"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-bonespearnecromancer",
+      "game": "d4",
+      "className": "Necromancer",
+      "buildName": "Bone Spear Necromancer",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/bone-spear-necromancer-guide",
+          "label": "Maxroll Bone Spear Necromancer"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-minionnecromancer",
+      "game": "d4",
+      "className": "Necromancer",
+      "buildName": "Minion Necromancer",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/minion-necromancer-guide",
+          "label": "Maxroll Minion Necromancer"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-golemnecromancer",
+      "game": "d4",
+      "className": "Necromancer",
+      "buildName": "Golem Necromancer",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/golem-necromancer-guide",
+          "label": "Maxroll Golem Necromancer"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-poisonbarragerogue",
+      "game": "d4",
+      "className": "Rogue",
+      "buildName": "Poison Barrage Rogue",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/poison-barrage-rogue-guide",
+          "label": "Maxroll Poison Barrage Rogue"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-poisonrainofarrowsrogue",
+      "game": "d4",
+      "className": "Rogue",
+      "buildName": "Poison Rain Of Arrows Rogue",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/poison-rain-of-arrows-rogue-guide",
+          "label": "Maxroll Poison Rain Of Arrows Rogue"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-barragerogue",
+      "game": "d4",
+      "className": "Rogue",
+      "buildName": "Barrage Rogue",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/barrage-rogue-guide",
+          "label": "Maxroll Barrage Rogue"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-zealpaladin",
+      "game": "d4",
       "className": "Paladin",
-      "buildName": "Holy Paladin (Forever)",
+      "buildName": "Zeal Paladin",
       "tier": null,
-      "summary": "Live guide on ClassicWoW.gg. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
       "sources": [
         {
-          "site": "ClassicWoW.gg",
-          "url": "https://classicwow.gg/forever/guides/paladin/holy",
-          "label": "ClassicWoW.gg Holy Paladin (Forever)"
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/zeal-paladin-guide",
+          "label": "Maxroll Zeal Paladin"
         }
       ],
       "fetchedAt": "2026-10-12"
     },
     {
-      "id": "forever-snap-protectionpaladinforever",
-      "game": "forever",
+      "id": "d4-snap-divinelancepaladin",
+      "game": "d4",
       "className": "Paladin",
-      "buildName": "Protection Paladin (Forever)",
+      "buildName": "Divine Lance Paladin",
       "tier": null,
-      "summary": "Live guide on ClassicWoW.gg. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
       "sources": [
         {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/divine-lance-paladin-guide",
+          "label": "Maxroll Divine Lance Paladin"
+        },
+        {
+          "site": "Icy Veins",
+          "url": "https://www.icy-veins.com/d4/guides/divine-lance-paladin-leveling-build",
+          "label": "Icy Veins Divine Lance Paladin Leveling"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-earthquakebarbarian",
+      "game": "d4",
+      "className": "Barbarian",
+      "buildName": "Earthquake Barbarian",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/earthquake-barbarian-guide",
+          "label": "Maxroll Earthquake Barbarian"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-lungingstrikebarbarian",
+      "game": "d4",
+      "className": "Barbarian",
+      "buildName": "Lunging Strike Barbarian",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/lunging-strike-barbarian-guide",
+          "label": "Maxroll Lunging Strike Barbarian"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-coldpenetratingshotrogue",
+      "game": "d4",
+      "className": "Rogue",
+      "buildName": "Cold Penetrating Shot Rogue",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/cold-penetrating-shot-rogue-guide",
+          "label": "Maxroll Cold Penetrating Shot Rogue"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-shieldofretributionpaladin",
+      "game": "d4",
+      "className": "Paladin",
+      "buildName": "Shield Of Retribution Paladin",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/shield-of-retribution-paladin-guide",
+          "label": "Maxroll Shield Of Retribution Paladin"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-hammeroftheancientsbarbarian",
+      "game": "d4",
+      "className": "Barbarian",
+      "buildName": "Hammer Of The Ancients Barbarian",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/hammer-of-the-ancients-barbarian-guide",
+          "label": "Maxroll Hammer Of The Ancients Barbarian"
+        },
+        {
+          "site": "Icy Veins",
+          "url": "https://www.icy-veins.com/d4/guides/hammer-of-the-ancients-barbarian-leveling-build",
+          "label": "Icy Veins Hammer Of The Ancients Barbarian Leveling"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-twistingbladesrogue",
+      "game": "d4",
+      "className": "Rogue",
+      "buildName": "Twisting Blades Rogue",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/twisting-blades-rogue-guide",
+          "label": "Maxroll Twisting Blades Rogue"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-rainofarrowsrogue",
+      "game": "d4",
+      "className": "Rogue",
+      "buildName": "Rain Of Arrows Rogue",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/rain-of-arrows-rogue-guide",
+          "label": "Maxroll Rain Of Arrows Rogue"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-evadebarbarian",
+      "game": "d4",
+      "className": "Barbarian",
+      "buildName": "Evade Barbarian",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/evade-barbarian-guide",
+          "label": "Maxroll Evade Barbarian"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-mightythrowbarbarian",
+      "game": "d4",
+      "className": "Barbarian",
+      "buildName": "Mighty Throw Barbarian",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/mighty-throw-barbarian-guide",
+          "label": "Maxroll Mighty Throw Barbarian"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-upheavalbarbarian",
+      "game": "d4",
+      "className": "Barbarian",
+      "buildName": "Upheaval Barbarian",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/upheaval-barbarian-guide",
+          "label": "Maxroll Upheaval Barbarian"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-arrowstormsrogue",
+      "game": "d4",
+      "className": "Rogue",
+      "buildName": "Arrow Storms Rogue",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/arrow-storms-rogue-guide",
+          "label": "Maxroll Arrow Storms Rogue"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-boulderdruid",
+      "game": "d4",
+      "className": "Druid",
+      "buildName": "Boulder Druid",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/boulder-druid-guide",
+          "label": "Maxroll Boulder Druid"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-bloodwavenecromancer",
+      "game": "d4",
+      "className": "Necromancer",
+      "buildName": "Blood Wave Necromancer",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/blood-wave-necromancer-guide",
+          "label": "Maxroll Blood Wave Necromancer"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-stingerspiritborn",
+      "game": "d4",
+      "className": "Spiritborn",
+      "buildName": "Stinger Spiritborn",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/stinger-spiritborn-guide",
+          "label": "Maxroll Stinger Spiritborn"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-minionbarbarian",
+      "game": "d4",
+      "className": "Barbarian",
+      "buildName": "Minion Barbarian",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/minion-barbarian-guide",
+          "label": "Maxroll Minion Barbarian"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-touchofdeathspiritborn",
+      "game": "d4",
+      "className": "Spiritborn",
+      "buildName": "Touch Of Death Spiritborn",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/touch-of-death-spiritborn-guide",
+          "label": "Maxroll Touch Of Death Spiritborn"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-quillvolleyspiritborn",
+      "game": "d4",
+      "className": "Spiritborn",
+      "buildName": "Quill Volley Spiritborn",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/quill-volley-spiritborn-guide",
+          "label": "Maxroll Quill Volley Spiritborn"
+        },
+        {
+          "site": "Icy Veins",
+          "url": "https://www.icy-veins.com/d4/guides/quill-volley-spiritborn-leveling-build",
+          "label": "Icy Veins Quill Volley Spiritborn Leveling"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-chargebarbarian",
+      "game": "d4",
+      "className": "Barbarian",
+      "buildName": "Charge Barbarian",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/charge-barbarian-guide",
+          "label": "Maxroll Charge Barbarian"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-dashrogue",
+      "game": "d4",
+      "className": "Rogue",
+      "buildName": "Dash Rogue",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/dash-rogue-guide",
+          "label": "Maxroll Dash Rogue"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-shreddruid",
+      "game": "d4",
+      "className": "Druid",
+      "buildName": "Shred Druid",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/shred-druid-guide",
+          "label": "Maxroll Shred Druid"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-auradin",
+      "game": "d4",
+      "className": "Paladin",
+      "buildName": "Auradin",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/auradin-guide",
+          "label": "Maxroll Auradin"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-apocalypsewarlock",
+      "game": "d4",
+      "className": "Warlock",
+      "buildName": "Apocalypse Warlock",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/apocalypse-warlock-guide",
+          "label": "Maxroll Apocalypse Warlock"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-stormstrikedruid",
+      "game": "d4",
+      "className": "Druid",
+      "buildName": "Storm Strike Druid",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/storm-strike-druid-guide",
+          "label": "Maxroll Storm Strike Druid"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-tornadodruid",
+      "game": "d4",
+      "className": "Druid",
+      "buildName": "Tornado Druid",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/tornado-druid-guide",
+          "label": "Maxroll Tornado Druid"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-rakespiritborn",
+      "game": "d4",
+      "className": "Spiritborn",
+      "buildName": "Rake Spiritborn",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/rake-spiritborn-guide",
+          "label": "Maxroll Rake Spiritborn"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-evadecaltropsrogue",
+      "game": "d4",
+      "className": "Rogue",
+      "buildName": "Evade Caltrops Rogue",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/evade-caltrops-rogue-guide",
+          "label": "Maxroll Evade Caltrops Rogue"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-brandishpaladin",
+      "game": "d4",
+      "className": "Paladin",
+      "buildName": "Brandish Paladin",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/brandish-paladin-guide",
+          "label": "Maxroll Brandish Paladin"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-shieldchargepaladin",
+      "game": "d4",
+      "className": "Paladin",
+      "buildName": "Shield Charge Paladin",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/shield-charge-paladin-guide",
+          "label": "Maxroll Shield Charge Paladin"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-fistoftheheavenspaladin",
+      "game": "d4",
+      "className": "Paladin",
+      "buildName": "Fist Of The Heavens Paladin",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/fist-of-the-heavens-paladin-guide",
+          "label": "Maxroll Fist Of The Heavens Paladin"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-minionwarlock",
+      "game": "d4",
+      "className": "Warlock",
+      "buildName": "Minion Warlock",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/minion-warlock-guide",
+          "label": "Maxroll Minion Warlock"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-companiondruid",
+      "game": "d4",
+      "className": "Druid",
+      "buildName": "Companion Druid",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/companion-druid-guide",
+          "label": "Maxroll Companion Druid"
+        },
+        {
+          "site": "Icy Veins",
+          "url": "https://www.icy-veins.com/d4/guides/companion-druid-leveling-build",
+          "label": "Icy Veins Companion Druid Leveling"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-incineratesorcerer",
+      "game": "d4",
+      "className": "Sorcerer",
+      "buildName": "Incinerate Sorcerer",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/incinerate-sorcerer-guide",
+          "label": "Maxroll Incinerate Sorcerer"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-frozenorbsorcerer",
+      "game": "d4",
+      "className": "Sorcerer",
+      "buildName": "Frozen Orb Sorcerer",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/frozen-orb-sorcerer-guide",
+          "label": "Maxroll Frozen Orb Sorcerer"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-iceshardssorcerer",
+      "game": "d4",
+      "className": "Sorcerer",
+      "buildName": "Ice Shards Sorcerer",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/ice-shards-sorcerer-guide",
+          "label": "Maxroll Ice Shards Sorcerer"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-icespikessorcerer",
+      "game": "d4",
+      "className": "Sorcerer",
+      "buildName": "Ice Spikes Sorcerer",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/ice-spikes-sorcerer-guide",
+          "label": "Maxroll Ice Spikes Sorcerer"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-rocksplitterspiritborn",
+      "game": "d4",
+      "className": "Spiritborn",
+      "buildName": "Rock Splitter Spiritborn",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/rock-splitter-spiritborn-guide",
+          "label": "Maxroll Rock Splitter Spiritborn"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-witheringfistspiritborn",
+      "game": "d4",
+      "className": "Spiritborn",
+      "buildName": "Withering Fist Spiritborn",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/withering-fist-spiritborn-guide",
+          "label": "Maxroll Withering Fist Spiritborn"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-flurryrogue",
+      "game": "d4",
+      "className": "Rogue",
+      "buildName": "Flurry Rogue",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/flurry-rogue-guide",
+          "label": "Maxroll Flurry Rogue"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-hellfracturewarlock",
+      "game": "d4",
+      "className": "Warlock",
+      "buildName": "Hell Fracture Warlock",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/hell-fracture-warlock-guide",
+          "label": "Maxroll Hell Fracture Warlock"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-trampleslidedruid",
+      "game": "d4",
+      "className": "Druid",
+      "buildName": "Trampleslide Druid",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/trampleslide-druid-guide",
+          "label": "Maxroll Trampleslide Druid"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-cataclysmdruid",
+      "game": "d4",
+      "className": "Druid",
+      "buildName": "Cataclysm Druid",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/cataclysm-druid-build-guide",
+          "label": "Maxroll Cataclysm Druid"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-zenithpaladin",
+      "game": "d4",
+      "className": "Paladin",
+      "buildName": "Zenith Paladin",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/zenith-paladin-guide",
+          "label": "Maxroll Zenith Paladin"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-blessedhammerpaladin",
+      "game": "d4",
+      "className": "Paladin",
+      "buildName": "Blessed Hammer Paladin",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/blessed-hammer-paladin-guide",
+          "label": "Maxroll Blessed Hammer Paladin"
+        },
+        {
+          "site": "Icy Veins",
+          "url": "https://www.icy-veins.com/d4/guides/blessed-hammer-paladin-leveling-build",
+          "label": "Icy Veins Blessed Hammer Paladin Leveling"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-wingstrikespaladin",
+      "game": "d4",
+      "className": "Paladin",
+      "buildName": "Wing Strikes Paladin",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/wing-strikes-paladin-guide",
+          "label": "Maxroll Wing Strikes Paladin"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-bloodsurgenecromancer",
+      "game": "d4",
+      "className": "Necromancer",
+      "buildName": "Blood Surge Necromancer",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/blood-surge-necromancer-guide",
+          "label": "Maxroll Blood Surge Necromancer"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-blizzardsorcerer",
+      "game": "d4",
+      "className": "Sorcerer",
+      "buildName": "Blizzard Sorcerer",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/blizzard-sorcerer-guide",
+          "label": "Maxroll Blizzard Sorcerer"
+        },
+        {
+          "site": "Icy Veins",
+          "url": "https://www.icy-veins.com/d4/guides/blizzard-sorcerer-leveling-build",
+          "label": "Icy Veins Blizzard Sorcerer Leveling"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-grenaderogue",
+      "game": "d4",
+      "className": "Rogue",
+      "buildName": "Grenade Rogue",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/grenade-rogue-guide",
+          "label": "Maxroll Grenade Rogue"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-hydrasorcerer",
+      "game": "d4",
+      "className": "Sorcerer",
+      "buildName": "Hydra Sorcerer",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/hydra-sorcerer-guide",
+          "label": "Maxroll Hydra Sorcerer"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-mightymaelstrombarbarian",
+      "game": "d4",
+      "className": "Barbarian",
+      "buildName": "Mighty Maelstrom Barbarian",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/mighty-maelstrom-barbarian-guide",
+          "label": "Maxroll Mighty Maelstrom Barbarian"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-rendbarbarian",
+      "game": "d4",
+      "className": "Barbarian",
+      "buildName": "Rend Barbarian",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/rend-barbarian-guide",
+          "label": "Maxroll Rend Barbarian"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-lunaticwarlockleveling",
+      "game": "d4",
+      "className": "Warlock",
+      "buildName": "Lunatic Warlock Leveling",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/lunatic-warlock-leveling-guide",
+          "label": "Maxroll Lunatic Warlock Leveling"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-dreadclawswarlockleveling",
+      "game": "d4",
+      "className": "Warlock",
+      "buildName": "Dread Claws Warlock Leveling",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/dread-claws-warlock-leveling-guide",
+          "label": "Maxroll Dread Claws Warlock Leveling"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-crushinghandspiritborn",
+      "game": "d4",
+      "className": "Spiritborn",
+      "buildName": "Crushing Hand Spiritborn",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/crushing-hand-spiritborn-guide",
+          "label": "Maxroll Crushing Hand Spiritborn"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-frenzybarbarianleveling",
+      "game": "d4",
+      "className": "Barbarian",
+      "buildName": "Frenzy Barbarian Leveling",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/frenzy-barbarian-leveling-guide",
+          "label": "Maxroll Frenzy Barbarian Leveling"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-flurryrogueleveling",
+      "game": "d4",
+      "className": "Rogue",
+      "buildName": "Flurry Rogue Leveling",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/flurry-rogue-leveling-guide",
+          "label": "Maxroll Flurry Rogue Leveling"
+        },
+        {
+          "site": "Icy Veins",
+          "url": "https://www.icy-veins.com/d4/guides/flurry-rogue-leveling-build",
+          "label": "Icy Veins Flurry Rogue Leveling"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-evisceratewarlockleveling",
+      "game": "d4",
+      "className": "Warlock",
+      "buildName": "Eviscerate Warlock Leveling",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/eviscerate-warlock-leveling-guide",
+          "label": "Maxroll Eviscerate Warlock Leveling"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-tyrantsgraspwarlock",
+      "game": "d4",
+      "className": "Warlock",
+      "buildName": "Tyrants Grasp Warlock",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/tyrants-grasp-warlock-guide",
+          "label": "Maxroll Tyrants Grasp Warlock"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-heartseekerrogueleveling",
+      "game": "d4",
+      "className": "Rogue",
+      "buildName": "Heartseeker Rogue Leveling",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/heartseeker-rogue-leveling-build-guide",
+          "label": "Maxroll Heartseeker Rogue Leveling"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-barragerogueleveling",
+      "game": "d4",
+      "className": "Rogue",
+      "buildName": "Barrage Rogue Leveling",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/barrage-rogue-leveling-guide",
+          "label": "Maxroll Barrage Rogue Leveling"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-severnecromancerendgame",
+      "game": "d4",
+      "className": "Necromancer",
+      "buildName": "Sever Necromancer Endgame",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/sever-necromancer-endgame-guide",
+          "label": "Maxroll Sever Necromancer Endgame"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-blightnecromancerleveling",
+      "game": "d4",
+      "className": "Necromancer",
+      "buildName": "Blight Necromancer Leveling",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/blight-necromancer-leveling-guide",
+          "label": "Maxroll Blight Necromancer Leveling"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-paybackspiritbornleveling",
+      "game": "d4",
+      "className": "Spiritborn",
+      "buildName": "Payback Spiritborn Leveling",
+      "tier": null,
+      "summary": "Live guide on Icy Veins. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Icy Veins",
+          "url": "https://www.icy-veins.com/d4/guides/payback-spiritborn-leveling-build",
+          "label": "Icy Veins Payback Spiritborn Leveling"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-chargedboltssorcererleveling",
+      "game": "d4",
+      "className": "Sorcerer",
+      "buildName": "Charged Bolts Sorcerer Leveling",
+      "tier": null,
+      "summary": "Live guide on Icy Veins. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Icy Veins",
+          "url": "https://www.icy-veins.com/d4/guides/charged-bolts-sorcerer-leveling-build",
+          "label": "Icy Veins Charged Bolts Sorcerer Leveling"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-demonsummonerwarlockleveling",
+      "game": "d4",
+      "className": "Warlock",
+      "buildName": "Demon Summoner Warlock Leveling",
+      "tier": null,
+      "summary": "Live guide on Icy Veins. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Icy Veins",
+          "url": "https://www.icy-veins.com/d4/guides/demon-summoner-warlock-leveling-build",
+          "label": "Icy Veins Demon Summoner Warlock Leveling"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-abyssrampagewarlockleveling",
+      "game": "d4",
+      "className": "Warlock",
+      "buildName": "Abyss Rampage Warlock Leveling",
+      "tier": null,
+      "summary": "Live guide on Icy Veins. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Icy Veins",
+          "url": "https://www.icy-veins.com/d4/guides/abyss-rampage-warlock-leveling-build",
+          "label": "Icy Veins Abyss Rampage Warlock Leveling"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-summonernecromancerleveling",
+      "game": "d4",
+      "className": "Necromancer",
+      "buildName": "Summoner Necromancer Leveling",
+      "tier": null,
+      "summary": "Live guide on Icy Veins. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Icy Veins",
+          "url": "https://www.icy-veins.com/d4/guides/summoner-necromancer-leveling-build",
+          "label": "Icy Veins Summoner Necromancer Leveling"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-doubleswingbarbarianleveling",
+      "game": "d4",
+      "className": "Barbarian",
+      "buildName": "Double Swing Barbarian Leveling",
+      "tier": null,
+      "summary": "Live guide on Icy Veins. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Icy Veins",
+          "url": "https://www.icy-veins.com/d4/guides/double-swing-barbarian-leveling-build",
+          "label": "Icy Veins Double Swing Barbarian Leveling"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-zealpaladinleveling",
+      "game": "d4",
+      "className": "Paladin",
+      "buildName": "Zeal Paladin Leveling",
+      "tier": null,
+      "summary": "Live guide on Icy Veins. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Icy Veins",
+          "url": "https://www.icy-veins.com/d4/guides/zeal-paladin-leveling-build",
+          "label": "Icy Veins Zeal Paladin Leveling"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-shreddruidleveling",
+      "game": "d4",
+      "className": "Druid",
+      "buildName": "Shred Druid Leveling",
+      "tier": null,
+      "summary": "Live guide on Icy Veins. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Icy Veins",
+          "url": "https://www.icy-veins.com/d4/guides/shred-druid-leveling-build",
+          "label": "Icy Veins Shred Druid Leveling"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-hellfireabodianwarlockleveling",
+      "game": "d4",
+      "className": "Warlock",
+      "buildName": "Hellfire Abodian Warlock Leveling",
+      "tier": null,
+      "summary": "Live guide on Icy Veins. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Icy Veins",
+          "url": "https://www.icy-veins.com/d4/guides/hellfire-abodian-warlock-leveling-build",
+          "label": "Icy Veins Hellfire Abodian Warlock Leveling"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-blessedshieldpaladinleveling",
+      "game": "d4",
+      "className": "Paladin",
+      "buildName": "Blessed Shield Paladin Leveling",
+      "tier": null,
+      "summary": "Live guide on Icy Veins. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Icy Veins",
+          "url": "https://www.icy-veins.com/d4/guides/blessed-shield-paladin-leveling-build",
+          "label": "Icy Veins Blessed Shield Paladin Leveling"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "d4-snap-lightningstormdruidleveling",
+      "game": "d4",
+      "className": "Druid",
+      "buildName": "Lightning Storm Druid Leveling",
+      "tier": null,
+      "summary": "Live guide on Icy Veins. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Icy Veins",
+          "url": "https://www.icy-veins.com/d4/guides/lightning-storm-druid-leveling-build",
+          "label": "Icy Veins Lightning Storm Druid Leveling"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "forever-snap-balancedruidforever",
+      "game": "forever",
+      "className": "Druid",
+      "buildName": "Balance Druid (Forever)",
+      "tier": null,
+      "summary": "Live guide on Icy Veins. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Icy Veins",
+          "url": "https://www.icy-veins.com/wow-forever/balance-druid-ranged-dps-pve-guide",
+          "label": "Icy Veins Balance Druid (Forever)"
+        },
+        {
           "site": "ClassicWoW.gg",
-          "url": "https://classicwow.gg/forever/guides/paladin/protection",
-          "label": "ClassicWoW.gg Protection Paladin (Forever)"
+          "url": "https://classicwow.gg/forever/guides/druid/balance",
+          "label": "ClassicWoW.gg Balance Druid (Forever)"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "forever-snap-feraldruidmeleedpsandforever",
+      "game": "forever",
+      "className": "Druid",
+      "buildName": "Feral Druid Melee Dps And (Forever)",
+      "tier": null,
+      "summary": "Live guide on Icy Veins. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Icy Veins",
+          "url": "https://www.icy-veins.com/wow-forever/feral-druid-melee-dps-and-tank-pve-guide",
+          "label": "Icy Veins Feral Druid Melee Dps And (Forever)"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "forever-snap-restorationdruidforever",
+      "game": "forever",
+      "className": "Druid",
+      "buildName": "Restoration Druid (Forever)",
+      "tier": null,
+      "summary": "Live guide on Icy Veins. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Icy Veins",
+          "url": "https://www.icy-veins.com/wow-forever/restoration-druid-healer-pve-guide",
+          "label": "Icy Veins Restoration Druid (Forever)"
+        },
+        {
+          "site": "ClassicWoW.gg",
+          "url": "https://classicwow.gg/forever/guides/druid/restoration",
+          "label": "ClassicWoW.gg Restoration Druid (Forever)"
         }
       ],
       "fetchedAt": "2026-10-12"
@@ -870,8 +3096,13 @@
       "className": "Hunter",
       "buildName": "Marksmanship Hunter (Forever)",
       "tier": null,
-      "summary": "Live guide on ClassicWoW.gg. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "summary": "Live guide on Icy Veins. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
       "sources": [
+        {
+          "site": "Icy Veins",
+          "url": "https://www.icy-veins.com/wow-forever/marksmanship-hunter-ranged-dps-pve-guide",
+          "label": "Icy Veins Marksmanship Hunter (Forever)"
+        },
         {
           "site": "ClassicWoW.gg",
           "url": "https://classicwow.gg/forever/guides/hunter/marksmanship",
@@ -886,92 +3117,17 @@
       "className": "Hunter",
       "buildName": "Survival Hunter (Forever)",
       "tier": null,
-      "summary": "Live guide on ClassicWoW.gg. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "summary": "Live guide on Icy Veins. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
       "sources": [
+        {
+          "site": "Icy Veins",
+          "url": "https://www.icy-veins.com/wow-forever/survival-hunter-melee-dps-pve-guide",
+          "label": "Icy Veins Survival Hunter (Forever)"
+        },
         {
           "site": "ClassicWoW.gg",
           "url": "https://classicwow.gg/forever/guides/hunter/survival",
           "label": "ClassicWoW.gg Survival Hunter (Forever)"
-        }
-      ],
-      "fetchedAt": "2026-10-12"
-    },
-    {
-      "id": "forever-snap-assassinationrogueforever",
-      "game": "forever",
-      "className": "Rogue",
-      "buildName": "Assassination Rogue (Forever)",
-      "tier": null,
-      "summary": "Live guide on ClassicWoW.gg. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
-      "sources": [
-        {
-          "site": "ClassicWoW.gg",
-          "url": "https://classicwow.gg/forever/guides/rogue/assassination",
-          "label": "ClassicWoW.gg Assassination Rogue (Forever)"
-        }
-      ],
-      "fetchedAt": "2026-10-12"
-    },
-    {
-      "id": "forever-snap-subtletyrogueforever",
-      "game": "forever",
-      "className": "Rogue",
-      "buildName": "Subtlety Rogue (Forever)",
-      "tier": null,
-      "summary": "Live guide on ClassicWoW.gg. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
-      "sources": [
-        {
-          "site": "ClassicWoW.gg",
-          "url": "https://classicwow.gg/forever/guides/rogue/subtlety",
-          "label": "ClassicWoW.gg Subtlety Rogue (Forever)"
-        }
-      ],
-      "fetchedAt": "2026-10-12"
-    },
-    {
-      "id": "forever-snap-disciplinepriestforever",
-      "game": "forever",
-      "className": "Priest",
-      "buildName": "Discipline Priest (Forever)",
-      "tier": null,
-      "summary": "Live guide on ClassicWoW.gg. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
-      "sources": [
-        {
-          "site": "ClassicWoW.gg",
-          "url": "https://classicwow.gg/forever/guides/priest/discipline",
-          "label": "ClassicWoW.gg Discipline Priest (Forever)"
-        }
-      ],
-      "fetchedAt": "2026-10-12"
-    },
-    {
-      "id": "forever-snap-elementalshamanforever",
-      "game": "forever",
-      "className": "Shaman",
-      "buildName": "Elemental Shaman (Forever)",
-      "tier": null,
-      "summary": "Live guide on ClassicWoW.gg. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
-      "sources": [
-        {
-          "site": "ClassicWoW.gg",
-          "url": "https://classicwow.gg/forever/guides/shaman/elemental",
-          "label": "ClassicWoW.gg Elemental Shaman (Forever)"
-        }
-      ],
-      "fetchedAt": "2026-10-12"
-    },
-    {
-      "id": "forever-snap-restorationshamanforever",
-      "game": "forever",
-      "className": "Shaman",
-      "buildName": "Restoration Shaman (Forever)",
-      "tier": null,
-      "summary": "Live guide on ClassicWoW.gg. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
-      "sources": [
-        {
-          "site": "ClassicWoW.gg",
-          "url": "https://classicwow.gg/forever/guides/shaman/restoration",
-          "label": "ClassicWoW.gg Restoration Shaman (Forever)"
         }
       ],
       "fetchedAt": "2026-10-12"
@@ -982,8 +3138,13 @@
       "className": "Mage",
       "buildName": "Arcane Mage (Forever)",
       "tier": null,
-      "summary": "Live guide on ClassicWoW.gg. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "summary": "Live guide on Icy Veins. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
       "sources": [
+        {
+          "site": "Icy Veins",
+          "url": "https://www.icy-veins.com/wow-forever/arcane-mage-ranged-dps-pve-guide",
+          "label": "Icy Veins Arcane Mage (Forever)"
+        },
         {
           "site": "ClassicWoW.gg",
           "url": "https://classicwow.gg/forever/guides/mage/arcane",
@@ -998,12 +3159,164 @@
       "className": "Mage",
       "buildName": "Fire Mage (Forever)",
       "tier": null,
-      "summary": "Live guide on ClassicWoW.gg. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "summary": "Live guide on Icy Veins. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
       "sources": [
+        {
+          "site": "Icy Veins",
+          "url": "https://www.icy-veins.com/wow-forever/fire-mage-ranged-dps-pve-guide",
+          "label": "Icy Veins Fire Mage (Forever)"
+        },
         {
           "site": "ClassicWoW.gg",
           "url": "https://classicwow.gg/forever/guides/mage/fire",
           "label": "ClassicWoW.gg Fire Mage (Forever)"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "forever-snap-protectionpaladinforever",
+      "game": "forever",
+      "className": "Paladin",
+      "buildName": "Protection Paladin (Forever)",
+      "tier": null,
+      "summary": "Live guide on Icy Veins. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Icy Veins",
+          "url": "https://www.icy-veins.com/wow-forever/protection-paladin-tank-pve-guide",
+          "label": "Icy Veins Protection Paladin (Forever)"
+        },
+        {
+          "site": "ClassicWoW.gg",
+          "url": "https://classicwow.gg/forever/guides/paladin/protection",
+          "label": "ClassicWoW.gg Protection Paladin (Forever)"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "forever-snap-holypaladinforever",
+      "game": "forever",
+      "className": "Paladin",
+      "buildName": "Holy Paladin (Forever)",
+      "tier": null,
+      "summary": "Live guide on Icy Veins. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Icy Veins",
+          "url": "https://www.icy-veins.com/wow-forever/holy-paladin-healer-pve-guide",
+          "label": "Icy Veins Holy Paladin (Forever)"
+        },
+        {
+          "site": "ClassicWoW.gg",
+          "url": "https://classicwow.gg/forever/guides/paladin/holy",
+          "label": "ClassicWoW.gg Holy Paladin (Forever)"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "forever-snap-disciplinepriestforever",
+      "game": "forever",
+      "className": "Priest",
+      "buildName": "Discipline Priest (Forever)",
+      "tier": null,
+      "summary": "Live guide on Icy Veins. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Icy Veins",
+          "url": "https://www.icy-veins.com/wow-forever/discipline-priest-healer-pve-guide",
+          "label": "Icy Veins Discipline Priest (Forever)"
+        },
+        {
+          "site": "ClassicWoW.gg",
+          "url": "https://classicwow.gg/forever/guides/priest/discipline",
+          "label": "ClassicWoW.gg Discipline Priest (Forever)"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "forever-snap-assassinationrogueforever",
+      "game": "forever",
+      "className": "Rogue",
+      "buildName": "Assassination Rogue (Forever)",
+      "tier": null,
+      "summary": "Live guide on Icy Veins. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Icy Veins",
+          "url": "https://www.icy-veins.com/wow-forever/assassination-rogue-melee-dps-pve-guide",
+          "label": "Icy Veins Assassination Rogue (Forever)"
+        },
+        {
+          "site": "ClassicWoW.gg",
+          "url": "https://classicwow.gg/forever/guides/rogue/assassination",
+          "label": "ClassicWoW.gg Assassination Rogue (Forever)"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "forever-snap-subtletyrogueforever",
+      "game": "forever",
+      "className": "Rogue",
+      "buildName": "Subtlety Rogue (Forever)",
+      "tier": null,
+      "summary": "Live guide on Icy Veins. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Icy Veins",
+          "url": "https://www.icy-veins.com/wow-forever/subtlety-rogue-melee-dps-pve-guide",
+          "label": "Icy Veins Subtlety Rogue (Forever)"
+        },
+        {
+          "site": "ClassicWoW.gg",
+          "url": "https://classicwow.gg/forever/guides/rogue/subtlety",
+          "label": "ClassicWoW.gg Subtlety Rogue (Forever)"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "forever-snap-elementalshamanforever",
+      "game": "forever",
+      "className": "Shaman",
+      "buildName": "Elemental Shaman (Forever)",
+      "tier": null,
+      "summary": "Live guide on Icy Veins. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Icy Veins",
+          "url": "https://www.icy-veins.com/wow-forever/elemental-shaman-ranged-dps-pve-guide",
+          "label": "Icy Veins Elemental Shaman (Forever)"
+        },
+        {
+          "site": "ClassicWoW.gg",
+          "url": "https://classicwow.gg/forever/guides/shaman/elemental",
+          "label": "ClassicWoW.gg Elemental Shaman (Forever)"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "forever-snap-restorationshamanforever",
+      "game": "forever",
+      "className": "Shaman",
+      "buildName": "Restoration Shaman (Forever)",
+      "tier": null,
+      "summary": "Live guide on Icy Veins. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Icy Veins",
+          "url": "https://www.icy-veins.com/wow-forever/restoration-shaman-healer-pve-guide",
+          "label": "Icy Veins Restoration Shaman (Forever)"
+        },
+        {
+          "site": "ClassicWoW.gg",
+          "url": "https://classicwow.gg/forever/guides/shaman/restoration",
+          "label": "ClassicWoW.gg Restoration Shaman (Forever)"
         }
       ],
       "fetchedAt": "2026-10-12"
@@ -1014,8 +3327,13 @@
       "className": "Warlock",
       "buildName": "Demonology Warlock (Forever)",
       "tier": null,
-      "summary": "Live guide on ClassicWoW.gg. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "summary": "Live guide on Icy Veins. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
       "sources": [
+        {
+          "site": "Icy Veins",
+          "url": "https://www.icy-veins.com/wow-forever/demonology-warlock-ranged-dps-pve-guide",
+          "label": "Icy Veins Demonology Warlock (Forever)"
+        },
         {
           "site": "ClassicWoW.gg",
           "url": "https://classicwow.gg/forever/guides/warlock/demonology",
@@ -1030,8 +3348,13 @@
       "className": "Warlock",
       "buildName": "Destruction Warlock (Forever)",
       "tier": null,
-      "summary": "Live guide on ClassicWoW.gg. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "summary": "Live guide on Icy Veins. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
       "sources": [
+        {
+          "site": "Icy Veins",
+          "url": "https://www.icy-veins.com/wow-forever/destruction-warlock-ranged-dps-pve-guide",
+          "label": "Icy Veins Destruction Warlock (Forever)"
+        },
         {
           "site": "ClassicWoW.gg",
           "url": "https://classicwow.gg/forever/guides/warlock/destruction",
@@ -1041,17 +3364,43 @@
       "fetchedAt": "2026-10-12"
     },
     {
-      "id": "forever-snap-balancedruidforever",
+      "id": "forever-snap-armswarriorforever",
       "game": "forever",
-      "className": "Druid",
-      "buildName": "Balance Druid (Forever)",
+      "className": "Warrior",
+      "buildName": "Arms Warrior (Forever)",
       "tier": null,
-      "summary": "Live guide on ClassicWoW.gg. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "summary": "Live guide on Icy Veins. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
       "sources": [
         {
+          "site": "Icy Veins",
+          "url": "https://www.icy-veins.com/wow-forever/arms-warrior-melee-dps-pve-guide",
+          "label": "Icy Veins Arms Warrior (Forever)"
+        },
+        {
           "site": "ClassicWoW.gg",
-          "url": "https://classicwow.gg/forever/guides/druid/balance",
-          "label": "ClassicWoW.gg Balance Druid (Forever)"
+          "url": "https://classicwow.gg/forever/guides/warrior/arms",
+          "label": "ClassicWoW.gg Arms Warrior (Forever)"
+        }
+      ],
+      "fetchedAt": "2026-10-12"
+    },
+    {
+      "id": "forever-snap-protectionwarriorforever",
+      "game": "forever",
+      "className": "Warrior",
+      "buildName": "Protection Warrior (Forever)",
+      "tier": null,
+      "summary": "Live guide on Icy Veins. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Icy Veins",
+          "url": "https://www.icy-veins.com/wow-forever/protection-warrior-tank-pve-guide",
+          "label": "Icy Veins Protection Warrior (Forever)"
+        },
+        {
+          "site": "ClassicWoW.gg",
+          "url": "https://classicwow.gg/forever/guides/warrior/protection",
+          "label": "ClassicWoW.gg Protection Warrior (Forever)"
         }
       ],
       "fetchedAt": "2026-10-12"
@@ -1089,118 +3438,6 @@
       "fetchedAt": "2026-10-12"
     },
     {
-      "id": "forever-snap-restorationdruidforever",
-      "game": "forever",
-      "className": "Druid",
-      "buildName": "Restoration Druid (Forever)",
-      "tier": null,
-      "summary": "Live guide on ClassicWoW.gg. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
-      "sources": [
-        {
-          "site": "ClassicWoW.gg",
-          "url": "https://classicwow.gg/forever/guides/druid/restoration",
-          "label": "ClassicWoW.gg Restoration Druid (Forever)"
-        }
-      ],
-      "fetchedAt": "2026-10-12"
-    },
-    {
-      "id": "d4-snap-apocalypsewarlock",
-      "game": "d4",
-      "className": "Warlock",
-      "buildName": "Apocalypse Warlock",
-      "tier": null,
-      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/apocalypse-warlock-guide",
-          "label": "Maxroll Apocalypse Warlock guide"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-dreadclawswarlock",
-      "game": "d4",
-      "className": "Warlock",
-      "buildName": "Dread Claws Warlock",
-      "tier": null,
-      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/dread-claws-warlock-leveling-guide",
-          "label": "Maxroll Dread Claws Warlock guide"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-divinelancepaladin",
-      "game": "d4",
-      "className": "Paladin",
-      "buildName": "Divine Lance Paladin",
-      "tier": null,
-      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/divine-lance-paladin-guide",
-          "label": "Maxroll Divine Lance Paladin guide"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-shieldchargepaladin",
-      "game": "d4",
-      "className": "Paladin",
-      "buildName": "Shield Charge Paladin",
-      "tier": null,
-      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/shield-charge-paladin-guide",
-          "label": "Maxroll Shield Charge Paladin guide"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-counterswarmspiritborn",
-      "game": "d4",
-      "className": "Spiritborn",
-      "buildName": "Counterswarm Spiritborn",
-      "tier": null,
-      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/counterswarm-spiritborn-guide",
-          "label": "Maxroll Counterswarm Spiritborn guide"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-laceratedruid",
-      "game": "d4",
-      "className": "Druid",
-      "buildName": "Lacerate Druid",
-      "tier": null,
-      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/lacerate-druid-guide",
-          "label": "Maxroll Lacerate Druid guide"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
       "id": "d4-snap-calloftheancientsbarbarian",
       "game": "d4",
       "className": "Barbarian",
@@ -1212,1126 +3449,6 @@
           "site": "Maxroll",
           "url": "https://maxroll.gg/d4/build-guides/call-of-the-ancients-barbarian-guide",
           "label": "Maxroll Call of the Ancients Barbarian guide"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-penetratingshotrogue",
-      "game": "d4",
-      "className": "Rogue",
-      "buildName": "Penetrating Shot Rogue",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/penetrating-shot-rogue-guide",
-          "label": "Maxroll Penetrating Shot Rogue"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-heartseekerroguespecialized",
-      "game": "d4",
-      "className": "Rogue",
-      "buildName": "Heartseeker Rogue Specialized",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/heartseeker-rogue-specialized-guide",
-          "label": "Maxroll Heartseeker Rogue Specialized"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-bonespiritnecromancer",
-      "game": "d4",
-      "className": "Necromancer",
-      "buildName": "Bone Spirit Necromancer",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/bone-spirit-necromancer-guide",
-          "label": "Maxroll Bone Spirit Necromancer"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-firewallsorcerer",
-      "game": "d4",
-      "className": "Sorcerer",
-      "buildName": "Firewall Sorcerer",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/firewall-sorcerer-guide",
-          "label": "Maxroll Firewall Sorcerer"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-bonespearnecromancer",
-      "game": "d4",
-      "className": "Necromancer",
-      "buildName": "Bone Spear Necromancer",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/bone-spear-necromancer-guide",
-          "label": "Maxroll Bone Spear Necromancer"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-minionnecromancer",
-      "game": "d4",
-      "className": "Necromancer",
-      "buildName": "Minion Necromancer",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/minion-necromancer-guide",
-          "label": "Maxroll Minion Necromancer"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-golemnecromancer",
-      "game": "d4",
-      "className": "Necromancer",
-      "buildName": "Golem Necromancer",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/golem-necromancer-guide",
-          "label": "Maxroll Golem Necromancer"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-poisonbarragerogue",
-      "game": "d4",
-      "className": "Rogue",
-      "buildName": "Poison Barrage Rogue",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/poison-barrage-rogue-guide",
-          "label": "Maxroll Poison Barrage Rogue"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-poisonrainofarrowsrogue",
-      "game": "d4",
-      "className": "Rogue",
-      "buildName": "Poison Rain Of Arrows Rogue",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/poison-rain-of-arrows-rogue-guide",
-          "label": "Maxroll Poison Rain Of Arrows Rogue"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-barragerogue",
-      "game": "d4",
-      "className": "Rogue",
-      "buildName": "Barrage Rogue",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/barrage-rogue-guide",
-          "label": "Maxroll Barrage Rogue"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-zealpaladin",
-      "game": "d4",
-      "className": "Paladin",
-      "buildName": "Zeal Paladin",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/zeal-paladin-guide",
-          "label": "Maxroll Zeal Paladin"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-earthquakebarbarian",
-      "game": "d4",
-      "className": "Barbarian",
-      "buildName": "Earthquake Barbarian",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/earthquake-barbarian-guide",
-          "label": "Maxroll Earthquake Barbarian"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-lungingstrikebarbarian",
-      "game": "d4",
-      "className": "Barbarian",
-      "buildName": "Lunging Strike Barbarian",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/lunging-strike-barbarian-guide",
-          "label": "Maxroll Lunging Strike Barbarian"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-coldpenetratingshotrogue",
-      "game": "d4",
-      "className": "Rogue",
-      "buildName": "Cold Penetrating Shot Rogue",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/cold-penetrating-shot-rogue-guide",
-          "label": "Maxroll Cold Penetrating Shot Rogue"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-shieldofretributionpaladin",
-      "game": "d4",
-      "className": "Paladin",
-      "buildName": "Shield Of Retribution Paladin",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/shield-of-retribution-paladin-guide",
-          "label": "Maxroll Shield Of Retribution Paladin"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-hammeroftheancientsbarbarian",
-      "game": "d4",
-      "className": "Barbarian",
-      "buildName": "Hammer Of The Ancients Barbarian",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/hammer-of-the-ancients-barbarian-guide",
-          "label": "Maxroll Hammer Of The Ancients Barbarian"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-twistingbladesrogue",
-      "game": "d4",
-      "className": "Rogue",
-      "buildName": "Twisting Blades Rogue",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/twisting-blades-rogue-guide",
-          "label": "Maxroll Twisting Blades Rogue"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-rainofarrowsrogue",
-      "game": "d4",
-      "className": "Rogue",
-      "buildName": "Rain Of Arrows Rogue",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/rain-of-arrows-rogue-guide",
-          "label": "Maxroll Rain Of Arrows Rogue"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-evadebarbarian",
-      "game": "d4",
-      "className": "Barbarian",
-      "buildName": "Evade Barbarian",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/evade-barbarian-guide",
-          "label": "Maxroll Evade Barbarian"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-mightythrowbarbarian",
-      "game": "d4",
-      "className": "Barbarian",
-      "buildName": "Mighty Throw Barbarian",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/mighty-throw-barbarian-guide",
-          "label": "Maxroll Mighty Throw Barbarian"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-upheavalbarbarian",
-      "game": "d4",
-      "className": "Barbarian",
-      "buildName": "Upheaval Barbarian",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/upheaval-barbarian-guide",
-          "label": "Maxroll Upheaval Barbarian"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-arrowstormsrogue",
-      "game": "d4",
-      "className": "Rogue",
-      "buildName": "Arrow Storms Rogue",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/arrow-storms-rogue-guide",
-          "label": "Maxroll Arrow Storms Rogue"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-deathtraprogue",
-      "game": "d4",
-      "className": "Rogue",
-      "buildName": "Death Trap Rogue",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/death-trap-rogue-guide",
-          "label": "Maxroll Death Trap Rogue"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-boulderdruid",
-      "game": "d4",
-      "className": "Druid",
-      "buildName": "Boulder Druid",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/boulder-druid-guide",
-          "label": "Maxroll Boulder Druid"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-bloodwavenecromancer",
-      "game": "d4",
-      "className": "Necromancer",
-      "buildName": "Blood Wave Necromancer",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/blood-wave-necromancer-guide",
-          "label": "Maxroll Blood Wave Necromancer"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-stingerspiritborn",
-      "game": "d4",
-      "className": "Spiritborn",
-      "buildName": "Stinger Spiritborn",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/stinger-spiritborn-guide",
-          "label": "Maxroll Stinger Spiritborn"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-minionbarbarian",
-      "game": "d4",
-      "className": "Barbarian",
-      "buildName": "Minion Barbarian",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/minion-barbarian-guide",
-          "label": "Maxroll Minion Barbarian"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-touchofdeathspiritborn",
-      "game": "d4",
-      "className": "Spiritborn",
-      "buildName": "Touch Of Death Spiritborn",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/touch-of-death-spiritborn-guide",
-          "label": "Maxroll Touch Of Death Spiritborn"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-quillvolleyspiritborn",
-      "game": "d4",
-      "className": "Spiritborn",
-      "buildName": "Quill Volley Spiritborn",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/quill-volley-spiritborn-guide",
-          "label": "Maxroll Quill Volley Spiritborn"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-chargebarbarian",
-      "game": "d4",
-      "className": "Barbarian",
-      "buildName": "Charge Barbarian",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/charge-barbarian-guide",
-          "label": "Maxroll Charge Barbarian"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-dashrogue",
-      "game": "d4",
-      "className": "Rogue",
-      "buildName": "Dash Rogue",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/dash-rogue-guide",
-          "label": "Maxroll Dash Rogue"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-shreddruid",
-      "game": "d4",
-      "className": "Druid",
-      "buildName": "Shred Druid",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/shred-druid-guide",
-          "label": "Maxroll Shred Druid"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-auradin",
-      "game": "d4",
-      "className": "Paladin",
-      "buildName": "Auradin",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/auradin-guide",
-          "label": "Maxroll Auradin"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-stormstrikedruid",
-      "game": "d4",
-      "className": "Druid",
-      "buildName": "Storm Strike Druid",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/storm-strike-druid-guide",
-          "label": "Maxroll Storm Strike Druid"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-tornadodruid",
-      "game": "d4",
-      "className": "Druid",
-      "buildName": "Tornado Druid",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/tornado-druid-guide",
-          "label": "Maxroll Tornado Druid"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-rakespiritborn",
-      "game": "d4",
-      "className": "Spiritborn",
-      "buildName": "Rake Spiritborn",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/rake-spiritborn-guide",
-          "label": "Maxroll Rake Spiritborn"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-evadecaltropsrogue",
-      "game": "d4",
-      "className": "Rogue",
-      "buildName": "Evade Caltrops Rogue",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/evade-caltrops-rogue-guide",
-          "label": "Maxroll Evade Caltrops Rogue"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-brandishpaladin",
-      "game": "d4",
-      "className": "Paladin",
-      "buildName": "Brandish Paladin",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/brandish-paladin-guide",
-          "label": "Maxroll Brandish Paladin"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-fistoftheheavenspaladin",
-      "game": "d4",
-      "className": "Paladin",
-      "buildName": "Fist Of The Heavens Paladin",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/fist-of-the-heavens-paladin-guide",
-          "label": "Maxroll Fist Of The Heavens Paladin"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-minionwarlock",
-      "game": "d4",
-      "className": "Warlock",
-      "buildName": "Minion Warlock",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/minion-warlock-guide",
-          "label": "Maxroll Minion Warlock"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-companiondruid",
-      "game": "d4",
-      "className": "Druid",
-      "buildName": "Companion Druid",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/companion-druid-guide",
-          "label": "Maxroll Companion Druid"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-incineratesorcerer",
-      "game": "d4",
-      "className": "Sorcerer",
-      "buildName": "Incinerate Sorcerer",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/incinerate-sorcerer-guide",
-          "label": "Maxroll Incinerate Sorcerer"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-frozenorbsorcerer",
-      "game": "d4",
-      "className": "Sorcerer",
-      "buildName": "Frozen Orb Sorcerer",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/frozen-orb-sorcerer-guide",
-          "label": "Maxroll Frozen Orb Sorcerer"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-iceshardssorcerer",
-      "game": "d4",
-      "className": "Sorcerer",
-      "buildName": "Ice Shards Sorcerer",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/ice-shards-sorcerer-guide",
-          "label": "Maxroll Ice Shards Sorcerer"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-icespikessorcerer",
-      "game": "d4",
-      "className": "Sorcerer",
-      "buildName": "Ice Spikes Sorcerer",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/ice-spikes-sorcerer-guide",
-          "label": "Maxroll Ice Spikes Sorcerer"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-rocksplitterspiritborn",
-      "game": "d4",
-      "className": "Spiritborn",
-      "buildName": "Rock Splitter Spiritborn",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/rock-splitter-spiritborn-guide",
-          "label": "Maxroll Rock Splitter Spiritborn"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-witheringfistspiritborn",
-      "game": "d4",
-      "className": "Spiritborn",
-      "buildName": "Withering Fist Spiritborn",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/withering-fist-spiritborn-guide",
-          "label": "Maxroll Withering Fist Spiritborn"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-flurryrogue",
-      "game": "d4",
-      "className": "Rogue",
-      "buildName": "Flurry Rogue",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/flurry-rogue-guide",
-          "label": "Maxroll Flurry Rogue"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-hellfracturewarlock",
-      "game": "d4",
-      "className": "Warlock",
-      "buildName": "Hell Fracture Warlock",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/hell-fracture-warlock-guide",
-          "label": "Maxroll Hell Fracture Warlock"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-trampleslidedruid",
-      "game": "d4",
-      "className": "Druid",
-      "buildName": "Trampleslide Druid",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/trampleslide-druid-guide",
-          "label": "Maxroll Trampleslide Druid"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-cataclysmdruidbuild",
-      "game": "d4",
-      "className": "Druid",
-      "buildName": "Cataclysm Druid Build",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/cataclysm-druid-build-guide",
-          "label": "Maxroll Cataclysm Druid Build"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-zenithpaladin",
-      "game": "d4",
-      "className": "Paladin",
-      "buildName": "Zenith Paladin",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/zenith-paladin-guide",
-          "label": "Maxroll Zenith Paladin"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-blessedhammerpaladin",
-      "game": "d4",
-      "className": "Paladin",
-      "buildName": "Blessed Hammer Paladin",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/blessed-hammer-paladin-guide",
-          "label": "Maxroll Blessed Hammer Paladin"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-wingstrikespaladin",
-      "game": "d4",
-      "className": "Paladin",
-      "buildName": "Wing Strikes Paladin",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/wing-strikes-paladin-guide",
-          "label": "Maxroll Wing Strikes Paladin"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-bloodsurgenecromancer",
-      "game": "d4",
-      "className": "Necromancer",
-      "buildName": "Blood Surge Necromancer",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/blood-surge-necromancer-guide",
-          "label": "Maxroll Blood Surge Necromancer"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-blizzardsorcerer",
-      "game": "d4",
-      "className": "Sorcerer",
-      "buildName": "Blizzard Sorcerer",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/blizzard-sorcerer-guide",
-          "label": "Maxroll Blizzard Sorcerer"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-grenaderogue",
-      "game": "d4",
-      "className": "Rogue",
-      "buildName": "Grenade Rogue",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/grenade-rogue-guide",
-          "label": "Maxroll Grenade Rogue"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-hydrasorcerer",
-      "game": "d4",
-      "className": "Sorcerer",
-      "buildName": "Hydra Sorcerer",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/hydra-sorcerer-guide",
-          "label": "Maxroll Hydra Sorcerer"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-mightymaelstrombarbarian",
-      "game": "d4",
-      "className": "Barbarian",
-      "buildName": "Mighty Maelstrom Barbarian",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/mighty-maelstrom-barbarian-guide",
-          "label": "Maxroll Mighty Maelstrom Barbarian"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-rendbarbarian",
-      "game": "d4",
-      "className": "Barbarian",
-      "buildName": "Rend Barbarian",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/rend-barbarian-guide",
-          "label": "Maxroll Rend Barbarian"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-lunaticwarlockleveling",
-      "game": "d4",
-      "className": "Warlock",
-      "buildName": "Lunatic Warlock Leveling",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/lunatic-warlock-leveling-guide",
-          "label": "Maxroll Lunatic Warlock Leveling"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-crushinghandspiritborn",
-      "game": "d4",
-      "className": "Spiritborn",
-      "buildName": "Crushing Hand Spiritborn",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/crushing-hand-spiritborn-guide",
-          "label": "Maxroll Crushing Hand Spiritborn"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-frenzybarbarianleveling",
-      "game": "d4",
-      "className": "Barbarian",
-      "buildName": "Frenzy Barbarian Leveling",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/frenzy-barbarian-leveling-guide",
-          "label": "Maxroll Frenzy Barbarian Leveling"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-flurryrogueleveling",
-      "game": "d4",
-      "className": "Rogue",
-      "buildName": "Flurry Rogue Leveling",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/flurry-rogue-leveling-guide",
-          "label": "Maxroll Flurry Rogue Leveling"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-evisceratewarlockleveling",
-      "game": "d4",
-      "className": "Warlock",
-      "buildName": "Eviscerate Warlock Leveling",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/eviscerate-warlock-leveling-guide",
-          "label": "Maxroll Eviscerate Warlock Leveling"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-tyrantsgraspwarlock",
-      "game": "d4",
-      "className": "Warlock",
-      "buildName": "Tyrants Grasp Warlock",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/tyrants-grasp-warlock-guide",
-          "label": "Maxroll Tyrants Grasp Warlock"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-heartseekerroguelevelingbuild",
-      "game": "d4",
-      "className": "Rogue",
-      "buildName": "Heartseeker Rogue Leveling Build",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/heartseeker-rogue-leveling-build-guide",
-          "label": "Maxroll Heartseeker Rogue Leveling Build"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-barragerogueleveling",
-      "game": "d4",
-      "className": "Rogue",
-      "buildName": "Barrage Rogue Leveling",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/barrage-rogue-leveling-guide",
-          "label": "Maxroll Barrage Rogue Leveling"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-severnecromancerendgame",
-      "game": "d4",
-      "className": "Necromancer",
-      "buildName": "Sever Necromancer Endgame",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/sever-necromancer-endgame-guide",
-          "label": "Maxroll Sever Necromancer Endgame"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-blightnecromancerleveling",
-      "game": "d4",
-      "className": "Necromancer",
-      "buildName": "Blight Necromancer Leveling",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/blight-necromancer-leveling-guide",
-          "label": "Maxroll Blight Necromancer Leveling"
         }
       ],
       "fetchedAt": "2026-10-11"
