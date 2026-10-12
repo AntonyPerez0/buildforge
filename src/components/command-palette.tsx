@@ -109,7 +109,7 @@ export function CommandPalette({ entries }: { entries: SearchEntry[] }) {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="inline-flex items-center gap-2 rounded-lg border border-line bg-surface px-2.5 py-1.5 text-sm text-ink-muted transition-colors hover:text-ink"
+        className="btn btn-sm !px-2.5"
         aria-label="Search (Ctrl+K)"
       >
         <Search className="h-4 w-4" />
@@ -118,7 +118,7 @@ export function CommandPalette({ entries }: { entries: SearchEntry[] }) {
 
       {open ? (
         <div
-          className="fixed inset-0 z-[90] bg-base/70 px-4 pt-[10vh] backdrop-blur-sm"
+          className="fixed inset-0 z-[90] bg-canvas/70 px-4 pt-[10vh] backdrop-blur-sm"
           onMouseDown={(e) => {
             if (e.target === e.currentTarget) setOpen(false);
           }}

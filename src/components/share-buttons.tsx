@@ -27,7 +27,7 @@ export function CopyLinkButton({ path, label = "Copy link" }: { path: string; la
     <button
       type="button"
       onClick={copy}
-      className="inline-flex items-center gap-2 rounded-lg border border-line bg-surface px-4 py-2 text-sm font-medium text-ink-muted transition-colors hover:border-(--accent-border) hover:text-ink"
+      className="btn"
     >
       {copied ? <Check className="h-4 w-4 text-(--accent-bright)" /> : <Copy className="h-4 w-4" />}
       {copied ? "Copied" : label}
@@ -39,7 +39,7 @@ export function ForkButton({ buildId }: { buildId: string }) {
   return (
     <a
       href={`${withBase("/builder")}?fork=${encodeURIComponent(buildId)}`}
-      className="inline-flex items-center gap-2 rounded-lg bg-(--accent) px-4 py-2 text-sm font-semibold text-base shadow-[0_0_24px_-8px_var(--accent)] transition-transform hover:scale-[1.03]"
+      className="btn btn-primary"
     >
       <GitFork className="h-4 w-4" />
       Fork in Builder

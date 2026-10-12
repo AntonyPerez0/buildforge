@@ -12,7 +12,7 @@ export const minionNecromancer: Build = {
   name: "Minion Necromancer",
   className: "Necromancer",
   role: "Summoner AoE command",
-  tier: "S",
+  tier: "A",
   difficulty: 2,
   tagline: "Raise the line, manage the corpses, command from the back.",
   summary:
@@ -23,13 +23,13 @@ export const minionNecromancer: Build = {
   sources: [
     {
       site: "Maxroll",
-      url: "https://maxroll.gg/d4/build-guides",
-      label: "Maxroll Necromancer build guides",
+      url: "https://maxroll.gg/d4/build-guides/minion-necromancer-guide",
+      label: "Maxroll Minion Necromancer guide",
     },
     {
       site: "Icy Veins",
-      url: "https://www.icy-veins.com/d4/necromancer/builds/",
-      label: "Icy Veins Necromancer builds",
+      url: "https://www.icy-veins.com/d4/guides/endgame-tier-list/",
+      label: "Icy Veins endgame tier list",
     },
   ],
   meta: {

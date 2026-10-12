@@ -1,4 +1,4 @@
-import type { GameId, MetaSnapshot, SourceName, Tier } from "@/data/types";
+import type { GameId, MetaSnapshot, SourceName, Tier, TierAssignment, TierListMeta } from "@/data/types";
 import rawSnapshots from "@/data/synced/meta-snapshots.json";
 
 interface RawSnapshot {
@@ -12,7 +12,16 @@ interface RawSnapshot {
   fetchedAt: string;
 }
 
-const data = rawSnapshots as { fetchedAt?: string; snapshots: RawSnapshot[] };
+interface RawTierList extends Omit<TierListMeta, "status"> {
+  status?: TierListMeta["status"];
+}
+
+const data = rawSnapshots as unknown as {
+  _meta?: { fetchedAt?: string };
+  tierLists?: RawTierList[];
+  tierAssignments?: TierAssignment[];
+  snapshots: RawSnapshot[];
+};
 
 export const SNAPSHOTS: MetaSnapshot[] = data.snapshots.map((s) => ({
   id: s.id,
@@ -25,11 +34,18 @@ export const SNAPSHOTS: MetaSnapshot[] = data.snapshots.map((s) => ({
   fetchedAt: s.fetchedAt,
 }));
 
+export const TIER_LISTS: TierListMeta[] = (data.tierLists ?? []).map((l) => ({
+  ...l,
+  status: l.status ?? "curated",
+}));
+
+export const TIER_ASSIGNMENTS: TierAssignment[] = data.tierAssignments ?? [];
+
 /** Most recent sync date across all snapshots — shown in the UI as the pipeline freshness stamp. */
 export function latestSyncDate(): string {
   return SNAPSHOTS.reduce(
     (latest, s) => (s.fetchedAt > latest ? s.fetchedAt : latest),
-    data.fetchedAt ?? SNAPSHOTS[0]?.fetchedAt ?? "",
+    data._meta?.fetchedAt ?? SNAPSHOTS[0]?.fetchedAt ?? "",
   );
 }
 

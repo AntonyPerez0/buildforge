@@ -9,7 +9,8 @@ import { formatDate } from "@/lib/utils";
 import { ForeverRoster } from "@/components/forever-roster";
 import { WowHeading } from "@/components/wowui";
 import { FadeUp, Stagger, StaggerItem } from "@/components/motion";
-import { FOREVER_IN_BETA, FOREVER_LEVEL_CAP } from "@/lib/forever";
+import { FOREVER_DATES, FOREVER_IN_BETA, FOREVER_LEVEL_CAP } from "@/lib/forever";
+import { getTierList } from "@/lib/tiers";
 
 export const metadata: Metadata = {
   title: "WoW Forever — Classic+ build paths",
@@ -30,19 +31,19 @@ const FOREVER_CHANGES = [
   },
   {
     title: "Raid buffs are baseline",
-    body: "Kings, Might, Mark of the Wild and Divine Spirit no longer eat talent points. Every point you save goes straight into damage or survivability.",
+    body: "Talent-locked buffs such as Blessing of Kings, Divine Spirit and the improved Might and Mark of the Wild ranks no longer cost points. Reports differ on the full list — check the changes guide.",
   },
   {
     title: "16-point capstones",
-    body: "Every tree gains a new one-point ability at 16 points invested — alongside the classic 11/21/31 milestones. Exact values are still tuning in beta.",
+    body: "All 27 trees gain a new one-point talent at 16 points invested — alongside the classic 11/21/31 milestones. Exact values are still tuning in beta.",
   },
   {
     title: "Both factions, new combos",
-    body: "Paladins and Shamans on both sides. Gnome Priests, Human Hunters, Dwarf Shamans, Orc Mages, Troll Warlocks and Undead Paladins join the roster.",
+    body: "Paladins and Shamans on both sides. Human Hunters, Gnome Priests, Dwarf Shamans, Orc Mages, Troll Warlocks and Undead Paladins join the roster; Skyborne Elves need an optional upgrade.",
   },
   {
     title: "Reworked itemization",
-    body: "Every dungeon drop re-examined — hundreds of new or adjusted items, some tied to environments and creature types. Healer gear now grants spell damage too.",
+    body: "Every boss loot table redone: dungeon drops are rare or better, world-drop epics added, caster weapons carry spell damage and healer gear grants spell damage too.",
   },
   {
     title: "Camping & Legacy",
@@ -53,6 +54,7 @@ const FOREVER_CHANGES = [
 export default function ForeverPage() {
   const game = GAMES.forever;
   const builds = getBuildsFor("forever");
+  const tierHub = getTierList("icyveins-forever-hub");
 
   return (
     <div data-game="forever" className="world-bg noise">
@@ -65,9 +67,15 @@ export default function ForeverPage() {
                 <CalendarClock className="h-3.5 w-3.5" />
                 {game.statusChip}
               </span>
+              {FOREVER_IN_BETA ? (
+                <span className="wowui-chip">
+                  <Compass className="h-3 w-3" />
+                  Level {FOREVER_LEVEL_CAP} cap · beta ends {FOREVER_DATES.betaEnds}
+                </span>
+              ) : null}
               <span className="wowui-chip">
                 <Compass className="h-3 w-3" />
-                {game.metaLine} · nightly sync {formatDate(latestSyncDate())}
+                Raids unlock {FOREVER_DATES.raids}
               </span>
             </div>
             <h1 className="wowui-title display-forever mt-5 text-4xl font-bold tracking-wide sm:text-6xl">
@@ -76,10 +84,20 @@ export default function ForeverPage() {
             <p className="wowui-sub mt-4 max-w-2xl text-sm leading-relaxed sm:text-base">
               {game.description}
             </p>
-            <Link href="/forever/launch" className="wow-redbtn mt-6 inline-flex">
-              <CalendarClock className="h-4 w-4" />
-              Launch hub — day-one checklist, dungeons &amp; raids
-            </Link>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <Link href="/forever/launch" className="wow-redbtn !flex-none max-w-full py-2 text-center whitespace-normal">
+                <CalendarClock className="h-4 w-4 shrink-0" />
+                <span>
+                  Launch hub<span className="hidden sm:inline"> — checklist, dungeons &amp; raids</span>
+                </span>
+              </Link>
+              <a href="#builds" className="wowui-stonebtn">
+                Build paths
+              </a>
+            </div>
+            <p className="mt-5 text-xs text-[#9d968a]">
+              {game.metaLine} · nightly sync {formatDate(latestSyncDate())}
+            </p>
           </FadeUp>
         </div>
       </section>
@@ -119,6 +137,15 @@ export default function ForeverPage() {
             </a>
             {" · "}
             <a
+              href="https://www.icy-veins.com/wow-forever/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-(--accent-bright) hover:underline"
+            >
+              Icy Veins Forever guides
+            </a>
+            {" · "}
+            <a
               href="https://classicwow.gg/forever/changes"
               target="_blank"
               rel="noopener noreferrer"
@@ -135,7 +162,7 @@ export default function ForeverPage() {
       </section>
 
       {/* Builds */}
-      <section className="mx-auto max-w-6xl px-4 pb-20 sm:px-6 sm:pb-28">
+      <section id="builds" className="mx-auto max-w-6xl scroll-mt-20 px-4 pb-20 sm:px-6 sm:pb-28">
         <FadeUp>
           <WowHeading
             eyebrow="Core collection"
@@ -147,6 +174,27 @@ export default function ForeverPage() {
         </FadeUp>
         <FadeUp className="mx-auto mt-10 max-w-3xl">
           <ForeverRoster builds={builds} guides={getSnapshotsFor("forever")} />
+        </FadeUp>
+        <FadeUp className="mx-auto mt-8 max-w-3xl">
+          <div className="wow-dialog flex flex-col gap-3 p-5 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="text-sm text-[#ffd100] [text-shadow:1px_1px_0_#000]">Where do the tiers come from?</p>
+              <p className="mt-1 text-[13px] leading-relaxed text-[#d8d8e0]">
+                {tierHub?.status === "coming-soon"
+                  ? (tierHub.note ??
+                    "Icy Veins' Forever tier lists aren't published yet; ratings here are BuildForge's own until they are.")
+                  : "Tiers come from Icy Veins' Forever tier lists, re-read nightly. Specs a list doesn't rank keep a labelled BuildForge rating; Maxroll doesn't cover Forever."}
+              </p>
+            </div>
+            <a
+              href={tierHub?.url ?? "https://www.icy-veins.com/wow-forever/tier-list-hub"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="wowui-stonebtn shrink-0"
+            >
+              Icy Veins tier hub
+            </a>
+          </div>
         </FadeUp>
       </section>
     </div>

@@ -16,7 +16,7 @@
 
 BuildForge is designed to live on your **second screen or phone** while you play — installable
 as a PWA and fully usable offline. Pick your world — Diablo IV (Season 15) or WoW Forever
-(Blizzard's official Classic+) — and get:
+(Blizzard's official Classic+) — and each side looks and feels like that game's own menus:
 
 ### Build pages
 
@@ -43,8 +43,11 @@ as a PWA and fully usable offline. Pick your world — Diablo IV (Season 15) or 
 - **Command palette** — `⌘K` / `Ctrl+K` (or `/`) searches all builds, the live guide index and
   site pages, with keyboard navigation.
 - **Favorites pinning** — star builds; pinned to the top of both hubs.
-- **Live meta pipeline** — curated Season 15 snapshot cards + an auto-discovered **live guide
-  index** (84 D4 guides + 28 Forever spec guides), refreshed nightly.
+- **Tiers from Maxroll and Icy Veins** — the D4 hub mirrors the Maxroll and Icy Veins Season 15
+  tier lists (endgame + leveling); every build card and page shows its placement on each list,
+  linked back to the source. Forever tiers follow Icy Veins once its Forever lists publish.
+- **Live meta pipeline** — an auto-discovered **live guide index** (Maxroll + Icy Veins for D4,
+  Icy Veins + ClassicWoW.gg for Forever), refreshed nightly.
 - **Nightly sync report page** (`/sync`) — exactly what the pipeline checked on its last run.
 - **Forever launch hub** (`/forever/launch`) — day-one checklist (rulesets, access, name
   reservation, race/class combos, camping, Legacy), the December 9 raid unlock, new dungeons
@@ -60,8 +63,9 @@ as a PWA and fully usable offline. Pick your world — Diablo IV (Season 15) or 
 
 | | Diablo IV | WoW Forever |
 |---|---|---|
-| Theme | Blood red & ember, gothic serif (Cinzel) | Alliance gold & arcane blue (Marcellus) |
-| Current | Season 15: Hell's Legacy (patch 3.2) | Beta live · launches Nov 4, 2026 |
+| Interface | In-game D4 menus: iron frames with bronze corners, Cinzel capitals, blood-red selection light, diamond objectives, rarity-lit item cards | WoW Classic FrameXML: stone frames with gold trim, #FFD100 text, red UIPanelButtons, quest-log parchment, navy GameTooltips |
+| Current | Season 15: Season of Hell's Legacy (patch 3.2, Lord of Hatred) | Beta live to level 30 until Oct 21 · launches Nov 4, 2026 · raids Dec 9 |
+| Tier source | Maxroll + Icy Veins tier lists | Icy Veins (Forever tier lists Coming Soon; Maxroll has no Forever coverage) |
 | Authored builds | Whirlwind Barbarian, Chain Lightning Sorcerer, Fireball Sorcerer, Bone Spear Necromancer, Minion Necromancer, Pulverize Druid, Twisting Blades Rogue, Rapid Fire Rogue | Fury Warrior, Retribution Paladin, Beast Mastery Hunter, Affliction Warlock, Frost Mage, Shadow Priest, Enhancement Shaman, Combat Rogue |
 | Routes | `/d4` | `/forever` (+ `/forever/launch`) |
 
@@ -71,10 +75,13 @@ gear with item tooltips, endgame chapters, rotations and watch-outs.
 ## Tech stack
 
 - **Next.js 16** (App Router, static export) + **TypeScript**
-- **Tailwind CSS v4** with runtime per-game theming (`[data-game]` CSS custom properties)
+- **Tailwind CSS v4** with runtime per-game theming — each `[data-game]` scope redefines the
+  palette Tailwind utilities read, and a component layer adds the D4 / WoW Classic chrome.
+  All interface art is original CSS gradients and inline SVG with free Google Fonts — no game
+  textures, logos or Blizzard fonts.
 - **Framer Motion** (with `reducedMotion="user"` support), **lucide-react** icons
 - **`next/og` ImageResponse** for build-time OG card generation (+ `sharp` for PWA icon rasterizing)
-- **Vitest** data-integrity tests (28), **ESLint** (flat config)
+- **Vitest** data-integrity + tier-parsing tests (62), **ESLint** (flat config)
 - Fully static — deploys to GitHub Pages, no server, no database. Progress, favorites and
   custom builds live in `localStorage`; the service worker keeps everything offline.
 
@@ -83,7 +90,7 @@ gear with item tooltips, endgame chapters, rotations and watch-outs.
 ```bash
 npm install
 npm run dev        # http://localhost:3000
-npm test           # data-integrity tests (28)
+npm test           # data-integrity + tier tests (62)
 npm run lint       # eslint
 npm run build      # static export → ./out (postbuild finalizes OG .png files)
 ```
@@ -91,7 +98,9 @@ npm run build      # static export → ./out (postbuild finalizes OG .png files)
 Utility scripts:
 
 ```bash
-npm run sync               # fetch/refresh the live-meta snapshot layer
+npm run sync                    # fetch guide indexes + tier lists (Maxroll, Icy Veins)
+npm run sync -- --offline       # rebuild from curated-meta.json + the last run, no fetching
+npm run sync -- --offline --curated   # same, but force the human-verified tiers
 node scripts/generate-icons.mjs   # rasterize public/icon.svg → PWA PNGs
 ```
 
@@ -111,17 +120,24 @@ BuildForge **summarizes and attributes** — it never reproduces guide content.
    stat priorities, rotations and watch-outs. They anchor to patch-stable mechanics and hedge
    anything seasonal.
 2. **Nightly automated sync** (`.github/workflows/sync.yml`, daily at 06:23 UTC):
-   - Fetches public guide indexes (Maxroll; ClassicWoW.gg specs come from the site's own
-     nav) — `robots.txt` honored first, one request every 2 s, custom user-agent.
-   - Refreshes curated source links, appends newly published guides as `tier: null` "NEW"
-     entries, and keeps guides discovered on earlier runs (they age out after 120 days
-     unseen). Writes `src/data/synced/meta-snapshots.json` + a human-readable report.
+   - Fetches public guide indexes — Maxroll (D4 build guides), Icy Veins (D4 tier-list
+     guides, WoW Forever spec guides); ClassicWoW.gg specs come from the site's own nav —
+     `robots.txt` honored first, one request every 2 s, custom user-agent.
+   - **Reads every tier list** in `curated-meta.json` (Maxroll + Icy Veins endgame/leveling,
+     Icy Veins' Forever hub). A list whose page parses cleanly
+     (`scripts/lib/tier-parse.mjs`: enough guide links across at least two tiers) replaces
+     that list's tiers; otherwise the human-verified tiers stay and the report says why.
+   - Keeps guides discovered on earlier runs (they age out after 120 days unseen). Writes
+     `src/data/synced/meta-snapshots.json` + a human-readable report.
    - If anything changed, the workflow **auto-commits and chains the Pages deploy** — the site
      is back online with fresh data within minutes.
    - If every remote index is unreachable, previous data is kept untouched.
-3. **Human curation stays human**: tiers and summaries live in
-   `src/data/synced/curated-meta.json` — the bot never invents them. Newly discovered guides
-   show a NEW badge until someone curates them.
+3. **List tiers are read, not invented**: `src/data/synced/curated-meta.json` holds each tier
+   list's URL and check date, the human-verified placements, and hand-verified guide links.
+   A live read replaces a list's placements; a failed read keeps the last live read (up to 30
+   days old), then falls back to the verified ones. Builds and guides pick up placements by
+   guide URL first, then by exact build name. Builds no list ranks show a labelled
+   BuildForge rating.
 4. Everything renders with a *last synced* date (hubs + footer + `/sync`), so seasonal balance
    shifts are always one click away from correction.
 
@@ -164,8 +180,9 @@ public/
 ## Disclaimer
 
 Not affiliated with or endorsed by Blizzard Entertainment, Maxroll, Icy Veins, ClassicWoW.gg
-or Wowhead. Diablo and World of Warcraft are trademarks of their respective owners. Build
-summaries link back to and credit the source guides.
+or Wowhead. Diablo and World of Warcraft are trademarks of Blizzard Entertainment, Inc. The
+in-game interface styling is recreated with original CSS and SVG — no game assets, logos or
+proprietary fonts are used. Build summaries link back to and credit the source guides.
 
 ## License
 

@@ -5,6 +5,7 @@ import { LaunchChecklist, type LaunchTask } from "@/components/launch-checklist"
 import { WowHeading } from "@/components/wowui";
 import { FadeUp, Stagger, StaggerItem } from "@/components/motion";
 import { ogImage } from "@/lib/site";
+import { FOREVER_DATES, FOREVER_IN_BETA, FOREVER_LEVEL_CAP } from "@/lib/forever";
 
 export const metadata: Metadata = {
   title: "Forever launch hub — day-one checklist, dungeons & raids",
@@ -21,12 +22,12 @@ const TASKS: LaunchTask[] = [
   {
     title: "Pick your ruleset",
     tag: "Permanent",
-    body: "Normal, PvP or Roleplaying — chosen per character, with Hardcore planned after launch. Your friends need the same ruleset and faction to group with you.",
+    body: "Normal, PvP or Roleplaying — chosen per character (there is no realm list), with Hardcore planned after launch. PvP locks an account to one faction, and friends need the same ruleset and faction to group.",
   },
   {
     title: "Sort access",
     tag: "Before Nov 4",
-    body: "Base game runs on an active WoW subscription or game time. Upgrades (Skyborne Epic Pack, Warcraft Forever Collection) add the Skyborne race, cosmetics and beta access; the Heroic Pack does not list beta.",
+    body: "The base game runs on an active WoW subscription or game time. The Skyborne Heroic Pack unlocks the Skyborne race; the Epic Pack and Warcraft Forever Collection add beta access (live until Oct 21) — the Heroic Pack does not.",
   },
   {
     title: "Name reservation",
@@ -36,7 +37,7 @@ const TASKS: LaunchTask[] = [
   {
     title: "Choose race & class",
     tag: "New combos",
-    body: "Gnome Priest, Human Hunter, Dwarf Shaman, Orc Mage, Troll Warlock and Undead Paladin join the roster. Paladins and Shamans exist on both factions. Skyborne (neutral, glide racial) requires the optional upgrade.",
+    body: "Human Hunter, Gnome Priest, Dwarf Shaman, Orc Mage, Troll Warlock and Undead Paladin join the roster, so Paladins and Shamans exist on both factions. Skyborne Elves (paid upgrade) pick a side at creation — High Order or Windshapers — and play Warrior, Hunter, Rogue or Druid, plus Mage (Alliance) or Shaman (Horde).",
   },
   {
     title: "Pick professions with camping in mind",
@@ -46,7 +47,7 @@ const TASKS: LaunchTask[] = [
   {
     title: "Plan your Legacy points",
     tag: "16-point cap",
-    body: "Legacy points are account-wide but each character spends up to 16 at launch across Professions, Adventure and Resourcefulness. Decide your priority tree before launch night.",
+    body: "Legacy points are account-wide, but each character spends up to 16 at launch (Blizzard plans to raise the cap later) across Professions, Adventure and Resourcefulness. Decide your priority tree before launch night.",
   },
   {
     title: "Set expectations: no flying, no scaling",
@@ -56,16 +57,20 @@ const TASKS: LaunchTask[] = [
   {
     title: "Book raid nights",
     tag: "Dec 9",
-    body: "Barrow Deeps (10), Hyjal Summit (20) and Onyxia's Lair (40) unlock December 9. The launch window is your dungeon-gearing and consumable runway — see the raid plan below.",
+    body: "Barrow Deeps (10), Hyjal Summit (20) and Onyxia's Lair (40) are on the roadmap for December 9 — Blizzard notes timing can shift. The launch window is your dungeon-gearing and consumable runway.",
   },
 ];
 
-const DUNGEONS: { name: string; note: string }[] = [
-  { name: "Hall of Thanes", note: "New — level band TBD per the dungeon overview" },
-  { name: "Ruins of Lordaeron", note: "New — quest-first design" },
-  { name: "City of Dalaran", note: "New" },
-  { name: "Drowned City", note: "New" },
-  { name: "Five more dungeons", note: "Unannounced — spanning levels 13–60" },
+const DUNGEONS: { name: string; level: string }[] = [
+  { name: "Hall of Thanes", level: "~13" },
+  { name: "Ruins of Lordaeron", level: "15" },
+  { name: "Excavation Site: Wetlands", level: "26" },
+  { name: "City of Dalaran", level: "28" },
+  { name: "The Drowned City", level: "35" },
+  { name: "Krol'dok Stronghold", level: "40" },
+  { name: "Alcaz Prison", level: "48" },
+  { name: "Blackmaw Hold", level: "55" },
+  { name: "Shaper's Terrace", level: "58" },
 ];
 
 const RAIDS: { name: string; size: string; note: string }[] = [
@@ -93,7 +98,7 @@ const SYSTEMS: { title: string; body: string }[] = [
   },
   {
     title: "Baseline raid buffs",
-    body: "Kings, Might, Mark of the Wild and Divine Spirit cost no talent points — every point goes into damage or survivability.",
+    body: "Talent-locked buffs such as Blessing of Kings, Divine Spirit and the improved Might and Mark of the Wild ranks cost no points — reports differ on the exact list.",
   },
   {
     title: "16-point capstones",
@@ -101,11 +106,11 @@ const SYSTEMS: { title: string; body: string }[] = [
   },
   {
     title: "Reworked itemization",
-    body: "Every dungeon drop re-examined; healer gear also grants spell damage. Old BiS lists are not Forever gearing plans.",
+    body: "Every boss loot table redone, dungeon drops rare or better, world-drop epics added; caster and healer gear carry spell damage. Old BiS lists are not Forever gearing plans.",
   },
   {
     title: "Camping",
-    body: "Campfires become campsites with rest, vendors, repairs and one-hour buffs — contributed by nearby players' professions.",
+    body: "Campfires become campsites with rest, vendors, repairs and one-hour buffs — up to three nearby players each add one profession object.",
   },
   {
     title: "Transmog & visuals",
@@ -130,7 +135,9 @@ export default function LaunchHubPage() {
             <div className="mt-5 flex flex-wrap items-center gap-3">
               <span className="wowui-chip">
                 <CalendarClock className="h-3.5 w-3.5" />
-                Beta live · Launches Nov 4, 2026
+                {FOREVER_IN_BETA
+                  ? `Beta to level ${FOREVER_LEVEL_CAP} until ${FOREVER_DATES.betaEnds} · Launches ${FOREVER_DATES.launch}`
+                  : `Live since ${FOREVER_DATES.launch}`}
               </span>
               <span className="wowui-chip">
                 <Compass className="h-3 w-3" />
@@ -170,7 +177,7 @@ export default function LaunchHubPage() {
             <WowHeading
               eyebrow="December 9"
               title="The raid unlock"
-              sub="The official roadmap lists all three for the December 9 unlock — after the November 4 launch. Use the gap to gear through the new dungeons."
+              sub="The BlizzCon roadmap lists all three for December 9 (timing can shift), then two new raids (10- and 20-player) in spring 2027 and a new raid plus a revamped classic raid in summer 2027. Use the gap to gear through the new dungeons."
             />
           </FadeUp>
           <Stagger className="mt-8 grid gap-4 md:grid-cols-3">
@@ -198,18 +205,18 @@ export default function LaunchHubPage() {
             <WowHeading
               eyebrow="Level 13–60"
               title="Nine new dungeons & new zones"
-              sub="Blizzard announced nine new instances and 1,000+ new quests across the original continents — the gearing funnel between launch and raids."
+              sub="Nine new instances, three new zones and 1,000+ new quests — the gearing funnel between launch and raids. Levels are the announced recommended levels."
             />
           </FadeUp>
           <Stagger className="mt-8 grid gap-4 lg:grid-cols-2">
             <StaggerItem>
               <div className="wowui-parchment h-full">
-                <h3 className="wowui-parchment-head">New dungeons (announced)</h3>
-                <ul className="mt-3 space-y-2.5">
+                <h3 className="wowui-parchment-head">New dungeons</h3>
+                <ul className="mt-3">
                   {DUNGEONS.map((d) => (
-                    <li key={d.name} className="wowui-task flex items-start justify-between gap-3 text-sm">
+                    <li key={d.name} className="wowui-task flex items-center justify-between gap-3 py-2 text-sm">
                       <span className="font-medium" style={{ color: "#4a2c0a" }}>{d.name}</span>
-                      <span className="text-right text-xs" style={{ color: "#6b5327" }}>{d.note}</span>
+                      <span className="wowui-stamp">Level {d.level}</span>
                     </li>
                   ))}
                 </ul>
@@ -220,10 +227,10 @@ export default function LaunchHubPage() {
                 <h3 className="wowui-parchment-head">New regions</h3>
                 <ul className="mt-3 space-y-2.5">
                   {[
-                    ["Mount Hyjal", "New raid region — home of Hyjal Summit"],
-                    ["Shen'dralas", "New zone on the 1–60 journey"],
-                    ["Riverglades", "New zone on the 1–60 journey"],
-                    ["Zephras Isle", "Skyborne starting experience (optional upgrade)"],
+                    ["Mount Hyjal", "Level 60 zone — home of Hyjal Summit"],
+                    ["The Riverglades", "Eastern Kingdoms · levels ~35–45 · 150+ quests"],
+                    ["Zephras Isle", "Skyborne starting zone · levels 1–12"],
+                    ["Shen'dralas", "South of Desolace — some outlets count it as a fourth region"],
                   ].map(([name, note]) => (
                     <li key={name} className="wowui-task flex items-start justify-between gap-3 text-sm">
                       <span className="inline-flex items-center gap-1.5 font-medium" style={{ color: "#4a2c0a" }}>
@@ -270,6 +277,10 @@ export default function LaunchHubPage() {
                   ["Blizzard: Carve a New Path", "https://worldofwarcraft.blizzard.com/en-us/news/24302093/carve-a-new-path-with-world-of-warcraft-forever"],
                   ["Blizzard: What's Next panel", "https://worldofwarcraft.blizzard.com/en-us/news/24303862/world-of-warcraft-forever-whats-next-panel-recap"],
                   ["Blizzard: Upgrades & beta", "https://worldofwarcraft.blizzard.com/en-us/news/24301508/pre-purchase-world-of-warcraft-forever-upgrades-and-begin-your-next-journey-in-azeroth"],
+                  ["Blizzard: Choose your ruleset", "https://news.blizzard.com/en-us/article/24302070/choose-your-ruleset-in-world-of-warcraft-forever"],
+                  ["Icy Veins: Forever guides", "https://www.icy-veins.com/wow-forever/"],
+                  ["Icy Veins: Skyborne race", "https://www.icy-veins.com/wow-forever/skyborne-race-guide"],
+                  ["Icy Veins: Camping", "https://www.icy-veins.com/wow-forever/camping"],
                   ["ClassicWoW.gg: Raids", "https://classicwow.gg/forever/raids"],
                   ["ClassicWoW.gg: Dungeons", "https://classicwow.gg/forever/dungeons"],
                   ["ClassicWoW.gg: What changes", "https://classicwow.gg/forever/changes"],
@@ -286,7 +297,7 @@ export default function LaunchHubPage() {
                 ))}
               </div>
               <div className="mt-6 flex flex-wrap gap-3">
-                <Link href="/forever" className="wow-redbtn">
+                <Link href="/forever#builds" className="wow-redbtn !flex-none">
                   Pick your build
                 </Link>
                 <Link href="/builder" className="wowui-stonebtn">

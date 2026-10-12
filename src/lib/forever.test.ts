@@ -47,7 +47,7 @@ describe("clampProgression", () => {
 describe("clampTalentRuns", () => {
   it("clamps runs so every expanded level is reachable in beta", () => {
     const fury = getBuildsFor("forever").find((b) => b.slug === "fury-warrior")!;
-    const clamped = clampTalentRuns(fury.talentRuns!, 20);
+    const clamped = clampTalentRuns(fury.talentRuns!, FOREVER_LEVEL_CAP);
     const levels = expandTalentRuns(clamped).map((r) => r.level);
     expect(Math.max(...levels)).toBeLessThanOrEqual(FOREVER_LEVEL_CAP);
     for (let level = 10; level <= FOREVER_LEVEL_CAP; level++) {

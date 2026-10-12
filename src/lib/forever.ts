@@ -2,15 +2,23 @@ import type { Build, ProgressionBand, TalentRun } from "@/data/types";
 
 /**
  * WoW Forever launches with a level-60 cap, but the running beta caps
- * characters at 20. Authored build data always describes the full launch
+ * characters at 30 (raised from 20 on Oct 1, 2026; the beta closes Oct 21).
+ * Authored build data always describes the full launch
  * game; this constant trims what renders. Bump it to
  * FOREVER_LAUNCH_LEVEL_CAP (60) on release day and every trimmed track,
  * talent spine, endgame chapter and copy line re-extends automatically.
  */
 export const FOREVER_LAUNCH_LEVEL_CAP = 60;
 
-/** Playable cap right now — the beta only reaches 20. */
-export const FOREVER_LEVEL_CAP = 20;
+/** Playable cap right now — the beta reaches 30. */
+export const FOREVER_LEVEL_CAP = 30;
+
+/** Key dates, shown across the Forever section. */
+export const FOREVER_DATES = {
+  betaEnds: "Oct 21, 2026",
+  launch: "Nov 4, 2026",
+  raids: "Dec 9, 2026",
+} as const;
 
 export const FOREVER_IN_BETA = FOREVER_LEVEL_CAP < FOREVER_LAUNCH_LEVEL_CAP;
 

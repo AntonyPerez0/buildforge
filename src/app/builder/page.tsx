@@ -38,8 +38,7 @@ import { TierBadge } from "@/components/ui-bits";
 
 /* ─── tiny form primitives ─────────────────────────────────── */
 
-const inputCls =
-  "w-full rounded-lg border border-line bg-surface px-3 py-2 text-sm text-ink placeholder:text-ink-dim focus:border-(--accent-border) focus:outline-none";
+const inputCls = "field";
 
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
@@ -288,8 +287,8 @@ function BuilderClient() {
         {/* Header */}
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <p className="eyebrow text-(--accent-bright)">The forge</p>
-            <h1 className="mt-2 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+            <p className="sh-eyebrow">The forge</p>
+            <h1 className="sh-title mt-2 text-3xl sm:text-4xl">
               Custom Build Forge
             </h1>
             <p className="mt-2 max-w-xl text-sm leading-relaxed text-ink-muted">
@@ -301,7 +300,7 @@ function BuilderClient() {
             <button
               type="button"
               onClick={save}
-              className="inline-flex items-center gap-2 rounded-lg bg-(--accent) px-4 py-2 text-sm font-semibold text-base shadow-[0_0_24px_-8px_var(--accent)] transition-transform hover:scale-[1.03]"
+              className="btn btn-primary"
             >
               <Save className="h-4 w-4" />
               {dirty ? "Save" : "Saved"}
@@ -309,20 +308,20 @@ function BuilderClient() {
             <button
               type="button"
               onClick={copyShareLink}
-              className="inline-flex items-center gap-2 rounded-lg border border-line bg-surface px-4 py-2 text-sm font-medium text-ink-muted hover:text-ink"
+              className="btn"
             >
               <Copy className="h-4 w-4" /> Share link
             </button>
             <button
               type="button"
               onClick={exportJson}
-              className="inline-flex items-center gap-2 rounded-lg border border-line bg-surface px-3 py-2 text-sm font-medium text-ink-muted hover:text-ink"
+              className="btn"
               aria-label="Export JSON"
             >
               <Download className="h-4 w-4" />
             </button>
             <label
-              className="inline-flex cursor-pointer items-center gap-2 rounded-lg border border-line bg-surface px-3 py-2 text-sm font-medium text-ink-muted hover:text-ink"
+              className="btn"
               aria-label="Import JSON"
             >
               <Upload className="h-4 w-4" />
@@ -349,12 +348,8 @@ function BuilderClient() {
                   key={g}
                   type="button"
                   onClick={() => switchGame(g)}
-                  className={cn(
-                    "rounded-full border px-4 py-1.5 text-xs font-semibold transition-colors",
-                    build.game === g
-                      ? "border-(--accent-border) bg-(--accent-wash) text-(--accent-bright)"
-                      : "border-line text-ink-muted hover:text-ink",
-                  )}
+                  aria-pressed={build.game === g}
+                  className="toggle"
                 >
                   {GAMES[g].label}
                 </button>

@@ -1,22 +1,22 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Flame, RefreshCw } from "lucide-react";
 import { GAMES } from "@/lib/games";
-import { getBuildsFor, getSnapshotsFor } from "@/lib/builds";
+import { BUILDS, buildHref, getBuildsFor, getSnapshotsFor } from "@/lib/builds";
 import { latestSyncDate } from "@/lib/snapshots";
+import { assignmentsFor, groupByTier, normalizeUrl, resolveTiers, sameBuild, tierListsFor } from "@/lib/tiers";
 import { ogImage } from "@/lib/site";
 import { formatDate } from "@/lib/utils";
 import { BuildExplorer } from "@/components/build-explorer";
-import { MetaSnapshotGrid } from "@/components/meta-snapshot-grid";
-import { GuideIndexGrid } from "@/components/guide-index-grid";
+import { TierListBoard, type BoardList } from "@/components/tier-list-board";
+import { GuideIndexGrid, type GuideIndexEntry } from "@/components/guide-index-grid";
 import { FavoritesBar } from "@/components/favorites-bar";
 import { FadeUp } from "@/components/motion";
-import { SectionHeading } from "@/components/ui-bits";
+import { D4Ornament, SectionHeading } from "@/components/ui-bits";
 
 export const metadata: Metadata = {
-  title: "Diablo IV — Season 15 build paths",
+  title: "Diablo IV — Season 15 build paths & tier list",
   description:
-    "Zero-guessing Diablo IV builds for Season 15: Hell's Legacy. Level-by-level skill paths, gear priorities and rotations for Barbarian, Sorcerer, Necromancer, Rogue and the S15 meta.",
+    "Zero-guessing Diablo IV builds for Season 15: Hell's Legacy (patch 3.2). Level-by-level skill paths, gear priorities and rotations, with tiers from the Maxroll and Icy Veins Season 15 tier lists.",
   openGraph: {
     title: "BuildForge — Diablo IV build paths",
     images: [ogImage("d4", "hub")],
@@ -24,44 +24,134 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", images: [ogImage("d4", "hub")] },
 };
 
+const MENU = [
+  { href: "#builds", label: "Build paths", hint: "Level-by-level" },
+  { href: "#tier-list", label: "Season 15 tier list", hint: "Maxroll · Icy Veins" },
+  { href: "#guides", label: "Live guide index", hint: "Synced nightly" },
+];
+
+/**
+ * Everything known to be the same build as a tier row: authored builds and
+ * indexed guides that share the row's link. Their titles and other-site links
+ * let one site's row find the other site's placement ("Blazing Scream Warlock"
+ * on Maxroll, "Hellfire Blazing Scream Warlock" on Icy Veins).
+ */
+function identityOf(build: string, url: string | null): { names: string[]; urls: { url: string }[] } {
+  const names = new Set([build]);
+  const urls = new Set(url ? [url] : []);
+  if (url) {
+    const key = normalizeUrl(url);
+    const peers = [
+      ...getBuildsFor("d4").map((b) => ({ name: b.name, sources: b.sources })),
+      ...getSnapshotsFor("d4").map((sn) => ({ name: sn.buildName, sources: sn.sources })),
+    ].filter((p) => p.sources.some((src) => normalizeUrl(src.url) === key));
+    for (const p of peers) {
+      names.add(p.name);
+      for (const src of p.sources) urls.add(src.url);
+    }
+  }
+  return { names: [...names], urls: [...urls].map((u) => ({ url: u })) };
+}
+
+function boardLists(): BoardList[] {
+  const authored = getBuildsFor("d4");
+  return tierListsFor("d4")
+    .map((meta) => {
+      const rows = assignmentsFor(meta.id);
+      const groups = groupByTier(rows).map((g) => ({
+        tier: g.tier,
+        rows: g.rows.map((r) => {
+          const path = authored.find(
+            (b) =>
+              sameBuild(b.name, r.build) ||
+              (r.url !== null && b.sources.some((s) => normalizeUrl(s.url) === normalizeUrl(r.url!))),
+          );
+          const id = identityOf(r.build, r.url);
+          const elsewhere = resolveTiers("d4", id.names, id.urls)
+            .filter((t) => t.listId !== meta.id)
+            .map((t) => ({ label: `${t.site}${t.list === meta.list ? "" : ` ${t.list}`}`, tier: t.tier }));
+          return {
+            build: r.build,
+            className: r.className,
+            href: r.url ?? meta.url,
+            external: true,
+            pathHref: path ? buildHref(path) : undefined,
+            elsewhere,
+          };
+        }),
+      }));
+      return { meta, groups, total: rows.length };
+    })
+    .filter((l) => l.total > 0);
+}
+
+function guideEntries(): GuideIndexEntry[] {
+  return getSnapshotsFor("d4").map((s) => {
+    const [best] = resolveTiers("d4", s.buildName, s.sources);
+    return {
+      id: s.id,
+      name: s.buildName,
+      className: s.className,
+      sources: s.sources.map(({ site, url }) => ({ site, url })),
+      tier: best ? { tier: best.tier, label: `${best.site} ${best.list} · ${best.tier}` } : undefined,
+    };
+  });
+}
+
 export default function D4Page() {
   const game = GAMES.d4;
   const builds = getBuildsFor("d4");
-  const snapshots = getSnapshotsFor("d4");
+  const lists = boardLists();
+  const guides = guideEntries();
+  const sTier = lists[0]?.groups.find((g) => g.tier === "S")?.rows.length ?? 0;
 
   return (
     <div data-game="d4" className="world-bg noise">
-      {/* Hero band */}
-      <section className="border-b border-line bg-[radial-gradient(90%_100%_at_50%_0%,rgba(212,32,46,0.16),transparent_70%)]">
-        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
-          <FadeUp>
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="accent-chip inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold">
-                <Flame className="h-3.5 w-3.5" />
-                {game.statusChip}
+      {/* ─── Season splash ──────────────────────────────────── */}
+      <section className="d4-hero">
+        <div className="d4-embers" aria-hidden />
+        <div className="relative mx-auto flex max-w-6xl flex-col items-center px-4 pt-16 pb-14 text-center sm:px-6 sm:pt-24 sm:pb-20">
+          <FadeUp className="flex flex-col items-center">
+            <p className="d4-season">Season 15 · Season of Hell&apos;s Legacy</p>
+            <h1 className="d4-title mt-5 text-5xl sm:text-7xl">Diablo IV</h1>
+            <D4Ornament className="mt-6" />
+            <p className="mt-6 max-w-2xl text-sm leading-relaxed text-ink-muted sm:text-base">{game.description}</p>
+            <div className="mt-7 flex flex-wrap justify-center gap-2">
+              <span className="d4-stat">
+                <b>Patch 3.2</b> · Lord of Hatred
               </span>
-              <span className="inline-flex items-center gap-1.5 text-xs text-ink-dim">
-                <RefreshCw className="h-3 w-3" />
-                {game.metaLine} · nightly sync {formatDate(latestSyncDate())}
+              <span className="d4-stat">
+                <b>{builds.length}</b> build paths
+              </span>
+              <span className="d4-stat">
+                <b>{sTier}</b> S-tier builds on Maxroll
+              </span>
+              <span className="d4-stat">
+                Synced <b>{formatDate(latestSyncDate())}</b>
               </span>
             </div>
-            <h1 className="display-d4 mt-5 text-4xl font-bold tracking-wide text-ink sm:text-6xl">
-              DIABLO IV
-            </h1>
-            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-ink-muted sm:text-base">
-              {game.description}
-            </p>
+          </FadeUp>
+
+          <FadeUp className="mt-10 w-full max-w-md" delay={0.1}>
+            <nav aria-label="Diablo IV menu" className="flex flex-col gap-2">
+              {MENU.map((m) => (
+                <a key={m.href} href={m.href} className="d4-menu-btn">
+                  {m.label}
+                  <small>{m.hint}</small>
+                </a>
+              ))}
+            </nav>
           </FadeUp>
         </div>
       </section>
 
-      {/* Authored builds */}
-      <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
+      {/* ─── Build paths ────────────────────────────────────── */}
+      <section id="builds" className="mx-auto max-w-6xl scroll-mt-20 px-4 py-14 sm:px-6 sm:py-20">
         <FadeUp>
           <SectionHeading
             eyebrow="Core collection"
             title="Level-by-level build paths"
-            sub="Hand-authored, anchored to patch-stable mechanics, with every skill point accounted for from level 1 to the Pit."
+            sub="Hand-authored and anchored to patch-stable mechanics — every skill point accounted for from level 1 to the Pit. Each card shows where the build sits on the Maxroll and Icy Veins Season 15 lists."
           />
         </FadeUp>
         <div className="mt-10">
@@ -70,40 +160,46 @@ export default function D4Page() {
         </div>
       </section>
 
-      {/* Live meta snapshots */}
-      <section className="mx-auto max-w-6xl px-4 pb-20 sm:px-6 sm:pb-28">
+      {/* ─── Tier list ──────────────────────────────────────── */}
+      <section id="tier-list" className="mx-auto max-w-6xl scroll-mt-20 px-4 pb-14 sm:px-6 sm:pb-20">
         <FadeUp>
           <SectionHeading
             eyebrow="Live meta"
-            title="Season 15 snapshot"
-            sub="Condensed straight from Maxroll. These cards are pointers — open the full guide for the complete tree, gear table and tuning notes."
+            title="Season 15 tier list"
+            sub="Straight from the Maxroll and Icy Veins tier lists — re-read every night, with a human-verified fallback. Entries marked Path have a full BuildForge level path."
           />
         </FadeUp>
-        <div className="mt-10">
-          <MetaSnapshotGrid snapshots={snapshots.filter((s) => s.tier)} />
-        </div>
-        <FadeUp className="mt-6">
+        <FadeUp className="mt-10">
+          <TierListBoard lists={lists} />
+        </FadeUp>
+        <FadeUp className="mt-5">
           <p className="text-xs leading-relaxed text-ink-dim">
-            Want the full level-by-level path for a snapshot build? Pick the closest authored
-            build above, fork it in the{" "}
+            Want a level path for a build without one? Fork the closest authored build in the{" "}
             <Link href="/builder" className="text-(--accent-bright) hover:underline">
               Builder
-            </Link>
-            , and adjust from the linked guide — seasonal tuning shifts weekly in the first
-            month.
+            </Link>{" "}
+            and adjust it from the linked guide. Tiers move with every balance patch — the{" "}
+            <Link href="/sync" className="text-(--accent-bright) hover:underline">
+              sync report
+            </Link>{" "}
+            shows when each list was last read.
           </p>
         </FadeUp>
+      </section>
 
-        <FadeUp className="mt-16">
+      {/* ─── Guide index ────────────────────────────────────── */}
+      <section id="guides" className="mx-auto max-w-6xl scroll-mt-20 px-4 pb-20 sm:px-6 sm:pb-28">
+        <FadeUp>
           <SectionHeading
             eyebrow="Synced nightly"
             title="Live guide index"
-            sub="Every guide the nightly pipeline finds on Maxroll — refreshed once a day, linked with attribution. Tier ratings land here after human curation."
+            sub={`Every Diablo IV guide the nightly sync found on Maxroll and Icy Veins — ${guides.length} links, grouped by class, with its tier where a list we mirror ranks that guide or a build of the same name.`}
           />
         </FadeUp>
         <div className="mt-10">
-          <GuideIndexGrid snapshots={snapshots.filter((s) => !s.tier)} />
+          <GuideIndexGrid entries={guides} classOrder={game.classOrder} />
         </div>
+        <p className="sr-only">{BUILDS.length} builds in total across both games.</p>
       </section>
     </div>
   );

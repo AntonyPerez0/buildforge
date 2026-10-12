@@ -12,10 +12,11 @@ export const afflictionWarlock: Build = {
   tagline: "Corruption, Curse, Drain — repeat until Azeroth gives up. The lazy immortal.",
   summary:
     "Affliction is the warlock's sustain identity: DoTs that never lapse, a pet that tanks for you, and a Life Tap loop that converts your health bar into damage. Forever changes the math in your favor — hit and crit are unified across spells, healer gear now also grants spell damage, and the reworked dungeons feed casters real upgrades. Level with a Voidwalker, drain-tank your way to 60, and stop reading heal-up tips.",
-  patchLabel: "Forever Beta · Sep 2026",
+  patchLabel: "Forever Beta · Oct 2026",
   lastSynced: "2026-09-19",
   dataQuality: "authored",
   sources: [
+    { site: "Icy Veins", url: "https://www.icy-veins.com/wow-forever/affliction-warlock-ranged-dps-pve-guide", label: "Icy Veins Affliction Warlock guide (Forever)" },
     { site: "ClassicWoW.gg", url: "https://classicwow.gg/forever/guides/warlock/affliction", label: "ClassicWoW.gg Affliction guide" },
     { site: "Wowhead", url: "https://www.wowhead.com/forever", label: "Wowhead Forever hub" },
     { site: "Blizzard", url: "https://worldofwarcraft.blizzard.com/en-us/news/24302093/carve-a-new-path-with-world-of-warcraft-forever", label: "Official Forever announcement" },
@@ -188,7 +189,7 @@ export const afflictionWarlock: Build = {
       phase: "Min-maxing",
       goal: "Squeeze the caster levers Forever keeps alive",
       steps: [
-        { name: "Staff chase", detail: "Raid-era", why: "Staff of Dominance from Molten Core is the stat-stick dream — until then, the reworked dungeon caster weapons were fully reworked; check the itemization guide for the current list." },
+        { name: "Staff chase", detail: "Raid-era", why: "Forever reworked every loot table and Molten Core is not in the announced raid lineup — chase the best spell-damage staff from the new dungeons and Barrow Deeps/Hyjal Summit; check the itemization guide for the current list." },
         { name: "Healer-gear sweep", detail: "Forever bonus", why: "Healer gear now grants spell damage — cloth marked 'healing' feeds Corruption and Agony just the same; don't vendor it." },
         { name: "Weapon skill check", detail: "Low priority", why: "Forever cut weapon-skill per item and a staff-wielding DoT engine barely swings — spend the attention on unified hit instead, then re-verify both in the linked calculator." },
         { name: "Unified hit check", detail: "Per patch", why: "Old spell-hit tables are dead — Forever merges spell and melee hit; verify current thresholds in the linked calculator." },
@@ -461,7 +462,7 @@ export const afflictionWarlock: Build = {
           { text: "+1% Spell Critical Strike chance" },
         ],
         flavor: "The caster stat-stick dream — wand weaving between DoT refreshes does the rest.",
-        source: "Molten Core",
+        source: "Classic-era reference",
         icon: "staff",
       },
     },

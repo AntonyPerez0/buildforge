@@ -7,7 +7,7 @@ export const fireballSorcerer: Build = {
   name: "Fireball Sorcerer",
   className: "Sorcerer",
   role: "Explosive AoE caster",
-  tier: "A",
+  tier: "C",
   difficulty: 1,
   tagline: "Lob, detonate, blink — the enchant throws half your Fireballs for free.",
   summary:
@@ -18,13 +18,13 @@ export const fireballSorcerer: Build = {
   sources: [
     {
       site: "Maxroll",
-      url: "https://maxroll.gg/d4/build-guides",
-      label: "Maxroll Sorcerer build guides",
+      url: "https://maxroll.gg/d4/build-guides/fireball-sorcerer-guide",
+      label: "Maxroll Fireball Sorcerer guide",
     },
     {
       site: "Icy Veins",
-      url: "https://www.icy-veins.com/d4/sorcerer/builds/",
-      label: "Icy Veins Sorcerer builds",
+      url: "https://www.icy-veins.com/d4/guides/fireball-sorcerer-build/",
+      label: "Icy Veins Fireball Sorcerer build",
     },
   ],
   meta: {

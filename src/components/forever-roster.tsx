@@ -7,30 +7,17 @@ import type { Build, MetaSnapshot } from "@/data/types";
 import { buildHref } from "@/lib/builds";
 import { getFavorites, toggleFavorite, FAVORITES_EVENT } from "@/lib/favorites";
 import { GAMES } from "@/lib/games";
-
-/** Classic-era WoW class colors (canonical values), brightened for dark backgrounds. */
-const CLASS_COLORS: Record<string, string> = {
-  Warrior: "#c69b6d",
-  Paladin: "#f48cba",
-  Hunter: "#aad372",
-  Rogue: "#fff569",
-  Priest: "#ffffff",
-  Shaman: "#4a9fe3",
-  Mage: "#68ccef",
-  Warlock: "#9382c9",
-  Druid: "#ff7d0a",
-  Monk: "#00ff96",
-  "Death Knight": "#c41f3e",
-  "Demon Hunter": "#a330c9",
-  Evoker: "#33937f",
-};
+import { classColor } from "@/lib/class-colors";
+import { getTierList, headlineTier } from "@/lib/tiers";
 
 const TIER_COLORS: Record<string, string> = {
   S: "#ffc24b",
   A: "#6ecf8e",
   B: "#7fa8e0",
   C: "#9a98a0",
+  D: "#7c7a82",
 };
+
 
 const CLASS_ORDER = GAMES.forever.classOrder;
 const classRank = (className: string) => {
@@ -83,6 +70,9 @@ export function ForeverRoster({ builds, guides }: { builds: Build[]; guides: Met
     (a, b) => classRank(a.className) - classRank(b.className) || a.buildName.localeCompare(b.buildName),
   );
   const game = GAMES.forever;
+  const ratings = Object.fromEntries(builds.map((b) => [b.id, headlineTier(b)]));
+  const anyFromSource = Object.values(ratings).some((r) => r.fromSource);
+  const tierHubComingSoon = getTierList("icyveins-forever-hub")?.status === "coming-soon";
 
   return (
     <div>
@@ -109,7 +99,9 @@ export function ForeverRoster({ builds, guides }: { builds: Build[]; guides: Met
         <div className="wow-grid wow-colhead" aria-hidden="true">
           <span>Name</span>
           <span className="wow-col-role">Role</span>
-          <span className="wow-col-tier">Tier</span>
+          <span className="wow-col-tier" title={anyFromSource ? "Tier from Icy Veins where ranked, else BuildForge rating" : "BuildForge rating"}>
+            {anyFromSource ? "Tier" : "Rating"}
+          </span>
           <span>Class</span>
           <span />
         </div>
@@ -128,13 +120,14 @@ export function ForeverRoster({ builds, guides }: { builds: Build[]; guides: Met
                 </span>
                 <span
                   className="wow-lvl relative z-10 pointer-events-none"
-                  style={{ color: TIER_COLORS[b.tier] ?? "#e6e0d3" }}
+                  style={{ color: TIER_COLORS[ratings[b.id].tier] ?? "#e6e0d3" }}
+                  title={ratings[b.id].basis}
                 >
-                  {b.tier}
+                  {ratings[b.id].tier}
                 </span>
                 <span
                   className="wow-class relative z-10 pointer-events-none"
-                  style={{ color: CLASS_COLORS[b.className] ?? "#ffffff" }}
+                  style={{ color: classColor(b.className) }}
                 >
                   {b.className}
                 </span>
@@ -170,7 +163,7 @@ export function ForeverRoster({ builds, guides }: { builds: Build[]; guides: Met
                   <span className="wow-lvl relative z-10 pointer-events-none">—</span>
                   <span
                     className="wow-class relative z-10 pointer-events-none"
-                    style={{ color: CLASS_COLORS[g.className] ?? "#ffffff" }}
+                    style={{ color: classColor(g.className) }}
                   >
                     {g.className}
                   </span>
@@ -186,7 +179,7 @@ export function ForeverRoster({ builds, guides }: { builds: Build[]; guides: Met
             <span className="wow-count-green">({guides.length} Live Guides)</span>
           </p>
           <Link href="/forever/launch" className="wow-status">
-            Beta Status
+            Launch Hub
             <span className="wow-go" aria-hidden="true">
               <Play className="h-3 w-3 fill-current" />
             </span>
@@ -196,6 +189,12 @@ export function ForeverRoster({ builds, guides }: { builds: Build[]; guides: Met
         <div className="wow-motd">
           <p className="wow-motd-head">Message of the Day</p>
           <p>{game.description}</p>
+          <p className="mt-2 !text-[0.85rem] !text-[#9d968a]">
+            {tierHubComingSoon
+              ? "Ratings are BuildForge's own until Icy Veins publishes its Forever tier lists (marked Coming Soon); Maxroll has no Forever coverage."
+              : "Tiers come from Icy Veins' Forever tier lists where a spec is ranked; the rest carry BuildForge's own rating."}{" "}
+            Live Guides link Icy Veins first.
+          </p>
         </div>
 
         <div className="wow-actions">

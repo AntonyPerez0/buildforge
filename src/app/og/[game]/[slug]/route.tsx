@@ -2,6 +2,7 @@ import { ImageResponse } from "next/og";
 import type { GameId } from "@/data/types";
 import { BUILDS, getBuild } from "@/lib/builds";
 import { GAMES } from "@/lib/games";
+import { headlineTier } from "@/lib/tiers";
 
 export const dynamic = "force-static";
 
@@ -19,6 +20,7 @@ const TIER_COLORS: Record<string, string> = {
   A: "#6ecf8e",
   B: "#7fa8e0",
   C: "#9a98a0",
+  D: "#7c7a82",
 };
 
 const GAME_ACCENTS: Record<string, { glow: string; chipBg: string; chipText: string }> = {
@@ -33,12 +35,14 @@ interface CardProps {
   chipText: string;
   chipLabel: string;
   tier?: string;
+  /** "BuildForge rating" when no Maxroll / Icy Veins list ranks the build. */
+  tierCaption?: string;
   title: string;
   subtitle: string;
   tagline?: string;
 }
 
-function Card({ accent, chipBg, chipText, chipLabel, tier, title, subtitle, tagline }: CardProps) {
+function Card({ accent, chipBg, chipText, chipLabel, tier, tierCaption, title, subtitle, tagline }: CardProps) {
   return (
     <div
       style={{
@@ -66,10 +70,18 @@ function Card({ accent, chipBg, chipText, chipLabel, tier, title, subtitle, tagl
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              fontSize: 22,
             }}
           >
-            🔨
+            {/* Inline anvil mark (same path as the site logo) — no emoji, so the
+                build never fetches glyphs from a CDN. */}
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M3 15h9l2 3H5l-2-3Zm11 3h6l1-2h-5l-2 2Zm-2-3 4.5-7.5L15 5l-5 7 2 3Z"
+                stroke={chipText}
+                strokeWidth="1.6"
+                strokeLinejoin="round"
+              />
+            </svg>
           </div>
           <span style={{ fontSize: 22, fontWeight: 700, letterSpacing: "-0.02em" }}>
             Build<span style={{ color: "#6f6d78", fontWeight: 600 }}>Forge</span>
@@ -95,6 +107,7 @@ function Card({ accent, chipBg, chipText, chipLabel, tier, title, subtitle, tagl
       <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
           {tier ? (
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
             <div
               style={{
                 width: 64,
@@ -111,6 +124,10 @@ function Card({ accent, chipBg, chipText, chipLabel, tier, title, subtitle, tagl
               }}
             >
               {tier}
+            </div>
+              {tierCaption ? (
+                <span style={{ fontSize: 13, color: "#8b8994", letterSpacing: "0.04em" }}>{tierCaption}</span>
+              ) : null}
             </div>
           ) : null}
           <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
@@ -152,7 +169,7 @@ async function render(params: { game: string; slug: string }): Promise<ImageResp
           chipText={accent.chipText}
           chipLabel="TWO WORLDS · ZERO GUESSING"
           title="Diablo IV + WoW Forever"
-          subtitle="The second-screen build companion — Season 15 & Blizzard's Classic+"
+          subtitle="The second-screen build companion — D4 Season 15 & Blizzard's Classic+"
           tagline="Level-by-level build paths, in-game character screens with item tooltips, and a custom build forge."
         />
       ),
@@ -201,7 +218,8 @@ async function render(params: { game: string; slug: string }): Promise<ImageResp
         chipBg={accent.chipBg}
         chipText={accent.chipText}
         chipLabel={`${GAMES[build.game].label} · ${build.patchLabel}`.toUpperCase()}
-        tier={build.tier}
+        tier={headlineTier(build).tier}
+        tierCaption={headlineTier(build).fromSource ? undefined : "BuildForge rating"}
         title={build.name}
         subtitle={`${build.className} · ${build.role}`}
         tagline={build.tagline}
