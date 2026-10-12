@@ -2477,26 +2477,277 @@ body {
       0 30px 80px -30px rgba(0, 0, 0, 0.95);
   }
 
+  /* Equipment button: dark well inside a grey metal bevel (light top-left, dark bottom-right). */
   .slot-wow {
-    border-radius: 5px;
-    border: 1px solid #060504;
+    border-radius: 3px;
+    border: 1px solid #000;
     background:
-      radial-gradient(circle at 50% 40%, color-mix(in srgb, var(--slot-color) 16%, transparent), transparent 70%),
-      linear-gradient(180deg, #2a2520, #100e0c);
+      radial-gradient(circle at 50% 40%, color-mix(in srgb, var(--slot-color) 14%, transparent), transparent 70%),
+      linear-gradient(180deg, #1f1f1f, #0b0b0b);
     box-shadow:
-      inset 0 0 0 1px rgba(0, 0, 0, 0.9),
-      inset 0 0 0 2px #6b5f4d,
-      inset 0 0 0 3px color-mix(in srgb, var(--slot-color) 55%, transparent),
-      inset 0 0 12px rgba(0, 0, 0, 0.7);
+      inset 1px 1px 0 #9b9b9b,
+      inset -1px -1px 0 #3c3c3c,
+      inset 0 0 0 2px #1b1b1b,
+      inset 0 0 10px rgba(0, 0, 0, 0.8),
+      0 1px 2px rgba(0, 0, 0, 0.8);
   }
 
-  .slot-wow:hover {
+  .slot-wow:hover,
+  .slot-wow:focus-visible {
     box-shadow:
-      inset 0 0 0 1px rgba(0, 0, 0, 0.9),
-      inset 0 0 0 2px #c9a648,
-      inset 0 0 0 3px var(--slot-color),
-      inset 0 0 12px rgba(0, 0, 0, 0.6),
-      0 0 14px color-mix(in srgb, var(--slot-color) 45%, transparent);
+      inset 1px 1px 0 #d8d8d8,
+      inset -1px -1px 0 #5a5a5a,
+      inset 0 0 0 2px #1b1b1b,
+      inset 0 0 10px rgba(0, 0, 0, 0.6),
+      0 0 8px color-mix(in srgb, var(--slot-color) 55%, transparent);
+  }
+
+  .slot-wow.slot-frame-empty {
+    border-style: solid;
+    opacity: 1;
+  }
+
+  /* ── CharacterFrame (Forever gear) ─────────────────────── */
+
+  .wow-cf-wrap {
+    width: 100%;
+    max-width: 404px;
+    padding-top: 10px;
+    padding-left: 10px;
+  }
+
+  .wow-cf {
+    position: relative;
+    padding: 8px 8px 10px;
+    border-radius: 6px;
+    border: 1px solid #000;
+    background:
+      radial-gradient(120% 60% at 50% 0%, rgba(255, 255, 255, 0.04), transparent 60%),
+      linear-gradient(180deg, #2a2a2a 0%, #1e1e1e 40%, #171717 100%);
+    box-shadow:
+      inset 0 0 0 1px #000,
+      inset 0 0 0 2px #7a7a7a,
+      inset 0 0 0 3px #2b2b2b,
+      inset 0 0 0 4px #5c5c5c,
+      inset 0 0 30px rgba(0, 0, 0, 0.55),
+      0 18px 40px -16px rgba(0, 0, 0, 0.9);
+    font-family: var(--font-marcellus), serif;
+  }
+
+  .wow-cf-portrait {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    z-index: 2;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    border: 1px solid #000;
+    background: radial-gradient(circle at 35% 30%, #5a1a1f, #2a0708 72%);
+    box-shadow:
+      inset 0 0 0 3px #c9a648,
+      inset 0 0 0 4px #3a2a0a,
+      inset 0 4px 10px rgba(0, 0, 0, 0.6),
+      0 3px 10px rgba(0, 0, 0, 0.7);
+  }
+
+  .wow-cf-portrait span {
+    font-size: 1.6rem;
+    color: #ffd100;
+    text-shadow: 1px 1px 0 #000;
+  }
+
+  .wow-cf-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 26px;
+    margin: 2px 32px 0 58px;
+    padding: 0 8px;
+    border-radius: 3px;
+    border: 1px solid #000;
+    background: linear-gradient(180deg, #151515, #0c0c0c);
+    box-shadow:
+      inset 0 0 0 1px #6a6a6a,
+      inset 0 0 0 2px #111;
+    color: #ffffff;
+    font-size: 0.95rem;
+    text-shadow: 1px 1px 0 #000;
+    min-width: 0;
+  }
+
+  .wow-cf-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    display: grid;
+    place-items: center;
+    border-radius: 3px;
+    border: 1px solid #000;
+    background: radial-gradient(circle at 35% 28%, #c0361f 0%, #8e1d0c 60%, #5c0e04 100%);
+    box-shadow:
+      inset 0 0 0 1px #d9a640,
+      inset 0 0 0 2px rgba(0, 0, 0, 0.5),
+      0 1px 3px rgba(0, 0, 0, 0.7);
+    color: #ffd100;
+    transition: filter 120ms ease;
+  }
+
+  .wow-cf-close:hover {
+    filter: brightness(1.2);
+  }
+
+  .wow-cf-sub {
+    margin: 4px 32px 0 58px;
+    text-align: center;
+    color: #ffd100;
+    font-size: 0.8rem;
+    line-height: 1.3;
+    text-shadow: 1px 1px 0 #000;
+    min-width: 0;
+  }
+
+  .wow-cf-body {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 6px;
+    margin-top: 14px;
+  }
+
+  .wow-cf-col {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .wow-cf-center {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+  }
+
+  .wow-cf-model {
+    flex: 1;
+    min-height: 120px;
+    display: grid;
+    place-items: center;
+    border-radius: 3px;
+    border: 1px solid #000;
+    background:
+      radial-gradient(60% 55% at 50% 45%, rgba(78, 134, 212, 0.12), transparent 70%),
+      linear-gradient(180deg, #121212, #0a0a0a);
+    box-shadow:
+      inset 0 0 0 1px #3c3c3c,
+      inset 0 0 18px rgba(0, 0, 0, 0.9);
+  }
+
+  .wow-cf-stats {
+    border-radius: 3px;
+    border: 1px solid #000;
+    background: linear-gradient(180deg, #161616, #101010);
+    box-shadow: inset 0 0 0 1px #474747;
+    padding: 4px 6px 5px;
+  }
+
+  .wow-cf-stats-head {
+    margin-bottom: 3px;
+    padding: 1px 6px;
+    border-radius: 2px;
+    border: 1px solid #000;
+    background: linear-gradient(180deg, #2c2c2c, #1a1a1a);
+    box-shadow: inset 0 0 0 1px #5a5a5a;
+    color: #ffffff;
+    font-size: 0.75rem;
+    text-shadow: 1px 1px 0 #000;
+  }
+
+  .wow-cf-stat {
+    display: flex;
+    justify-content: space-between;
+    gap: 6px;
+    font-size: 0.72rem;
+    line-height: 1.45;
+    text-shadow: 1px 1px 0 #000;
+  }
+
+  .wow-cf-stat dt {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #ffd100;
+  }
+
+  /* Marcellus draws "1" like "I" — ranks use a face with lining digits. */
+  .wow-cf-stat dd {
+    flex-shrink: 0;
+    color: #ffffff;
+    font-family: var(--font-inter), sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+  }
+
+  .wow-cf-weapons {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .wow-cf-leftovers {
+    margin-top: 8px;
+    padding-top: 6px;
+    border-top: 1px solid #000;
+    box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.05);
+    font-family: var(--font-inter), sans-serif;
+    font-size: 0.75rem;
+    color: #d8d8d8;
+  }
+
+  .wow-cf-leftovers span {
+    color: #ffd100;
+  }
+
+  /* CharacterFrameTab: tabs hang off the bottom edge; the active one joins the frame. */
+  .wow-cf-tabs {
+    display: flex;
+    gap: 2px;
+    padding-left: 10px;
+    margin-top: -1px;
+  }
+
+  .wow-cf-tab {
+    display: inline-flex;
+    align-items: center;
+    height: 26px;
+    padding: 0 12px;
+    border: 1px solid #000;
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+    background: linear-gradient(180deg, #161616, #242424);
+    box-shadow:
+      inset 1px 0 0 #5c5c5c,
+      inset -1px 0 0 #5c5c5c,
+      inset 0 -1px 0 #5c5c5c;
+    color: #ffd100;
+    font-family: var(--font-marcellus), serif;
+    font-size: 0.78rem;
+    text-shadow: 1px 1px 0 #000;
+    transition: filter 120ms ease;
+  }
+
+  a.wow-cf-tab:hover {
+    filter: brightness(1.35);
+  }
+
+  .wow-cf-tab[aria-current="page"] {
+    height: 30px;
+    background: linear-gradient(180deg, #1e1e1e, #2c2c2c);
+    color: #ffffff;
   }
 
   /* GameTooltip: TOOLTIP_DEFAULT_BACKGROUND_COLOR (0.09, 0.09, 0.19) with the silver rim. */
