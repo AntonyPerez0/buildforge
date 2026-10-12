@@ -13,9 +13,11 @@ interface ItemSlotProps {
   align?: "left" | "right" | "center";
   goal?: string;
   affixes?: string[];
+  /** Classic-size slot (~38px) with no caption — the name lives in the tooltip and aria-label. */
+  compact?: boolean;
 }
 
-export function ItemSlot({ game, label, item, icon, align = "center", goal, affixes }: ItemSlotProps) {
+export function ItemSlot({ game, label, item, icon, align = "center", goal, affixes, compact = false }: ItemSlotProps) {
   const [open, setOpen] = useState(false);
   const color = item ? slotGlowColor(item.quality, game) : "#4a4a56";
   const isD4 = game === "d4";
@@ -24,7 +26,8 @@ export function ItemSlot({ game, label, item, icon, align = "center", goal, affi
     <div className="relative" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
       <button
         type="button"
-        aria-label={item ? `${label}: ${item.name}. Show item details.` : `${label} slot`}
+        aria-label={item ? `${label}: ${item.name}. Show item details.` : `${label} slot (empty)`}
+        title={item ? undefined : label}
         aria-expanded={open}
         onClick={() => {
           if (typeof window !== "undefined" && window.matchMedia("(hover: hover)").matches) return;
@@ -33,7 +36,8 @@ export function ItemSlot({ game, label, item, icon, align = "center", goal, affi
         onFocus={() => setOpen(true)}
         onBlur={() => setOpen(false)}
         className={cn(
-          "group grid h-14 w-14 place-items-center text-lg transition-all sm:h-16 sm:w-16",
+          "group grid place-items-center text-lg transition-all",
+          compact ? "h-9 w-9 sm:h-[38px] sm:w-[38px]" : "h-14 w-14 sm:h-16 sm:w-16",
           isD4 ? "slot-d4" : "slot-wow",
           !item && "slot-frame-empty",
         )}
@@ -47,6 +51,7 @@ export function ItemSlot({ game, label, item, icon, align = "center", goal, affi
       <span
         className={cn(
           "mt-1 block text-center text-[10px] font-medium tracking-wide",
+          compact && "hidden",
           isD4 ? "font-[family-name:var(--font-cinzel)] font-bold tracking-[0.08em] text-[#8a7f70] uppercase" : "text-[#ffd100] [text-shadow:1px_1px_0_#000]",
         )}
         aria-hidden="true"

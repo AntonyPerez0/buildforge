@@ -260,43 +260,55 @@ export function BuildDetail({ build }: { build: Build }) {
             <SectionHeading
               eyebrow={isD4 ? "Equipment" : "Character info"}
               title="Gear priorities"
-              sub="Hover or tap any slot for the full item card. Below the doll: the plain-text checklist."
+              sub={
+                isD4
+                  ? "Hover or tap any slot for the full item card. Below the doll: the plain-text checklist."
+                  : "Hover or tap any slot for its tooltip. The list beside the character frame covers every slot in plain text."
+              }
             />
           </FadeUp>
-          <FadeUp className="mt-8">
-            <PaperDoll build={build} />
-          </FadeUp>
-          <FadeUp className="mt-6">
-            <div className="panel">
-              {build.gear.map((g, i) => (
-                <div
-                  key={`${g.slot}-${i}`}
-                  className="flex flex-col gap-1.5 border-b border-line/70 p-4 last:border-0 sm:flex-row sm:items-baseline sm:gap-4"
-                >
-                  <p className="display w-28 shrink-0 text-sm font-semibold text-(--accent-bright)">{g.slot}</p>
-                  <div className="min-w-0">
-                    <p className="text-sm text-ink">{g.target}</p>
-                    {g.item ? (
-                      <p className="mt-0.5 text-xs text-ink-dim">
-                        {g.item.name}
-                        {" · "}
-                        {g.item.source ?? g.item.type}
-                      </p>
-                    ) : null}
-                    {g.affixes && g.affixes.length > 0 ? (
-                      <div className="mt-1.5 flex flex-wrap gap-1.5">
-                        {g.affixes.map((a) => (
-                          <span key={a} className="kv !px-2 !py-0.5 text-ink-muted">
-                            {a}
-                          </span>
-                        ))}
-                      </div>
-                    ) : null}
+          <div className={cn("mt-8", !isD4 && "grid grid-cols-1 items-start gap-6 lg:grid-cols-[404px_minmax(0,1fr)]")}>
+            <FadeUp className={cn(!isD4 && "flex min-w-0 flex-col items-center lg:items-start")}>
+              <PaperDoll build={build} />
+              {!isD4 ? (
+                <p className="mt-4 max-w-[404px] text-[11px] leading-relaxed text-ink-dim">
+                  Forever reworked every loot table, so items marked Classic-era reference are stat benchmarks, not
+                  Forever drop locations — the linked Icy Veins guide tracks real drops.
+                </p>
+              ) : null}
+            </FadeUp>
+            <FadeUp className={cn(isD4 && "mt-6")}>
+              <div className="panel">
+                {build.gear.map((g, i) => (
+                  <div
+                    key={`${g.slot}-${i}`}
+                    className="flex flex-col gap-1.5 border-b border-line/70 p-4 last:border-0 sm:flex-row sm:items-baseline sm:gap-4"
+                  >
+                    <p className="display w-28 shrink-0 text-sm font-semibold text-(--accent-bright)">{g.slot}</p>
+                    <div className="min-w-0">
+                      <p className="text-sm text-ink">{g.target}</p>
+                      {g.item ? (
+                        <p className="mt-0.5 text-xs text-ink-dim">
+                          {g.item.name}
+                          {" · "}
+                          {g.item.source ?? g.item.type}
+                        </p>
+                      ) : null}
+                      {g.affixes && g.affixes.length > 0 ? (
+                        <div className="mt-1.5 flex flex-wrap gap-1.5">
+                          {g.affixes.map((a) => (
+                            <span key={a} className="kv !px-2 !py-0.5 text-ink-muted">
+                              {a}
+                            </span>
+                          ))}
+                        </div>
+                      ) : null}
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          </FadeUp>
+                ))}
+              </div>
+            </FadeUp>
+          </div>
         </Section>
 
         {/* ─── Stats ────────────────────────────────────────── */}
