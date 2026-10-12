@@ -22,7 +22,7 @@ const FEATURES = [
   {
     icon: ShieldCheck,
     title: "Tiers you can trace",
-    body: "Every tier is read from the Maxroll and Icy Veins lists and links back to them, with the date it was last checked.",
+    body: "List placements are read from Maxroll and Icy Veins and link back to them with the date they were checked; anything unranked is labelled as BuildForge's own rating.",
   },
   {
     icon: Workflow,
@@ -172,7 +172,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Sources"
             title="Tiers from Maxroll and Icy Veins."
-            sub="BuildForge never invents a tier. The nightly sync re-reads each list below; when a page can't be read cleanly, the last human-verified placement stays."
+            sub="Every list placement comes from Maxroll or Icy Veins and links back to it. The nightly sync re-reads each list below; when a page can't be read cleanly, the last good read (or the human-verified placement) stays. Builds no list ranks carry a clearly labelled BuildForge rating."
           />
         </FadeUp>
         <FadeUp className="mt-10">

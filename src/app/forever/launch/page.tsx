@@ -177,7 +177,7 @@ export default function LaunchHubPage() {
             <WowHeading
               eyebrow="December 9"
               title="The raid unlock"
-              sub="The BlizzCon roadmap lists all three for December 9 (timing can shift), with two more raids slotted for spring and summer 2027. Use the gap to gear through the new dungeons."
+              sub="The BlizzCon roadmap lists all three for December 9 (timing can shift), then two new raids (10- and 20-player) in spring 2027 and a new raid plus a revamped classic raid in summer 2027. Use the gap to gear through the new dungeons."
             />
           </FadeUp>
           <Stagger className="mt-8 grid gap-4 md:grid-cols-3">

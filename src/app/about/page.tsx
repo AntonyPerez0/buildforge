@@ -46,8 +46,8 @@ const PIPELINE = [
   },
   {
     icon: Database,
-    title: "Tiers are read, never invented",
-    body: "Every tier comes from a Maxroll or Icy Veins tier list and links back to it. The sync re-reads each list nightly; if a page can't be parsed cleanly, the last human-verified placements stay — and the sync report says which.",
+    title: "List tiers are read, not invented",
+    body: "Every list placement comes from a Maxroll or Icy Veins tier list and links back to it. The sync re-reads each list nightly; if a page can't be parsed cleanly, the last good read (or the human-verified placements) stays — and the sync report says which. Builds no list ranks show a labelled BuildForge rating.",
   },
   {
     icon: ScrollText,
@@ -117,9 +117,9 @@ export default function AboutPage() {
             <p className="mt-3 text-sm leading-relaxed text-ink-muted">
               BuildForge is open source. The sync pipeline is a local CLI — clone the repo,
               run <code className="rounded bg-surface-raised px-1.5 py-0.5 font-mono text-xs text-(--accent-bright)">npm run sync</code>,
-              and it re-reads the guide indexes and tier lists. Edit tiers by hand in{" "}
+              and it re-reads the guide indexes and tier lists. Verified tiers live in{" "}
               <code className="rounded bg-surface-raised px-1.5 py-0.5 font-mono text-xs text-(--accent-bright)">curated-meta.json</code>{" "}
-              and apply them without fetching via{" "}
+              (used wherever no recent live read exists); rebuild without fetching via{" "}
               <code className="rounded bg-surface-raised px-1.5 py-0.5 font-mono text-xs text-(--accent-bright)">npm run sync -- --offline</code>.
             </p>
             <div className="mt-4 flex flex-wrap gap-3">

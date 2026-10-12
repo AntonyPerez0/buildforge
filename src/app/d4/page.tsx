@@ -169,7 +169,7 @@ export default function D4Page() {
           <SectionHeading
             eyebrow="Synced nightly"
             title="Live guide index"
-            sub={`Every Diablo IV guide the nightly sync found on Maxroll and Icy Veins — ${guides.length} links, grouped by class, each with its best tier-list placement.`}
+            sub={`Every Diablo IV guide the nightly sync found on Maxroll and Icy Veins — ${guides.length} links, grouped by class, with its tier where a list we mirror ranks that exact guide.`}
           />
         </FadeUp>
         <div className="mt-10">

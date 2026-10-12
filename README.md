@@ -99,7 +99,7 @@ Utility scripts:
 
 ```bash
 npm run sync                    # fetch guide indexes + tier lists (Maxroll, Icy Veins)
-npm run sync -- --offline       # re-apply curated-meta.json edits without fetching
+npm run sync -- --offline       # rebuild from curated-meta.json + the last run, no fetching
 node scripts/generate-icons.mjs   # rasterize public/icon.svg → PWA PNGs
 ```
 
@@ -131,9 +131,12 @@ BuildForge **summarizes and attributes** — it never reproduces guide content.
    - If anything changed, the workflow **auto-commits and chains the Pages deploy** — the site
      is back online with fresh data within minutes.
    - If every remote index is unreachable, previous data is kept untouched.
-3. **Tiers are read, never invented**: `src/data/synced/curated-meta.json` holds each tier
-   list's URL and check date, the human-verified placements (the fallback), and hand-verified
-   guide links. Builds and guides pick up placements by guide URL or build name.
+3. **List tiers are read, not invented**: `src/data/synced/curated-meta.json` holds each tier
+   list's URL and check date, the human-verified placements, and hand-verified guide links.
+   A live read replaces a list's placements; a failed read keeps the last live read (up to 30
+   days old), then falls back to the verified ones. Builds and guides pick up placements by
+   guide URL first, then by exact build name. Builds no list ranks show a labelled
+   BuildForge rating.
 4. Everything renders with a *last synced* date (hubs + footer + `/sync`), so seasonal balance
    shifts are always one click away from correction.
 

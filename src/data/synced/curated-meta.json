@@ -9,7 +9,7 @@
       "url": "https://maxroll.gg/d4/tierlists/endgame-tier-list",
       "sourceUpdated": "2026-09-26",
       "checkedAt": "2026-10-11",
-      "note": "Overall endgame list for Season 15. A/B/C rows here are the verified subset — open the list for every entry."
+      "note": "Overall endgame list for Season 15. A/B/C rows here are the verified subset — open the full list for every entry."
     },
     {
       "id": "icyveins-d4-endgame",
@@ -18,7 +18,7 @@
       "list": "Endgame",
       "url": "https://www.icy-veins.com/d4/guides/endgame-tier-list/",
       "checkedAt": "2026-10-11",
-      "note": "Ranks endgame push builds for Torment XII and the Pit. Only the verified S tier is mirrored until the nightly sync reads the full list."
+      "note": "Ranks endgame push builds for Torment XII and the Pit. Only S-tier entries BuildForge has verified are shown — Icy Veins' S tier may hold more, and the lower tiers are on the full list."
     },
     {
       "id": "maxroll-d4-leveling",
@@ -72,6 +72,13 @@
     { "list": "maxroll-d4-endgame", "tier": "A", "build": "Heartseeker Rogue", "className": "Rogue", "url": "https://maxroll.gg/d4/build-guides/heartseeker-rogue-specialized-guide" },
     { "list": "maxroll-d4-endgame", "tier": "A", "build": "Cold Rain of Arrows Rogue", "className": "Rogue", "url": "https://maxroll.gg/d4/build-guides/rain-of-arrows-rogue-guide" },
     { "list": "maxroll-d4-endgame", "tier": "A", "build": "Tornado Druid", "className": "Druid", "url": "https://maxroll.gg/d4/build-guides/tornado-druid-guide" },
+    { "list": "maxroll-d4-endgame", "tier": "A", "build": "Death Trap Rogue", "className": "Rogue", "url": "https://maxroll.gg/d4/build-guides/death-trap-rogue-guide" },
+    { "list": "maxroll-d4-endgame", "tier": "A", "build": "Cataclysm Druid", "className": "Druid", "url": "https://maxroll.gg/d4/build-guides/cataclysm-druid-build-guide" },
+    { "list": "maxroll-d4-endgame", "tier": "A", "build": "Mighty Throw Barbarian", "className": "Barbarian", "url": "https://maxroll.gg/d4/build-guides/mighty-throw-barbarian-guide" },
+    { "list": "maxroll-d4-endgame", "tier": "A", "build": "Crushing Hand Spiritborn", "className": "Spiritborn", "url": "https://maxroll.gg/d4/build-guides/crushing-hand-spiritborn-guide" },
+    { "list": "maxroll-d4-endgame", "tier": "A", "build": "Auradin", "className": "Paladin", "url": "https://maxroll.gg/d4/build-guides/auradin-guide" },
+    { "list": "maxroll-d4-endgame", "tier": "A", "build": "Evade Caltrops Rogue", "className": "Rogue", "url": "https://maxroll.gg/d4/build-guides/evade-caltrops-rogue-guide" },
+    { "list": "maxroll-d4-endgame", "tier": "A", "build": "Poison Rain of Arrows Rogue", "className": "Rogue", "url": "https://maxroll.gg/d4/build-guides/poison-rain-of-arrows-rogue-guide" },
     { "list": "maxroll-d4-endgame", "tier": "A", "build": "Minion Necromancer", "className": "Necromancer", "url": "https://maxroll.gg/d4/build-guides/minion-necromancer-guide" },
     { "list": "maxroll-d4-endgame", "tier": "A", "build": "Poison Twisting Blades Rogue", "className": "Rogue", "url": "https://maxroll.gg/d4/build-guides/twisting-blades-rogue-guide" },
     { "list": "maxroll-d4-endgame", "tier": "A", "build": "Rapid Fire Rogue", "className": "Rogue", "url": "https://maxroll.gg/d4/build-guides/rapid-fire-rogue-guide" },
@@ -89,9 +96,11 @@
 
     { "list": "icyveins-d4-endgame", "tier": "S", "build": "Whirlwind Barbarian", "className": "Barbarian", "url": "https://www.icy-veins.com/d4/guides/whirlwind-barbarian-build" },
     { "list": "icyveins-d4-endgame", "tier": "S", "build": "Hammer of the Ancients Barbarian", "className": "Barbarian", "url": null },
+    { "list": "icyveins-d4-endgame", "tier": "S", "build": "Arbiter Disciple Paladin", "className": "Paladin", "url": "https://www.icy-veins.com/d4/guides/arbiter-paladin-build" },
     { "list": "icyveins-d4-endgame", "tier": "S", "build": "Penetrating Shot Rogue", "className": "Rogue", "url": null },
     { "list": "icyveins-d4-endgame", "tier": "S", "build": "Rapid Fire Rogue", "className": "Rogue", "url": "https://www.icy-veins.com/d4/guides/rapid-fire-rogue-build" },
     { "list": "icyveins-d4-endgame", "tier": "S", "build": "Blazing Scream Warlock", "className": "Warlock", "url": "https://www.icy-veins.com/d4/guides/hellfire-blazing-scream-warlock-build" },
+    { "list": "icyveins-d4-endgame", "tier": "S", "build": "Soar Swarm Spiritborn", "className": "Spiritborn", "url": "https://www.icy-veins.com/d4/guides/soar-swarm-spiritborn-build" },
 
     { "list": "maxroll-d4-leveling", "tier": "S", "build": "Dance of Knives Rogue", "className": "Rogue", "url": null },
     { "list": "maxroll-d4-leveling", "tier": "S", "build": "Frenzy Throw Barbarian", "className": "Barbarian", "url": null },

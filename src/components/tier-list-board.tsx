@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, ExternalLink } from "lucide-react";
 import type { Tier, TierListMeta } from "@/data/types";
@@ -27,22 +27,46 @@ export interface BoardList {
 /** A D4-menu tier board — one tab per Maxroll / Icy Veins list. */
 export function TierListBoard({ lists }: { lists: BoardList[] }) {
   const [active, setActive] = useState(0);
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const baseId = useId();
   const list = lists[active];
   if (!list) return null;
   const { meta } = list;
+  const tabId = (i: number) => `${baseId}-tab-${i}`;
+  const panelId = `${baseId}-panel`;
+
+  function focusTab(i: number) {
+    const next = (i + lists.length) % lists.length;
+    setActive(next);
+    tabRefs.current[next]?.focus();
+  }
+
+  function onKeyDown(e: React.KeyboardEvent<HTMLButtonElement>, i: number) {
+    const moves: Record<string, number> = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: lists.length - 1 };
+    if (!(e.key in moves)) return;
+    e.preventDefault();
+    focusTab(moves[e.key]);
+  }
 
   return (
     <div className="panel overflow-hidden">
-      <div className="tabbar-shell !static !mx-0 border-b px-2" role="tablist" aria-label="Tier lists">
-        <div className="tabbar">
+      <div className="tabbar-shell border-b px-2">
+        <div className="tabbar py-1" role="tablist" aria-label="Tier lists">
           {lists.map((l, i) => (
             <button
               key={l.meta.id}
+              ref={(el) => {
+                tabRefs.current[i] = el;
+              }}
+              id={tabId(i)}
               type="button"
               role="tab"
               aria-selected={i === active}
+              aria-controls={panelId}
+              tabIndex={i === active ? 0 : -1}
               className="tab"
               onClick={() => setActive(i)}
+              onKeyDown={(e) => onKeyDown(e, i)}
             >
               {l.meta.site} · {l.meta.list}
             </button>
@@ -64,7 +88,7 @@ export function TierListBoard({ lists }: { lists: BoardList[] }) {
         </a>
       </div>
 
-      <div role="tabpanel" className="relative">
+      <div role="tabpanel" id={panelId} aria-labelledby={tabId(active)} tabIndex={0} className="relative">
         {list.groups.map((g) => (
           <div key={g.tier} className="d4-tier-row" style={{ "--tier": `var(--color-tier-${g.tier.toLowerCase()})` } as React.CSSProperties}>
             <div className="d4-tier-label py-4">
@@ -102,7 +126,7 @@ export function TierListBoard({ lists }: { lists: BoardList[] }) {
         ))}
       </div>
 
-      {meta.note ? (
+      {meta.note && meta.status !== "auto" ? (
         <p className="relative border-t border-line px-4 py-3 text-xs leading-relaxed text-ink-dim sm:px-5">{meta.note}</p>
       ) : null}
     </div>

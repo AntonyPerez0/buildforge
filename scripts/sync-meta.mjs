@@ -168,14 +168,18 @@ async function collectIndexEntries(curated) {
   const report = [];
   /** Entries fetched from remote indexes — static/curated entries never count. */
   let remoteEntries = 0;
+  /** "site:game" pairs with an index that wasn't read this run — their old links stay trusted. */
+  const unreached = new Set();
 
   for (const idx of INDEXES) {
     if (OFFLINE) {
+      unreached.add(`${idx.site}:${idx.game}`);
       report.push(`| ${idx.site} | ${idx.url} | skipped (offline run) |`);
       continue;
     }
     const page = await getPage(idx.url);
     if (page.error) {
+      unreached.add(`${idx.site}:${idx.game}`);
       console.log(`✗ ${idx.site}: ${idx.url} ${page.error} — keeping previous data`);
       report.push(`| ${idx.site} | ${idx.url} | ${page.error} |`);
       continue;
@@ -208,7 +212,7 @@ async function collectIndexEntries(curated) {
   }
   report.push(`| ClassicWoW.gg | (static spec index from site nav) | ${CLASSICWOW_SPECS.length} specs |`);
 
-  return { fresh, report, remoteEntries };
+  return { fresh, report, remoteEntries, unreached };
 }
 
 /** Child tier-list pages linked from a hub (e.g. Icy Veins' Forever tier-list hub). */
@@ -259,18 +263,29 @@ async function readTierList(list) {
   return { ok: false, reason: reasons.join("; ") };
 }
 
-async function syncTierLists(curated, today) {
+/** A live read this recent survives a failed fetch; older ones fall back to the curated tiers. */
+const MAX_LIVE_TIER_AGE_DAYS = 30;
+
+async function syncTierLists(curated, today, previous) {
   const lists = [];
   const assignments = [];
   const report = [];
   const changes = [];
+  const freshestLive = Date.now() - MAX_LIVE_TIER_AGE_DAYS * 24 * 60 * 60 * 1000;
 
   for (const list of curated.tierLists ?? []) {
     const curatedRows = (curated.tierAssignments ?? []).filter((a) => a.list === list.id);
+    const prevList = (previous.tierLists ?? []).find((l) => l.id === list.id);
+    const prevRows = (previous.tierAssignments ?? []).filter((a) => a.list === list.id);
+    const prevLive =
+      prevList?.status === "auto" && prevRows.length > 0 && Date.parse(prevList.checkedAt) > freshestLive
+        ? { meta: prevList, rows: prevRows }
+        : null;
     const result = OFFLINE ? { ok: false, reason: "offline run" } : await readTierList(list);
 
     if (result.ok) {
-      const before = new Map(curatedRows.filter((a) => a.url).map((a) => [normalizeGuideUrl(a.url), a.tier]));
+      const baseline = prevLive ? prevLive.rows : curatedRows;
+      const before = new Map(baseline.filter((a) => a.url).map((a) => [normalizeGuideUrl(a.url), a.tier]));
       for (const hit of result.hits) {
         const prev = before.get(hit.url);
         if (prev && prev !== hit.tier) changes.push(`${list.site} ${list.list}: ${hit.title} ${prev} → ${hit.tier}`);
@@ -286,6 +301,14 @@ async function syncTierLists(curated, today) {
       lists.push({ ...list, status: "auto", checkedAt: today, result: result.reason });
       report.push(`| ${list.site} ${list.list} tier list | ${list.url} | ${result.reason} (read live) |`);
       console.log(`✓ ${list.site} ${list.list} tier list: ${result.reason}`);
+    } else if (prevLive) {
+      // A failed fetch must not flip tiers back to an older curated snapshot.
+      assignments.push(...prevLive.rows);
+      lists.push({ ...list, status: "auto", checkedAt: prevLive.meta.checkedAt, result: `last live read kept (${result.reason})` });
+      report.push(
+        `| ${list.site} ${list.list} tier list | ${list.url} | ${prevLive.rows.length} tiers from the ${prevLive.meta.checkedAt} live read kept (${result.reason}) |`,
+      );
+      console.log(`· ${list.site} ${list.list} tier list: last live read kept (${result.reason})`);
     } else {
       assignments.push(...curatedRows);
       lists.push({ ...list, status: list.status ?? "curated", result: result.reason });
@@ -303,9 +326,10 @@ async function main() {
   const today = new Date().toISOString().slice(0, 10);
 
   const curated = JSON.parse(await readFile(CURATED_FILE, "utf8"));
-  const { fresh, report, remoteEntries } = await collectIndexEntries(curated);
-  const tierSync = await syncTierLists(curated, today);
-  const previous = await readPreviousSnapshots();
+  const { fresh, report, remoteEntries, unreached } = await collectIndexEntries(curated);
+  const previousFile = await readPreviousFile();
+  const previous = Array.isArray(previousFile.snapshots) ? previousFile.snapshots : [];
+  const tierSync = await syncTierLists(curated, today, previousFile);
   const header = [`# BuildForge nightly sync — ${today}`, "", "| Source | Index | Result |", "| --- | --- | --- |"];
 
   // Guard the promise in the README: if every remote index fails (or a redesign
@@ -352,7 +376,7 @@ async function main() {
     });
   }
 
-  const carried = carryPrevious(previous, discovered);
+  const carried = carryPrevious(previous, discovered, unreached);
   for (const entry of discovered) entry.sources.sort((a, b) => siteRank(a.site) - siteRank(b.site));
   const snapshots = [...discovered, ...carried];
   await mkdir(SYNCED_DIR, { recursive: true });
@@ -383,14 +407,41 @@ async function main() {
   console.log(`\n${discovered.length} discovered + ${carried.length} carried → ${OUT_FILE}`);
 }
 
-/** Previously discovered entries kept from the last snapshot file. */
-async function readPreviousSnapshots() {
+/** The last generated file: previously discovered guides and the last tier reads. */
+async function readPreviousFile() {
   try {
     const raw = JSON.parse(await readFile(OUT_FILE, "utf8"));
-    return Array.isArray(raw?.snapshots) ? raw.snapshots : [];
+    return raw && typeof raw === "object" ? raw : {};
   } catch {
-    return [];
+    return {};
   }
+}
+
+/** Guide-page URL shapes per site + game — used to keep only real guide links from older files. */
+const GUIDE_URLS = {
+  "Maxroll:d4": /^https:\/\/maxroll\.gg\/d4\/build-guides\/[a-z0-9-]{12,}\/?$/,
+  "Icy Veins:d4": /^https:\/\/www\.icy-veins\.com\/d4\/guides\/[a-z0-9-]+-build\/?$/,
+  "Icy Veins:forever": /^https:\/\/www\.icy-veins\.com\/wow-forever\/[a-z0-9-]+-pve-guide\/?$/,
+  "ClassicWoW.gg:forever": /^https:\/\/classicwow\.gg\/forever\/guides\/[a-z-]+\/[a-z-]+$/,
+};
+const INDEXED = new Set(INDEXES.map((i) => `${i.site}:${i.game}`));
+
+/**
+ * Entries written by the pre-tier-list format carried a curated tier and
+ * summary. Turn them into plain guide entries (tier from the tier lists now)
+ * so the format switch drops no guides — keeping only real guide links.
+ */
+function fromOldFormat(s) {
+  if (s.tier == null) return s;
+  const sources = (s.sources ?? []).filter((src) => GUIDE_URLS[`${src.site}:${s.game}`]?.test(src.url));
+  if (sources.length === 0) return null;
+  return {
+    ...s,
+    id: `${s.game}-snap-${normalize(s.buildName).slice(0, 60)}`,
+    tier: null,
+    summary: `Live guide on ${sources[0].site}. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.`,
+    sources,
+  };
 }
 
 /**
@@ -405,15 +456,30 @@ const MAX_CARRIED_AGE_DAYS = 120;
 const SITE_ORDER = ["Maxroll", "Icy Veins", "ClassicWoW.gg", "Wowhead", "Blizzard"];
 const siteRank = (site) => (SITE_ORDER.includes(site) ? SITE_ORDER.indexOf(site) : SITE_ORDER.length);
 
-function carryPrevious(previous, discovered) {
-  // A previous entry for a guide indexed again today lends it any site links
-  // today's run didn't see (e.g. an offline run, or one index failing).
+function carryPrevious(previousRaw, discovered, unreached) {
+  // Old-format entries defer to a plain guide entry that already carries the same link.
+  const plainUrls = new Set(
+    previousRaw.filter((p) => p.tier == null).flatMap((p) => (p.sources ?? []).map((src) => normalizeGuideUrl(src.url))),
+  );
+  const previous = previousRaw
+    .map((p) => {
+      if (p.tier == null) return p;
+      const converted = fromOldFormat(p);
+      return converted && converted.sources.some((src) => !plainUrls.has(normalizeGuideUrl(src.url))) ? converted : null;
+    })
+    .filter(Boolean);
+
+  // A previous entry for a guide indexed again today lends it links from sites
+  // whose index wasn't read this run (offline, or that index failed). A site
+  // that was read and no longer lists the guide lends nothing — the link died.
   const byId = new Map(discovered.map((d) => [d.id, d]));
   for (const prev of previous) {
-    const today = prev.tier == null ? byId.get(prev.id) : undefined;
+    const today = byId.get(prev.id);
     if (!today) continue;
     for (const src of prev.sources ?? []) {
-      if (!today.sources.some((s) => s.site === src.site)) today.sources.push(src);
+      const key = `${src.site}:${prev.game}`;
+      const trusted = unreached.has(key) || !INDEXED.has(key);
+      if (trusted && !today.sources.some((s) => s.site === src.site)) today.sources.push(src);
     }
   }
 
@@ -423,7 +489,6 @@ function carryPrevious(previous, discovered) {
   return previous
     .filter(
       (s) =>
-        s.tier == null &&
         !todayIds.has(s.id) &&
         !s.sources?.some((src) => todayUrls.has(normalizeGuideUrl(src.url))) &&
         typeof s.fetchedAt === "string" &&

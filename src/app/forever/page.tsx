@@ -85,9 +85,11 @@ export default function ForeverPage() {
               {game.description}
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
-              <Link href="/forever/launch" className="wow-redbtn !flex-none">
-                <CalendarClock className="h-4 w-4" />
-                Launch hub — checklist, dungeons &amp; raids
+              <Link href="/forever/launch" className="wow-redbtn !flex-none max-w-full py-2 text-center whitespace-normal">
+                <CalendarClock className="h-4 w-4 shrink-0" />
+                <span>
+                  Launch hub<span className="hidden sm:inline"> — checklist, dungeons &amp; raids</span>
+                </span>
               </Link>
               <a href="#builds" className="wowui-stonebtn">
                 Build paths

@@ -163,8 +163,12 @@ export function BuildDetail({ build }: { build: Build }) {
                 <span className="text-ink-muted">
                   (beta ends {FOREVER_DATES.betaEnds}). This path is trimmed to what&apos;s reachable now; the full
                   level 1–{FOREVER_LAUNCH_LEVEL_CAP} track, endgame chapters and raid prep return at launch on{" "}
-                  {FOREVER_DATES.launch}. The {headline.tier} rating is BuildForge&apos;s own — Icy Veins&apos; Forever
-                  tier lists are marked Coming Soon and Maxroll doesn&apos;t cover Forever.
+                  {FOREVER_DATES.launch}.{" "}
+                  {headline.fromSource
+                    ? `Its tier comes from the ${headline.basis} tier list.`
+                    : foreverTierList?.status === "coming-soon"
+                      ? `The ${headline.tier} rating is BuildForge's own — Icy Veins' Forever tier lists are marked Coming Soon and Maxroll doesn't cover Forever.`
+                      : `The ${headline.tier} rating is BuildForge's own — no Icy Veins Forever tier list ranks this spec yet.`}
                 </span>
               </p>
             </div>

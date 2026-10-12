@@ -206,10 +206,27 @@ function WowTooltip({ item, goal, affixes, slotLabel }: TooltipBodyProps) {
   );
 }
 
-/** "Epic Plate Bracers" → ["Wrist", "Plate"]-style split for the two-column tooltip line. */
+/**
+ * The classic tooltip's two-column line — equip slot left, armor/weapon type
+ * right — from the item's own type ("Epic Two-Handed Staff" → Two-Hand · Staff),
+ * so a two-hander never reads as its doll slot ("Main Hand").
+ */
 function splitWowType(type: string, slotLabel?: string): [string, string | null] {
-  const armor = type.match(/\b(Cloth|Leather|Mail|Plate)\b/i)?.[1];
-  const weapon = type.match(/\b(Sword|Axe|Mace|Dagger|Staff|Polearm|Bow|Gun|Crossbow|Wand|Fist Weapon|Shield|Idol|Libram|Totem)\b/i)?.[1];
-  const slot = slotLabel?.replace(/\s*\d+$/, "") ?? type;
-  return [slot, armor ?? weapon ?? null];
+  const weapon = type.match(/\b(Sword|Axe|Mace|Dagger|Staff|Polearm|Bow|Gun|Crossbow|Wand|Fist Weapon|Shield|Idol|Libram|Totem)\b/i)?.[1] ?? null;
+  const armor = type.match(/\b(Cloth|Leather|Mail|Plate)\b/i)?.[1] ?? null;
+  const slot =
+    (/Two-Hand(?:ed)?/i.test(type) && "Two-Hand") ||
+    (/One-Hand(?:ed)?/i.test(type) && "One-Hand") ||
+    (/Throwing|Thrown/i.test(type) && "Thrown") ||
+    (/\b(Wand|Bow|Gun|Crossbow)\b/i.test(type) && "Ranged") ||
+    (/\bStaff\b/i.test(type) && "Two-Hand") ||
+    (/\b(Libram|Totem|Idol)\b/i.test(type) && "Relic") ||
+    (/\bShield\b/i.test(type) && "Off Hand") ||
+    (/Necklace|Amulet/i.test(type) && "Neck") ||
+    (/Cloak/i.test(type) && "Back") ||
+    (/\bRing\b/i.test(type) && "Finger") ||
+    (/Trinket/i.test(type) && "Trinket") ||
+    (slotLabel?.replace(/\s*\d+$/, "") ?? type);
+  if (slot === "Thrown") return [slot, null];
+  return [slot, armor ?? weapon];
 }

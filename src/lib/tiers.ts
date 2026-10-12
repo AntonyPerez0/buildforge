@@ -2,10 +2,13 @@ import type { Build, GameId, MetaSnapshot, SourceRef, SourceTier, Tier, TierAssi
 import { TIER_ASSIGNMENTS, TIER_LISTS } from "@/lib/snapshots";
 
 /**
- * Tier resolution. Every tier shown on the site comes from a Maxroll or Icy
- * Veins tier list (curated-meta.json, refreshed by the nightly sync). Builds
- * and guides are matched to placements by guide URL first, then by build
- * name — "Twisting Blades Rogue" matches Maxroll's "Poison Twisting Blades Rogue".
+ * Tier resolution. Every tier letter shown for a list comes from a Maxroll or
+ * Icy Veins tier list (curated-meta.json, refreshed by the nightly sync).
+ *
+ * Builds and guides are matched to a list's rows by guide URL first. A row
+ * matches by build name only when the names are the same build (exact, after
+ * dropping "guide"/"build" filler) and the URLs can't settle it — so "Cold
+ * Penetrating Shot Rogue" never inherits "Penetrating Shot Rogue"'s tier.
  */
 
 export const TIER_ORDER: Tier[] = ["S", "A", "B", "C", "D"];
@@ -17,9 +20,10 @@ const listRank = (id: string) => {
   return i === -1 ? LIST_PRIORITY.length : i;
 };
 
-const LISTS_BY_ID = new Map(TIER_LISTS.map((l) => [l.id, l]));
-
-const normalizeName = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "");
+const SITE_HOSTS: Record<TierListMeta["site"], string> = {
+  Maxroll: "maxroll.gg",
+  "Icy Veins": "icy-veins.com",
+};
 
 export function normalizeUrl(url: string): string {
   try {
@@ -30,63 +34,95 @@ export function normalizeUrl(url: string): string {
   }
 }
 
-/** Same build on two lists? Exact name, or one name containing the other (≥ 10 chars). */
+/** Build-name key: lowercase alphanumerics, trailing "guide"/"build" filler dropped. */
+export function buildKey(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/\((?:forever)\)/g, "")
+    .replace(/\b(?:build\s+guide|guide|build)\s*$/g, "")
+    .replace(/[^a-z0-9]+/g, "");
+}
+
+/** Same build on two lists? Exact name match after normalization — variants ("Poison …", "Cold …") are different builds. */
 export function sameBuild(a: string, b: string): boolean {
-  const na = normalizeName(a);
-  const nb = normalizeName(b);
-  if (na === nb) return true;
-  if (na.length < 10 || nb.length < 10) return false;
-  return na.includes(nb) || nb.includes(na);
+  const ka = buildKey(a);
+  return ka.length > 0 && ka === buildKey(b);
 }
 
-export function tierListsFor(game: GameId): TierListMeta[] {
-  return TIER_LISTS.filter((l) => l.game === game).sort((a, b) => listRank(a.id) - listRank(b.id));
+function onSite(url: string, site: TierListMeta["site"]): boolean {
+  try {
+    return new URL(url).hostname.endsWith(SITE_HOSTS[site]);
+  } catch {
+    return false;
+  }
 }
 
-export function getTierList(id: string): TierListMeta | undefined {
-  return LISTS_BY_ID.get(id);
+export interface TierResolver {
+  tierListsFor(game: GameId): TierListMeta[];
+  getTierList(id: string): TierListMeta | undefined;
+  assignmentsFor(listId: string): TierAssignment[];
+  resolveTiers(game: GameId, name: string, sources?: Pick<SourceRef, "url">[]): SourceTier[];
 }
 
-export function assignmentsFor(listId: string): TierAssignment[] {
-  return TIER_ASSIGNMENTS.filter((a) => a.list === listId);
-}
+/** Build a resolver over any tier data — the site uses the synced data, tests use fixtures. */
+export function createTierResolver(lists: TierListMeta[], assignments: TierAssignment[]): TierResolver {
+  const byId = new Map(lists.map((l) => [l.id, l]));
 
-function toSourceTier(a: TierAssignment): SourceTier | null {
-  const list = LISTS_BY_ID.get(a.list);
-  if (!list) return null;
+  function toSourceTier(a: TierAssignment, list: TierListMeta): SourceTier {
+    return {
+      listId: list.id,
+      site: list.site,
+      list: list.list,
+      tier: a.tier,
+      listUrl: list.url,
+      guideUrl: a.url,
+      checkedAt: list.checkedAt,
+      auto: Boolean(a.auto),
+    };
+  }
+
   return {
-    listId: list.id,
-    site: list.site,
-    list: list.list,
-    tier: a.tier,
-    listUrl: list.url,
-    guideUrl: a.url,
-    checkedAt: list.checkedAt,
-    auto: Boolean(a.auto),
+    tierListsFor: (game) => lists.filter((l) => l.game === game).sort((a, b) => listRank(a.id) - listRank(b.id)),
+    getTierList: (id) => byId.get(id),
+    assignmentsFor: (listId) => assignments.filter((a) => a.list === listId),
+    resolveTiers(game, name, sources = []) {
+      const out: SourceTier[] = [];
+      for (const list of lists) {
+        if (list.game !== game) continue;
+        const rows = assignments.filter((a) => a.list === list.id);
+        const ownUrls = sources.map((s) => s.url).filter((u) => onSite(u, list.site));
+        const ownKeys = new Set(ownUrls.map(normalizeUrl));
+
+        // Pass 1: the guide's own link on this site is on the list.
+        let hit = rows.find((r) => r.url !== null && ownKeys.has(normalizeUrl(r.url)));
+        // Pass 2: same build by name — unless both sides carry a link on this
+        // site and the links differ (then they're different guides).
+        if (!hit) {
+          hit = rows.find((r) => sameBuild(r.build, name) && !(r.url !== null && ownUrls.length > 0));
+        }
+        if (hit) out.push(toSourceTier(hit, list));
+      }
+      return out.sort((x, y) => listRank(x.listId) - listRank(y.listId));
+    },
   };
 }
 
-/** All placements for a build/guide, one per tier list, best list first. */
-export function resolveTiers(game: GameId, name: string, sources: Pick<SourceRef, "url">[] = []): SourceTier[] {
-  const urls = new Set(sources.map((s) => normalizeUrl(s.url)));
-  const byList = new Map<string, SourceTier>();
-  for (const a of TIER_ASSIGNMENTS) {
-    const list = LISTS_BY_ID.get(a.list);
-    if (!list || list.game !== game || byList.has(a.list)) continue;
-    const urlHit = a.url ? urls.has(normalizeUrl(a.url)) : false;
-    if (!urlHit && !sameBuild(a.build, name)) continue;
-    const st = toSourceTier(a);
-    if (st) byList.set(a.list, st);
-  }
-  return [...byList.values()].sort((x, y) => listRank(x.listId) - listRank(y.listId));
+const resolver = createTierResolver(TIER_LISTS, TIER_ASSIGNMENTS);
+
+export const tierListsFor = resolver.tierListsFor;
+export const getTierList = resolver.getTierList;
+export const assignmentsFor = resolver.assignmentsFor;
+export const resolveTiers = resolver.resolveTiers;
+
+export function buildTiers(build: Pick<Build, "game" | "name" | "sources">, r: TierResolver = resolver): SourceTier[] {
+  return r.resolveTiers(build.game, build.name, build.sources);
 }
 
-export function buildTiers(build: Pick<Build, "game" | "name" | "sources">): SourceTier[] {
-  return resolveTiers(build.game, build.name, build.sources);
-}
-
-export function snapshotTiers(snap: Pick<MetaSnapshot, "game" | "buildName" | "sources">): SourceTier[] {
-  return resolveTiers(snap.game, snap.buildName, snap.sources);
+export function snapshotTiers(
+  snap: Pick<MetaSnapshot, "game" | "buildName" | "sources">,
+  r: TierResolver = resolver,
+): SourceTier[] {
+  return r.resolveTiers(snap.game, snap.buildName, snap.sources);
 }
 
 export interface HeadlineTier {
@@ -96,9 +132,12 @@ export interface HeadlineTier {
   fromSource: boolean;
 }
 
-/** The single letter to lead with: the best source placement, else the build's own rating. */
-export function headlineTier(build: Pick<Build, "game" | "name" | "sources" | "tier">): HeadlineTier {
-  const [best] = buildTiers(build);
+/** The single letter to lead with: the best source placement, else the build's own (labelled) rating. */
+export function headlineTier(
+  build: Pick<Build, "game" | "name" | "sources" | "tier">,
+  r: TierResolver = resolver,
+): HeadlineTier {
+  const [best] = buildTiers(build, r);
   if (best) return { tier: best.tier, basis: `${best.site} ${best.list}`, fromSource: true };
   return { tier: build.tier, basis: "BuildForge rating", fromSource: false };
 }
