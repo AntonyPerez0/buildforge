@@ -17,8 +17,14 @@
  * Tiers are only ever read from Maxroll / Icy Veins or curated by a human in
  * src/data/synced/curated-meta.json — this script never invents them.
  *
- *   npm run sync               live run (network)
- *   npm run sync -- --offline  re-apply curated edits without fetching anything
+ *   npm run sync                          live run (network)
+ *   npm run sync -- --offline             rebuild without fetching (keeps live tier reads < 30 days old)
+ *   npm run sync -- --offline --curated   rebuild without fetching, forcing curated-meta.json tiers
+ *
+ * Tier precedence per list: a clean live read today → the last live read if
+ * under MAX_LIVE_TIER_AGE_DAYS → the human-verified rows in curated-meta.json.
+ * --curated skips straight to the human-verified rows (use it after correcting
+ * a bad read; the next clean live read takes over again).
  */
 
 import { readFile, writeFile, mkdir } from "node:fs/promises";
@@ -26,6 +32,7 @@ import path from "node:path";
 import { normalizeGuideUrl, parseTierList, titleFromGuidePath } from "./lib/tier-parse.mjs";
 
 const OFFLINE = process.argv.includes("--offline");
+const FORCE_CURATED = process.argv.includes("--curated");
 const DELAY_MS = 2000;
 const UA = "BuildForgeSync/1.1 (open-source build companion; +https://github.com/AntonyPerez0/buildforge)";
 const SYNCED_DIR = path.resolve("src/data/synced");
@@ -166,6 +173,13 @@ function guideLinks(html, site, game) {
 async function collectIndexEntries(curated) {
   const fresh = [];
   const report = [];
+
+  // Hand-verified guide links first: their titles are the canonical identity a
+  // site's differently-titled guide merges into ("Blazing Scream Warlock").
+  for (const g of curated.guides ?? []) {
+    const title = indexTitle(g.title, g.game);
+    fresh.push({ site: g.site, game: g.game, className: guessClass(title), title, url: g.url });
+  }
   /** Entries fetched from remote indexes — static/curated entries never count. */
   let remoteEntries = 0;
   /** "site:game" pairs with an index that wasn't read this run — their old links stay trusted. */
@@ -194,11 +208,6 @@ async function collectIndexEntries(curated) {
     report.push(`| ${idx.site} | ${idx.url} | ${links.length} links |`);
   }
 
-  // Hand-verified guide links (curated-meta.json → guides).
-  for (const g of curated.guides ?? []) {
-    const title = indexTitle(g.title, g.game);
-    fresh.push({ site: g.site, game: g.game, className: guessClass(title), title, url: g.url });
-  }
   report.push(`| Curated | curated-meta.json guides | ${(curated.guides ?? []).length} verified links |`);
 
   for (const [cls, spec] of CLASSICWOW_SPECS) {
@@ -278,17 +287,23 @@ async function syncTierLists(curated, today, previous) {
     const prevList = (previous.tierLists ?? []).find((l) => l.id === list.id);
     const prevRows = (previous.tierAssignments ?? []).filter((a) => a.list === list.id);
     const prevLive =
-      prevList?.status === "auto" && prevRows.length > 0 && Date.parse(prevList.checkedAt) > freshestLive
+      !FORCE_CURATED &&
+      prevList?.status === "auto" &&
+      prevRows.length > 0 &&
+      Date.parse(prevList.checkedAt) > freshestLive
         ? { meta: prevList, rows: prevRows }
         : null;
     const result = OFFLINE ? { ok: false, reason: "offline run" } : await readTierList(list);
 
     if (result.ok) {
       const baseline = prevLive ? prevLive.rows : curatedRows;
+      const since = prevLive ? `last live read ${prevLive.meta.checkedAt}` : "curated tiers";
       const before = new Map(baseline.filter((a) => a.url).map((a) => [normalizeGuideUrl(a.url), a.tier]));
       for (const hit of result.hits) {
         const prev = before.get(hit.url);
-        if (prev && prev !== hit.tier) changes.push(`${list.site} ${list.list}: ${hit.title} ${prev} → ${hit.tier}`);
+        if (prev && prev !== hit.tier) {
+          changes.push(`${list.site} ${list.list}: ${hit.title} ${prev} → ${hit.tier} (vs ${since})`);
+        }
         assignments.push({
           list: list.id,
           tier: hit.tier,
@@ -353,7 +368,11 @@ async function main() {
 
   // Discovered guide entries — one per build name, sources merged across sites.
   const discovered = [];
+  const indexedUrls = new Set();
   for (const f of fresh) {
+    const urlKey = normalizeGuideUrl(f.url);
+    if (indexedUrls.has(urlKey)) continue;
+    indexedUrls.add(urlKey);
     const handles = discoverKeys(f.title);
     const existing = discovered.find(
       (d) => d.game === f.game && discoverKeys(d.buildName).some((h) => handles.includes(h)),
@@ -399,9 +418,12 @@ async function main() {
     `${discovered.length} guides indexed · ${carried.length} carried from earlier runs · ${tierSync.assignments.length} tier placements across ${tierSync.lists.length} tier lists`,
   ];
   if (tierSync.changes.length > 0) {
-    summary.push("", "Tier changes since the curated snapshot:", "", ...tierSync.changes.map((c) => `- ${c}`));
+    summary.push("", "Tier changes this run:", "", ...tierSync.changes.map((c) => `- ${c}`));
   }
-  summary.push("", "Verify or correct tiers in `src/data/synced/curated-meta.json`.");
+  summary.push(
+    "",
+    "Verify or correct tiers in `src/data/synced/curated-meta.json` — they apply when a list has no clean live read in the last 30 days, or immediately with `npm run sync -- --offline --curated`.",
+  );
   await writeFile(REPORT_FILE, [...header, ...report, ...tierSync.report, ...summary].join("\n") + "\n");
 
   console.log(`\n${discovered.length} discovered + ${carried.length} carried → ${OUT_FILE}`);

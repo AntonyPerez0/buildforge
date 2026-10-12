@@ -30,6 +30,29 @@ const MENU = [
   { href: "#guides", label: "Live guide index", hint: "Synced nightly" },
 ];
 
+/**
+ * Everything known to be the same build as a tier row: authored builds and
+ * indexed guides that share the row's link. Their titles and other-site links
+ * let one site's row find the other site's placement ("Blazing Scream Warlock"
+ * on Maxroll, "Hellfire Blazing Scream Warlock" on Icy Veins).
+ */
+function identityOf(build: string, url: string | null): { names: string[]; urls: { url: string }[] } {
+  const names = new Set([build]);
+  const urls = new Set(url ? [url] : []);
+  if (url) {
+    const key = normalizeUrl(url);
+    const peers = [
+      ...getBuildsFor("d4").map((b) => ({ name: b.name, sources: b.sources })),
+      ...getSnapshotsFor("d4").map((sn) => ({ name: sn.buildName, sources: sn.sources })),
+    ].filter((p) => p.sources.some((src) => normalizeUrl(src.url) === key));
+    for (const p of peers) {
+      names.add(p.name);
+      for (const src of p.sources) urls.add(src.url);
+    }
+  }
+  return { names: [...names], urls: [...urls].map((u) => ({ url: u })) };
+}
+
 function boardLists(): BoardList[] {
   const authored = getBuildsFor("d4");
   return tierListsFor("d4")
@@ -43,7 +66,8 @@ function boardLists(): BoardList[] {
               sameBuild(b.name, r.build) ||
               (r.url !== null && b.sources.some((s) => normalizeUrl(s.url) === normalizeUrl(r.url!))),
           );
-          const elsewhere = resolveTiers("d4", r.build, r.url ? [{ url: r.url }] : [])
+          const id = identityOf(r.build, r.url);
+          const elsewhere = resolveTiers("d4", id.names, id.urls)
             .filter((t) => t.listId !== meta.id)
             .map((t) => ({ label: `${t.site}${t.list === meta.list ? "" : ` ${t.list}`}`, tier: t.tier }));
           return {
@@ -169,7 +193,7 @@ export default function D4Page() {
           <SectionHeading
             eyebrow="Synced nightly"
             title="Live guide index"
-            sub={`Every Diablo IV guide the nightly sync found on Maxroll and Icy Veins — ${guides.length} links, grouped by class, with its tier where a list we mirror ranks that exact guide.`}
+            sub={`Every Diablo IV guide the nightly sync found on Maxroll and Icy Veins — ${guides.length} links, grouped by class, with its tier where a list we mirror ranks that guide or a build of the same name.`}
           />
         </FadeUp>
         <div className="mt-10">

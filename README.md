@@ -100,6 +100,7 @@ Utility scripts:
 ```bash
 npm run sync                    # fetch guide indexes + tier lists (Maxroll, Icy Veins)
 npm run sync -- --offline       # rebuild from curated-meta.json + the last run, no fetching
+npm run sync -- --offline --curated   # same, but force the human-verified tiers
 node scripts/generate-icons.mjs   # rasterize public/icon.svg → PWA PNGs
 ```
 

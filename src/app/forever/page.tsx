@@ -180,8 +180,10 @@ export default function ForeverPage() {
             <div>
               <p className="text-sm text-[#ffd100] [text-shadow:1px_1px_0_#000]">Where do the tiers come from?</p>
               <p className="mt-1 text-[13px] leading-relaxed text-[#d8d8e0]">
-                {tierHub?.note ??
-                  "Icy Veins' Forever tier lists aren't published yet; ratings here are BuildForge's own until they are."}
+                {tierHub?.status === "coming-soon"
+                  ? (tierHub.note ??
+                    "Icy Veins' Forever tier lists aren't published yet; ratings here are BuildForge's own until they are.")
+                  : "Tiers come from Icy Veins' Forever tier lists, re-read nightly. Specs a list doesn't rank keep a labelled BuildForge rating; Maxroll doesn't cover Forever."}
               </p>
             </div>
             <a

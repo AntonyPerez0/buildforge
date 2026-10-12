@@ -47,9 +47,13 @@ export function BuildCard({ build, className }: { build: Build; className?: stri
                 </span>
               ))
             ) : (
-              <span className="src-tier" data-tier="none">
-                <span className="src-tier-site">{isD4 ? "Unranked in S15" : "BuildForge rating"}</span>
-                <span className="src-tier-letter">{isD4 ? "—" : headline.tier}</span>
+              <span
+                className="src-tier"
+                data-tier="none"
+                title={isD4 ? "Not on the Maxroll or Icy Veins Season 15 lists" : "Not ranked by an Icy Veins Forever list"}
+              >
+                <span className="src-tier-site">{isD4 ? "Unranked · BuildForge rating" : "BuildForge rating"}</span>
+                <span className="src-tier-letter">{headline.tier}</span>
               </span>
             )}
           </div>

@@ -3,6 +3,9 @@ import Link from "next/link";
 import { Bot, Database, ExternalLink, GitBranch, ScrollText, ShieldCheck } from "lucide-react";
 import { FadeUp, Stagger, StaggerItem } from "@/components/motion";
 import { SectionHeading } from "@/components/ui-bits";
+import { getTierList } from "@/lib/tiers";
+
+const FOREVER_TIERS_PENDING = getTierList("icyveins-forever-hub")?.status === "coming-soon";
 
 export const metadata: Metadata = {
   title: "About — data sources & sync pipeline",
@@ -19,7 +22,9 @@ const SOURCES = [
   {
     name: "Icy Veins",
     url: "https://www.icy-veins.com/d4/guides/endgame-tier-list/",
-    use: "Diablo IV tier lists and build guides, plus the WoW Forever spec guides and tier-list hub (Forever tier lists are marked Coming Soon).",
+    use: FOREVER_TIERS_PENDING
+      ? "Diablo IV tier lists and build guides, plus the WoW Forever spec guides and tier-list hub (Forever tier lists are marked Coming Soon)."
+      : "Diablo IV tier lists and build guides, plus the WoW Forever spec guides and tier lists.",
   },
   {
     name: "ClassicWoW.gg",

@@ -35,12 +35,14 @@ interface CardProps {
   chipText: string;
   chipLabel: string;
   tier?: string;
+  /** "BuildForge rating" when no Maxroll / Icy Veins list ranks the build. */
+  tierCaption?: string;
   title: string;
   subtitle: string;
   tagline?: string;
 }
 
-function Card({ accent, chipBg, chipText, chipLabel, tier, title, subtitle, tagline }: CardProps) {
+function Card({ accent, chipBg, chipText, chipLabel, tier, tierCaption, title, subtitle, tagline }: CardProps) {
   return (
     <div
       style={{
@@ -105,6 +107,7 @@ function Card({ accent, chipBg, chipText, chipLabel, tier, title, subtitle, tagl
       <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
           {tier ? (
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
             <div
               style={{
                 width: 64,
@@ -121,6 +124,10 @@ function Card({ accent, chipBg, chipText, chipLabel, tier, title, subtitle, tagl
               }}
             >
               {tier}
+            </div>
+              {tierCaption ? (
+                <span style={{ fontSize: 13, color: "#8b8994", letterSpacing: "0.04em" }}>{tierCaption}</span>
+              ) : null}
             </div>
           ) : null}
           <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
@@ -212,6 +219,7 @@ async function render(params: { game: string; slug: string }): Promise<ImageResp
         chipText={accent.chipText}
         chipLabel={`${GAMES[build.game].label} · ${build.patchLabel}`.toUpperCase()}
         tier={headlineTier(build).tier}
+        tierCaption={headlineTier(build).fromSource ? undefined : "BuildForge rating"}
         title={build.name}
         subtitle={`${build.className} · ${build.role}`}
         tagline={build.tagline}

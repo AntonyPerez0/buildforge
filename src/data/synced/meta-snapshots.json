@@ -317,6 +317,13 @@
     },
     {
       "list": "maxroll-d4-endgame",
+      "tier": "B",
+      "build": "Golem Necromancer",
+      "className": "Necromancer",
+      "url": "https://maxroll.gg/d4/build-guides/golem-necromancer-guide"
+    },
+    {
+      "list": "maxroll-d4-endgame",
       "tier": "C",
       "build": "Bone Spear Necromancer",
       "className": "Necromancer",
@@ -418,7 +425,7 @@
       "tier": "S",
       "build": "Barrage Rogue",
       "className": "Rogue",
-      "url": null
+      "url": "https://maxroll.gg/d4/build-guides/barrage-rogue-leveling-guide"
     },
     {
       "list": "maxroll-d4-leveling",
@@ -542,17 +549,22 @@
       "fetchedAt": "2026-10-12"
     },
     {
-      "id": "d4-snap-hellfireblazingscreamwarlock",
+      "id": "d4-snap-blazingscreamwarlock",
       "game": "d4",
       "className": "Warlock",
-      "buildName": "Hellfire Blazing Scream Warlock",
+      "buildName": "Blazing Scream Warlock",
       "tier": null,
       "summary": "Live guide on Icy Veins. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
       "sources": [
         {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/blazing-scream-warlock-guide",
+          "label": "Maxroll Blazing Scream Warlock guide"
+        },
+        {
           "site": "Icy Veins",
           "url": "https://www.icy-veins.com/d4/guides/hellfire-blazing-scream-warlock-build/",
-          "label": "Icy Veins Hellfire Blazing Scream Warlock"
+          "label": "Icy Veins Blazing Scream Warlock"
         }
       ],
       "fetchedAt": "2026-10-12"
@@ -579,17 +591,22 @@
       "fetchedAt": "2026-10-12"
     },
     {
-      "id": "d4-snap-shifterpulverizedruid",
+      "id": "d4-snap-pulverizedruid",
       "game": "d4",
       "className": "Druid",
-      "buildName": "Shifter Pulverize Druid",
+      "buildName": "Pulverize Druid",
       "tier": null,
       "summary": "Live guide on Icy Veins. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
       "sources": [
         {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/pulverize-druid-guide",
+          "label": "Maxroll Pulverize Druid"
+        },
+        {
           "site": "Icy Veins",
           "url": "https://www.icy-veins.com/d4/guides/shifter-pulverize-druid-build/",
-          "label": "Icy Veins Shifter Pulverize Druid"
+          "label": "Icy Veins Pulverize Druid"
         }
       ],
       "fetchedAt": "2026-10-12"
@@ -1086,22 +1103,6 @@
         }
       ],
       "fetchedAt": "2026-10-12"
-    },
-    {
-      "id": "d4-snap-blazingscreamwarlock",
-      "game": "d4",
-      "className": "Warlock",
-      "buildName": "Blazing Scream Warlock",
-      "tier": null,
-      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/blazing-scream-warlock-guide",
-          "label": "Maxroll Blazing Scream Warlock guide"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
     },
     {
       "id": "d4-snap-apocalypsewarlock",
@@ -1995,22 +1996,6 @@
           "site": "Maxroll",
           "url": "https://maxroll.gg/d4/build-guides/hell-fracture-warlock-guide",
           "label": "Maxroll Hell Fracture Warlock"
-        }
-      ],
-      "fetchedAt": "2026-10-11"
-    },
-    {
-      "id": "d4-snap-pulverizedruid",
-      "game": "d4",
-      "className": "Druid",
-      "buildName": "Pulverize Druid",
-      "tier": null,
-      "summary": "Fresh from the live meta — synced from Maxroll. Open the full guide for the current skill tree, gear table and tuning notes; a tier rating lands here once a human curates it in curated-meta.json.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/pulverize-druid-guide",
-          "label": "Maxroll Pulverize Druid"
         }
       ],
       "fetchedAt": "2026-10-11"

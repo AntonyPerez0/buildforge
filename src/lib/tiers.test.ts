@@ -53,6 +53,7 @@ const ROWS: TierAssignment[] = [
   { list: "icyveins-d4-endgame", tier: "S", build: "Penetrating Shot Rogue", className: "Rogue", url: null },
   { list: "icyveins-d4-endgame", tier: "S", build: "Whirlwind Barbarian", className: "Barbarian", url: "https://www.icy-veins.com/d4/guides/whirlwind-barbarian-build" },
   { list: "maxroll-d4-leveling", tier: "S", build: "Barrage Rogue", className: "Rogue", url: null },
+  { list: "icyveins-d4-endgame", tier: "A", build: "Minion Necromancer", className: "Necromancer", url: "https://www.icy-veins.com/d4/guides/minion-necromancer-build" },
   { list: "maxroll-d4-leveling", tier: "A", build: "Whirlwind Barbarian", className: "Barbarian", url: null },
 ];
 const r = createTierResolver(LISTS, ROWS);
@@ -86,6 +87,25 @@ describe("tier matching", () => {
       "maxroll-d4-leveling:A",
     ]);
     const pen = r.resolveTiers("d4", "Penetrating Shot Rogue", [{ url: `${MX}penetrating-shot-rogue-guide` }]);
+    expect(pen.map((t) => `${t.listId}:${t.tier}`)).toEqual(["maxroll-d4-endgame:S", "icyveins-d4-endgame:S"]);
+  });
+
+  it("doesn't count a cited tier-list page as the build's own guide link", () => {
+    const minion = r.resolveTiers("d4", "Minion Necromancer", [
+      { url: "https://www.icy-veins.com/d4/guides/endgame-tier-list/" },
+    ]);
+    expect(minion.map((t) => `${t.listId}:${t.tier}`)).toEqual(["icyveins-d4-endgame:A"]);
+  });
+
+  it("pairs a leveling guide with the leveling list's plain build name", () => {
+    const lv = r.resolveTiers("d4", "Barrage Rogue Leveling", [{ url: `${MX}barrage-rogue-leveling-guide` }]);
+    expect(lv.map((t) => `${t.listId}:${t.tier}`)).toEqual(["maxroll-d4-leveling:S"]);
+  });
+
+  it("resolves a build known by several titles across sites", () => {
+    const pen = r.resolveTiers("d4", ["Poison Penetrating Shot Rogue", "Penetrating Shot Rogue"], [
+      { url: `${MX}penetrating-shot-rogue-guide` },
+    ]);
     expect(pen.map((t) => `${t.listId}:${t.tier}`)).toEqual(["maxroll-d4-endgame:S", "icyveins-d4-endgame:S"]);
   });
 

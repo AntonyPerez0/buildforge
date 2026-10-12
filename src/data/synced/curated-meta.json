@@ -1,5 +1,5 @@
 {
-  "_comment": "Human-verified tier layer. Tiers come from Maxroll and Icy Veins tier lists only — never invented. Each list records where it lives and when a human last checked it. The nightly sync (scripts/sync-meta.mjs) re-reads every list and replaces that list's assignments with the live ones when the page parses cleanly; otherwise these verified assignments stay. 'guides' are hand-verified guide links added to the live guide index alongside what the sync discovers.",
+  "_comment": "Human-verified tier layer. List tiers come from Maxroll and Icy Veins tier lists only. Each list records where it lives and when a human last checked it. The nightly sync (scripts/sync-meta.mjs) re-reads every list: a clean live read replaces that list's assignments, a failed read keeps the last live read (up to 30 days), and otherwise these verified assignments apply (force them with `npm run sync -- --offline --curated`). 'guides' are hand-verified guide links; their titles are the canonical name a site's differently-titled guide merges into.",
   "tierLists": [
     {
       "id": "maxroll-d4-endgame",
@@ -87,6 +87,7 @@
     { "list": "maxroll-d4-endgame", "tier": "B", "build": "Pulverize Druid", "className": "Druid", "url": "https://maxroll.gg/d4/build-guides/pulverize-druid-guide" },
     { "list": "maxroll-d4-endgame", "tier": "B", "build": "Lightning Storm Druid", "className": "Druid", "url": null },
     { "list": "maxroll-d4-endgame", "tier": "B", "build": "Boulder Druid", "className": "Druid", "url": "https://maxroll.gg/d4/build-guides/boulder-druid-guide" },
+    { "list": "maxroll-d4-endgame", "tier": "B", "build": "Golem Necromancer", "className": "Necromancer", "url": "https://maxroll.gg/d4/build-guides/golem-necromancer-guide" },
 
     { "list": "maxroll-d4-endgame", "tier": "C", "build": "Bone Spear Necromancer", "className": "Necromancer", "url": "https://maxroll.gg/d4/build-guides/bone-spear-necromancer-guide" },
     { "list": "maxroll-d4-endgame", "tier": "C", "build": "Fireball Sorcerer", "className": "Sorcerer", "url": "https://maxroll.gg/d4/build-guides/fireball-sorcerer-guide" },
@@ -104,7 +105,7 @@
 
     { "list": "maxroll-d4-leveling", "tier": "S", "build": "Dance of Knives Rogue", "className": "Rogue", "url": null },
     { "list": "maxroll-d4-leveling", "tier": "S", "build": "Frenzy Throw Barbarian", "className": "Barbarian", "url": null },
-    { "list": "maxroll-d4-leveling", "tier": "S", "build": "Barrage Rogue", "className": "Rogue", "url": null },
+    { "list": "maxroll-d4-leveling", "tier": "S", "build": "Barrage Rogue", "className": "Rogue", "url": "https://maxroll.gg/d4/build-guides/barrage-rogue-leveling-guide" },
     { "list": "maxroll-d4-leveling", "tier": "S", "build": "Minion Necromancer", "className": "Necromancer", "url": null },
     { "list": "maxroll-d4-leveling", "tier": "S", "build": "Blizzard Sorcerer", "className": "Sorcerer", "url": null },
     { "list": "maxroll-d4-leveling", "tier": "S", "build": "Shield of Retribution Paladin", "className": "Paladin", "url": null },
@@ -118,9 +119,9 @@
     { "site": "Icy Veins", "game": "d4", "title": "Whirlwind Barbarian", "url": "https://www.icy-veins.com/d4/guides/whirlwind-barbarian-build/" },
     { "site": "Icy Veins", "game": "d4", "title": "Rapid Fire Rogue", "url": "https://www.icy-veins.com/d4/guides/rapid-fire-rogue-build/" },
     { "site": "Icy Veins", "game": "d4", "title": "Dance of Knives Rogue", "url": "https://www.icy-veins.com/d4/guides/dance-of-knives-rogue-build/" },
-    { "site": "Icy Veins", "game": "d4", "title": "Hellfire Blazing Scream Warlock", "url": "https://www.icy-veins.com/d4/guides/hellfire-blazing-scream-warlock-build/" },
+    { "site": "Icy Veins", "game": "d4", "title": "Blazing Scream Warlock", "url": "https://www.icy-veins.com/d4/guides/hellfire-blazing-scream-warlock-build/" },
     { "site": "Icy Veins", "game": "d4", "title": "Fireball Sorcerer", "url": "https://www.icy-veins.com/d4/guides/fireball-sorcerer-build/" },
-    { "site": "Icy Veins", "game": "d4", "title": "Shifter Pulverize Druid", "url": "https://www.icy-veins.com/d4/guides/shifter-pulverize-druid-build/" },
+    { "site": "Icy Veins", "game": "d4", "title": "Pulverize Druid", "url": "https://www.icy-veins.com/d4/guides/shifter-pulverize-druid-build/" },
 
     { "site": "Icy Veins", "game": "forever", "title": "Fury Warrior", "url": "https://www.icy-veins.com/wow-forever/fury-warrior-melee-dps-pve-guide" },
     { "site": "Icy Veins", "game": "forever", "title": "Retribution Paladin", "url": "https://www.icy-veins.com/wow-forever/retribution-paladin-melee-dps-pve-guide" },

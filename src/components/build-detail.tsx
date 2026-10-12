@@ -117,7 +117,9 @@ export function BuildDetail({ build }: { build: Build }) {
                       data-tier="none"
                     >
                       <span className="src-tier-site">Icy Veins tier lists</span>
-                      <span className="src-tier-letter">Soon</span>
+                      <span className="src-tier-letter">
+                        {foreverTierList?.status === "coming-soon" ? "Soon" : "Not ranked"}
+                      </span>
                     </a>
                   )}
                 </div>
