@@ -1,7 +1,7 @@
 {
   "_meta": {
     "generator": "scripts/sync-meta.mjs",
-    "fetchedAt": "2026-10-21",
+    "fetchedAt": "2026-10-22",
     "note": "Generated layer. Tiers come from Maxroll / Icy Veins tier lists (read live when they parse, otherwise the human-verified curated-meta.json values). Never reproduce guide content — link to it.",
     "userAgent": "BuildForgeSync/1.1 (open-source build companion; +https://github.com/AntonyPerez0/buildforge)"
   },
@@ -13,7 +13,7 @@
       "list": "Endgame",
       "url": "https://maxroll.gg/d4/tierlists/endgame-tier-list",
       "sourceUpdated": "2026-09-26",
-      "checkedAt": "2026-10-21",
+      "checkedAt": "2026-10-22",
       "note": "Overall endgame list for Season 15. A/B/C rows here are the verified subset — open the full list for every entry.",
       "status": "auto",
       "result": "86 guides across 5 tiers"
@@ -36,7 +36,7 @@
       "list": "Leveling",
       "url": "https://maxroll.gg/d4/tierlists/leveling-tier-list",
       "sourceUpdated": "2026-09-14",
-      "checkedAt": "2026-10-21",
+      "checkedAt": "2026-10-22",
       "status": "auto",
       "result": "38 guides across 4 tiers"
     },
@@ -46,7 +46,7 @@
       "game": "d4",
       "list": "Leveling",
       "url": "https://www.icy-veins.com/d4/guides/leveling-tier-list/",
-      "checkedAt": "2026-10-21",
+      "checkedAt": "2026-10-22",
       "status": "auto",
       "result": "23 guides across 3 tiers"
     },
@@ -1309,7 +1309,7 @@
           "label": "Icy Veins Whirlwind Barbarian"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-rapidfirerogue",
@@ -1330,7 +1330,7 @@
           "label": "Icy Veins Rapid Fire Rogue"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-danceofknivesrogue",
@@ -1351,7 +1351,7 @@
           "label": "Icy Veins Dance of Knives Rogue"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-blazingscreamwarlock",
@@ -1372,7 +1372,7 @@
           "label": "Icy Veins Blazing Scream Warlock"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-fireballsorcerer",
@@ -1393,7 +1393,7 @@
           "label": "Icy Veins Fireball Sorcerer"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-pulverizedruid",
@@ -1414,7 +1414,7 @@
           "label": "Icy Veins Pulverize Druid"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "forever-snap-furywarriorforever",
@@ -1435,7 +1435,7 @@
           "label": "ClassicWoW.gg Fury Warrior (Forever)"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "forever-snap-retributionpaladinforever",
@@ -1456,7 +1456,7 @@
           "label": "ClassicWoW.gg Retribution Paladin (Forever)"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "forever-snap-enhancementshamanforever",
@@ -1477,7 +1477,7 @@
           "label": "ClassicWoW.gg Enhancement Shaman (Forever)"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "forever-snap-combatrogueforever",
@@ -1498,7 +1498,7 @@
           "label": "ClassicWoW.gg Combat Rogue (Forever)"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "forever-snap-beastmasteryhunterforever",
@@ -1519,7 +1519,7 @@
           "label": "ClassicWoW.gg Beast Mastery Hunter (Forever)"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "forever-snap-afflictionwarlockforever",
@@ -1540,7 +1540,7 @@
           "label": "ClassicWoW.gg Affliction Warlock (Forever)"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "forever-snap-frostmageforever",
@@ -1561,7 +1561,7 @@
           "label": "ClassicWoW.gg Frost Mage (Forever)"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "forever-snap-shadowpriestforever",
@@ -1582,7 +1582,7 @@
           "label": "ClassicWoW.gg Shadow Priest (Forever)"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "forever-snap-holypriestforever",
@@ -1603,39 +1603,7 @@
           "label": "ClassicWoW.gg Holy Priest (Forever)"
         }
       ],
-      "fetchedAt": "2026-10-21"
-    },
-    {
-      "id": "d4-snap-bloodwavenecromancer",
-      "game": "d4",
-      "className": "Necromancer",
-      "buildName": "Blood Wave Necromancer",
-      "tier": null,
-      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/blood-wave-necromancer-guide",
-          "label": "Maxroll Blood Wave Necromancer"
-        }
-      ],
-      "fetchedAt": "2026-10-21"
-    },
-    {
-      "id": "d4-snap-rainofarrowsrogue",
-      "game": "d4",
-      "className": "Rogue",
-      "buildName": "Rain Of Arrows Rogue",
-      "tier": null,
-      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/rain-of-arrows-rogue-guide",
-          "label": "Maxroll Rain Of Arrows Rogue"
-        }
-      ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-deathtraprogue",
@@ -1651,7 +1619,55 @@
           "label": "Maxroll Death Trap Rogue"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
+    },
+    {
+      "id": "d4-snap-twistingbladesrogue",
+      "game": "d4",
+      "className": "Rogue",
+      "buildName": "Twisting Blades Rogue",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/twisting-blades-rogue-guide",
+          "label": "Maxroll Twisting Blades Rogue"
+        }
+      ],
+      "fetchedAt": "2026-10-22"
+    },
+    {
+      "id": "d4-snap-bloodwavenecromancer",
+      "game": "d4",
+      "className": "Necromancer",
+      "buildName": "Blood Wave Necromancer",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/blood-wave-necromancer-guide",
+          "label": "Maxroll Blood Wave Necromancer"
+        }
+      ],
+      "fetchedAt": "2026-10-22"
+    },
+    {
+      "id": "d4-snap-rainofarrowsrogue",
+      "game": "d4",
+      "className": "Rogue",
+      "buildName": "Rain Of Arrows Rogue",
+      "tier": null,
+      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
+      "sources": [
+        {
+          "site": "Maxroll",
+          "url": "https://maxroll.gg/d4/build-guides/rain-of-arrows-rogue-guide",
+          "label": "Maxroll Rain Of Arrows Rogue"
+        }
+      ],
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-dashrogue",
@@ -1667,7 +1683,7 @@
           "label": "Maxroll Dash Rogue"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-penetratingshotrogue",
@@ -1683,7 +1699,7 @@
           "label": "Maxroll Penetrating Shot Rogue"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-upheavalbarbarian",
@@ -1699,7 +1715,7 @@
           "label": "Maxroll Upheaval Barbarian"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-counterswarmspiritborn",
@@ -1715,7 +1731,7 @@
           "label": "Maxroll Counterswarm Spiritborn"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-laceratedruid",
@@ -1731,7 +1747,7 @@
           "label": "Maxroll Lacerate Druid"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-heartseekerroguespecialized",
@@ -1747,7 +1763,7 @@
           "label": "Maxroll Heartseeker Rogue Specialized"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-bonespiritnecromancer",
@@ -1763,7 +1779,7 @@
           "label": "Maxroll Bone Spirit Necromancer"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-firewallsorcerer",
@@ -1779,7 +1795,7 @@
           "label": "Maxroll Firewall Sorcerer"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-bonespearnecromancer",
@@ -1795,7 +1811,7 @@
           "label": "Maxroll Bone Spear Necromancer"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-minionnecromancer",
@@ -1811,7 +1827,7 @@
           "label": "Maxroll Minion Necromancer"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-golemnecromancer",
@@ -1827,7 +1843,7 @@
           "label": "Maxroll Golem Necromancer"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-poisonbarragerogue",
@@ -1843,7 +1859,7 @@
           "label": "Maxroll Poison Barrage Rogue"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-poisonrainofarrowsrogue",
@@ -1859,7 +1875,7 @@
           "label": "Maxroll Poison Rain Of Arrows Rogue"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-barragerogue",
@@ -1875,7 +1891,7 @@
           "label": "Maxroll Barrage Rogue"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-zealpaladin",
@@ -1891,7 +1907,7 @@
           "label": "Maxroll Zeal Paladin"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-divinelancepaladin",
@@ -1912,7 +1928,7 @@
           "label": "Icy Veins Divine Lance Paladin Leveling"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-earthquakebarbarian",
@@ -1928,7 +1944,7 @@
           "label": "Maxroll Earthquake Barbarian"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-lungingstrikebarbarian",
@@ -1944,7 +1960,7 @@
           "label": "Maxroll Lunging Strike Barbarian"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-coldpenetratingshotrogue",
@@ -1960,7 +1976,7 @@
           "label": "Maxroll Cold Penetrating Shot Rogue"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-shieldofretributionpaladin",
@@ -1976,7 +1992,7 @@
           "label": "Maxroll Shield Of Retribution Paladin"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-hammeroftheancientsbarbarian",
@@ -1997,23 +2013,7 @@
           "label": "Icy Veins Hammer Of The Ancients Barbarian Leveling"
         }
       ],
-      "fetchedAt": "2026-10-21"
-    },
-    {
-      "id": "d4-snap-twistingbladesrogue",
-      "game": "d4",
-      "className": "Rogue",
-      "buildName": "Twisting Blades Rogue",
-      "tier": null,
-      "summary": "Live guide on Maxroll. Open it for the current skill tree, gear and tuning notes — tiers come from the Maxroll and Icy Veins tier lists.",
-      "sources": [
-        {
-          "site": "Maxroll",
-          "url": "https://maxroll.gg/d4/build-guides/twisting-blades-rogue-guide",
-          "label": "Maxroll Twisting Blades Rogue"
-        }
-      ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-evadebarbarian",
@@ -2029,7 +2029,7 @@
           "label": "Maxroll Evade Barbarian"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-mightythrowbarbarian",
@@ -2045,7 +2045,7 @@
           "label": "Maxroll Mighty Throw Barbarian"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-arrowstormsrogue",
@@ -2061,7 +2061,7 @@
           "label": "Maxroll Arrow Storms Rogue"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-boulderdruid",
@@ -2077,7 +2077,7 @@
           "label": "Maxroll Boulder Druid"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-stingerspiritborn",
@@ -2093,7 +2093,7 @@
           "label": "Maxroll Stinger Spiritborn"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-minionbarbarian",
@@ -2109,7 +2109,7 @@
           "label": "Maxroll Minion Barbarian"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-touchofdeathspiritborn",
@@ -2125,7 +2125,7 @@
           "label": "Maxroll Touch Of Death Spiritborn"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-quillvolleyspiritborn",
@@ -2146,7 +2146,7 @@
           "label": "Icy Veins Quill Volley Spiritborn Leveling"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-chargebarbarian",
@@ -2162,7 +2162,7 @@
           "label": "Maxroll Charge Barbarian"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-shreddruid",
@@ -2178,7 +2178,7 @@
           "label": "Maxroll Shred Druid"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-auradin",
@@ -2194,7 +2194,7 @@
           "label": "Maxroll Auradin"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-apocalypsewarlock",
@@ -2210,7 +2210,7 @@
           "label": "Maxroll Apocalypse Warlock"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-stormstrikedruid",
@@ -2226,7 +2226,7 @@
           "label": "Maxroll Storm Strike Druid"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-tornadodruid",
@@ -2242,7 +2242,7 @@
           "label": "Maxroll Tornado Druid"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-rakespiritborn",
@@ -2258,7 +2258,7 @@
           "label": "Maxroll Rake Spiritborn"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-evadecaltropsrogue",
@@ -2274,7 +2274,7 @@
           "label": "Maxroll Evade Caltrops Rogue"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-brandishpaladin",
@@ -2290,7 +2290,7 @@
           "label": "Maxroll Brandish Paladin"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-shieldchargepaladin",
@@ -2306,7 +2306,7 @@
           "label": "Maxroll Shield Charge Paladin"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-fistoftheheavenspaladin",
@@ -2322,7 +2322,7 @@
           "label": "Maxroll Fist Of The Heavens Paladin"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-minionwarlock",
@@ -2338,7 +2338,7 @@
           "label": "Maxroll Minion Warlock"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-companiondruid",
@@ -2359,7 +2359,7 @@
           "label": "Icy Veins Companion Druid Leveling"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-incineratesorcerer",
@@ -2375,7 +2375,7 @@
           "label": "Maxroll Incinerate Sorcerer"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-frozenorbsorcerer",
@@ -2391,7 +2391,7 @@
           "label": "Maxroll Frozen Orb Sorcerer"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-iceshardssorcerer",
@@ -2407,7 +2407,7 @@
           "label": "Maxroll Ice Shards Sorcerer"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-icespikessorcerer",
@@ -2423,7 +2423,7 @@
           "label": "Maxroll Ice Spikes Sorcerer"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-rocksplitterspiritborn",
@@ -2439,7 +2439,7 @@
           "label": "Maxroll Rock Splitter Spiritborn"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-witheringfistspiritborn",
@@ -2455,7 +2455,7 @@
           "label": "Maxroll Withering Fist Spiritborn"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-flurryrogue",
@@ -2471,7 +2471,7 @@
           "label": "Maxroll Flurry Rogue"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-hellfracturewarlock",
@@ -2487,7 +2487,7 @@
           "label": "Maxroll Hell Fracture Warlock"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-trampleslidedruid",
@@ -2503,7 +2503,7 @@
           "label": "Maxroll Trampleslide Druid"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-cataclysmdruid",
@@ -2519,7 +2519,7 @@
           "label": "Maxroll Cataclysm Druid"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-zenithpaladin",
@@ -2535,7 +2535,7 @@
           "label": "Maxroll Zenith Paladin"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-blessedhammerpaladin",
@@ -2556,7 +2556,7 @@
           "label": "Icy Veins Blessed Hammer Paladin Leveling"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-wingstrikespaladin",
@@ -2572,7 +2572,7 @@
           "label": "Maxroll Wing Strikes Paladin"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-bloodsurgenecromancer",
@@ -2588,7 +2588,7 @@
           "label": "Maxroll Blood Surge Necromancer"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-blizzardsorcerer",
@@ -2609,7 +2609,7 @@
           "label": "Icy Veins Blizzard Sorcerer Leveling"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-grenaderogue",
@@ -2625,7 +2625,7 @@
           "label": "Maxroll Grenade Rogue"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-hydrasorcerer",
@@ -2641,7 +2641,7 @@
           "label": "Maxroll Hydra Sorcerer"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-mightymaelstrombarbarian",
@@ -2657,7 +2657,7 @@
           "label": "Maxroll Mighty Maelstrom Barbarian"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-rendbarbarian",
@@ -2673,7 +2673,7 @@
           "label": "Maxroll Rend Barbarian"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-lunaticwarlockleveling",
@@ -2689,7 +2689,7 @@
           "label": "Maxroll Lunatic Warlock Leveling"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-dreadclawswarlockleveling",
@@ -2705,7 +2705,7 @@
           "label": "Maxroll Dread Claws Warlock Leveling"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-crushinghandspiritborn",
@@ -2721,7 +2721,7 @@
           "label": "Maxroll Crushing Hand Spiritborn"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-frenzybarbarianleveling",
@@ -2737,7 +2737,7 @@
           "label": "Maxroll Frenzy Barbarian Leveling"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-flurryrogueleveling",
@@ -2758,7 +2758,7 @@
           "label": "Icy Veins Flurry Rogue Leveling"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-evisceratewarlockleveling",
@@ -2774,7 +2774,7 @@
           "label": "Maxroll Eviscerate Warlock Leveling"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-tyrantsgraspwarlock",
@@ -2790,7 +2790,7 @@
           "label": "Maxroll Tyrants Grasp Warlock"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-heartseekerrogueleveling",
@@ -2806,7 +2806,7 @@
           "label": "Maxroll Heartseeker Rogue Leveling"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-barragerogueleveling",
@@ -2822,7 +2822,7 @@
           "label": "Maxroll Barrage Rogue Leveling"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-severnecromancerendgame",
@@ -2838,7 +2838,7 @@
           "label": "Maxroll Sever Necromancer Endgame"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-blightnecromancerleveling",
@@ -2854,7 +2854,7 @@
           "label": "Maxroll Blight Necromancer Leveling"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-paybackspiritbornleveling",
@@ -2870,7 +2870,7 @@
           "label": "Icy Veins Payback Spiritborn Leveling"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-chargedboltssorcererleveling",
@@ -2886,7 +2886,7 @@
           "label": "Icy Veins Charged Bolts Sorcerer Leveling"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-demonsummonerwarlockleveling",
@@ -2902,7 +2902,7 @@
           "label": "Icy Veins Demon Summoner Warlock Leveling"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-abyssrampagewarlockleveling",
@@ -2918,7 +2918,7 @@
           "label": "Icy Veins Abyss Rampage Warlock Leveling"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-summonernecromancerleveling",
@@ -2934,7 +2934,7 @@
           "label": "Icy Veins Summoner Necromancer Leveling"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-doubleswingbarbarianleveling",
@@ -2950,7 +2950,7 @@
           "label": "Icy Veins Double Swing Barbarian Leveling"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-zealpaladinleveling",
@@ -2966,7 +2966,7 @@
           "label": "Icy Veins Zeal Paladin Leveling"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-shreddruidleveling",
@@ -2982,7 +2982,7 @@
           "label": "Icy Veins Shred Druid Leveling"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-hellfireabodianwarlockleveling",
@@ -2998,7 +2998,7 @@
           "label": "Icy Veins Hellfire Abodian Warlock Leveling"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-blessedshieldpaladinleveling",
@@ -3014,7 +3014,7 @@
           "label": "Icy Veins Blessed Shield Paladin Leveling"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-lightningstormdruidleveling",
@@ -3030,7 +3030,7 @@
           "label": "Icy Veins Lightning Storm Druid Leveling"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "forever-snap-balancedruidforever",
@@ -3051,7 +3051,7 @@
           "label": "ClassicWoW.gg Balance Druid (Forever)"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "forever-snap-feraldruidmeleedpsandforever",
@@ -3067,7 +3067,7 @@
           "label": "Icy Veins Feral Druid Melee Dps And (Forever)"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "forever-snap-restorationdruidforever",
@@ -3088,7 +3088,7 @@
           "label": "ClassicWoW.gg Restoration Druid (Forever)"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "forever-snap-marksmanshiphunterforever",
@@ -3109,7 +3109,7 @@
           "label": "ClassicWoW.gg Marksmanship Hunter (Forever)"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "forever-snap-survivalhunterforever",
@@ -3130,7 +3130,7 @@
           "label": "ClassicWoW.gg Survival Hunter (Forever)"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "forever-snap-arcanemageforever",
@@ -3151,7 +3151,7 @@
           "label": "ClassicWoW.gg Arcane Mage (Forever)"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "forever-snap-firemageforever",
@@ -3172,7 +3172,7 @@
           "label": "ClassicWoW.gg Fire Mage (Forever)"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "forever-snap-protectionpaladinforever",
@@ -3193,7 +3193,7 @@
           "label": "ClassicWoW.gg Protection Paladin (Forever)"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "forever-snap-holypaladinforever",
@@ -3214,7 +3214,7 @@
           "label": "ClassicWoW.gg Holy Paladin (Forever)"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "forever-snap-disciplinepriestforever",
@@ -3235,7 +3235,7 @@
           "label": "ClassicWoW.gg Discipline Priest (Forever)"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "forever-snap-assassinationrogueforever",
@@ -3256,7 +3256,7 @@
           "label": "ClassicWoW.gg Assassination Rogue (Forever)"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "forever-snap-subtletyrogueforever",
@@ -3277,7 +3277,7 @@
           "label": "ClassicWoW.gg Subtlety Rogue (Forever)"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "forever-snap-elementalshamanforever",
@@ -3298,7 +3298,7 @@
           "label": "ClassicWoW.gg Elemental Shaman (Forever)"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "forever-snap-restorationshamanforever",
@@ -3319,7 +3319,7 @@
           "label": "ClassicWoW.gg Restoration Shaman (Forever)"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "forever-snap-demonologywarlockforever",
@@ -3340,7 +3340,7 @@
           "label": "ClassicWoW.gg Demonology Warlock (Forever)"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "forever-snap-destructionwarlockforever",
@@ -3361,7 +3361,7 @@
           "label": "ClassicWoW.gg Destruction Warlock (Forever)"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "forever-snap-armswarriorforever",
@@ -3382,7 +3382,7 @@
           "label": "ClassicWoW.gg Arms Warrior (Forever)"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "forever-snap-protectionwarriorforever",
@@ -3403,7 +3403,7 @@
           "label": "ClassicWoW.gg Protection Warrior (Forever)"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "forever-snap-catdruidforever",
@@ -3419,7 +3419,7 @@
           "label": "ClassicWoW.gg Cat Druid (Forever)"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "forever-snap-beardruidforever",
@@ -3435,7 +3435,7 @@
           "label": "ClassicWoW.gg Bear Druid (Forever)"
         }
       ],
-      "fetchedAt": "2026-10-21"
+      "fetchedAt": "2026-10-22"
     },
     {
       "id": "d4-snap-calloftheancientsbarbarian",
