@@ -1,4 +1,4 @@
-# BuildForge nightly sync — 2026-11-12
+# BuildForge nightly sync — 2026-11-13
 
 | Source | Index | Result |
 | --- | --- | --- |
