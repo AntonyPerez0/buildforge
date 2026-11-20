@@ -1,4 +1,4 @@
-# BuildForge nightly sync — 2026-11-19
+# BuildForge nightly sync — 2026-11-20
 
 | Source | Index | Result |
 | --- | --- | --- |
@@ -12,7 +12,7 @@
 | Icy Veins Endgame tier list | https://www.icy-veins.com/d4/guides/endgame-tier-list/ | 7 verified tiers kept (failed (HTTP 403)) |
 | Maxroll Leveling tier list | https://maxroll.gg/d4/tierlists/leveling-tier-list | 38 guides across 4 tiers (read live) |
 | Icy Veins Leveling tier list | https://www.icy-veins.com/d4/guides/leveling-tier-list/ | 23 guides across 3 tiers (read live) |
-| Icy Veins Raid & PvP tier list | https://www.icy-veins.com/wow-forever/tier-list-hub | 0 verified tiers kept (failed (HTTP 403)) |
+| Icy Veins Raid & PvP tier list | https://www.icy-veins.com/wow-forever/tier-list-hub | 0 verified tiers kept (page: only 0 tiered guide links (need 6); https://www.icy-veins.com/wow-forever/pve-tier-list-dps-specs: only 0 tiered guide links (need 6); https://www.icy-veins.com/wow-forever/pve-tier-list-tank-specs: only 0 tiered guide links (need 6); https://www.icy-veins.com/wow-forever/pve-tier-list-healer-specs: only 0 tiered guide links (need 6); https://www.icy-veins.com/wow-forever/pvp-tier-list-dps-specs: only 0 tiered guide links (need 6)) |
 
 122 guides indexed · 1 carried from earlier runs · 154 tier placements across 5 tier lists
 
